@@ -33,7 +33,32 @@ class AuthMethodsScreen extends StatelessWidget {
         child: Scaffold(
       body: ListView(
         children: [
-          Stack(),
+          Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Container(
+                width: double.infinity,
+                height: 6.h,
+                color: AppTheme.secondary900,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15, top: 20),
+                child: Container(
+                  height: 5.h,
+                  width: 10.w,
+                  decoration: BoxDecoration(
+                    color: Colors.blueGrey,
+                  ),
+                  child: Center(
+                    child: Icon(
+                      Icons.language,
+                      color: AppTheme.neutral100,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
           Space(
             height: 8.h,
           ),

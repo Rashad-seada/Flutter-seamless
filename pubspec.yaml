@@ -65,7 +65,7 @@ dependencies:
   another_flushbar:
   loading_animation_widget:
   pinput:
-
+  cached_network_image:
 
   # Service
   internet_connection_checker_plus:

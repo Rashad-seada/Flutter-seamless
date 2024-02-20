@@ -8,9 +8,10 @@ import 'package:sizer/sizer.dart';
 class CustomNavBar extends StatelessWidget {
 
   List<PageModel> items = [];
+  int selectedIndex;
   void Function(int)? onTap;
 
-  CustomNavBar({super.key,required this.items,this.onTap});
+  CustomNavBar({super.key,required this.items,this.onTap,required this.selectedIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,9 @@ class CustomNavBar extends StatelessWidget {
               onTap!(index);
             }
           },
-            child: CustomNavItem(items[index]
+            child: CustomNavItem(
+                items[index],
+                selectedIndex == index
             ))),
       ),
     );
@@ -47,7 +50,7 @@ class CustomNavBar extends StatelessWidget {
 }
 
 
-Widget CustomNavItem(PageModel page,){
+Widget CustomNavItem(PageModel page,bool isSelected){
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
@@ -55,7 +58,8 @@ Widget CustomNavItem(PageModel page,){
       SvgPicture.asset(
           width: 6.w,
           height: 6.w,
-          page.icon
+          page.icon,
+        color: (isSelected)? AppTheme.primary900 : AppTheme.neutral900,
       ),
 
       Space(height: .5.h,),
@@ -63,7 +67,7 @@ Widget CustomNavItem(PageModel page,){
       Text(
         page.title,
         style: AppTheme.mainTextStyle(
-            color: AppTheme.neutral900, fontSize: 9.sp),
+            color: (isSelected)? AppTheme.primary900 : AppTheme.neutral900, fontSize: 8.sp),
       ),
 
     ],

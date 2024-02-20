@@ -33,4 +33,6 @@ class MainCubit extends Cubit<MainState> {
     this.index = index;
     emit(MainInitial());
   }
+
+  test() {}
 }

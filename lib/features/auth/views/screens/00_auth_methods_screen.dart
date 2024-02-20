@@ -42,17 +42,19 @@ class AuthMethodsScreen extends StatelessWidget {
                 color: AppTheme.secondary900,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 15, top: 20),
+                padding: EdgeInsets.only(left: 20, top: 20),
                 child: Container(
-                  height: 5.h,
-                  width: 10.w,
+                  height: 6.h,
+                  width: 13.w,
                   decoration: BoxDecoration(
-                    color: Colors.blueGrey,
+                    color: AppTheme.neutral100,
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   child: Center(
                     child: Icon(
                       Icons.language,
-                      color: AppTheme.neutral100,
+                      color: AppTheme.secondary900,
+                      size: 25,
                     ),
                   ),
                 ),

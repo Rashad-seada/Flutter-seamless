@@ -17,14 +17,22 @@ class MainScreen extends StatelessWidget {
         },
         builder: (context, state) {
           return AnimatedSwitcher(
-            duration: Duration(milliseconds: 200),
+            duration: Duration(milliseconds: 400),
             child: context.read<MainCubit>().currentPage(),
           );
         },
       ),
-      bottomNavigationBar: CustomNavBar(
-        items: context.read<MainCubit>().pages,
-        onTap: (index)=>  context.read<MainCubit>().onNavItemTap(index),
+      bottomNavigationBar: BlocConsumer<MainCubit, MainState>(
+        listener: (context, state) {
+          // TODO: implement listener
+        },
+        builder: (context, state) {
+          return CustomNavBar(
+            items: context.read<MainCubit>().pages,
+            onTap: (index) => context.read<MainCubit>().onNavItemTap(index),
+            selectedIndex: context.read<MainCubit>().index,
+          );
+        },
       ),
     ));
   }

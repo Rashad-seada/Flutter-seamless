@@ -28,4 +28,8 @@ class AppImages {
   static String account = "images/account.svg";
   static String cart = "images/cart.svg";
   static String heart = "images/heart.svg";
+
+  static String image = "images/image.svg";
+  static String imageError = "images/imageError.svg";
+
 }

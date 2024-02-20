@@ -17,7 +17,7 @@ class AuthMethodAppBar extends StatelessWidget {
           color: AppTheme.secondary900,
         ),
         Padding(
-          padding: EdgeInsets.only(left: 20, top: 20),
+          padding: const EdgeInsets.only(left: 20, top: 20),
           child: Container(
             height: 6.h,
             width: 13.w,
@@ -25,7 +25,7 @@ class AuthMethodAppBar extends StatelessWidget {
               color: AppTheme.neutral100,
               borderRadius: BorderRadius.circular(8),
             ),
-            child: Center(
+            child: const Center(
               child: Icon(
                 Icons.language,
                 color: AppTheme.secondary900,

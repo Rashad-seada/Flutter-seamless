@@ -1,4 +1,4 @@
-![alt text]([[https://github.com/Rashad-seada/Flutter-Starter-Project-with-auth/blob/master/Mockup%204.png?raw=true](https://github.com/Rashad-seada/Flutter-seamless/blob/master/Mockup%205.png?raw=true](https://github.com/Rashad-seada/Flutter-seamless/blob/master/Mockup%205.png))
+![alt text](https://github.com/Rashad-seada/Flutter-seamless/blob/master/Mockup%205.png?raw=true)
 
 # Seamless Project
 

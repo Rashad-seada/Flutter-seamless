@@ -12,8 +12,6 @@ import '/generated/locale_keys.g.dart';
 import '../../../../core/config/app_theme.dart';
 import '../../../../core/views/widgets/main_button.dart';
 
-//modefied this screen
-// a7a doubled
 class AuthMethodsScreen extends StatelessWidget {
   const AuthMethodsScreen({Key? key}) : super(key: key);
 

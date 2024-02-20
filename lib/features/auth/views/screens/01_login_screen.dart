@@ -193,7 +193,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ) : Text(
                                 LocaleKeys.login,
                                 style: AppTheme.mainTextStyle(
-                                    color: AppTheme.neutral100, fontSize: 13.sp),
+                                    color: AppTheme.secondary900, fontSize: 13.sp),
                               ).tr(),
                               onTap: ()=> context.read<LoginCubit>().onLoginClick(context),
                             );

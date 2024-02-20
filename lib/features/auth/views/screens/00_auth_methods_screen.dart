@@ -34,7 +34,7 @@ class AuthMethodsScreen extends StatelessWidget {
         children: [
           AuthMethodAppBar(),
           Space(
-            height: 7.h,
+            height: 1.h,
           ),
           Center(
             child: Image.asset(

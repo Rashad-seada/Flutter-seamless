@@ -1,3 +1,4 @@
+import 'package:Mawthoq/features/auth/components/auth_method_app_bar.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,34 +32,7 @@ class AuthMethodsScreen extends StatelessWidget {
         child: Scaffold(
       body: ListView(
         children: [
-          Stack(
-            clipBehavior: Clip.none,
-            children: [
-              Container(
-                width: double.infinity,
-                height: 6.h,
-                color: AppTheme.secondary900,
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 20, top: 20),
-                child: Container(
-                  height: 6.h,
-                  width: 13.w,
-                  decoration: BoxDecoration(
-                    color: AppTheme.neutral100,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.language,
-                      color: AppTheme.secondary900,
-                      size: 25,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+          AuthMethodAppBar(),
           Space(
             height: 8.h,
           ),

@@ -56,5 +56,10 @@ abstract class  LocaleKeys {
   static const documents = 'documents';
   static const rewards = 'rewards';
   static const account = 'account';
+  static const sold = 'sold';
+  static const annual_return = 'annual_return';
+  static const expected_growth = 'expected_growth';
+  static const expected_rental_return = 'expected_rental_return';
+  static const net_rental_return = 'net_rental_return';
 
 }

@@ -71,6 +71,12 @@
   "wallet": "المحفظه",
   "documents": "الملفات",
   "rewards": "المكائات",
-  "account": "حسابي"
+  "account": "حسابي",
+  "sold": "مباع",
+
+  "annual_return": "العائد السنوي",
+  "expected_growth": "النمو المتوقع",
+  "expected_rental_return" : "عائد الايجار المتوقع",
+  "net_rental_return" : "العايد الصافي للايجار"
 
 }

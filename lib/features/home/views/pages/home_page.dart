@@ -1,6 +1,9 @@
+import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 import '../components/home_app_bar.dart';
+import '../components/home_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,7 +16,29 @@ class HomePage extends StatelessWidget {
         shrinkWrap: true,
         children: [
 
-          HomeAppBar()
+          HomeAppBar(),
+
+          Space(height: 4.h,),
+
+          Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 7.w),
+            child: ListView(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              children: [
+
+                HomeCard(),
+
+                HomeCard(),
+
+                HomeCard(),
+
+                HomeCard(),
+
+
+              ],
+            ),
+          )
 
         ],
       ),

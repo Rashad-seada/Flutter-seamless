@@ -69,7 +69,12 @@ class CodegenLoader extends AssetLoader{
   "wallet": "المحفظه",
   "documents": "الملفات",
   "rewards": "المكائات",
-  "account": "حسابي"
+  "account": "حسابي",
+  "sold": "مباع",
+  "annual_return": "العائد السنوي",
+  "expected_growth": "النمو المتوقع",
+  "expected_rental_return": "عائد الايجار المتوقع",
+  "net_rental_return": "العايد الصافي للايجار"
 };
 static const Map<String,dynamic> en = {
   "on_boarding_title_1": "Digital Catalog",
@@ -126,7 +131,12 @@ static const Map<String,dynamic> en = {
   "wallet": "Wallet",
   "documents": "Documents",
   "rewards": "Rewards",
-  "account": "Account"
+  "account": "Account",
+  "sold": "Sold",
+  "annual_return": "Annual return",
+  "expected_growth": "Expected growth",
+  "expected_rental_return": "Expected rental return",
+  "net_rental_return": "Net rental return"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

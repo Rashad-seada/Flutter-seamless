@@ -34,7 +34,9 @@ class MainCubit extends Cubit<MainState> {
     emit(MainInitial());
   }
 
-  test(){}
+  test(){
+
+  }
 
 
 }

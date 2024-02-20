@@ -22,5 +22,13 @@ class AppImages {
 
   static String eye = "images/eye.svg";
 
+  static String realState = "images/realstate.svg";
+  static String wallet = "images/wallet.svg";
+  static String documents = "images/files.svg";
+  static String reward = "images/present.svg";
+  static String account = "images/account.svg";
+  static String cart = "images/cart.svg";
+  static String heart = "images/heart.svg";
+
 
 }

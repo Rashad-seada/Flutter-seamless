@@ -51,5 +51,10 @@ abstract class  LocaleKeys {
   static const didnt_recive_code = 'didnt_recive_code';
   static const resend = 'resend';
   static const confirm = 'confirm';
+  static const real_state = 'real_state';
+  static const wallet = 'wallet';
+  static const documents = 'documents';
+  static const rewards = 'rewards';
+  static const account = 'account';
 
 }

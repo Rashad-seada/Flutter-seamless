@@ -64,6 +64,14 @@
   "confirm_code_sub_text": "A four-digit code has been sent to your phone number via text message. Enter the code below.",
   "didnt_recive_code": "Didn't Receive Any Messages?",
   "resend": "Resend",
-  "confirm": "Confirm"
+  "confirm": "Confirm",
+
+  "real_state": "Real-state",
+  "wallet": "Wallet",
+  "documents": "Documents",
+  "rewards": "Rewards",
+  "account": "Account"
+
+
 
 }

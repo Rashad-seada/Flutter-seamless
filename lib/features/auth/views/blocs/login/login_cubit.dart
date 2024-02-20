@@ -6,7 +6,6 @@ import '../../../../main/views/main_screen.dart';
 import '/core/di/app_module.dart';
 import '/core/errors/failure.dart';
 import '/core/usecases/validate_password_use_case.dart';
-import '/core/usecases/validate_phone_use_case.dart';
 import '/features/auth/domain/usecases/login_use_case.dart';
 import '/features/auth/views/screens/02_register_screen.dart';
 import '/features/auth/views/screens/03_reset_password_screen.dart';
@@ -76,7 +75,7 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   navigateToMainScreen(BuildContext context){
-    Navigator.push(context,MaterialPageRoute(builder: (_)=> MainScreen()));
+    Navigator.push(context,MaterialPageRoute(builder: (_)=> const MainScreen()));
   }
 
   navigateToResetPasswordScreen(BuildContext context){

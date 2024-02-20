@@ -64,7 +64,12 @@ class CodegenLoader extends AssetLoader{
   "confirm_code_sub_text": "تم ارسال كود مكون من اربع ارقام في رساله نصيه لرقم الهاتف الخاص بك, ادخل الكود بالاسفل",
   "didnt_recive_code": "لم اتلقى اي رسائل؟",
   "resend": "اعاده الارسال",
-  "confirm": "تاكيد"
+  "confirm": "تاكيد",
+  "real_state": "العقارات",
+  "wallet": "المحفظه",
+  "documents": "الملفات",
+  "rewards": "المكائات",
+  "account": "حسابي"
 };
 static const Map<String,dynamic> en = {
   "on_boarding_title_1": "Digital Catalog",
@@ -116,7 +121,12 @@ static const Map<String,dynamic> en = {
   "confirm_code_sub_text": "A four-digit code has been sent to your phone number via text message. Enter the code below.",
   "didnt_recive_code": "Didn't Receive Any Messages?",
   "resend": "Resend",
-  "confirm": "Confirm"
+  "confirm": "Confirm",
+  "real_state": "Real-state",
+  "wallet": "Wallet",
+  "documents": "Documents",
+  "rewards": "Rewards",
+  "account": "Account"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

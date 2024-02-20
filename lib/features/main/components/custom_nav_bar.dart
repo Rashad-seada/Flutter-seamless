@@ -8,8 +8,9 @@ import 'package:sizer/sizer.dart';
 class CustomNavBar extends StatelessWidget {
 
   List<PageModel> items = [];
+  void Function(int)? onTap;
 
-  CustomNavBar({super.key,required this.items});
+  CustomNavBar({super.key,required this.items,this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,14 @@ class CustomNavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: List.generate(items.length, (index) => CustomNavItem(items[index])),
+        children: List.generate(items.length, (index) => InkWell(
+          onTap: (){
+            if(onTap != null){
+              onTap!(index);
+            }
+          },
+            child: CustomNavItem(items[index]
+            ))),
       ),
     );
   }

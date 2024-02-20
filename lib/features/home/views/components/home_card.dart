@@ -15,10 +15,10 @@ class HomeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.hardEdge,
+      padding: EdgeInsets.all(0),
       margin: EdgeInsets.only(bottom: 4.h),
       alignment: Alignment.center,
       width: double.infinity,
-      height: 55.h,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(3.w),
           boxShadow: [
@@ -72,7 +72,9 @@ class HomeCard extends StatelessWidget {
                 HomeFundsComponents(raisedFunds: 150, requestedFunds: 200,width: 80.w,),
                 Space(height: 3.h,),
 
-                HomeIncomeChip(annualReturn: 6, expectedGrowth: 5.6, expectedRentalReturn: 65, netRentalReturn: 9,)
+                HomeIncomeChip(annualReturn: 6, expectedGrowth: 5.6, expectedRentalReturn: 65, netRentalReturn: 9,),
+
+                Space(height: 1.h,),
 
               ],
             ),

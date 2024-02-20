@@ -9,13 +9,23 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(
-      body: AnimatedSwitcher(
-        duration: Duration(milliseconds: 200),
-        child: context.read<MainCubit>().currentPage().page,
+    return SafeArea(
+        child: Scaffold(
+      body: BlocConsumer<MainCubit, MainState>(
+        listener: (context, state) {
+          // TODO: implement listener
+        },
+        builder: (context, state) {
+          return AnimatedSwitcher(
+            duration: Duration(milliseconds: 200),
+            child: context.read<MainCubit>().currentPage(),
+          );
+        },
       ),
-
-      bottomNavigationBar: CustomNavBar(items: context.read<MainCubit>().pages,),
+      bottomNavigationBar: CustomNavBar(
+        items: context.read<MainCubit>().pages,
+        onTap: (index)=>  context.read<MainCubit>().onNavItemTap(index),
+      ),
     ));
   }
 }

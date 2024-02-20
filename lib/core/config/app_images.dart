@@ -1,9 +1,8 @@
 class AppImages {
-
   static String onBoardingImage1 = "images/on_boarding_1.svg";
   static String onBoardingImage2 = "images/on_boarding_2.svg";
   static String onBoardingImage3 = "images/on_boarding_3.svg";
-  static String authMethods = "images/auth_methods.png";
+  static String authMethods = "images/realstate.png";
 
   static String login = "images/login.svg";
   static String email = "images/email.svg";
@@ -29,6 +28,4 @@ class AppImages {
   static String account = "images/account.svg";
   static String cart = "images/cart.svg";
   static String heart = "images/heart.svg";
-
-
 }

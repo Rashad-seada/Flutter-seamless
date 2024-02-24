@@ -1,0 +1,66 @@
+import 'package:Mawthoq/core/config/app_theme.dart';
+import 'package:Mawthoq/core/views/widgets/custom_network_image.dart';
+import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
+
+class AccountPageAppBar extends StatelessWidget {
+  const AccountPageAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              'Account',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20.sp,
+              ),
+            ),
+          ],
+        ),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.w),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(100.w),
+            color: AppTheme.neutral200,
+          ),
+          clipBehavior: Clip.none,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100.w),
+                  color: AppTheme.neutral300,
+                ),
+                clipBehavior: Clip.hardEdge,
+                child: CustomNetworkImage(
+                  fit: BoxFit.cover,
+                  url:
+                      "https://cdn.britannica.com/79/5779-004-DC479508/Flag-Saudi-Arabia.jpg",
+                  width: 4.w,
+                  height: 4.w,
+                ),
+              ),
+              Space(
+                width: 1.w,
+              ),
+              Text(
+                'SAR',
+                style: TextStyle(
+                  fontSize: 10.sp,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}

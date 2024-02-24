@@ -6,17 +6,20 @@ import 'package:sizer/sizer.dart';
 
 import '../../../../core/config/app_theme.dart';
 
+// ignore: must_be_immutable
 class HomeFundsComponents extends StatelessWidget {
   double raisedFunds;
   double requestedFunds;
   double width;
-  HomeFundsComponents({super.key,this.width = 100,required this.raisedFunds,required this.requestedFunds});
+  HomeFundsComponents(
+      {super.key,
+      this.width = 100,
+      required this.raisedFunds,
+      required this.requestedFunds});
 
-  double percentOfRaisedFunds(){
-    return raisedFunds/requestedFunds;
+  double percentOfRaisedFunds() {
+    return raisedFunds / requestedFunds;
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +51,7 @@ class HomeFundsComponents extends StatelessWidget {
               ],
             ),
             Text(
-              LocaleKeys.sold.tr() + " ${percentOfRaisedFunds()*100}%",
+              LocaleKeys.sold.tr() + " ${percentOfRaisedFunds() * 100}%",
               style: AppTheme.mainTextStyle(
                   color: AppTheme.neutral400, fontSize: 10.sp),
             ),
@@ -73,7 +76,6 @@ class HomeFundsComponents extends StatelessWidget {
                 ),
               ],
               color: AppTheme.primary900.withOpacity(0.1)),
-
           child: Container(
             alignment: Alignment.center,
             width: (width * percentOfRaisedFunds()),

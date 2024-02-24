@@ -12,6 +12,7 @@ class AppImages {
   static String done = "images/done.svg";
   static String product = "images/product.svg";
   static String arrow = "images/arrow.svg";
+  static String arrowRight = "images/arrow_right.svg";
 
   static String phone = "images/phone.svg";
   static String profile = "images/profile.svg";
@@ -26,10 +27,10 @@ class AppImages {
   static String documents = "images/files.svg";
   static String reward = "images/present.svg";
   static String account = "images/account.svg";
+  static String account1 = "images/accout1.svg";
   static String cart = "images/cart.svg";
   static String heart = "images/heart.svg";
 
   static String image = "images/image.svg";
   static String imageError = "images/imageError.svg";
-
 }

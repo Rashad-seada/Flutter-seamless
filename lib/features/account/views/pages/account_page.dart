@@ -4,12 +4,18 @@ import 'package:Mawthoq/features/account/views/components/account_logout_botton.
 import 'package:Mawthoq/features/account/views/components/account_page_app_bar.dart';
 import 'package:Mawthoq/features/account/views/components/account_page_card.dart';
 import 'package:Mawthoq/features/account/views/components/account_page_container.dart';
+import 'package:Mawthoq/features/auth/views/screens/01_login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
+
+  void navigateToLoginScreen(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => const LoginScreen()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +50,10 @@ class AccountPage extends StatelessWidget {
             Space(
               height: 2.h,
             ),
-            const AccountLogOutBotton(),
+            AccountLogOutBotton(
+              label: 'Logout',
+              onTap: () => navigateToLoginScreen(context),
+            ),
           ],
         ),
       ),

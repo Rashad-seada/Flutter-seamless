@@ -1,7 +1,9 @@
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/main_button.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/account/views/components/account_logout_botton.dart';
 import 'package:Mawthoq/features/account/views/components/account_page_app_bar.dart';
+import 'package:Mawthoq/features/wallet/components/wallet_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -14,10 +16,14 @@ class WalletScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
+        shrinkWrap: false,
         padding: EdgeInsets.all(7.w),
         children: [
           AccountPageAppBar(
             label: 'Wallet',
+          ),
+          Space(
+            height: 3.h,
           ),
           Center(
             child: Text(
@@ -34,6 +40,7 @@ class WalletScreen extends StatelessWidget {
               Text(
                 'SAR',
                 style: AppTheme.mainTextStyle(
+                  fontWeight: FontWeight.w600,
                   fontSize: 12.sp,
                 ),
               ),
@@ -44,7 +51,7 @@ class WalletScreen extends StatelessWidget {
                 '1500',
                 style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 15.sp,
+                  fontSize: 20.sp,
                 ),
               ),
             ],
@@ -57,7 +64,7 @@ class WalletScreen extends StatelessWidget {
               Expanded(
                 child: MainButton(
                   borderRadius: BorderRadius.circular(1.5.w),
-                  height: 8.w,
+                  height: 9.w,
                   label: Text(
                     'Withdraw',
                     style: AppTheme.mainTextStyle(
@@ -74,8 +81,7 @@ class WalletScreen extends StatelessWidget {
               Expanded(
                 child: MainButton(
                   borderRadius: BorderRadius.circular(1.5.w),
-                  height: 8.w,
-                  width: 40.w,
+                  height: 9.w,
                   label: Text(
                     'Deposit',
                     style: AppTheme.mainTextStyle(
@@ -101,8 +107,57 @@ class WalletScreen extends StatelessWidget {
           Space(
             height: 1.5.h,
           ),
+          Container(
+            alignment: Alignment.center,
+            padding: EdgeInsets.all(2.w),
+            child: Text('Data'),
+          ),
+          AccountLogOutBotton(
+            label: 'Invest Now',
+            onTap: () {},
+            showArrow: false,
+          ),
         ],
       ),
     );
   }
 }
+
+
+  // Expanded(
+  //           child: TabBar(
+  //             controller: TabController(length: 5,vsync: this),
+  //             tabs: [
+  //               Tab(
+  //                 child: WalletButton(
+  //                   label: 'All Transactions',
+  //                 ),
+  //               ),
+  //               Tab(
+  //                 child: WalletButton(
+  //                   label: 'All Transactions',
+  //                 ),
+  //               ),
+  //               Tab(
+  //                 child: WalletButton(
+  //                   label: 'All Transactions',
+  //                 ),
+  //               ),
+  //               Tab(
+  //                 child: WalletButton(
+  //                   label: 'All Transactions',
+  //                 ),
+  //               ),
+  //               Tab(
+  //                 child: WalletButton(
+  //                   label: 'All Transactions',
+  //                 ),
+  //               ),
+  //               Tab(
+  //                 child: WalletButton(
+  //                   label: 'All Transactions',
+  //                 ),
+  //               ),
+  //             ],
+  //           ),
+  //         ),

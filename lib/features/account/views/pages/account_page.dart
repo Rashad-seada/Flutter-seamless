@@ -13,39 +13,44 @@ class AccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(6.w),
-        child: Column(
-          children: [
-            AccountPageAppBar(
-              label: 'Account',
-            ),
-            Space(
-              height: 4.h,
-            ),
-            AccountPageCard(
-              title: 'Name',
-              subTitle: 'Show Account Info.',
-              onTap: () =>
-                  context.read<AccountCubit>().onAccountCardClick(context),
-            ),
-            Space(
-              height: 2.5.h,
-            ),
-            AccountPageContainer(
-              info: context.read<AccountCubit>().accountPageInfo1(context),
-            ),
-            Space(
-              height: 2.5.h,
-            ),
-            AccountPageContainer(
-                info: context.read<AccountCubit>().accountPageInfo2(context)),
-            Space(
-              height: 2.h,
-            ),
-            const AccountLogOutBotton(),
-          ],
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 7.w),
+          child: ListView(
+            children: [
+
+              Space(height: 2.h,),
+
+              AccountPageAppBar(
+                label: 'Account',
+              ),
+              Space(
+                height: 4.h,
+              ),
+              AccountPageCard(
+                title: 'Name',
+                subTitle: 'Show Account Info.',
+                onTap: () =>
+                    context.read<AccountCubit>().onAccountCardClick(context),
+              ),
+              Space(
+                height: 2.5.h,
+              ),
+              AccountPageContainer(
+                info: context.read<AccountCubit>().accountPageInfo1(context),
+              ),
+              Space(
+                height: 2.5.h,
+              ),
+              AccountPageContainer(
+                  info: context.read<AccountCubit>().accountPageInfo2(context)),
+              Space(
+                height: 2.h,
+              ),
+              const AccountLogOutBotton(),
+            ],
+          ),
         ),
       ),
     );

@@ -74,7 +74,8 @@ class CodegenLoader extends AssetLoader{
   "annual_return": "العائد السنوي",
   "expected_growth": "النمو المتوقع",
   "expected_rental_return": "عائد الايجار المتوقع",
-  "net_rental_return": "العايد الصافي للايجار"
+  "net_rental_return": "العايد الصافي للايجار",
+  "investor_profile": "الملف الاستثماري"
 };
 static const Map<String,dynamic> en = {
   "on_boarding_title_1": "Digital Catalog",
@@ -136,7 +137,8 @@ static const Map<String,dynamic> en = {
   "annual_return": "Annual return",
   "expected_growth": "Expected growth",
   "expected_rental_return": "Expected rental return",
-  "net_rental_return": "Net rental return"
+  "net_rental_return": "Net rental return",
+  "investor_profile": "Investor profile"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

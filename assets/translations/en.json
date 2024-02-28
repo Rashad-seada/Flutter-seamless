@@ -76,7 +76,9 @@
   "annual_return": "Annual return",
   "expected_growth": "Expected growth",
   "expected_rental_return" : "Expected rental return",
-  "net_rental_return" : "Net rental return"
+  "net_rental_return" : "Net rental return",
+
+  "investor_profile" : "Investor profile"
 
 
 }

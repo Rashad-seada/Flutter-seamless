@@ -6,6 +6,7 @@ import '/core/config/app_theme.dart';
 
 import '../../../../core/views/widgets/space.dart';
 
+// ignore: must_be_immutable
 class OnBoardingPage extends StatelessWidget {
   String image;
   String title;
@@ -24,8 +25,8 @@ class OnBoardingPage extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 7.w),
       child: ListView(
 
-        // mainAxisAlignment: MainAxisAlignment.start,
-        // crossAxisAlignment: CrossAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.center,
 
           children: [
             Space(
@@ -34,10 +35,10 @@ class OnBoardingPage extends StatelessWidget {
             Center(
               child: Center(
                   child: SvgPicture.asset(
-                    image,
-                    width: 86.w,
-                    height: 23.h,
-                  )),
+                image,
+                width: 86.w,
+                height: 23.h,
+              )),
             ),
             Space(
               height: 16.h,
@@ -45,7 +46,10 @@ class OnBoardingPage extends StatelessWidget {
             Center(
               child: Text(
                 title,
-                style: AppTheme.mainTextStyle(color: AppTheme.neutral900,fontSize: 20.sp,),
+                style: AppTheme.mainTextStyle(
+                  color: AppTheme.neutral900,
+                  fontSize: 20.sp,
+                ),
                 textAlign: TextAlign.center,
               ).tr(),
             ),
@@ -55,7 +59,8 @@ class OnBoardingPage extends StatelessWidget {
             Center(
               child: Text(
                 description,
-                style: AppTheme.mainTextStyle(color: AppTheme.neutral700,fontSize: 12.sp),
+                style: AppTheme.mainTextStyle(
+                    color: AppTheme.neutral700, fontSize: 12.sp),
                 textAlign: TextAlign.center,
               ).tr(),
             )

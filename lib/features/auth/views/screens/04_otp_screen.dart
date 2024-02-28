@@ -12,11 +12,11 @@ import '../../../../core/views/widgets/main_button.dart';
 import '../../../../core/views/widgets/space.dart';
 import '../../../../generated/locale_keys.g.dart';
 
+// ignore: must_be_immutable
 class OtpScreen extends StatelessWidget {
-
   String phoneNumber;
 
-  OtpScreen({super.key,required this.phoneNumber});
+  OtpScreen({super.key, required this.phoneNumber});
 
   @override
   Widget build(BuildContext context) {
@@ -27,17 +27,13 @@ class OtpScreen extends StatelessWidget {
         child: ListView(
           shrinkWrap: true,
           children: [
-
             Space(
               height: 2.h,
             ),
-
             CustomBackButton(),
-
             Space(
               height: 4.h,
             ),
-
             Text(
               LocaleKeys.confirm_code,
               style: AppTheme.mainTextStyle(
@@ -45,84 +41,76 @@ class OtpScreen extends StatelessWidget {
                 fontSize: 25.sp,
               ),
             ).tr(),
-
             Space(
               height: 2.h,
             ),
-
             Text(
               LocaleKeys.confirm_code_sub_text,
               style: AppTheme.mainTextStyle(
                   color: AppTheme.neutral900, fontSize: 12.sp),
             ).tr(),
-
             Space(
               height: 3.h,
             ),
-
             Form(
               key: context.read<OtpCubit>().formKey,
               child: PinTextField(
                 onChange: context.read<OtpCubit>().onPinChange,
-                validator: (_)=> context.read<OtpCubit>().validatePin(),
-                onCompleted: (pin)=> context.read<OtpCubit>().onConfirmClick(context),
+                validator: (_) => context.read<OtpCubit>().validatePin(),
+                onCompleted: (pin) =>
+                    context.read<OtpCubit>().onConfirmClick(context),
               ),
             ),
-
             Space(
               height: 1.h,
             ),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-
                 Text(
                   LocaleKeys.didnt_recive_code.tr(),
                   style: AppTheme.mainTextStyle(
                       color: AppTheme.neutral400, fontSize: 12.sp),
                 ).tr(),
-
                 Space(
                   width: 2.w,
                 ),
-
                 InkWell(
-                  onTap: () => context.read<OtpCubit>().onResendClick(context,phoneNumber),
+                  onTap: () => context
+                      .read<OtpCubit>()
+                      .onResendClick(context, phoneNumber),
                   child: Text(
                     LocaleKeys.resend.tr(),
                     style: AppTheme.mainTextStyle(
                         color: AppTheme.primary900, fontSize: 12.sp),
                   ).tr(),
                 ),
-
               ],
             ),
-
             Space(
               height: 25.h,
             ),
-
             BlocConsumer<OtpCubit, OtpState>(
               listener: (context, state) {},
               builder: (context, state) {
                 return MainButton(
-                          color: AppTheme.primary900,
-                          width: 86.w,
-                          height: 6.5.h,
-                          label: (state is OtpLoading)? CustomProgressIndicator(
-                            color: AppTheme.neutral100,
-                          ) :Text(
-                            LocaleKeys.confirm,
-                            style: AppTheme.mainTextStyle(
-                                color: AppTheme.neutral100, fontSize: 13.sp),
-                          ).tr(),
-                          onTap: () => context.read<OtpCubit>().onConfirmClick(context),
-                        );
+                  color: AppTheme.primary900,
+                  width: 86.w,
+                  height: 6.5.h,
+                  label: (state is OtpLoading)
+                      ? CustomProgressIndicator(
+                          color: AppTheme.neutral100,
+                        )
+                      : Text(
+                          LocaleKeys.confirm,
+                          style: AppTheme.mainTextStyle(
+                              color: AppTheme.neutral100, fontSize: 13.sp),
+                        ).tr(),
+                  onTap: () => context.read<OtpCubit>().onConfirmClick(context),
+                );
               },
             ),
-
           ],
         ),
       ),

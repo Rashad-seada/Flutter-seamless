@@ -78,7 +78,10 @@
   "expected_rental_return" : "Expected rental return",
   "net_rental_return" : "Net rental return",
 
-  "investor_profile" : "Investor profile"
+  "investor_profile" : "Investor profile",
+
+  "investment_value" : "Your Investments value"
+
 
 
 }

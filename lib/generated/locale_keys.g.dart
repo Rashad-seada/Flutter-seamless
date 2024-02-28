@@ -62,5 +62,6 @@ abstract class  LocaleKeys {
   static const expected_rental_return = 'expected_rental_return';
   static const net_rental_return = 'net_rental_return';
   static const investor_profile = 'investor_profile';
+  static const investment_value = 'investment_value';
 
 }

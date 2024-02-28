@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../account/views/components/account_page_app_bar.dart';
+import '../components/investor_main_card.dart';
 
 class InvestorProfilePage extends StatelessWidget {
   const InvestorProfilePage({super.key});
@@ -20,7 +21,10 @@ class InvestorProfilePage extends StatelessWidget {
           Space(height: 2.h,),
 
           AccountPageAppBar(label: LocaleKeys.investor_profile.tr(),),
-          
+
+          Space(height: 5.h,),
+
+          InvestorMainCard(),
 
 
 

@@ -79,7 +79,8 @@
   "expected_rental_return" : "عائد الايجار المتوقع",
   "net_rental_return" : "العايد الصافي للايجار",
 
-  "investor_profile" : "الملف الاستثماري"
+  "investor_profile" : "الملف الاستثماري",
 
+  "investment_value" : "قيمه ملفك الاستثماري"
 
 }

@@ -16,21 +16,8 @@ import '../../../../core/views/widgets/main_button.dart';
 import '../../../../core/views/widgets/space.dart';
 import '../../../../generated/locale_keys.g.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
-
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-
-
-  @override
-  void didChangeDependencies() {
-    context.read<LoginCubit>().formKey.currentState?.dispose();
-    super.didChangeDependencies();
-  }
 
 
   @override

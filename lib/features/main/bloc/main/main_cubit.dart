@@ -33,13 +33,6 @@ class MainCubit extends Cubit<MainState> {
     this.index = index;
     emit(MainInitial());
   }
-<<<<<<<<< Temporary merge branch 1
-=========
-
-  test(){
-
-  }
 
 
->>>>>>>>> Temporary merge branch 2
 }

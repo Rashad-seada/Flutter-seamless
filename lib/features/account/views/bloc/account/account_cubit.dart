@@ -38,6 +38,7 @@ class AccountCubit extends Cubit<AccountState> {
   }
 
   void onAccountCardClick(BuildContext context) {
+    print('sdfgn');
     _navigateToAccountInfoScreen(context);
   }
 

@@ -1,6 +1,11 @@
+import 'package:Mawthoq/core/config/app_images.dart';
+import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
-import 'package:Mawthoq/features/account/views/components/setting_screen_contianer.dart';
+import 'package:Mawthoq/features/account/views/bloc/settings/settings_cubit.dart';
+import 'package:Mawthoq/features/account/views/components/settings_screen_contianer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -12,15 +17,18 @@ class SettingsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Settings'),
       ),
-      body: ListView(
-        children: [
-          SettingsContainer(),
-          Space(
-            height: 1.5.h,
-          ),
-          SettingsContainer(),
-        ],
-      ),
+      body: ListView.separated(
+          itemBuilder: (context, index) {
+            return SettingsScreenContainer(
+              model: context.read<SettingsCubit>().settingsInfo[index],
+            );
+          },
+          separatorBuilder: (context, index) {
+            return Space(
+              height: 1.5.h,
+            );
+          },
+          itemCount: context.read<SettingsCubit>().settingsInfo.length),
     );
   }
 }

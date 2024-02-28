@@ -66,7 +66,7 @@ class HomeCard extends StatelessWidget {
                   height: 1.2.h,
                 ),
                 HomeFundsComponents(
-                  raisedFunds: 150,
+                  raisedFunds: 170,
                   requestedFunds: 200,
                   width: 80.w,
                 ),

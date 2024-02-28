@@ -2,16 +2,28 @@ import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/features/account/views/bloc/settings/settings_states.dart';
 import 'package:Mawthoq/features/account/views/utils/account_model.dart';
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 
 class SettingsCubit extends Cubit<SettingsState> {
   SettingsCubit() : super(SettingsInitial());
 
-  List<SettingsContainerModel> get settingsContainerInfo1 => [
-        SettingsContainerModel(AppImages.email, 'Language', 'English', () {}),
-      ];
+  void _showLanguageMenu(BuildContext context) {}
 
-  List<SettingsContainerModel> get settingsContainerInfo2 => [
-        SettingsContainerModel(AppImages.phone, 'The currency', 'SAR', () {}),
+  void onMenuClick(BuildContext context) {
+    _showLanguageMenu(context);
+  }
+
+  List<SettingsModel> get settingsInfo => [
+        SettingsModel<LanguageModel>(
+            AppImages.email, 'Language', 'English', () {}, [
+          LanguageModel('English', () {}),
+          LanguageModel('Arabic', () {}),
+        ]),
+        SettingsModel<CurrencyModel>(
+            AppImages.phone, 'The currency', 'SAR', () {}, [
+          CurrencyModel('Saudi Arabia Riyal', 'SAR', () {}),
+          CurrencyModel('Kuwaiti Dinar', 'KWD', () {}),
+        ]),
       ];
 
   List<SettingsCardModel> get settingsCardInfo1 => [

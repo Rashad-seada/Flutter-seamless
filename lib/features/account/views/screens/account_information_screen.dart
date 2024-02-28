@@ -15,7 +15,7 @@ class AccountInformationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Account Information',
           style: TextStyle(
             fontWeight: FontWeight.bold,
@@ -54,8 +54,8 @@ class AccountInformationScreen extends StatelessWidget {
               height: 1.5.h,
             ),
             AccountInfoIndicator(
-              raisedFunds: 59,
-              requestedFunds: 100,
+              raisedFunds: 25,
+              requestedFunds: 1000,
               width: 86.w,
             ),
           ],

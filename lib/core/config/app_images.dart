@@ -2,7 +2,7 @@ class AppImages {
   static String onBoardingImage1 = "images/on_boarding_1.svg";
   static String onBoardingImage2 = "images/on_boarding_2.svg";
   static String onBoardingImage3 = "images/on_boarding_3.svg";
-  static String authMethods = "images/realstate.png";
+  static String authMethods = "images/start_screen.png";
 
   static String login = "images/login.svg";
   static String email = "images/email.svg";

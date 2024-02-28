@@ -68,7 +68,7 @@ class AccountCubit extends Cubit<AccountState> {
       ];
 
   List<AccountContainerModel> get helpCenterScreenInfo1 => [
-        AccountContainerModel(AppImages.heart, 'Ask & Answer', () {}),
+        AccountContainerModel(AppImages.email, 'Ask & Answer', () {}),
         AccountContainerModel(AppImages.eye, 'How it works', () {}),
       ];
 

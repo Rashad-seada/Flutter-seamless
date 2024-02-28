@@ -5,13 +5,29 @@ class AccountContainerModel {
   AccountContainerModel(this.icon, this.label, this.onTap);
 }
 
-class SettingsContainerModel {
-  String settingIcon;
-  String settingLabel1;
-  String settingLabel2;
+class SettingsModel<T> {
+  String leadingIcon;
+  String leadingLabel;
+  String trailingLabel;
   void Function() onTap;
-  SettingsContainerModel(
-      this.settingIcon, this.settingLabel1, this.settingLabel2, this.onTap);
+  List<T> object;
+  SettingsModel(this.leadingIcon, this.leadingLabel, this.trailingLabel,
+      this.onTap, this.object);
+}
+
+class LanguageModel {
+  String name;
+  void Function() onTap;
+
+  LanguageModel(this.name, this.onTap);
+}
+
+class CurrencyModel {
+  String name;
+  String tag;
+  void Function() onTap;
+
+  CurrencyModel(this.name, this.tag, this.onTap);
 }
 
 class SettingsCardModel {
@@ -19,4 +35,10 @@ class SettingsCardModel {
   String settingLabel;
   bool isEnabled;
   SettingsCardModel(this.settingIcon, this.settingLabel, this.isEnabled);
+}
+
+class SettingsMenuModel {
+  String menuLabel1;
+  String menuLabel2;
+  SettingsMenuModel(this.menuLabel1, this.menuLabel2);
 }

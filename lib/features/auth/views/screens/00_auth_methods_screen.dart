@@ -34,7 +34,7 @@ class AuthMethodsScreen extends StatelessWidget {
         children: [
           const AuthMethodAppBar(),
           Space(
-            height: 2.h,
+            height: 3.h,
           ),
           Center(
             child: Image.asset(
@@ -48,30 +48,17 @@ class AuthMethodsScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Center(
-                  child: Text(
-                    LocaleKeys.auth_method_title,
-                    style: AppTheme.mainTextStyle(
-                      color: AppTheme.secondary900,
-                      fontSize: 22.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ).tr(),
-                ),
-                Space(
-                  height: 1.h,
-                ),
                 Text(
                   textAlign: TextAlign.center,
-                  LocaleKeys.auth_method_description,
+                  'The latest investment methods',
                   style: AppTheme.mainTextStyle(
-                    color: AppTheme.neutral700,
-                    fontSize: 12.sp,
+                    color: AppTheme.secondary900,
+                    fontSize: 15.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ).tr(),
                 Space(
-                  height: 4.h,
+                  height: 3.h,
                 ),
                 MainButton(
                   color: AppTheme.secondary900,

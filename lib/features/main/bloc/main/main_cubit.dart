@@ -1,4 +1,5 @@
 import 'package:Mawthoq/core/config/app_images.dart';
+import 'package:Mawthoq/features/account/views/pages/account_page.dart';
 import 'package:Mawthoq/features/main/utils/pages.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:bloc/bloc.dart';
@@ -15,7 +16,7 @@ class MainCubit extends Cubit<MainState> {
 
   int index = 0;
 
-  Widget currentPage(){
+  Widget currentPage() {
     return pages[index].page;
   }
 
@@ -24,19 +25,21 @@ class MainCubit extends Cubit<MainState> {
     PageModel(LocaleKeys.wallet.tr(), AppImages.wallet, Scaffold()),
     PageModel(LocaleKeys.documents.tr(), AppImages.documents, HomePage()),
     PageModel(LocaleKeys.rewards.tr(), AppImages.reward, HomePage()),
-    PageModel(LocaleKeys.account.tr(), AppImages.account, HomePage()),
-
+    PageModel(LocaleKeys.account.tr(), AppImages.account, AccountPage()),
   ];
 
-  onNavItemTap(index){
+  onNavItemTap(index) {
     emit(MainPageChanged());
     this.index = index;
     emit(MainInitial());
   }
+<<<<<<<<< Temporary merge branch 1
+=========
 
   test(){
 
   }
 
 
+>>>>>>>>> Temporary merge branch 2
 }

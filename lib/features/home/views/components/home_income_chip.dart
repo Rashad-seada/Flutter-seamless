@@ -54,10 +54,7 @@ class HomeIncomeChip extends StatelessWidget {
               Text(
                 annualReturn.toString()+"%",
                 style: buttomStyle,
-
               ),
-
-
             ],
           ),
 

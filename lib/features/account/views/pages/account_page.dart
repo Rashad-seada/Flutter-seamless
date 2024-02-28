@@ -18,7 +18,9 @@ class AccountPage extends StatelessWidget {
         padding: EdgeInsets.all(6.w),
         child: Column(
           children: [
-            const AccountPageAppBar(),
+            AccountPageAppBar(
+              label: 'Account',
+            ),
             Space(
               height: 4.h,
             ),

@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class AccountPageAppBar extends StatelessWidget {
-  const AccountPageAppBar({super.key});
+  String label;
+  AccountPageAppBar({super.key, required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class AccountPageAppBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
-              'Account',
+              label,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20.sp,

@@ -10,6 +10,7 @@ class WalletButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MainButton(
+      onTap: () {},
       borderRadius: BorderRadius.circular(1.5.w),
       label: Text(
         label,
@@ -19,7 +20,6 @@ class WalletButton extends StatelessWidget {
           fontSize: 10.sp,
         ),
       ),
-      color: AppTheme.secondary900,
     );
   }
 }

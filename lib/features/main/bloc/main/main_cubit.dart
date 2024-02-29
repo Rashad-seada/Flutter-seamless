@@ -1,7 +1,8 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/features/account/views/pages/account_page.dart';
-import 'package:Mawthoq/features/investor_profile/views/pages/investor_profile_page.dart';
 import 'package:Mawthoq/features/main/utils/pages.dart';
+import 'package:Mawthoq/features/rewards/pages/rewards_page.dart';
+import 'package:Mawthoq/features/wallet/pages/wallet_page.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:bloc/bloc.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -23,9 +24,9 @@ class MainCubit extends Cubit<MainState> {
 
   List<PageModel> pages = [
     PageModel(LocaleKeys.real_state.tr(), AppImages.realState, HomePage()),
-    PageModel(LocaleKeys.wallet.tr(), AppImages.wallet, Scaffold()),
-    PageModel(LocaleKeys.documents.tr(), AppImages.documents, InvestorProfilePage()),
-    PageModel(LocaleKeys.rewards.tr(), AppImages.reward, Scaffold()),
+    PageModel(LocaleKeys.wallet.tr(), AppImages.wallet, WalletPage()),
+    PageModel(LocaleKeys.documents.tr(), AppImages.documents, HomePage()),
+    PageModel(LocaleKeys.rewards.tr(), AppImages.reward, RewardsPage()),
     PageModel(LocaleKeys.account.tr(), AppImages.account, AccountPage()),
   ];
 
@@ -34,6 +35,4 @@ class MainCubit extends Cubit<MainState> {
     this.index = index;
     emit(MainInitial());
   }
-
-
 }

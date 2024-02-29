@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
-class AccountLogOutBotton extends StatelessWidget {
+class LowOpacityBotton extends StatelessWidget {
   String label;
   bool showArrow;
   void Function() onTap;
-  AccountLogOutBotton({
+  LowOpacityBotton({
     super.key,
     required this.label,
     required this.onTap,

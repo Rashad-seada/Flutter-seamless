@@ -48,7 +48,7 @@ class AccountPage extends StatelessWidget {
               Space(
                 height: 2.h,
               ),
-              const AccountLogOutBotton(),
+              AccountLogOutBotton(label: '', onTap: () {  },),
             ],
           ),
         ),

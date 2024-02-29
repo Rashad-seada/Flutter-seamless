@@ -50,7 +50,7 @@ class AccountPage extends StatelessWidget {
             Space(
               height: 2.h,
             ),
-            AccountLogOutBotton(
+            LowOpacityBotton(
               label: 'Logout',
               onTap: () => navigateToLoginScreen(context),
             ),

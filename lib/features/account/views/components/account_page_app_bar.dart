@@ -20,7 +20,7 @@ class AccountPageAppBar extends StatelessWidget {
               label,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 20.sp,
+                fontSize: 18.sp,
               ),
             ),
           ],

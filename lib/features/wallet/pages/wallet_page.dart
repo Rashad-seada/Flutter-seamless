@@ -3,10 +3,8 @@ import 'package:Mawthoq/core/views/widgets/main_button.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/components/account_logout_botton.dart';
 import 'package:Mawthoq/features/account/views/components/account_page_app_bar.dart';
-import 'package:Mawthoq/features/wallet/components/wallet_button.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:Mawthoq/features/wallet/components/wallet_tab.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:sizer/sizer.dart';
 
 class WalletPage extends StatelessWidget {
@@ -17,7 +15,7 @@ class WalletPage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         shrinkWrap: false,
-        padding: EdgeInsets.all(7.w),
+        padding: EdgeInsets.all(6.w),
         children: [
           AccountPageAppBar(
             label: 'Wallet',
@@ -63,6 +61,7 @@ class WalletPage extends StatelessWidget {
             children: [
               Expanded(
                 child: MainButton(
+                  onTap: () {},
                   borderRadius: BorderRadius.circular(1.5.w),
                   height: 9.w,
                   label: Text(
@@ -80,6 +79,7 @@ class WalletPage extends StatelessWidget {
               ),
               Expanded(
                 child: MainButton(
+                  onTap: () {},
                   borderRadius: BorderRadius.circular(1.5.w),
                   height: 9.w,
                   label: Text(
@@ -107,12 +107,47 @@ class WalletPage extends StatelessWidget {
           Space(
             height: 1.5.h,
           ),
+          Row(
+            children: [
+              WalletTab(label: 'All transactions'),
+              WalletTab(label: 'Investments'),
+              WalletTab(label: 'Rent'),
+              WalletTab(label: 'Incoming'),
+              WalletTab(label: 'Outgoing'),
+            ],
+          ),
+          Space(
+            height: 3.h,
+          ),
           Container(
             alignment: Alignment.center,
             padding: EdgeInsets.all(2.w),
-            child: Text('Data'),
+            child: Column(
+              children: [
+                Icon(
+                  Icons.block_flipped,
+                  size: 18.w,
+                  color: AppTheme.neutral200,
+                ),
+                Text(
+                  'No data',
+                  style: AppTheme.mainTextStyle(
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.bold,
+                    color: AppTheme.neutral200,
+                  ),
+                ),
+                Text(
+                  'Start investing now',
+                  style: AppTheme.mainTextStyle(
+                    fontSize: 12.sp,
+                    color: AppTheme.neutral200,
+                  ),
+                ),
+              ],
+            ),
           ),
-          AccountLogOutBotton(
+          LowOpacityBotton(
             label: 'Invest Now',
             onTap: () {},
             showArrow: false,
@@ -122,42 +157,3 @@ class WalletPage extends StatelessWidget {
     );
   }
 }
-
-
-  // Expanded(
-  //           child: TabBar(
-  //             controller: TabController(length: 5,vsync: this),
-  //             tabs: [
-  //               Tab(
-  //                 child: WalletButton(
-  //                   label: 'All Transactions',
-  //                 ),
-  //               ),
-  //               Tab(
-  //                 child: WalletButton(
-  //                   label: 'All Transactions',
-  //                 ),
-  //               ),
-  //               Tab(
-  //                 child: WalletButton(
-  //                   label: 'All Transactions',
-  //                 ),
-  //               ),
-  //               Tab(
-  //                 child: WalletButton(
-  //                   label: 'All Transactions',
-  //                 ),
-  //               ),
-  //               Tab(
-  //                 child: WalletButton(
-  //                   label: 'All Transactions',
-  //                 ),
-  //               ),
-  //               Tab(
-  //                 child: WalletButton(
-  //                   label: 'All Transactions',
-  //                 ),
-  //               ),
-  //             ],
-  //           ),
-  //         ),

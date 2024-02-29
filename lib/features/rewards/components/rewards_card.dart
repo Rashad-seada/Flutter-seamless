@@ -19,7 +19,7 @@ class RewardsCard extends StatelessWidget {
             offset: Offset(0, 3),
           ),
         ],
-        color: Colors.red.withOpacity(0.1),
+        color: AppTheme.primary900.withOpacity(0.4),
         borderRadius: BorderRadius.circular(
           3.w,
         ),

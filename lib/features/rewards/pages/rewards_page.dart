@@ -11,31 +11,32 @@ class RewardsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(6.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Rewards',
-              style: AppTheme.mainTextStyle(
-                color: AppTheme.secondary900,
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w600,
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
+          padding: EdgeInsets.all(7.w),
+          child: ListView(
+            children: [
+              Text(
+                'Rewards',
+                style: AppTheme.mainTextStyle(
+                  color: AppTheme.secondary900,
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-            ),
-            Space(
-              height: 3.h,
-            ),
-            RewardsIndicator(raisedFunds: 100, requestedFunds: 200),
-            Space(height: 2.5.h),
-            RewardsContainer(),
-            Space(
-              height: 1.5.h,
-            ),
-            RewardsCard(),
-          ],
+              Space(
+                height: 3.h,
+              ),
+              RewardsIndicator(raisedFunds: 100, requestedFunds: 200),
+              Space(height: 2.5.h),
+              RewardsContainer(),
+              Space(
+                height: 1.5.h,
+              ),
+              RewardsCard(),
+            ],
+          ),
         ),
       ),
     );

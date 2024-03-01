@@ -33,4 +33,11 @@ class AppImages {
 
   static String image = "images/image.svg";
   static String imageError = "images/imageError.svg";
+
+  static String coin = "images/coin.svg";
+  static String plus = "images/plus.svg";
+
+  static String investment = "images/investment.png";
+
+
 }

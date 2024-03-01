@@ -76,7 +76,24 @@ class CodegenLoader extends AssetLoader{
   "expected_rental_return": "عائد الايجار المتوقع",
   "net_rental_return": "العايد الصافي للايجار",
   "investor_profile": "الملف الاستثماري",
-  "investment_value": "قيمه ملفك الاستثماري"
+  "investment_value": "قيمه ملفك الاستثماري",
+  "invest": "استثمر",
+  "deposit": "إيداع",
+  "start_selling": "بدء البيع",
+  "begin_investing": "ابدأ الاستثمار الآن",
+  "begin_investing_sub_text": "رحلتك في الاستثمار تبدأ من هنا",
+  "begin_investing_step1": "سوف تتلقى مستندات الملكية القانونية من المنصة",
+  "begin_investing_step2": "ستحصل على عوائد إيجار شهرية",
+  "begin_investing_step3": "سيتم الحفاظ على جميع أصولك مع مرور الوقت",
+  "money_grows": "كيف ستنمو اموالك؟",
+  "monthly_deposits": "ودائعك الشهريه",
+  "expected_investments_value": "قيمه ملفك الاستثماري على",
+  "monthly_rent_return": "دخلك الشهري بحسب السنه",
+  "year": "سنوات",
+  "net_return": "صافي العائد",
+  "view_investments_chances": "مشاهده فرص استثماريه مميزه",
+  "view_investments_chances_sub_text": "تصفح الان فرص مميزه للاستثمار في العقارات",
+  "explore_real_estate": "تصفح العقارات"
 };
 static const Map<String,dynamic> en = {
   "on_boarding_title_1": "Digital Catalog",
@@ -140,7 +157,24 @@ static const Map<String,dynamic> en = {
   "expected_rental_return": "Expected rental return",
   "net_rental_return": "Net rental return",
   "investor_profile": "Investor profile",
-  "investment_value": "Your Investments value"
+  "investment_value": "Your Investments value",
+  "invest": "Invest",
+  "deposit": "Deposit",
+  "start_selling": "start selling",
+  "begin_investing": "Begin investing now",
+  "begin_investing_sub_text": "Your investing journey starts from here",
+  "begin_investing_step1": "You will receive legal ownership documents from the platform",
+  "begin_investing_step2": "You will get monthly rent returns",
+  "begin_investing_step3": "All your assets will be preserved by time",
+  "money_grows": "How will your money grow?",
+  "monthly_deposits": "Monthly Deposits",
+  "expected_investments_value": "Expected Investment Value on",
+  "monthly_rent_return": "Monthly Rent Return on",
+  "year": "Years",
+  "net_return": "Net Return",
+  "view_investments_chances": "View Investment Opportunities",
+  "view_investments_chances_sub_text": "Browse now exclusive investment opportunities in real estate",
+  "explore_real_estate": "Explore real estate"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

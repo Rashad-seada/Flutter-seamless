@@ -13,111 +13,34 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      body: Column(
+      body: ListView(
+        shrinkWrap: true,
         children: [
 
           HomeAppBar(),
 
           Space(height: 2.h,),
 
-          CustomTab(
 
-            tabsLabels: [
-            "first",
-            "second",
-            "third",
+          Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 7.w),
+            child: ListView(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              children: [
 
-          ],
-            pages: [
+                HomeCard(),
 
-              Expanded(
-                child: Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: 7.w),
-                  child: ListView(
-                    shrinkWrap: true,
-                    children: [
+                HomeCard(),
 
-                      HomeCard(),
+                HomeCard(),
 
-                      HomeCard(),
-
-                      HomeCard(),
-
-                      HomeCard(),
+                HomeCard(),
 
 
-                    ],
-                  ),
-                ),
-              ),
-
-              Expanded(
-                child: Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: 7.w),
-                  child: ListView(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    children: [
-
-                      HomeCard(),
-
-                      HomeCard(),
-
-                      HomeCard(),
-
-                      HomeCard(),
-
-
-                    ],
-                  ),
-                ),
-              ),
-
-              Expanded(
-                child: Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: 7.w),
-                  child: ListView(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    children: [
-
-                      HomeCard(),
-
-                      HomeCard(),
-
-                      HomeCard(),
-
-                      HomeCard(),
-
-
-                    ],
-                  ),
-                ),
-              )
-
-            ],
-
-          ),
-
-          // Padding(
-          //   padding:  EdgeInsets.symmetric(horizontal: 7.w),
-          //   child: ListView(
-          //     physics: NeverScrollableScrollPhysics(),
-          //     shrinkWrap: true,
-          //     children: [
-          //
-          //       HomeCard(),
-          //
-          //       HomeCard(),
-          //
-          //       HomeCard(),
-          //
-          //       HomeCard(),
-          //
-          //
-          //     ],
-          //   ),
-          // )
+              ],
+            ),
+          )
 
         ],
       ),

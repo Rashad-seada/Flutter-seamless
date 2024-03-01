@@ -63,5 +63,22 @@ abstract class  LocaleKeys {
   static const net_rental_return = 'net_rental_return';
   static const investor_profile = 'investor_profile';
   static const investment_value = 'investment_value';
+  static const invest = 'invest';
+  static const deposit = 'deposit';
+  static const start_selling = 'start_selling';
+  static const begin_investing = 'begin_investing';
+  static const begin_investing_sub_text = 'begin_investing_sub_text';
+  static const begin_investing_step1 = 'begin_investing_step1';
+  static const begin_investing_step2 = 'begin_investing_step2';
+  static const begin_investing_step3 = 'begin_investing_step3';
+  static const money_grows = 'money_grows';
+  static const monthly_deposits = 'monthly_deposits';
+  static const expected_investments_value = 'expected_investments_value';
+  static const monthly_rent_return = 'monthly_rent_return';
+  static const year = 'year';
+  static const net_return = 'net_return';
+  static const view_investments_chances = 'view_investments_chances';
+  static const view_investments_chances_sub_text = 'view_investments_chances_sub_text';
+  static const explore_real_estate = 'explore_real_estate';
 
 }

@@ -80,8 +80,27 @@
 
   "investor_profile" : "Investor profile",
 
-  "investment_value" : "Your Investments value"
+  "investment_value" : "Your Investments value",
 
+  "invest" : "Invest",
+  "deposit" : "Deposit",
+  "start_selling" : "start selling",
 
+  "begin_investing" : "Begin investing now",
+  "begin_investing_sub_text" : "Your investing journey starts from here",
+
+  "begin_investing_step1" : "You will receive legal ownership documents from the platform",
+  "begin_investing_step2" : "You will get monthly rent returns",
+  "begin_investing_step3" : "All your assets will be preserved by time",
+
+  "money_grows": "How will your money grow?",
+  "monthly_deposits": "Monthly Deposits",
+  "expected_investments_value": "Expected Investment Value on",
+  "monthly_rent_return": "Monthly Rent Return on",
+  "year": "Years",
+  "net_return": "Net Return",
+  "view_investments_chances": "View Investment Opportunities",
+  "view_investments_chances_sub_text": "Browse now exclusive investment opportunities in real estate",
+  "explore_real_estate": "Explore real estate"
 
 }

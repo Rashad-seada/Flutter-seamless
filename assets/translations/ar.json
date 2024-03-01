@@ -81,6 +81,28 @@
 
   "investor_profile" : "الملف الاستثماري",
 
-  "investment_value" : "قيمه ملفك الاستثماري"
+  "investment_value" : "قيمه ملفك الاستثماري",
+
+  "invest": "استثمر",
+  "deposit": "إيداع",
+
+  "start_selling": "بدء البيع",
+  "begin_investing": "ابدأ الاستثمار الآن",
+  "begin_investing_sub_text": "رحلتك في الاستثمار تبدأ من هنا",
+  "begin_investing_step1": "سوف تتلقى مستندات الملكية القانونية من المنصة",
+  "begin_investing_step2": "ستحصل على عوائد إيجار شهرية",
+  "begin_investing_step3": "سيتم الحفاظ على جميع أصولك مع مرور الوقت",
+
+  "money_grows": "كيف ستنمو اموالك؟",
+  "monthly_deposits": "ودائعك الشهريه",
+  "expected_investments_value": "قيمه ملفك الاستثماري على",
+  "monthly_rent_return": "دخلك الشهري بحسب السنه",
+  "year": "سنوات",
+  "net_return": "صافي العائد",
+  "view_investments_chances": "مشاهده فرص استثماريه مميزه",
+  "view_investments_chances_sub_text": "تصفح الان فرص مميزه للاستثمار في العقارات",
+
+  "explore_real_estate": "تصفح العقارات"
+
 
 }

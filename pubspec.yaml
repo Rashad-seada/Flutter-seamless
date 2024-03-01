@@ -66,6 +66,7 @@ dependencies:
   loading_animation_widget:
   pinput:
   cached_network_image:
+  syncfusion_flutter_sliders:
 
   # Service
   internet_connection_checker_plus:

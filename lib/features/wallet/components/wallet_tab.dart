@@ -26,7 +26,6 @@ class WalletTab extends StatelessWidget {
           onTap: () {
             isTapped = true;
             color = AppTheme.secondary900;
-            print('Tapped');
           },
           borderRadius: BorderRadius.circular(1.5.w),
           label: Text(

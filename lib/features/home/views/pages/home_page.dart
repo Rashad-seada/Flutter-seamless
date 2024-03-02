@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
 
           HomeAppBar(),
 
-          Space(height: 2.h,),
+          Space(height: 2.5.h,),
 
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 7.w),
@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
 
-          Space(height: 2.h,),
+          Space(height: 2.5.h,),
 
           Padding(
             padding:  EdgeInsets.symmetric(horizontal: 7.w),

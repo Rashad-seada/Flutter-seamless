@@ -12,12 +12,11 @@ class HomeIncomeChip extends StatelessWidget {
   double expectedRentalReturn;
   double netRentalReturn;
 
-  HomeIncomeChip(
-      {super.key,
-      required this.annualReturn,
-      required this.expectedGrowth,
-      required this.expectedRentalReturn,
-      required this.netRentalReturn});
+  HomeIncomeChip({super.key,
+    required this.annualReturn,
+    required this.expectedGrowth,
+    required this.expectedRentalReturn,
+    required this.netRentalReturn});
 
   TextStyle? topStyle = AppTheme.mainTextStyle(
       color: AppTheme.neutral600, fontWeight: FontWeight.w700, fontSize: 6.sp);
@@ -32,7 +31,8 @@ class HomeIncomeChip extends StatelessWidget {
       alignment: Alignment.center,
       padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.7.h),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(1.w), color: AppTheme.tertiary900),
+          borderRadius: BorderRadius.circular(1.w),
+          color: AppTheme.tertiary900),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -46,10 +46,26 @@ class HomeIncomeChip extends StatelessWidget {
               Space(
                 height: 0.5.h,
               ),
-              Text(
-                annualReturn.toStringAsFixed(1) + "%",
-                style: buttomStyle,
-              ),
+              Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppTheme.neutral400.withOpacity(0.2),
+                      // shadow color
+                      spreadRadius: 5,
+                      // spread radius
+                      blurRadius: 10,
+                      // blur radius
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
+                ),
+                child: Text(
+                  annualReturn.toStringAsFixed(1) + "%",
+                  style: buttomStyle,
+                ),
+              )
             ],
           ),
           Column(
@@ -61,10 +77,26 @@ class HomeIncomeChip extends StatelessWidget {
               Space(
                 height: 0.5.h,
               ),
-              Text(
-                expectedGrowth.toStringAsFixed(1) + "%",
-                style: buttomStyle,
-              ),
+              Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppTheme.neutral400.withOpacity(0.2),
+                      // shadow color
+                      spreadRadius: 5,
+                      // spread radius
+                      blurRadius: 10,
+                      // blur radius
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
+                ),
+                child: Text(
+                  expectedGrowth.toStringAsFixed(1) + "%",
+                  style: buttomStyle,
+                ),
+              )
             ],
           ),
           Column(
@@ -76,10 +108,26 @@ class HomeIncomeChip extends StatelessWidget {
               Space(
                 height: 0.5.h,
               ),
-              Text(
-                expectedRentalReturn.toStringAsFixed(1)+ "%",
-                style: buttomStyle,
-              ),
+              Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppTheme.neutral400.withOpacity(0.2),
+                      // shadow color
+                      spreadRadius: 5,
+                      // spread radius
+                      blurRadius: 10,
+                      // blur radius
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
+                ),
+                child: Text(
+                  expectedRentalReturn.toStringAsFixed(1) + "%",
+                  style: buttomStyle,
+                ),
+              )
             ],
           ),
           Column(
@@ -91,10 +139,26 @@ class HomeIncomeChip extends StatelessWidget {
               Space(
                 height: 0.5.h,
               ),
-              Text(
+
+              Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppTheme.neutral400.withOpacity(0.2),
+                        // shadow color
+                        spreadRadius: 5,
+                        // spread radius
+                        blurRadius: 10,
+                        // blur radius
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ), child: Text(
                 netRentalReturn.toStringAsFixed(1) + "%",
                 style: buttomStyle,
-              ),
+              ) ,)
+
             ],
           ),
         ],

@@ -17,7 +17,6 @@ class HomeTaps extends StatelessWidget {
       children: List.generate(tabs.length, (index) =>
       tab(isSelected : selectedIndex == index,label: tabs[index],onTap: (){
         onChange(index);
-        print(index);
       })
       ),
     );

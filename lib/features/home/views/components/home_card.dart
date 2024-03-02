@@ -32,12 +32,16 @@ class HomeCard extends StatelessWidget {
           color: Colors.white),
       child: Column(
         children: [
-          CustomNetworkImage(
-              height: 23.h,
-              width: double.infinity,
-              fit: BoxFit.cover,
-              url:
-                  "https://th.bing.com/th/id/R.d4ffd1d4dbdf170494f81c87e58753d2?rik=z%2fWIr5c13CFdIg&pid=ImgRaw&r=0"),
+          Container(
+            color: AppTheme.tertiary900,
+            child: CustomNetworkImage(
+                height: 23.h,
+                width: double.infinity,
+                fit: BoxFit.cover,
+                url:
+                "https://th.bing.com/th/id/R.d4ffd1d4dbdf170494f81c87e58753d2?rik=z%2fWIr5c13CFdIg&pid=ImgRaw&r=0") ,
+          ),
+
           Space(
             height: 1.5.h,
           ),

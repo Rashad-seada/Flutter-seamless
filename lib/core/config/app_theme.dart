@@ -49,6 +49,7 @@ abstract class AppTheme {
     hintColor: neutral300,  // Accent color used for buttons, etc.
 
     scaffoldBackgroundColor: backgroundColor,
+    textTheme: GoogleFonts.almaraiTextTheme(),
 
     // Button theme
     elevatedButtonTheme: ElevatedButtonThemeData(

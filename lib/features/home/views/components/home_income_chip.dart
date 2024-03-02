@@ -23,7 +23,7 @@ class HomeIncomeChip extends StatelessWidget {
       color: AppTheme.neutral600, fontWeight: FontWeight.w700, fontSize: 6.sp);
 
   TextStyle? buttomStyle = AppTheme.mainTextStyle(
-      color: AppTheme.neutral600, fontWeight: FontWeight.w700, fontSize: 13.sp);
+      color: AppTheme.neutral600, fontWeight: FontWeight.w800, fontSize: 12.sp);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class HomeIncomeChip extends StatelessWidget {
       alignment: Alignment.center,
       padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.7.h),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(1.w), color: AppTheme.neutral100),
+          borderRadius: BorderRadius.circular(1.w), color: AppTheme.tertiary900),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -47,7 +47,7 @@ class HomeIncomeChip extends StatelessWidget {
                 height: 0.5.h,
               ),
               Text(
-                annualReturn.toString() + "%",
+                annualReturn.toStringAsFixed(1) + "%",
                 style: buttomStyle,
               ),
             ],
@@ -62,7 +62,7 @@ class HomeIncomeChip extends StatelessWidget {
                 height: 0.5.h,
               ),
               Text(
-                expectedGrowth.toString() + "%",
+                expectedGrowth.toStringAsFixed(1) + "%",
                 style: buttomStyle,
               ),
             ],
@@ -77,7 +77,7 @@ class HomeIncomeChip extends StatelessWidget {
                 height: 0.5.h,
               ),
               Text(
-                expectedRentalReturn.toString() + "%",
+                expectedRentalReturn.toStringAsFixed(1)+ "%",
                 style: buttomStyle,
               ),
             ],
@@ -92,7 +92,7 @@ class HomeIncomeChip extends StatelessWidget {
                 height: 0.5.h,
               ),
               Text(
-                netRentalReturn.toString() + "%",
+                netRentalReturn.toStringAsFixed(1) + "%",
                 style: buttomStyle,
               ),
             ],

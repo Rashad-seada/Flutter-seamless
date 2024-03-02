@@ -33,23 +33,23 @@ class HomeAppBar extends StatelessWidget {
           Text(
             LocaleKeys.real_state,
             style: AppTheme.mainTextStyle(
-                color: AppTheme.neutral900, fontSize: 18.sp),
+                color: AppTheme.neutral900, fontSize: 17.sp,fontWeight: FontWeight.w600),
           ).tr(),
 
 
           Row(
             children: [
               SvgPicture.asset(
-                  width: 7.w,
-                  height: 7.w,
+                  width: 6.5.w,
+                  height: 6.5.w,
                   AppImages.heart
               ),
 
               Space(width: 2.w,),
 
               SvgPicture.asset(
-                  width: 7.w,
-                  height: 7.w,
+                  width: 6.5.w,
+                  height: 6.5.w,
                   AppImages.cart,
                 color: AppTheme.primary900,
               ),

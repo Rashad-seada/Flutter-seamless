@@ -80,5 +80,23 @@ abstract class  LocaleKeys {
   static const view_investments_chances = 'view_investments_chances';
   static const view_investments_chances_sub_text = 'view_investments_chances_sub_text';
   static const explore_real_estate = 'explore_real_estate';
+  static const investment_limit = 'investment_limit';
+  static const investment_limit_sub_text = 'investment_limit_sub_text';
+  static const profits = 'profits';
+  static const Invite_friends = 'Invite_friends';
+  static const Invite_friends_sub_text = 'Invite_friends_sub_text';
+  static const Invite_friends_cta = 'Invite_friends_cta';
+  static const balance = 'balance';
+  static const withdraw = 'withdraw';
+  static const transactions = 'transactions';
+  static const no_transactions = 'no_transactions';
+  static const no_transactions_sub_text = 'no_transactions_sub_text';
+  static const invest_now = 'invest_now';
+  static const show_account_info = 'show_account_info';
+  static const settings = 'settings';
+  static const privacy_security = 'privacy_security';
+  static const help_center = 'help_center';
+  static const blog = 'blog';
+  static const logout = 'logout';
 
 }

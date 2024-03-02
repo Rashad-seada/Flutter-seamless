@@ -38,6 +38,7 @@ class AppImages {
   static String plus = "images/plus.svg";
 
   static String investment = "images/investment.png";
+  static String rewardLimits = "images/real-state.png";
 
 
 }

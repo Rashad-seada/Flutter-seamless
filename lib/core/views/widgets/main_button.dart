@@ -26,13 +26,13 @@ class MainButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: borderRadius ?? BorderRadius.circular(4.w),
+      borderRadius: borderRadius ?? BorderRadius.circular(3.w),
       child: Container(
         alignment: Alignment.center,
         width: width,
         height: height,
         decoration: BoxDecoration(
-          borderRadius: borderRadius ?? BorderRadius.circular(4.w),
+          borderRadius: borderRadius ?? BorderRadius.circular(3.w),
           border: border,
           color: (color != null) ? color : AppTheme.neutral900,
         ),

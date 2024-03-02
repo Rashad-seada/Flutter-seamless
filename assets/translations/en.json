@@ -10,7 +10,7 @@
   "next": "Next",
   "skip": "Skip",
 
-  "auth_method_title": "Welcome",
+  "auth_method_title": "The latest investments methods",
   "auth_method_description": "choose between secure login or quick registration to tailor your access.",
 
   "login": "Login",
@@ -18,7 +18,7 @@
   "register_tailor": "Register as Tailor",
   "register_buyer": "Register as Buyer",
 
-  "login_description": "Welcome, login to your account",
+  "login_description": "login to your account",
   "register_description": "Create a new account",
 
   "username": "Username",
@@ -101,6 +101,31 @@
   "net_return": "Net Return",
   "view_investments_chances": "View Investment Opportunities",
   "view_investments_chances_sub_text": "Browse now exclusive investment opportunities in real estate",
-  "explore_real_estate": "Explore real estate"
+  "explore_real_estate": "Explore real estate",
+
+  "investment_limit": "Investment limit",
+  "investment_limit_sub_text": "Start investing now to get higher",
+
+  "profits": "Profits",
+
+  "Invite_friends": "Invite your friends and win now!!",
+  "Invite_friends_sub_text": "Invite your friends and you will be rewarded to your balance to invest freely and safely",
+  "Invite_friends_cta": "Share link",
+
+  "balance": "Balance",
+
+  "withdraw": "Withdraw",
+  "transactions": "Transactions",
+  "no_transactions": "No transactions",
+  "no_transactions_sub_text": "Start investing now in real-estate",
+  "invest_now": "Invest now",
+
+  "show_account_info": "Show your account info",
+  "settings": "Settings",
+  "privacy_security": "Privacy and security",
+  "help_center": "Help center",
+
+  "blog": "Blog",
+  "logout": "Logout"
 
 }

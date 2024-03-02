@@ -16,11 +16,11 @@ class HomeCard extends StatelessWidget {
     return Container(
       clipBehavior: Clip.hardEdge,
       padding: EdgeInsets.all(0),
-      margin: EdgeInsets.only(bottom: 4.h),
+      margin: EdgeInsets.only(bottom: 3.h),
       alignment: Alignment.center,
       width: double.infinity,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(3.w),
+          borderRadius: BorderRadius.circular(2.w),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.1),
@@ -80,7 +80,7 @@ class HomeCard extends StatelessWidget {
                   netRentalReturn: 9,
                 ),
                 Space(
-                  height: 1.h,
+                  height: 1.5.h,
                 ),
               ],
             ),

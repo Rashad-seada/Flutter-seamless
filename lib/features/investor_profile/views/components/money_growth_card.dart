@@ -21,11 +21,12 @@ class _MoneyGrowthCardState extends State<MoneyGrowthCard> {
 
   List<int> years = [1,2,3,5,7,10];
 
-  double selectedReturns = 1;
+  double selectedReturns = 1.5;
 
   List<double> returns = [1.5,3.5,5,11.5];
 
   TextEditingController textEditingController = TextEditingController(text: "1000");
+
 
   double calculateNetReturns(double value,double percentage){
     return (value * percentage) / 100;
@@ -103,7 +104,7 @@ class _MoneyGrowthCardState extends State<MoneyGrowthCard> {
               child: Slider(
                 activeColor: AppTheme.primary900,
                 inactiveColor: AppTheme.primary900.withOpacity(0.2),
-                value: double.tryParse(textEditingController.text) ?? 0,
+                value: (double.tryParse(textEditingController.text) != null && double.tryParse(textEditingController.text)! <= 100000)? double.tryParse(textEditingController.text)! : 0,
                 min: 0,
                 max: 100000,
                 divisions: 100,
@@ -127,7 +128,7 @@ class _MoneyGrowthCardState extends State<MoneyGrowthCard> {
               Expanded(
                   child: card(
                       text: LocaleKeys.expected_investments_value.tr(),
-                      value: calculateNetReturns(double.tryParse(textEditingController.text) ?? 0.0, selectedReturns).toString(),
+                      value: calculateNetReturns(double.tryParse(textEditingController.text) ?? 0.0, selectedReturns).toStringAsFixed(3),
                       currancyTag: "SAR",
                       numberOfYears: selectedYear.toString()
                   )),
@@ -137,7 +138,7 @@ class _MoneyGrowthCardState extends State<MoneyGrowthCard> {
 
               Expanded(child: card(
                   text: LocaleKeys.monthly_rent_return.tr(),
-                  value: calculateMonthlyReturns(double.tryParse(textEditingController.text) ?? 0.0, selectedReturns,selectedYear).toString(),
+                  value: calculateMonthlyReturns(double.tryParse(textEditingController.text) ?? 0.0, selectedReturns,selectedYear).toStringAsFixed(3),
                   currancyTag: "SAR",
                   numberOfYears: selectedYear.toString()
               ))
@@ -173,7 +174,7 @@ class _MoneyGrowthCardState extends State<MoneyGrowthCard> {
                     label: LocaleKeys.net_return.tr(),
                     onChanged: (value){
                       setState(() {
-                        selectedReturns = double.tryParse(value.toString()) ?? 1;
+                        selectedReturns = double.tryParse(value.toString()) ?? 1.5;
 
                       });
                     },
@@ -290,15 +291,13 @@ class _MoneyGrowthCardState extends State<MoneyGrowthCard> {
 
               Space(width: 1.5.w,),
 
-              SizedBox(
-                child: Text(
-                  value,
-                  textAlign: TextAlign.center,
-                  style: AppTheme.mainTextStyle(
-                      fontWeight: FontWeight.w700,
-                      color: AppTheme.neutral600,
-                      fontSize: 10.sp),
-                ),
+              Text(
+                value,
+                textAlign: TextAlign.center,
+                style: AppTheme.mainTextStyle(
+                    fontWeight: FontWeight.w700,
+                    color: AppTheme.neutral600,
+                    fontSize: 10.sp),
               ),
 
             ],

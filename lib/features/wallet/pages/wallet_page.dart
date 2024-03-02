@@ -4,8 +4,11 @@ import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/components/account_logout_botton.dart';
 import 'package:Mawthoq/features/account/views/components/account_page_app_bar.dart';
 import 'package:Mawthoq/features/wallet/components/wallet_tab.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../../generated/locale_keys.g.dart';
 
 class WalletPage extends StatelessWidget {
   const WalletPage({super.key});
@@ -23,39 +26,40 @@ class WalletPage extends StatelessWidget {
             ),
 
             AccountPageAppBar(
-              label: 'Wallet',
+              label: LocaleKeys.wallet.tr(),
             ),
             Space(
               height: 3.h,
             ),
             Center(
               child: Text(
-                'Balance',
+                LocaleKeys.balance.tr(),
                 style: AppTheme.mainTextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 15.sp,
-                ),
+                    color: AppTheme.neutral900, fontSize: 13.sp),
               ),
             ),
+
+            Space(height: 1.h,),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+
                 Text(
-                  'SAR',
+                  "SAR",
                   style: AppTheme.mainTextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 12.sp,
-                  ),
+                      color: AppTheme.neutral900, fontSize: 15.sp),
                 ),
-                Space(
-                  width: 1.w,
-                ),
+                Space(width: 2.w,),
+
                 Text(
-                  '1500',
+                  "1500",
                   style: AppTheme.mainTextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.sp,
+                      color: AppTheme.neutral900, fontSize: 22.sp,
+                      fontWeight: FontWeight.bold
                   ),
+
                 ),
               ],
             ),
@@ -68,14 +72,15 @@ class WalletPage extends StatelessWidget {
                   child: MainButton(
                     onTap: () {},
                     borderRadius: BorderRadius.circular(1.5.w),
-                    height: 9.w,
+                    height: 10.w,
                     label: Text(
-                      'Withdraw',
+                      LocaleKeys.withdraw,
                       style: AppTheme.mainTextStyle(
-                        color: AppTheme.secondary900,
-                        fontWeight: FontWeight.w700,
+                          color: AppTheme.secondary900,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 10.sp
                       ),
-                    ),
+                    ).tr(),
                     color: AppTheme.primary900,
                   ),
                 ),
@@ -86,31 +91,32 @@ class WalletPage extends StatelessWidget {
                   child: MainButton(
                     onTap: () {},
                     borderRadius: BorderRadius.circular(1.5.w),
-                    height: 9.w,
+                    height: 10.w,
                     label: Text(
-                      'Deposit',
+                      LocaleKeys.deposit,
                       style: AppTheme.mainTextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w700,
+                        fontSize: 10.sp
                       ),
-                    ),
+                    ).tr(),
                     color: AppTheme.secondary900,
                   ),
                 ),
               ],
             ),
             Space(
-              height: 3.h,
+              height: 4.h,
             ),
             Text(
-              'Transactions',
+              LocaleKeys.transactions,
               style: AppTheme.mainTextStyle(
                 color: AppTheme.secondary900,
                 fontWeight: FontWeight.w700,
               ),
-            ),
+            ).tr(),
             Space(
-              height: 1.5.h,
+              height: 1.h,
             ),
             Row(
               children: [
@@ -132,31 +138,41 @@ class WalletPage extends StatelessWidget {
                   Icon(
                     Icons.block_flipped,
                     size: 18.w,
-                    color: AppTheme.neutral200,
+                    color: AppTheme.neutral300,
                   ),
                   Text(
-                    'No data',
+                    LocaleKeys.no_transactions,
                     style: AppTheme.mainTextStyle(
-                      fontSize: 18.sp,
+                      fontSize: 17.sp,
                       fontWeight: FontWeight.bold,
-                      color: AppTheme.neutral200,
+                      color: AppTheme.neutral300,
                     ),
-                  ),
+                  ).tr(),
                   Text(
-                    'Start investing now',
+                    LocaleKeys.no_transactions_sub_text,
                     style: AppTheme.mainTextStyle(
                       fontSize: 12.sp,
-                      color: AppTheme.neutral200,
+                      color: AppTheme.neutral300,
                     ),
-                  ),
+                  ).tr(),
                 ],
               ),
             ),
-            LowOpacityBotton(
-              label: 'Invest Now',
-              onTap: () {},
-              showArrow: false,
-            ),
+
+            Space(height: 2.h,),
+
+            MainButton(
+              color: Colors.transparent,
+              height: 5.h,
+              border: Border.all(color: AppTheme.neutral400),
+              label: Text(
+                LocaleKeys.invest_now,
+                style: AppTheme.mainTextStyle(
+                  fontSize: 10.sp,
+                  color: AppTheme.neutral400,
+                ),
+              ).tr(),
+            )
           ],
         ),
       ),

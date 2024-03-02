@@ -23,7 +23,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
-
+      resizeToAvoidBottomInset: false,
       body: Stack(
         alignment: Alignment.bottomCenter,
         children: [
@@ -54,16 +54,6 @@ class LoginScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
 
-                    Text(
-                      LocaleKeys.email,
-                      style: AppTheme.mainTextStyle(
-                          color: AppTheme.neutral400, fontSize: 12.sp),
-                    ).tr(),
-                    Space(
-                      height: 0.5.h,
-                    ),
-
-
                     CustomTextField(
                       controller: context.read<LoginCubit>().emailController,
                       validator: (_)=> context.read<LoginCubit>().validateEmail(),
@@ -80,17 +70,10 @@ class LoginScreen extends StatelessWidget {
                       hint: LocaleKeys.email_hint.tr(),
                     ),
                     Space(
-                      height: 1.h,
+                      height: 2.h,
                     ),
 
-                    Text(
-                      LocaleKeys.password,
-                      style: AppTheme.mainTextStyle(
-                          color: AppTheme.neutral400, fontSize: 12.sp),
-                    ).tr(),
-                    Space(
-                      height: 0.5.h,
-                    ),
+
                     CustomTextField(
                       controller: context.read<LoginCubit>().passwordController,
                       validator: (_)=> context.read<LoginCubit>().validatePassword(),
@@ -131,7 +114,9 @@ class LoginScreen extends StatelessWidget {
                       child: Text(
                         LocaleKeys.forgot_password.tr(),
                         style: AppTheme.mainTextStyle(
-                            color: AppTheme.primary900, fontSize: 12.sp),
+                            color: AppTheme.neutral900,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 12.sp),
                       ).tr(),
                     ),
                   ],
@@ -158,14 +143,16 @@ class LoginScreen extends StatelessWidget {
                       child: Text(
                         LocaleKeys.register.tr(),
                         style: AppTheme.mainTextStyle(
-                            color: AppTheme.primary900, fontSize: 12.sp),
+                            color: AppTheme.neutral900,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 12.sp),
                       ).tr(),
                     ),
                   ],
                 ),
 
                 Space(
-                  height: 2.h,
+                  height: 1.5.h,
                 ),
 
                 BlocConsumer<LoginCubit, LoginState>(
@@ -174,13 +161,13 @@ class LoginScreen extends StatelessWidget {
                     return MainButton(
                               color: AppTheme.primary900,
                               width: 86.w,
-                              height: 6.5.h,
+                              height: 6.h,
                               label: (state is LoginLoading)? CustomProgressIndicator(
                                 color: AppTheme.neutral100,
                               ) : Text(
                                 LocaleKeys.login,
                                 style: AppTheme.mainTextStyle(
-                                    color: AppTheme.secondary900, fontSize: 13.sp),
+                                    color: AppTheme.secondary900, fontSize: 12.sp),
                               ).tr(),
                               onTap: ()=> context.read<LoginCubit>().onLoginClick(context),
                             );

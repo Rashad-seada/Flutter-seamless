@@ -44,7 +44,7 @@ class HomeIncomeChip extends StatelessWidget {
                 style: topStyle,
               ),
               Space(
-                height: 1.h,
+                height: 0.5.h,
               ),
               Text(
                 annualReturn.toString() + "%",
@@ -59,7 +59,7 @@ class HomeIncomeChip extends StatelessWidget {
                 style: topStyle,
               ),
               Space(
-                height: 1.h,
+                height: 0.5.h,
               ),
               Text(
                 expectedGrowth.toString() + "%",
@@ -74,7 +74,7 @@ class HomeIncomeChip extends StatelessWidget {
                 style: topStyle,
               ),
               Space(
-                height: 1.h,
+                height: 0.5.h,
               ),
               Text(
                 expectedRentalReturn.toString() + "%",
@@ -89,7 +89,7 @@ class HomeIncomeChip extends StatelessWidget {
                 style: topStyle,
               ),
               Space(
-                height: 1.h,
+                height: 0.5.h,
               ),
               Text(
                 netRentalReturn.toString() + "%",

@@ -1,15 +1,20 @@
+import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
-import 'package:Mawthoq/core/views/widgets/main_button.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
+// ignore: must_be_immutable
 class RewardsCard extends StatelessWidget {
   const RewardsCard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 3.w),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -19,52 +24,62 @@ class RewardsCard extends StatelessWidget {
             offset: Offset(0, 3),
           ),
         ],
-        color: AppTheme.primary900.withOpacity(0.4),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(
           3.w,
         ),
       ),
-      padding: EdgeInsets.all(6.w),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Row(
-            children: [
-              Icon(Icons.card_giftcard_rounded),
-              Space(
-                width: 1.w,
-              ),
-              Text(
-                'Invite your friends and win now!!',
-                style: AppTheme.mainTextStyle(
-                  color: AppTheme.secondary900,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 13.sp,
-                ),
-              ),
-            ],
-          ),
-          Space(
-            height: 1.h,
-          ),
-          Text(
-            'Invite your friends and you will be rewarded by balance to invest free and safely',
-            style: AppTheme.mainTextStyle(
-              color: AppTheme.secondary900,
-            ),
-          ),
-          Space(
-            height: 1.h,
-          ),
-          MainButton(
+          InkWell(
             onTap: () {},
-            label: Text(
-              'Share link',
-              style: AppTheme.mainTextStyle(
-                color: Colors.white,
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 0.7.h),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(LocaleKeys.profits,
+                      style: AppTheme.mainTextStyle(
+                        // fontSize: 10.sp,
+                        color: AppTheme.secondary900,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12.sp
+                      )).tr(),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        'SAR',
+                        style: AppTheme.mainTextStyle(
+                          fontSize: 10.sp,
+                          color: AppTheme.secondary900,
+                        ),
+                      ),
+                      Space(
+                        width:0.5.w,
+                      ),
+                      Text(
+                        '100',
+                        style: AppTheme.mainTextStyle(
+                          color: AppTheme.secondary900,
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Space(
+                        width: 2.w,
+                      ),
+                      SvgPicture.asset(
+                        AppImages.arrowRight,
+                        height: 2.h,
+                        width: 2.h,
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
-            height: 10.w,
           ),
         ],
       ),

@@ -31,7 +31,7 @@ abstract class AppTheme {
   static const Color success = Color(0xff60c631);
   static const Color error = Color(0xffff472b);
 
-  static const Color backgroundColor = Color(0xffFFFFFF);
+  static const Color backgroundColor = Color(0xfff6f7f9);
 
   static const double font32 = 28;
   static const double font28 = 24;

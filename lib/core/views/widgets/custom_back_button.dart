@@ -1,3 +1,4 @@
+import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
@@ -15,7 +16,6 @@ class CustomBackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         InkWell(
             borderRadius: BorderRadius.circular(100.w),
@@ -39,6 +39,8 @@ class CustomBackButton extends StatelessWidget {
             )
         ),
 
+        Space(width: 5.w,),
+
         Text(
           title,
           style: AppTheme.mainTextStyle(
@@ -47,9 +49,6 @@ class CustomBackButton extends StatelessWidget {
           ),
         ),
 
-        SizedBox(
-          width: 5.w,
-        )
 
 
       ],

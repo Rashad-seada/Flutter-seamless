@@ -15,25 +15,15 @@ import '../../../../core/views/widgets/main_button.dart';
 import '../../../../core/views/widgets/space.dart';
 import '../../../../generated/locale_keys.g.dart';
 
-class RegisterScreen extends StatefulWidget {
+class RegisterScreen extends StatelessWidget {
   const RegisterScreen({Key? key}) : super(key: key);
-
-  @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
-}
-
-class _RegisterScreenState extends State<RegisterScreen> {
-  @override
-  void didChangeDependencies() {
-    context.read<RegisterCubit>().formKey.currentState?.dispose();
-    super.didChangeDependencies();
-  }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      body: Stack(
+          resizeToAvoidBottomInset: false,
+          body: Stack(
         alignment: Alignment.bottomCenter,
         children: [
           WaveContainer(),
@@ -55,14 +45,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          LocaleKeys.username,
-                          style: AppTheme.mainTextStyle(
-                              color: AppTheme.neutral400, fontSize: 12.sp),
-                        ).tr(),
-                        Space(
-                          height: 0.5.h,
-                        ),
+
                         CustomTextField(
                           controller:
                               context.read<RegisterCubit>().usernameController,
@@ -79,16 +62,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           hint: LocaleKeys.username_hint.tr(),
                         ),
                         Space(
-                          height: 1.h,
+                          height: 2.h,
                         ),
-                        Text(
-                          LocaleKeys.email,
-                          style: AppTheme.mainTextStyle(
-                              color: AppTheme.neutral400, fontSize: 12.sp),
-                        ).tr(),
-                        Space(
-                          height: 0.5.h,
-                        ),
+
                         CustomTextField(
                           controller:
                               context.read<RegisterCubit>().emailController,
@@ -105,15 +81,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           hint: LocaleKeys.email_hint.tr(),
                         ),
                         Space(
-                          height: 1.h,
-                        ),
-                        Text(
-                          LocaleKeys.password,
-                          style: AppTheme.mainTextStyle(
-                              color: AppTheme.neutral400, fontSize: 12.sp),
-                        ).tr(),
-                        Space(
-                          height: 0.5.h,
+                          height: 2.h,
                         ),
                         CustomTextField(
                           controller:
@@ -154,7 +122,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       child: Text(
                         LocaleKeys.login.tr(),
                         style: AppTheme.mainTextStyle(
-                            color: AppTheme.primary900, fontSize: 12.sp),
+                            color: AppTheme.neutral900,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 12.sp),
                       ).tr(),
                     ),
                   ],
@@ -167,7 +137,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   builder: (context, state) {
                     return MainButton(
                       width: 86.w,
-                      height: 6.5.h,
+                      height: 6.h,
                       color: AppTheme.primary900,
                       label: (state is RegisterLoading)
                           ? CustomProgressIndicator(
@@ -176,7 +146,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           : Text(
                               LocaleKeys.register,
                               style: AppTheme.mainTextStyle(
-                                  color: AppTheme.neutral100, fontSize: 14.sp),
+                                  color: AppTheme.neutral900, fontSize: 13.sp),
                             ).tr(),
                       onTap: () => context
                           .read<RegisterCubit>()

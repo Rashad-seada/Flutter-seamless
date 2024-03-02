@@ -19,7 +19,7 @@ class AccountPageAppBar extends StatelessWidget {
             Text(
               label,
               style: TextStyle(
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w500,
                 fontSize: 18.sp,
               ),
             ),
@@ -29,7 +29,7 @@ class AccountPageAppBar extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100.w),
-            color: AppTheme.neutral200,
+            color: Color(0xffecf1fd),
           ),
           clipBehavior: Clip.none,
           child: Row(

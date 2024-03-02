@@ -4,6 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../config/app_images.dart';
+import '../../config/app_theme.dart';
+import 'custom_progress_indicator.dart';
 
 class CustomNetworkImage extends StatelessWidget {
   String url;
@@ -19,15 +21,16 @@ class CustomNetworkImage extends StatelessWidget {
       height: height,
       fit: fit,
       imageUrl: url,
-      placeholder: (context, url) => SvgPicture.asset(
-        AppImages.image,
-        width: 9.w,
-        height: 9.w,
+      placeholder: (context, url) => CustomProgressIndicator(
+        color: AppTheme.secondary900,
       ),
-      errorWidget: (context, url, error) => SvgPicture.asset(
-        AppImages.imageError,
-        width: 9.w,
-        height: 9.w,
+      errorWidget: (context, url, error) => Center(
+        child: SvgPicture.asset(
+          AppImages.imageError,
+          width: 9.w,
+          height: 9.w,
+          color: AppTheme.neutral500,
+        ),
       ),
     );
   }

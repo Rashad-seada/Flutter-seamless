@@ -59,7 +59,7 @@ class AccountPageContainer extends StatelessWidget {
                           style: AppTheme.mainTextStyle(
                             fontSize: 10.sp,
                             color: AppTheme.neutral900,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w700,
                           )),
                     ],
                   ),

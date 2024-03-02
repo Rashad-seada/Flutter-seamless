@@ -17,7 +17,7 @@ class HomeAppBar extends StatelessWidget {
       alignment: Alignment.center,
       padding: EdgeInsets.symmetric(horizontal: 7.w),
       width: double.infinity,
-      height: 10.h,
+      height: 9.h,
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(
           color: Colors.grey.withOpacity(0.2),
@@ -33,25 +33,42 @@ class HomeAppBar extends StatelessWidget {
           Text(
             LocaleKeys.real_state,
             style: AppTheme.mainTextStyle(
-                color: AppTheme.neutral900, fontSize: 18.sp),
+                color: AppTheme.neutral900, fontSize: 17.sp,fontWeight: FontWeight.w600),
           ).tr(),
 
 
           Row(
             children: [
               SvgPicture.asset(
-                  width: 7.w,
-                  height: 7.w,
+                  width: 6.5.w,
+                  height: 6.5.w,
                   AppImages.heart
               ),
 
               Space(width: 2.w,),
 
               SvgPicture.asset(
-                  width: 7.w,
-                  height: 7.w,
-                  AppImages.cart
+                  width: 6.5.w,
+                  height: 6.5.w,
+                  AppImages.cart,
+                color: AppTheme.primary900,
               ),
+              Space(width: 1.w,),
+
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 3.w,vertical: 0.4),
+                decoration: BoxDecoration(
+                  color: AppTheme.primary900,
+                  borderRadius: BorderRadius.circular(100)
+                ),
+                child: Text(
+                  "2",
+                  style: AppTheme.mainTextStyle(
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w700
+                  ),
+                ),
+              )
             ],
           )
         ],

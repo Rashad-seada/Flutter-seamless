@@ -6,7 +6,9 @@ import 'package:Mawthoq/features/account/views/screens/help_center_screen.dart';
 import 'package:Mawthoq/features/account/views/screens/privacy_and_security_screen.dart';
 import 'package:Mawthoq/features/account/views/screens/settings_screen.dart';
 import 'package:Mawthoq/features/account/views/utils/account_model.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:bloc/bloc.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class AccountCubit extends Cubit<AccountState> {
@@ -38,6 +40,7 @@ class AccountCubit extends Cubit<AccountState> {
   }
 
   void onAccountCardClick(BuildContext context) {
+    print('sdfgn');
     _navigateToAccountInfoScreen(context);
   }
 
@@ -84,14 +87,14 @@ class AccountCubit extends Cubit<AccountState> {
       ];
 
   List<AccountContainerModel> accountPageInfo1(BuildContext context) => [
-        AccountContainerModel(null, 'Settings', () => onSettingsClick(context)),
-        AccountContainerModel(null, 'Privacy and security',
+        AccountContainerModel(null, LocaleKeys.settings.tr(), () => onSettingsClick(context)),
+        AccountContainerModel(null, LocaleKeys.privacy_security.tr(),
             () => onPrivacyAndSecurityClick(context))
       ];
 
   List<AccountContainerModel> accountPageInfo2(BuildContext context) => [
         AccountContainerModel(
-            null, 'Help center', () => onHelpCenterClick(context)),
-        AccountContainerModel(null, 'Blog', () => onBlogClick(context))
+            null, LocaleKeys.help_center.tr(), () => onHelpCenterClick(context)),
+        AccountContainerModel(null, LocaleKeys.blog.tr(), () => onBlogClick(context))
       ];
 }

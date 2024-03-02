@@ -14,13 +14,15 @@ class HomeInfoChip extends StatelessWidget {
       alignment: Alignment.center,
       padding: EdgeInsets.all(1.w),
       decoration: BoxDecoration(
-          border: Border.all(color: AppTheme.neutral200, width: 1),
+          border: Border.all(color: AppTheme.neutral300, width: 1),
           borderRadius: BorderRadius.circular(1.w),
-          color: AppTheme.neutral100),
+          color: AppTheme.tertiary900),
       child: Text(
         label,
         style:
-            AppTheme.mainTextStyle(color: AppTheme.neutral400, fontSize: 9.sp),
+            AppTheme.mainTextStyle(color: AppTheme.neutral500,
+                fontWeight: FontWeight.w600,
+                fontSize: 8.sp),
       ),
     );
   }

@@ -16,11 +16,11 @@ class HomeCard extends StatelessWidget {
     return Container(
       clipBehavior: Clip.hardEdge,
       padding: EdgeInsets.all(0),
-      margin: EdgeInsets.only(bottom: 4.h),
+      margin: EdgeInsets.only(bottom: 3.h),
       alignment: Alignment.center,
       width: double.infinity,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(3.w),
+          borderRadius: BorderRadius.circular(3.5.w),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.1),
@@ -32,14 +32,18 @@ class HomeCard extends StatelessWidget {
           color: Colors.white),
       child: Column(
         children: [
-          CustomNetworkImage(
-              height: 23.h,
-              width: double.infinity,
-              fit: BoxFit.cover,
-              url:
-                  "https://th.bing.com/th/id/R.d4ffd1d4dbdf170494f81c87e58753d2?rik=z%2fWIr5c13CFdIg&pid=ImgRaw&r=0"),
+          Container(
+            color: AppTheme.tertiary900,
+            child: CustomNetworkImage(
+                height: 23.h,
+                width: double.infinity,
+                fit: BoxFit.cover,
+                url:
+                "https://th.bing.com/th/id/R.d4ffd1d4dbdf170494f81c87e58753d2?rik=z%2fWIr5c13CFdIg&pid=ImgRaw&r=0") ,
+          ),
+
           Space(
-            height: 2.h,
+            height: 1.5.h,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 3.w),
@@ -55,15 +59,17 @@ class HomeCard extends StatelessWidget {
                   ],
                 ),
                 Space(
-                  height: 1.5.h,
+                  height: 1.h,
                 ),
                 Text(
                   "شقه دورين فالرياض جرين لاند في الرياض من الداخل الشرقي",
                   style: AppTheme.mainTextStyle(
-                      color: AppTheme.neutral900, fontSize: 14.sp),
+                      color: AppTheme.neutral900,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12.sp),
                 ),
                 Space(
-                  height: 1.2.h,
+                  height: 1.h,
                 ),
                 HomeFundsComponents(
                   raisedFunds: 170,
@@ -71,7 +77,7 @@ class HomeCard extends StatelessWidget {
                   width: 80.w,
                 ),
                 Space(
-                  height: 2.h,
+                  height: 1.5.h,
                 ),
                 HomeIncomeChip(
                   annualReturn: 6,
@@ -80,7 +86,7 @@ class HomeCard extends StatelessWidget {
                   netRentalReturn: 9,
                 ),
                 Space(
-                  height: 1.h,
+                  height: 1.5.h,
                 ),
               ],
             ),

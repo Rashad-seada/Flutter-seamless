@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
 import '../../../home/views/pages/home_page.dart';
+import '../../../investor_profile/views/pages/investor_profile_page.dart';
 
 part 'main_state.dart';
 
@@ -22,10 +23,10 @@ class MainCubit extends Cubit<MainState> {
     return pages[index].page;
   }
 
-  List<PageModel> pages = [
+  List<PageModel> get pages => [
     PageModel(LocaleKeys.real_state.tr(), AppImages.realState, HomePage()),
     PageModel(LocaleKeys.wallet.tr(), AppImages.wallet, WalletPage()),
-    PageModel(LocaleKeys.documents.tr(), AppImages.documents, HomePage()),
+    PageModel(LocaleKeys.documents.tr(), AppImages.documents, InvestorProfilePage()),
     PageModel(LocaleKeys.rewards.tr(), AppImages.reward, RewardsPage()),
     PageModel(LocaleKeys.account.tr(), AppImages.account, AccountPage()),
   ];

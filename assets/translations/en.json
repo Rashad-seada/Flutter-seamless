@@ -10,7 +10,7 @@
   "next": "Next",
   "skip": "Skip",
 
-  "auth_method_title": "Welcome",
+  "auth_method_title": "The latest investments methods",
   "auth_method_description": "choose between secure login or quick registration to tailor your access.",
 
   "login": "Login",
@@ -18,7 +18,7 @@
   "register_tailor": "Register as Tailor",
   "register_buyer": "Register as Buyer",
 
-  "login_description": "Welcome, login to your account",
+  "login_description": "login to your account",
   "register_description": "Create a new account",
 
   "username": "Username",
@@ -76,7 +76,56 @@
   "annual_return": "Annual return",
   "expected_growth": "Expected growth",
   "expected_rental_return" : "Expected rental return",
-  "net_rental_return" : "Net rental return"
+  "net_rental_return" : "Net rental return",
 
+  "investor_profile" : "Investor profile",
+
+  "investment_value" : "Your Investments value",
+
+  "invest" : "Invest",
+  "deposit" : "Deposit",
+  "start_selling" : "start selling",
+
+  "begin_investing" : "Begin investing now",
+  "begin_investing_sub_text" : "Your investing journey starts from here",
+
+  "begin_investing_step1" : "You will receive legal ownership documents from the platform",
+  "begin_investing_step2" : "You will get monthly rent returns",
+  "begin_investing_step3" : "All your assets will be preserved by time",
+
+  "money_grows": "How will your money grow?",
+  "monthly_deposits": "Monthly Deposits",
+  "expected_investments_value": "Expected Investment Value on",
+  "monthly_rent_return": "Monthly Rent Return on",
+  "year": "Years",
+  "net_return": "Net Return",
+  "view_investments_chances": "View Investment Opportunities",
+  "view_investments_chances_sub_text": "Browse now exclusive investment opportunities in real estate",
+  "explore_real_estate": "Explore real estate",
+
+  "investment_limit": "Investment limit",
+  "investment_limit_sub_text": "Start investing now to get higher",
+
+  "profits": "Profits",
+
+  "Invite_friends": "Invite your friends and win now!!",
+  "Invite_friends_sub_text": "Invite your friends and you will be rewarded to your balance to invest freely and safely",
+  "Invite_friends_cta": "Share link",
+
+  "balance": "Balance",
+
+  "withdraw": "Withdraw",
+  "transactions": "Transactions",
+  "no_transactions": "No transactions",
+  "no_transactions_sub_text": "Start investing now in real-estate",
+  "invest_now": "Invest now",
+
+  "show_account_info": "Show your account info",
+  "settings": "Settings",
+  "privacy_security": "Privacy and security",
+  "help_center": "Help center",
+
+  "blog": "Blog",
+  "logout": "Logout"
 
 }

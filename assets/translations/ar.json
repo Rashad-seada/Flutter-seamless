@@ -10,7 +10,7 @@
   "next": "التالي",
   "skip": "تخطي",
 
-  "auth_method_title": "اهلا بك",
+  "auth_method_title": "احدث طرق الاستثمار",
   "auth_method_description": "اختر بين تسجيل الدخول الآمن أو التسجيل السريع لتخصيص وصولك.",
 
   "login": "تسجيل الدخول",
@@ -18,7 +18,7 @@
   "register_tailor": "انشاء حساب كخياط",
   "register_buyer": "انشاء حساب كمشتري",
 
-  "login_description": "مرحبا بك. سجل دخول الان",
+  "login_description": "سجل دخول الان",
   "register_description": "انشاء حساب الان",
 
   "username": "اسم المستخدم",
@@ -77,6 +77,56 @@
   "annual_return": "العائد السنوي",
   "expected_growth": "النمو المتوقع",
   "expected_rental_return" : "عائد الايجار المتوقع",
-  "net_rental_return" : "العايد الصافي للايجار"
+  "net_rental_return" : "العايد الصافي للايجار",
+
+  "investor_profile" : "الملف الاستثماري",
+
+  "investment_value" : "قيمه ملفك الاستثماري",
+
+  "invest": "استثمر",
+  "deposit": "إيداع",
+
+  "start_selling": "بدء البيع",
+  "begin_investing": "ابدأ الاستثمار الآن",
+  "begin_investing_sub_text": "رحلتك في الاستثمار تبدأ من هنا",
+  "begin_investing_step1": "سوف تتلقى مستندات الملكية القانونية من المنصة",
+  "begin_investing_step2": "ستحصل على عوائد إيجار شهرية",
+  "begin_investing_step3": "سيتم الحفاظ على جميع أصولك مع مرور الوقت",
+
+  "money_grows": "كيف ستنمو اموالك؟",
+  "monthly_deposits": "ودائعك الشهريه",
+  "expected_investments_value": "قيمه ملفك الاستثماري على",
+  "monthly_rent_return": "دخلك الشهري بحسب السنه",
+  "year": "سنوات",
+  "net_return": "صافي العائد",
+  "view_investments_chances": "مشاهده فرص استثماريه مميزه",
+  "view_investments_chances_sub_text": "تصفح الان فرص مميزه للاستثمار في العقارات",
+
+  "explore_real_estate": "تصفح العقارات",
+
+  "investment_limit": "حد الاستثمار",
+  "investment_limit_sub_text": "ابدأ الاستثمار الآن للحصول على عائد أعلى",
+
+  "profits": "الأرباح",
+
+  "Invite_friends": "ادعو أصدقائك واربح الآن!!",
+  "Invite_friends_sub_text": "ادعو أصدقاءك وسيتم مكافأتك برصيد للاستثمار بحرية وأمان",
+  "Invite_friends_cta": "مشاركة الرابط",
+
+  "balance": "رصيدك",
+
+  "withdraw": "سحب",
+  "transactions": "المعاملات",
+  "no_transactions": "لا توجد معاملات",
+  "no_transactions_sub_text": "ابدأ الاستثمار الآن في العقارات",
+  "invest_now": "استثمر الآن",
+
+  "show_account_info": "إظهار معلومات حسابك",
+  "settings": "الإعدادات",
+  "privacy_security": "الخصوصية والأمان",
+  "help_center": "مركز المساعدة",
+  "blog": "المدونة",
+  "logout": "تسجيل الخروج"
+
 
 }

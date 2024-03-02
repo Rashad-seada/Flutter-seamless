@@ -22,21 +22,22 @@ class WalletTab extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(0.5.w),
         child: MainButton(
-          height: 6.w,
+          height: 3.5.h,
           onTap: () {
             isTapped = true;
             color = AppTheme.secondary900;
           },
-          borderRadius: BorderRadius.circular(1.5.w),
+          borderRadius: BorderRadius.circular(1.w),
           label: Text(
             label,
             style: TextStyle(
-              color: Colors.white,
+              color: AppTheme.neutral700,
               fontSize: 8.sp,
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          color: AppTheme.neutral300,
+          color:  Color(0xffecf1fd),
+
         ),
       ),
     );

@@ -71,7 +71,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
       decoration: InputDecoration(
         filled: true,
 
-        fillColor: AppTheme.neutral100,
+        fillColor: Color(0xffecf1fd),
+
         suffixIcon: (widget.isSecure)? Padding(
           padding: EdgeInsets.all(3.w),
           child: InkWell(

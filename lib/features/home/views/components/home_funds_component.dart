@@ -32,33 +32,33 @@ class HomeFundsComponents extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  raisedFunds.toString(),
+                  raisedFunds.toStringAsFixed(1),
                   style: AppTheme.mainTextStyle(
                       fontWeight: FontWeight.w600,
                       color: AppTheme.primary900,
-                      fontSize: 19.sp),
+                      fontSize: 18.sp),
                 ),
                 Space(
-                  width: 2.w,
+                  width: 1.5.w,
                 ),
                 Text(
                   "SAR",
                   style: AppTheme.mainTextStyle(
                       fontWeight: FontWeight.w300,
                       color: AppTheme.primary900,
-                      fontSize: 14.sp),
+                      fontSize: 11.sp),
                 ),
               ],
             ),
             Text(
-              LocaleKeys.sold.tr() + " ${percentOfRaisedFunds() * 100}%",
+              LocaleKeys.sold.tr() + " ${(percentOfRaisedFunds() * 100).toStringAsFixed(1)}%",
               style: AppTheme.mainTextStyle(
                   color: AppTheme.neutral400, fontSize: 10.sp),
             ),
           ],
         ),
         Space(
-          height: .5.h,
+          height: .2.h,
         ),
         Container(
           clipBehavior: Clip.hardEdge,
@@ -67,14 +67,6 @@ class HomeFundsComponents extends StatelessWidget {
           height: .8.h,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(3.w),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.1),
-                  spreadRadius: 5,
-                  blurRadius: 7,
-                  offset: Offset(0, 3), // changes position of shadow
-                ),
-              ],
               color: AppTheme.primary900.withOpacity(0.1)),
           child: Container(
             alignment: Alignment.center,

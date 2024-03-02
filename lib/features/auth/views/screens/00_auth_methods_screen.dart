@@ -49,8 +49,8 @@ class AuthMethodsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
+                  LocaleKeys.auth_method_title,
                   textAlign: TextAlign.center,
-                  'The latest investment methods',
                   style: AppTheme.mainTextStyle(
                     color: AppTheme.secondary900,
                     fontSize: 15.sp,

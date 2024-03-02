@@ -20,7 +20,7 @@ class HomeCard extends StatelessWidget {
       alignment: Alignment.center,
       width: double.infinity,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(2.w),
+          borderRadius: BorderRadius.circular(3.5.w),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.1),

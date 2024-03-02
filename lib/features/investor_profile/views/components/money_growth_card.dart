@@ -89,7 +89,7 @@ class _MoneyGrowthCardState extends State<MoneyGrowthCard> {
           ),
 
           Space(
-            height: 2.0.h,
+            height: 1.5.h,
           ),
           SizedBox(
             width: 100.w,
@@ -118,7 +118,7 @@ class _MoneyGrowthCardState extends State<MoneyGrowthCard> {
           ),
 
           Space(
-            height: 2.h,
+            height: 1.5.h,
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -322,7 +322,7 @@ class _MoneyGrowthCardState extends State<MoneyGrowthCard> {
         children: [
           Container(
             alignment: Alignment.center,
-            width: 30.w,
+            width: 25.w,
             height: 4.5.h,
             child: TextField(
               onChanged: onChanged,

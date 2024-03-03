@@ -50,7 +50,7 @@ abstract class AppTheme {
 
     scaffoldBackgroundColor: backgroundColor,
     textTheme: GoogleFonts.almaraiTextTheme(),
-
+    fontFamily: 'Almarai',
     // Button theme
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(

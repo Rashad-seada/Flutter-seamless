@@ -30,10 +30,10 @@ class HomePage extends StatelessWidget {
               listener: (context, state) {},
               builder: (context, state) {
                 return HomeTaps(
-                          tabs: context.read<HomeCubit>().tabs,
-                          selectedIndex: context.read<HomeCubit>().selectedIndex,
-                          onChange: context.read<HomeCubit>().onTabChange,
-                        );
+                  tabs: context.read<HomeCubit>().tabs,
+                  selectedIndex: context.read<HomeCubit>().selectedIndex,
+                  onChange: context.read<HomeCubit>().onTabChange,
+                );
               },
             ),
           ),

@@ -39,9 +39,8 @@ class HomeCard extends StatelessWidget {
                 width: double.infinity,
                 fit: BoxFit.cover,
                 url:
-                "https://th.bing.com/th/id/R.d4ffd1d4dbdf170494f81c87e58753d2?rik=z%2fWIr5c13CFdIg&pid=ImgRaw&r=0") ,
+                    "https://th.bing.com/th/id/R.d4ffd1d4dbdf170494f81c87e58753d2?rik=z%2fWIr5c13CFdIg&pid=ImgRaw&r=0"),
           ),
-
           Space(
             height: 1.5.h,
           ),

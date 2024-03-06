@@ -52,8 +52,8 @@ class BeginInvestingCard extends StatelessWidget {
                     LocaleKeys.begin_investing.tr(),
                     style: AppTheme.mainTextStyle(
                         fontWeight: FontWeight.w600,
-
-                        color: AppTheme.neutral900, fontSize: 13.sp),
+                        color: AppTheme.neutral900,
+                        fontSize: 13.sp),
                   ),
                   Space(
                     height: 0.1.h,
@@ -61,7 +61,9 @@ class BeginInvestingCard extends StatelessWidget {
                   Text(
                     LocaleKeys.begin_investing_sub_text.tr(),
                     style: AppTheme.mainTextStyle(
-                        color: AppTheme.neutral400, fontSize: 9.sp),
+                      color: AppTheme.neutral400,
+                      fontSize: 9.sp,
+                    ),
                   ),
                 ],
               )
@@ -87,7 +89,6 @@ class BeginInvestingCard extends StatelessWidget {
           Space(
             height: 2.5.h,
           ),
-
           MainButton(
             borderRadius: BorderRadius.circular(2.w),
             height: 4.8.h,
@@ -113,7 +114,6 @@ class BeginInvestingCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-
         RotationTransition(
           turns: AlwaysStoppedAnimation(45 / 360),
           child: ClipPath(
@@ -121,13 +121,10 @@ class BeginInvestingCard extends StatelessWidget {
             child: Container(
               width: 5.w,
               height: 5.w,
-              decoration: BoxDecoration(
-                  color: AppTheme.primary900
-              ),
+              decoration: BoxDecoration(color: AppTheme.primary900),
             ),
           ),
         ),
-
         Space(
           width: 1.5.h,
         ),
@@ -135,7 +132,9 @@ class BeginInvestingCard extends StatelessWidget {
           child: Text(
             text,
             style: AppTheme.mainTextStyle(
-                color: AppTheme.neutral900, fontSize: 8.sp),
+              color: AppTheme.neutral900,
+              fontSize: 9.sp,
+            ),
           ),
         ),
       ],

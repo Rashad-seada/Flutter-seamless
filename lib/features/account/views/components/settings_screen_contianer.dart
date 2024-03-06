@@ -1,5 +1,6 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
+import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/utils/account_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -43,7 +44,7 @@ class SettingsScreenContainer extends StatelessWidget {
         ],
         color: Colors.white,
         borderRadius: BorderRadius.circular(
-          3.w,
+          2.w,
         ),
       ),
       child: Padding(
@@ -56,6 +57,9 @@ class SettingsScreenContainer extends StatelessWidget {
                 SvgPicture.asset(
                   model.leadingIcon,
                   color: AppTheme.primary900,
+                ),
+                Space(
+                  width: 1.w,
                 ),
                 Text(
                   model.leadingLabel,

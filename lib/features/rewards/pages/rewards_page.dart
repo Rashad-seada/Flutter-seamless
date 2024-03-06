@@ -23,24 +23,18 @@ class RewardsPage extends StatelessWidget {
             Space(
               height: 2.h,
             ),
-
             Text(
               LocaleKeys.rewards,
               style: AppTheme.mainTextStyle(
                 color: AppTheme.secondary900,
                 fontSize: 18.sp,
-                fontWeight: FontWeight.w600,
               ),
             ).tr(),
             Space(
               height: 3.h,
             ),
-
             RewardsIndicator(raisedFunds: 100, requestedFunds: 200),
-            Space(
-                height: 2.h
-            ),
-
+            Space(height: 2.h),
             RewardsCard(),
             Space(
               height: 2.h,

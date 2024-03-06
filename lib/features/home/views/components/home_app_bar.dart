@@ -32,40 +32,49 @@ class HomeAppBar extends StatelessWidget {
         children: [
           Text(
             LocaleKeys.real_state,
-            style: AppTheme.mainTextStyle(
-                color: AppTheme.neutral900, fontSize: 17.sp,fontWeight: FontWeight.w600),
+            style: TextStyle(
+              color: AppTheme.secondary900,
+              fontSize: 18.sp,
+            ),
           ).tr(),
-
-
           Row(
             children: [
-              SvgPicture.asset(
-                  width: 6.5.w,
-                  height: 6.5.w,
-                  AppImages.heart
+              InkWell(
+                onTap: () {},
+                child: Icon(
+                  Icons.notifications_none_outlined,
+                ),
               ),
-
-              Space(width: 2.w,),
-
+              Space(
+                width: 2.w,
+              ),
               SvgPicture.asset(
-                  width: 6.5.w,
-                  height: 6.5.w,
-                  AppImages.cart,
+                width: 6.5.w,
+                height: 6.5.w,
+                AppImages.heart,
+              ),
+              Space(
+                width: 2.w,
+              ),
+              SvgPicture.asset(
+                width: 6.5.w,
+                height: 6.5.w,
+                AppImages.cart,
                 color: AppTheme.primary900,
               ),
-              Space(width: 1.w,),
-
+              Space(
+                width: 1.w,
+              ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 3.w,vertical: 0.4),
+                padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 0.4),
                 decoration: BoxDecoration(
-                  color: AppTheme.primary900,
-                  borderRadius: BorderRadius.circular(100)
-                ),
+                    color: AppTheme.primary900,
+                    borderRadius: BorderRadius.circular(100)),
                 child: Text(
                   "2",
                   style: AppTheme.mainTextStyle(
                     fontSize: 10.sp,
-                    fontWeight: FontWeight.w700
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               )

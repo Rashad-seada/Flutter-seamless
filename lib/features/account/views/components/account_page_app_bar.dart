@@ -18,7 +18,7 @@ class AccountPageAppBar extends StatelessWidget {
           children: [
             Text(
               label,
-              style: TextStyle(
+              style: AppTheme.mainTextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 18.sp,
               ),

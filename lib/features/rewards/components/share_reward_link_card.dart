@@ -4,6 +4,7 @@ import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:sizer/sizer.dart';
 
 class ShareRewardLinkCard extends StatelessWidget {
@@ -26,7 +27,7 @@ class ShareRewardLinkCard extends StatelessWidget {
           3.w,
         ),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 5.w,vertical: 2.h),
+      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -36,14 +37,16 @@ class ShareRewardLinkCard extends StatelessWidget {
               Space(
                 width: 3.w,
               ),
-              Text(
-                LocaleKeys.Invite_friends,
-                style: AppTheme.mainTextStyle(
-                  color: AppTheme.secondary900,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12.sp,
-                ),
-              ).tr(),
+              Expanded(
+                child: Text(
+                  LocaleKeys.Invite_friends,
+                  style: AppTheme.mainTextStyle(
+                    color: AppTheme.secondary900,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12.sp,
+                  ),
+                ).tr(),
+              ),
             ],
           ),
           Space(
@@ -52,9 +55,7 @@ class ShareRewardLinkCard extends StatelessWidget {
           Text(
             LocaleKeys.Invite_friends_sub_text,
             style: AppTheme.mainTextStyle(
-              color: AppTheme.secondary900.withOpacity(0.6),
-              fontSize: 10.sp
-            ),
+                color: AppTheme.secondary900.withOpacity(0.6), fontSize: 10.sp),
           ).tr(),
           Space(
             height: 2.h,

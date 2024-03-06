@@ -27,7 +27,7 @@ class AccountInformationScreen extends StatelessWidget {
         child: ListView(
           children: [
             AccountPageCard(
-              title: 'Name',
+              title: 'Youssef Ashour',
               subTitle: 'Since 2015',
               showArrow: false,
             ),

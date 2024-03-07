@@ -1,4 +1,5 @@
 import 'package:Mawthoq/core/config/app_theme.dart';
+import 'package:Mawthoq/core/views/widgets/custom_tab.dart';
 import 'package:Mawthoq/core/views/widgets/main_button.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/components/account_page_app_bar.dart';
@@ -113,13 +114,13 @@ class WalletPage extends StatelessWidget {
             Space(
               height: 1.h,
             ),
-            Row(
-              children: [
-                WalletTab(label: 'All transactions'),
-                WalletTab(label: 'Investments'),
-                WalletTab(label: 'Rent'),
-                WalletTab(label: 'Incoming'),
-                WalletTab(label: 'Outgoing'),
+            WalletTab(
+              tabsLabels: [
+                LocaleKeys.balance.tr(),
+                LocaleKeys.balance.tr(),
+                LocaleKeys.balance.tr(),
+                LocaleKeys.balance.tr(),
+                LocaleKeys.balance.tr(),
               ],
             ),
             Space(

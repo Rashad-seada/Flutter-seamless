@@ -1,3 +1,4 @@
+import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/bloc/account/account_cubit.dart';
 import 'package:Mawthoq/features/account/views/components/account_logout_botton.dart';
@@ -64,7 +65,34 @@ class AccountPage extends StatelessWidget {
                     color: AppTheme.neutral400,
                   ),
                 ).tr(),
-              )
+              ),
+              Space(
+                height: 20.h,
+              ),
+              Column(
+                children: [
+                  Text(
+                    'Developed by:',
+                    style: AppTheme.mainTextStyle(
+                      fontSize: 11.sp,
+                      color: AppTheme.neutral300,
+                    ),
+                  ),
+                  Space(
+                    height: 1.h,
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: Image.asset(
+                      filterQuality: FilterQuality.medium,
+                      AppImages.developersLabel,
+                      height: 5.h,
+                      width: 11.h,
+                      color: AppTheme.primary900.withOpacity(0.7),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

@@ -1,10 +1,10 @@
+import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/main_button.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:sizer/sizer.dart';
 
 class ShareRewardLinkCard extends StatelessWidget {
@@ -33,9 +33,13 @@ class ShareRewardLinkCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.card_giftcard_rounded),
+              Image.asset(
+                AppImages.inviteGift,
+                height: 6.h,
+                width: 6.h,
+              ),
               Space(
-                width: 3.w,
+                width: 1.w,
               ),
               Expanded(
                 child: Text(
@@ -43,7 +47,7 @@ class ShareRewardLinkCard extends StatelessWidget {
                   style: AppTheme.mainTextStyle(
                     color: AppTheme.secondary900,
                     fontWeight: FontWeight.bold,
-                    fontSize: 12.sp,
+                    fontSize: 11.sp,
                   ),
                 ).tr(),
               ),

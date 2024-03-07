@@ -48,13 +48,13 @@ class RewardsIndicator extends StatelessWidget {
           children: [
             Image.asset(
               AppImages.rewardLimits,
-              height: 5.h,
-              width: 5.h,
+              height: 6.5.h,
+              width: 6.5.h,
               color: AppTheme.primary900,
             ),
-
-            Space(width: 4.w,),
-
+            Space(
+              width: 4.w,
+            ),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,9 +102,7 @@ class RewardsIndicator extends StatelessWidget {
                   Text(
                     LocaleKeys.investment_limit_sub_text,
                     style: AppTheme.mainTextStyle(
-                      color: AppTheme.neutral400,
-                      fontSize: 9.sp
-                    ),
+                        color: AppTheme.neutral400, fontSize: 9.sp),
                   ).tr(),
                 ],
               ),

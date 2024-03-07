@@ -1,7 +1,6 @@
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/rewards/components/rewards_card.dart';
-import 'package:Mawthoq/features/rewards/components/rewards_card.dart';
 import 'package:Mawthoq/features/rewards/components/rewards_indicator.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';

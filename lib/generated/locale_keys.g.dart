@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class LocaleKeys {
+abstract class  LocaleKeys {
   static const on_boarding_title_1 = 'on_boarding_title_1';
   static const on_boarding_title_2 = 'on_boarding_title_2';
   static const on_boarding_title_3 = 'on_boarding_title_3';
@@ -51,8 +51,8 @@ abstract class LocaleKeys {
   static const didnt_recive_code = 'didnt_recive_code';
   static const resend = 'resend';
   static const confirm = 'confirm';
-  static const real_state = 'Realstate';
-  static const wallet = 'Wallet';
+  static const real_state = 'real_state';
+  static const wallet = 'wallet';
   static const documents = 'documents';
   static const rewards = 'rewards';
   static const account = 'account';
@@ -78,8 +78,7 @@ abstract class LocaleKeys {
   static const year = 'year';
   static const net_return = 'net_return';
   static const view_investments_chances = 'view_investments_chances';
-  static const view_investments_chances_sub_text =
-      'view_investments_chances_sub_text';
+  static const view_investments_chances_sub_text = 'view_investments_chances_sub_text';
   static const explore_real_estate = 'explore_real_estate';
   static const investment_limit = 'investment_limit';
   static const investment_limit_sub_text = 'investment_limit_sub_text';
@@ -99,4 +98,5 @@ abstract class LocaleKeys {
   static const help_center = 'help_center';
   static const blog = 'blog';
   static const logout = 'logout';
+
 }

@@ -1,5 +1,4 @@
 import 'package:Mawthoq/core/config/app_theme.dart';
-import 'package:Mawthoq/core/views/widgets/custom_tab.dart';
 import 'package:Mawthoq/core/views/widgets/main_button.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/components/account_page_app_bar.dart';
@@ -7,7 +6,6 @@ import 'package:Mawthoq/features/wallet/components/wallet_tab.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
 import '../../../generated/locale_keys.g.dart';
 
 class WalletPage extends StatelessWidget {

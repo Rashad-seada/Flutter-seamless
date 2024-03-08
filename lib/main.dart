@@ -21,7 +21,7 @@ void main() async {
 
   runApp(EasyLocalization(
       supportedLocales: const [Locale('en'), Locale('ar')],
-      fallbackLocale: const Locale('en'),
+      fallbackLocale: const Locale('ar'),
       assetLoader: const CodegenLoader(),
       path: "assets/translations/",
       child: const MyApp()));
@@ -44,7 +44,6 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => AccountCubit()),
         BlocProvider(create: (_) => SettingsCubit()),
         BlocProvider(create: (_) => HomeCubit()),
-
       ],
       child: Sizer(
         builder: (BuildContext context, Orientation orientation,
@@ -54,7 +53,7 @@ class MyApp extends StatelessWidget {
             supportedLocales: context.supportedLocales,
             locale: context.locale,
             debugShowCheckedModeBanner: false,
-            home: const OnBoardingScreen(),
+            home: OnBoardingScreen(),
             theme: AppTheme.theme(context),
           );
         },

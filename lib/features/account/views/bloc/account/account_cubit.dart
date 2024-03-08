@@ -71,8 +71,8 @@ class AccountCubit extends Cubit<AccountState> {
       ];
 
   List<AccountContainerModel> get helpCenterScreenInfo1 => [
-        AccountContainerModel(AppImages.email, 'Ask & Answer', () {}),
-        AccountContainerModel(AppImages.eye, 'How it works', () {}),
+        AccountContainerModel(AppImages.password, 'Ask & Answer', () {}),
+        AccountContainerModel(AppImages.documents, 'How it works', () {}),
       ];
 
   List<AccountContainerModel> get helpCenterScreenInfo2 => [
@@ -87,14 +87,16 @@ class AccountCubit extends Cubit<AccountState> {
       ];
 
   List<AccountContainerModel> accountPageInfo1(BuildContext context) => [
-        AccountContainerModel(null, LocaleKeys.settings.tr(), () => onSettingsClick(context)),
+        AccountContainerModel(
+            null, LocaleKeys.settings.tr(), () => onSettingsClick(context)),
         AccountContainerModel(null, LocaleKeys.privacy_security.tr(),
             () => onPrivacyAndSecurityClick(context))
       ];
 
   List<AccountContainerModel> accountPageInfo2(BuildContext context) => [
+        AccountContainerModel(null, LocaleKeys.help_center.tr(),
+            () => onHelpCenterClick(context)),
         AccountContainerModel(
-            null, LocaleKeys.help_center.tr(), () => onHelpCenterClick(context)),
-        AccountContainerModel(null, LocaleKeys.blog.tr(), () => onBlogClick(context))
+            null, LocaleKeys.blog.tr(), () => onBlogClick(context))
       ];
 }

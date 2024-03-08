@@ -1,4 +1,6 @@
 class AppImages {
+  static String developersLabel = "images/mawthouq.png";
+
   static String onBoardingImage1 = "images/on_boarding_1.svg";
   static String onBoardingImage2 = "images/on_boarding_2.svg";
   static String onBoardingImage3 = "images/on_boarding_3.svg";
@@ -26,6 +28,7 @@ class AppImages {
   static String wallet = "images/wallet.svg";
   static String documents = "images/files.svg";
   static String reward = "images/present.svg";
+  static String inviteGift = 'images/invite_gift.png';
   static String account = "images/account.svg";
   static String account1 = "images/accout1.svg";
   static String cart = "images/cart.svg";
@@ -39,6 +42,4 @@ class AppImages {
 
   static String investment = "images/investment.png";
   static String rewardLimits = "images/real-state.png";
-
-
 }

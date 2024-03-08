@@ -3,8 +3,17 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 abstract class AppTheme {
-
-  static TextStyle? mainTextStyle ({Color? color, double? fontSize,FontWeight? fontWeight}) => GoogleFonts.almarai(color: color, fontSize: fontSize,fontWeight: fontWeight,);
+  static TextStyle? mainTextStyle({
+    Color? color,
+    double? fontSize,
+    FontWeight? fontWeight,
+  }) =>
+      TextStyle(
+        color: color,
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        fontFamily: 'Almarai',
+      );
 
   static const Color neutral900 = Color(0xff111827);
   static const Color neutral800 = Color(0xff1F2937);
@@ -19,7 +28,6 @@ abstract class AppTheme {
   static const Color primary900 = Color(0xffd1bc4a);
   static const Color secondary900 = Color(0xff12223c);
   static const Color tertiary900 = Color(0xffecf1fd);
-
 
   static const Color primary800 = Color(0xffE61E29);
   static const Color primary700 = Color(0xffE93842);
@@ -43,31 +51,28 @@ abstract class AppTheme {
   static const double font14 = 10;
   static const double font12 = 8;
 
-
   static ThemeData theme(BuildContext context) => ThemeData(
-    primaryColor: primary900,  // Primary color for your app
-    hintColor: neutral300,  // Accent color used for buttons, etc.
+        primaryColor: primary900, // Primary color for your app
+        hintColor: neutral300, // Accent color used for buttons, etc.
 
-    scaffoldBackgroundColor: backgroundColor,
-    textTheme: GoogleFonts.almaraiTextTheme(),
-    fontFamily: 'Almarai',
-    // Button theme
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: primary900,  // Default button color
-      ),
-    ),
+        scaffoldBackgroundColor: backgroundColor,
+        textTheme: GoogleFonts.almaraiTextTheme(),
+        fontFamily: 'Almarai',
+        // Button theme
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: primary900, // Default button color
+          ),
+        ),
 
-
-    // Input decoration theme
-    inputDecorationTheme: const InputDecorationTheme(
-      border: OutlineInputBorder(),
-      focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: primary900),
-      ),
-    ),
-
-  );
+        // Input decoration theme
+        inputDecorationTheme: const InputDecorationTheme(
+          border: OutlineInputBorder(),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: primary900),
+          ),
+        ),
+      );
 
   static void initSystemNavAndStatusBar() {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(

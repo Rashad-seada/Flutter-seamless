@@ -65,8 +65,9 @@ Widget CustomNavItem(PageModel page, bool isSelected) {
       Text(
         page.title,
         style: AppTheme.mainTextStyle(
-            color: (isSelected) ? AppTheme.primary900 : AppTheme.neutral900,
-            fontSize: 8.sp),
+          color: (isSelected) ? AppTheme.primary900 : AppTheme.neutral900,
+          fontSize: 9.sp,
+        ),
       ),
     ],
   );

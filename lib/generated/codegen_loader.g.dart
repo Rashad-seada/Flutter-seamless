@@ -68,7 +68,7 @@ class CodegenLoader extends AssetLoader{
   "real_state": "العقارات",
   "wallet": "المحفظه",
   "documents": "الملفات",
-  "rewards": "المكائات",
+  "rewards": "المكافآت",
   "account": "حسابي",
   "sold": "مباع",
   "annual_return": "العائد السنوي",

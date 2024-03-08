@@ -1,3 +1,4 @@
+import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/main_button.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
@@ -26,24 +27,30 @@ class ShareRewardLinkCard extends StatelessWidget {
           3.w,
         ),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 5.w,vertical: 2.h),
+      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Icon(Icons.card_giftcard_rounded),
-              Space(
-                width: 3.w,
+              Image.asset(
+                AppImages.inviteGift,
+                height: 6.h,
+                width: 6.h,
               ),
-              Text(
-                LocaleKeys.Invite_friends,
-                style: AppTheme.mainTextStyle(
-                  color: AppTheme.secondary900,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12.sp,
-                ),
-              ).tr(),
+              Space(
+                width: 1.w,
+              ),
+              Expanded(
+                child: Text(
+                  LocaleKeys.Invite_friends,
+                  style: AppTheme.mainTextStyle(
+                    color: AppTheme.secondary900,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 11.sp,
+                  ),
+                ).tr(),
+              ),
             ],
           ),
           Space(
@@ -52,9 +59,7 @@ class ShareRewardLinkCard extends StatelessWidget {
           Text(
             LocaleKeys.Invite_friends_sub_text,
             style: AppTheme.mainTextStyle(
-              color: AppTheme.secondary900.withOpacity(0.6),
-              fontSize: 10.sp
-            ),
+                color: AppTheme.secondary900.withOpacity(0.6), fontSize: 10.sp),
           ).tr(),
           Space(
             height: 2.h,

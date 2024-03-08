@@ -1,3 +1,4 @@
+import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/bloc/account/account_cubit.dart';
 import 'package:Mawthoq/features/account/views/components/account_logout_botton.dart';
@@ -24,9 +25,9 @@ class AccountPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 7.w),
           child: ListView(
             children: [
-
-              Space(height: 2.h,),
-
+              Space(
+                height: 2.h,
+              ),
               AccountPageAppBar(
                 label: LocaleKeys.account.tr(),
               ),
@@ -34,7 +35,7 @@ class AccountPage extends StatelessWidget {
                 height: 3.h,
               ),
               AccountPageCard(
-                title: 'Rashad Seada',
+                title: 'Youssef Ashour',
                 subTitle: LocaleKeys.show_account_info.tr(),
                 onTap: () =>
                     context.read<AccountCubit>().onAccountCardClick(context),
@@ -53,7 +54,6 @@ class AccountPage extends StatelessWidget {
               Space(
                 height: 2.h,
               ),
-
               MainButton(
                 color: Colors.transparent,
                 height: 5.h,
@@ -65,7 +65,34 @@ class AccountPage extends StatelessWidget {
                     color: AppTheme.neutral400,
                   ),
                 ).tr(),
-              )
+              ),
+              Space(
+                height: 20.h,
+              ),
+              Column(
+                children: [
+                  Text(
+                    'Developed by:',
+                    style: AppTheme.mainTextStyle(
+                      fontSize: 11.sp,
+                      color: AppTheme.neutral300,
+                    ),
+                  ),
+                  Space(
+                    height: 1.h,
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: Image.asset(
+                      filterQuality: FilterQuality.medium,
+                      AppImages.developersLabel,
+                      height: 5.h,
+                      width: 11.h,
+                      color: AppTheme.primary900.withOpacity(0.7),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

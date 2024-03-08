@@ -21,50 +21,45 @@ class OnBoardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 7.w),
-      child: ListView(
-
-          // mainAxisAlignment: MainAxisAlignment.start,
-          // crossAxisAlignment: CrossAxisAlignment.center,
-
-          children: [
-            Space(
-              height: 14.h,
-            ),
-            Center(
-              child: Center(
-                  child: SvgPicture.asset(
-                image,
-                width: 86.w,
-                height: 23.h,
-              )),
-            ),
-            Space(
-              height: 16.h,
-            ),
-            Center(
-              child: Text(
-                title,
-                style: AppTheme.mainTextStyle(
-                  color: AppTheme.neutral900,
-                  fontSize: 20.sp,
-                ),
-                textAlign: TextAlign.center,
-              ).tr(),
-            ),
-            Space(
-              height: 3.h,
-            ),
-            Center(
-              child: Text(
-                description,
-                style: AppTheme.mainTextStyle(
-                    color: AppTheme.neutral700, fontSize: 12.sp),
-                textAlign: TextAlign.center,
-              ).tr(),
-            )
-          ]),
-    );
+    return ListView(
+        padding: EdgeInsets.symmetric(horizontal: 7.w),
+        shrinkWrap: true,
+        children: [
+          Space(
+            height: 14.h,
+          ),
+          Center(
+            child: Center(
+                child: SvgPicture.asset(
+              image,
+              width: 86.w,
+              height: 23.h,
+            )),
+          ),
+          Space(
+            height: 16.h,
+          ),
+          Center(
+            child: Text(
+              title,
+              style: AppTheme.mainTextStyle(
+                color: AppTheme.neutral900,
+                fontSize: 20.sp,
+              ),
+              textAlign: TextAlign.center,
+            ).tr(),
+          ),
+          Space(
+            height: 3.h,
+          ),
+          Center(
+            child: Text(
+              description,
+              style: AppTheme.mainTextStyle(
+                  color: AppTheme.neutral700, fontSize: 12.sp),
+              textAlign: TextAlign.center,
+            ).tr(),
+          )
+        ]);
   }
 }

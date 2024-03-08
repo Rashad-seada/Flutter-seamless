@@ -98,5 +98,11 @@ abstract class  LocaleKeys {
   static const help_center = 'help_center';
   static const blog = 'blog';
   static const logout = 'logout';
+  static const investing_cart = 'investing_cart';
+  static const add_real_state = 'add_real_state';
+  static const total = 'total';
+  static const pay_now = 'pay_now';
+  static const monthly_rent = 'monthly_rent';
+  static const capital_growth = 'capital_growth';
 
 }

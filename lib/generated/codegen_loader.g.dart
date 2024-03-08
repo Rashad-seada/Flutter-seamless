@@ -111,7 +111,13 @@ class CodegenLoader extends AssetLoader{
   "privacy_security": "الخصوصية والأمان",
   "help_center": "مركز المساعدة",
   "blog": "المدونة",
-  "logout": "تسجيل الخروج"
+  "logout": "تسجيل الخروج",
+  "investing_cart": "عربه الاستثمار",
+  "add_real_state": "اضف عقار جديد",
+  "total": "القيمه الاجماليه",
+  "pay_now": "الدفع الان",
+  "monthly_rent": "الايجار الشهري",
+  "capital_growth": "نمو راس المال"
 };
 static const Map<String,dynamic> en = {
   "on_boarding_title_1": "Digital Catalog",
@@ -210,7 +216,13 @@ static const Map<String,dynamic> en = {
   "privacy_security": "Privacy and security",
   "help_center": "Help center",
   "blog": "Blog",
-  "logout": "Logout"
+  "logout": "Logout",
+  "investing_cart": "Investing cart",
+  "add_real_state": "Add real-state",
+  "total": "total value",
+  "pay_now": "Pay now",
+  "monthly_rent": "Monthly rent",
+  "capital_growth": "Capital growth"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

@@ -126,6 +126,15 @@
   "help_center": "Help center",
 
   "blog": "Blog",
-  "logout": "Logout"
+  "logout": "Logout",
+
+  "investing_cart": "Investing cart",
+  "add_real_state": "Add real-state",
+  "total": "total value",
+  "pay_now": "Pay now",
+
+  "monthly_rent": "Monthly rent",
+  "capital_growth": "Capital growth"
+
 
 }

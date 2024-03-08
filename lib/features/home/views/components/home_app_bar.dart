@@ -9,7 +9,10 @@ import 'package:sizer/sizer.dart';
 import '../../../../core/config/app_theme.dart';
 
 class HomeAppBar extends StatelessWidget {
-  const HomeAppBar({super.key});
+  void Function()? onFavoriteTap;
+  void Function()? onCartTap;
+
+  HomeAppBar({super.key,this.onFavoriteTap,this.onCartTap});
 
   @override
   Widget build(BuildContext context) {
@@ -39,19 +42,25 @@ class HomeAppBar extends StatelessWidget {
 
           Row(
             children: [
-              SvgPicture.asset(
-                  width: 6.5.w,
-                  height: 6.5.w,
-                  AppImages.heart
+              InkWell(
+                onTap: onFavoriteTap,
+                child: SvgPicture.asset(
+                    width: 6.5.w,
+                    height: 6.5.w,
+                    AppImages.heart
+                ),
               ),
 
               Space(width: 2.w,),
 
-              SvgPicture.asset(
-                  width: 6.5.w,
-                  height: 6.5.w,
-                  AppImages.cart,
-                color: AppTheme.primary900,
+              InkWell(
+                onTap: onCartTap,
+                child: SvgPicture.asset(
+                    width: 6.5.w,
+                    height: 6.5.w,
+                    AppImages.cart,
+                  color: AppTheme.primary900,
+                ),
               ),
               Space(width: 1.w,),
 

@@ -1,6 +1,7 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/rewards/screens/profits_screen.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,11 @@ import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
 class RewardsCard extends StatelessWidget {
+  void navigateToProfitsScreen(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => const ProfitsScreen()));
+  }
+
   const RewardsCard({super.key});
 
   @override
@@ -33,19 +39,19 @@ class RewardsCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           InkWell(
-            onTap: () {},
+            onTap: () => navigateToProfitsScreen(context),
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 0.7.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(LocaleKeys.profits,
-                      style: AppTheme.mainTextStyle(
-                        // fontSize: 10.sp,
-                        color: AppTheme.secondary900,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 12.sp
-                      )).tr(),
+                          style: AppTheme.mainTextStyle(
+                              // fontSize: 10.sp,
+                              color: AppTheme.secondary900,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 12.sp))
+                      .tr(),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -57,7 +63,7 @@ class RewardsCard extends StatelessWidget {
                         ),
                       ),
                       Space(
-                        width:0.5.w,
+                        width: 0.5.w,
                       ),
                       Text(
                         '100',

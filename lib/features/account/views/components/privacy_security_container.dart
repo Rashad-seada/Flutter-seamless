@@ -7,7 +7,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 class PrivacyAndSecurityContainer extends StatelessWidget {
-  PrivacyAndSecurityContainer({super.key});
+  String label;
+  String svgAsset;
+  String? string;
+  PrivacyAndSecurityContainer(
+      {super.key, required this.label, required this.svgAsset, this.string});
 
   @override
   Widget build(BuildContext context) {
@@ -35,22 +39,34 @@ class PrivacyAndSecurityContainer extends StatelessWidget {
             Row(
               children: [
                 SvgPicture.asset(
-                  AppImages.documents,
+                  svgAsset,
                   color: AppTheme.primary900,
+                  height: 4.h,
+                  width: 4.h,
                 ),
                 Space(
                   width: 1.w,
                 ),
                 Text(
-                  'Label',
+                  label,
                   style: AppTheme.mainTextStyle(
                     fontWeight: FontWeight.w600,
                   ),
                 ),
               ],
             ),
-            SvgPicture.asset(
-              AppImages.arrowRight,
+            Row(
+              children: [
+                if (string != null)
+                  Text(
+                    string!,
+                    style: AppTheme.mainTextStyle(
+                        fontSize: 10.sp, color: AppTheme.neutral400),
+                  ),
+                SvgPicture.asset(
+                  AppImages.arrowRight,
+                ),
+              ],
             ),
           ],
         ),

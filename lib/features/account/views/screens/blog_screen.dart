@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
-class BlogScreeen extends StatelessWidget {
-  const BlogScreeen({super.key});
+class BlogScreen extends StatelessWidget {
+  const BlogScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

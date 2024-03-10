@@ -25,10 +25,9 @@ class PrivacyAndSecurityCard extends StatelessWidget {
                 ),
                 Text(
                   'We care very much about the security of your account and add multiple layers of protection to develop our security and protection',
-                  style: TextStyle(
+                  style: AppTheme.mainTextStyle(
                     fontWeight: FontWeight.w200,
                     fontSize: 9.sp,
-                    overflow: TextOverflow.ellipsis,
                   ),
                   maxLines: 4,
                 ),

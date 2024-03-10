@@ -1,3 +1,4 @@
+import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/components/privacy_security_card.dart';
@@ -32,7 +33,10 @@ class PrivacyAndSecurityScreen extends StatelessWidget {
           Space(
             height: 1.5.h,
           ),
-          PrivacyAndSecurityContainer(),
+          PrivacyAndSecurityContainer(
+            label: 'Privacy Politics',
+            svgAsset: AppImages.account1,
+          ),
           Space(
             height: 4.h,
           ),

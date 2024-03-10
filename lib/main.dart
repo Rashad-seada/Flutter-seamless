@@ -1,6 +1,5 @@
 import 'package:Mawthoq/features/account/views/bloc/account/account_cubit.dart';
 import 'package:Mawthoq/features/account/views/bloc/settings/settings_cubit.dart';
-import 'package:Mawthoq/features/auth/views/screens/06_verfication_steps_screen.dart';
 import 'package:Mawthoq/features/home/views/bloc/home/home_cubit.dart';
 import 'package:Mawthoq/features/main/bloc/main/main_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -54,7 +53,7 @@ class MyApp extends StatelessWidget {
             supportedLocales: context.supportedLocales,
             locale: context.locale,
             debugShowCheckedModeBanner: false,
-            home: VerficationScreen(),
+            home: OnBoardingScreen(),
             theme: AppTheme.theme(context),
           );
         },

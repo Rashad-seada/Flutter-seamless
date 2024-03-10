@@ -6,6 +6,7 @@ import 'package:Mawthoq/features/auth/components/verfication_steps_card.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+// created
 class VerficationScreen extends StatelessWidget {
   const VerficationScreen({super.key});
 
@@ -13,7 +14,7 @@ class VerficationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Account activation'),
+        title: Text('Account Activation'),
       ),
       body: ListView(
         children: [

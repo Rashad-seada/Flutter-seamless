@@ -3,6 +3,7 @@ import 'package:Mawthoq/features/account/views/bloc/account/account_states.dart'
 import 'package:Mawthoq/features/account/views/screens/account_information_screen.dart';
 import 'package:Mawthoq/features/account/views/screens/blog_screen.dart';
 import 'package:Mawthoq/features/account/views/screens/help_center_screen.dart';
+import 'package:Mawthoq/features/account/views/screens/investment_limits_screen.dart';
 import 'package:Mawthoq/features/account/views/screens/privacy_and_security_screen.dart';
 import 'package:Mawthoq/features/account/views/screens/settings_screen.dart';
 import 'package:Mawthoq/features/account/views/utils/account_model.dart';
@@ -36,11 +37,19 @@ class AccountCubit extends Cubit<AccountState> {
 
   void _navigateToBlogScreen(BuildContext context) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (_) => const BlogScreeen()));
+        context, MaterialPageRoute(builder: (_) => const BlogScreen()));
+  }
+
+  void _navigateInvestmentLimitsScreen(BuildContext context) {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (_) => const InvestmentLimitsScreen()));
+  }
+
+  void onInvestmentLimitsClick(BuildContext context) {
+    _navigateInvestmentLimitsScreen(context);
   }
 
   void onAccountCardClick(BuildContext context) {
-    print('sdfgn');
     _navigateToAccountInfoScreen(context);
   }
 

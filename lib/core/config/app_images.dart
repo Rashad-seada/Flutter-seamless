@@ -6,6 +6,8 @@ class AppImages {
   static String onBoardingImage3 = "images/on_boarding_3.png";
   static String authMethods = "images/start_screen.png";
 
+  static String confirmEmailImage = "images/confirm_email _image.png";
+
   static String login = "images/login.svg";
   static String email = "images/email.svg";
   static String password = "images/password.svg";

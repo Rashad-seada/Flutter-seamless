@@ -1,7 +1,8 @@
+import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/bloc/account/account_cubit.dart';
-import 'package:Mawthoq/features/account/views/components/account_info_indicator.dart';
+import 'package:Mawthoq/features/account/views/components/investment_limits_indicator.dart';
 import 'package:Mawthoq/features/account/views/components/account_page_card.dart';
 import 'package:Mawthoq/features/account/views/components/account_page_container.dart';
 import 'package:flutter/material.dart';
@@ -53,9 +54,12 @@ class AccountInformationScreen extends StatelessWidget {
             Space(
               height: 1.5.h,
             ),
-            AccountInfoIndicator(
-              raisedFunds: 25,
-              requestedFunds: 1000,
+            InvestmentLimitsIndicator(
+              headLabel: 'Investment Limits',
+              svgAsset: AppImages.documents,
+              isInvetmentLimit: false,
+              raisedFunds: 5000,
+              requestedFunds: 10000,
               width: 86.w,
             ),
           ],

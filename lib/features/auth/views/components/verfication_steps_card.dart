@@ -3,15 +3,19 @@ import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/utils/account_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
-class PrivacyAndSecurityContainer extends StatelessWidget {
+class VerficationStepsCard extends StatelessWidget {
   String label;
   String svgAsset;
-  String? string;
-  PrivacyAndSecurityContainer(
-      {super.key, required this.label, required this.svgAsset, this.string});
+  String step;
+  VerficationStepsCard(
+      {super.key,
+      required this.label,
+      required this.svgAsset,
+      required this.step});
 
   @override
   Widget build(BuildContext context) {
@@ -32,41 +36,31 @@ class PrivacyAndSecurityContainer extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 0.7.h),
+        padding: EdgeInsets.all(1.w),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SvgPicture.asset(
-                  svgAsset,
-                  color: AppTheme.primary900,
-                  height: 4.h,
-                  width: 4.h,
-                ),
-                Space(
-                  width: 1.w,
+                Text(
+                  step,
+                  style: AppTheme.mainTextStyle(
+                    fontSize: 10.sp,
+                    color: AppTheme.neutral400,
+                  ),
                 ),
                 Text(
                   label,
                   style: AppTheme.mainTextStyle(
-                    fontWeight: FontWeight.w600,
+                    fontSize: 12.sp,
+                    color: AppTheme.secondary900,
                   ),
                 ),
               ],
             ),
-            Row(
-              children: [
-                if (string != null)
-                  Text(
-                    string!,
-                    style: AppTheme.mainTextStyle(
-                        fontSize: 10.sp, color: AppTheme.neutral400),
-                  ),
-                SvgPicture.asset(
-                  AppImages.arrowRight,
-                ),
-              ],
+            SvgPicture.asset(
+              svgAsset,
             ),
           ],
         ),

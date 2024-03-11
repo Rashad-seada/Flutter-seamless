@@ -15,12 +15,12 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> ar = {
-  "on_boarding_title_1": "فهرس رقمي",
-  "on_boarding_title_2": "قصص المنزل",
-  "on_boarding_title_3": "إدارة مبسّطة",
-  "on_boarding_description_1": "الوصف: نظم ووثق أثاثك بسهولة مع هذا الفهرس الرقمي السهل الاستخدام",
-  "on_boarding_description_2": "الوصف: التقط وشارك القصص الفريدة وراء أثاثك، محولًا إياها إلى عناصر تحبس الأنفاس في رواية منزلك.",
-  "on_boarding_description_3": "الوصف: بسّط إدارة قطع الأثاث مع هذا التطبيق البديهي، مما يضمن تتبعًا وثائقًا سهلين.",
+  "on_boarding_title_1": "أحدث طريقه للاستثمار في العقارات",
+  "on_boarding_title_2": "ملف مستثمر متكامل",
+  "on_boarding_title_3": "اصدار شهادات ملكية",
+  "on_boarding_description_1": "نوفر لك طرق حديثه للاستثمار في العقارات بشكل أمن وموثق",
+  "on_boarding_description_2": "نوفر لك لوحة تحكم متكاملة وسلسه لمتابعة استثماراتك واموالك من خلال المحفظة",
+  "on_boarding_description_3": "نصدر لجميع مستثمرين سيملس شهادات ملكية للاستثمار الخاص بهم",
   "next": "التالي",
   "skip": "تخطي",
   "auth_method_title": "احدث طرق الاستثمار",
@@ -120,12 +120,12 @@ class CodegenLoader extends AssetLoader{
   "capital_growth": "نمو راس المال"
 };
 static const Map<String,dynamic> en = {
-  "on_boarding_title_1": "Digital Catalog",
-  "on_boarding_title_2": "Home Stories",
-  "on_boarding_title_3": "Simplified Management",
-  "on_boarding_description_1": "Effortlessly organize and document your furniture pieces with this user-friendly digital catalog.",
-  "on_boarding_description_2": "Capture and share the unique stories behind your furniture, turning them into cherished elements of your home's narrative.",
-  "on_boarding_description_3": "Streamline the management of your furniture pieces with this intuitive app, ensuring easy tracking and documentation.",
+  "on_boarding_title_1": "The Latest Way to Invest in Real Estate",
+  "on_boarding_title_2": "Comprehensive Investor Profile",
+  "on_boarding_title_3": "Issuance of Ownership Certificates",
+  "on_boarding_description_1": "We provide you with modern ways to invest in real estate securely and authentically.",
+  "on_boarding_description_2": "We offer you a comprehensive and seamless dashboard to track your investments and funds through the portfolio.",
+  "on_boarding_description_3": "We issue seamless ownership certificates for all investors to invest in their properties.",
   "next": "Next",
   "skip": "Skip",
   "auth_method_title": "The latest investments methods",

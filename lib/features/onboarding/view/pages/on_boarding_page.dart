@@ -26,18 +26,18 @@ class OnBoardingPage extends StatelessWidget {
         shrinkWrap: true,
         children: [
           Space(
-            height: 14.h,
+            height: 10.h,
           ),
           Center(
             child: Center(
-                child: SvgPicture.asset(
+                child: Image.asset(
               image,
               width: 86.w,
-              height: 23.h,
+              height: 30.h,
             )),
           ),
           Space(
-            height: 16.h,
+            height: 12.h,
           ),
           Center(
             child: Text(

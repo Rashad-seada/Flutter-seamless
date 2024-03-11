@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/config/app_theme.dart';
+import '../../../../core/utils/is_locale_arabic.dart';
 import '../../../../core/views/widgets/main_button.dart';
 
 class BeginInvestingCard extends StatelessWidget {
@@ -75,15 +76,21 @@ class BeginInvestingCard extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              point(text: LocaleKeys.begin_investing_step1.tr()),
+              point(
+                  context: context,
+                  text: LocaleKeys.begin_investing_step1.tr()),
               Space(
                 height: 1.5.h,
               ),
-              point(text: LocaleKeys.begin_investing_step2.tr()),
+              point(
+                  context: context,
+                  text: LocaleKeys.begin_investing_step2.tr()),
               Space(
                 height: 1.5.h,
               ),
-              point(text: LocaleKeys.begin_investing_step3.tr()),
+              point(
+                  context: context,
+                  text: LocaleKeys.begin_investing_step3.tr()),
             ],
           ),
           Space(
@@ -109,18 +116,19 @@ class BeginInvestingCard extends StatelessWidget {
 
   Widget point({
     required String text,
+    required BuildContext context
   }) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         RotationTransition(
-          turns: AlwaysStoppedAnimation(45 / 360),
+          turns: AlwaysStoppedAnimation((isLocaleArabic(context))? 225 / 360 :  45/ 360),
           child: ClipPath(
             clipper: CustomTriangleClipper(),
             child: Container(
-              width: 5.w,
-              height: 5.w,
+              width: 4.w,
+              height: 4.w,
               decoration: BoxDecoration(color: AppTheme.primary900),
             ),
           ),

@@ -1,7 +1,10 @@
 import 'package:Mawthoq/features/cart/views/components/cart_pay_now_card.dart';
+import 'package:Mawthoq/features/main/bloc/main/main_cubit.dart';
+import 'package:Mawthoq/features/main/views/main_screen.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/config/app_theme.dart';
@@ -52,6 +55,9 @@ class CartScreen extends StatelessWidget {
 
               ),
             ).tr(),
+            onTap: (){
+              Navigator.push(context,MaterialPageRoute(builder: (_)=> MainScreen()));
+            },
           ),
           Space(
             height: 2.h,

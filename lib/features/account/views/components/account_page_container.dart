@@ -9,10 +9,12 @@ import 'package:sizer/sizer.dart';
 // ignore: must_be_immutable
 class AccountPageContainer extends StatelessWidget {
   List<AccountContainerModel> info;
+  Color? iconColor;
 
   AccountPageContainer({
     super.key,
     this.info = const [],
+    this.iconColor,
   });
 
   @override
@@ -49,11 +51,13 @@ class AccountPageContainer extends StatelessWidget {
                       if (info[index].icon != null)
                         SvgPicture.asset(
                           info[index].icon!,
-                          height: 3.h,
-                          width: 3.h,
+                          height: 2.5.h,
+                          width: 2.5.h,
+                          color: iconColor ?? AppTheme.neutral900,
+
                         ),
                       Space(
-                        width: 2.w,
+                        width: 3.w,
                       ),
                       Text(info[index].label,
                           style: AppTheme.mainTextStyle(

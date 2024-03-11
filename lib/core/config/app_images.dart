@@ -1,9 +1,9 @@
 class AppImages {
   static String developersLabel = "images/mawthouq.png";
 
-  static String onBoardingImage1 = "images/on_boarding_1.svg";
-  static String onBoardingImage2 = "images/on_boarding_2.svg";
-  static String onBoardingImage3 = "images/on_boarding_3.svg";
+  static String onBoardingImage1 = "images/on_boarding_1.png";
+  static String onBoardingImage2 = "images/on_boarding_2.png";
+  static String onBoardingImage3 = "images/on_boarding_3.png";
   static String authMethods = "images/start_screen.png";
 
   static String login = "images/login.svg";

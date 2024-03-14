@@ -6,18 +6,15 @@ import 'package:sizer/sizer.dart';
 class VerficationStepsButton extends StatelessWidget {
   String label;
   String? string;
+  void Function()? onTap;
 
-  void navigateToUploadIdPage(BuildContext context) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (_) => const UploadId1Screen()));
-  }
-
-  VerficationStepsButton({super.key, required this.label, this.string});
+  VerficationStepsButton(
+      {super.key, required this.label, this.string, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => navigateToUploadIdPage(context),
+      onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 2.w),
         decoration: BoxDecoration(

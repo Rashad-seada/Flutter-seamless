@@ -1,14 +1,20 @@
 import 'package:Mawthoq/core/config/app_images.dart';
-import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/auth/components/verfication_steps_button.dart';
 import 'package:Mawthoq/features/auth/components/verfication_steps_card.dart';
+import 'package:Mawthoq/features/auth/components/verfication_text_card.dart';
+import 'package:Mawthoq/features/auth/views/screens/07_upload_id1.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 // created
 class VerficationScreen extends StatelessWidget {
-  const VerficationScreen({super.key});
+  void navigateToUploadIdPage(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => UploadId1Screen()));
+  }
+
+  VerficationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,19 +32,8 @@ class VerficationScreen extends StatelessWidget {
                 Image.asset(
                   'images/verfication_icon.png',
                 ),
-                Text(
-                  'Lets start ivesting',
-                  style: AppTheme.mainTextStyle(
-                    fontSize: 12.sp,
-                    color: AppTheme.secondary900,
-                  ),
-                ),
-                Text(
-                  'Investing with us requires activating your identity or passport, residence address, and client details before starting the investment process',
-                  style: AppTheme.mainTextStyle(
-                    fontSize: 11.sp,
-                    color: AppTheme.neutral400,
-                  ),
+                VerficationTextCard(
+                  cardTitle: 'Lets start investing',
                 ),
                 Space(
                   height: 3.h,
@@ -75,7 +70,10 @@ class VerficationScreen extends StatelessWidget {
                 Space(
                   height: 1.5.h,
                 ),
-                VerficationStepsButton(label: 'Continue'),
+                VerficationStepsButton(
+                  label: 'Continue',
+                  onTap: () => navigateToUploadIdPage(context),
+                ),
               ],
             ),
           ),

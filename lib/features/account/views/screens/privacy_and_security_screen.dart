@@ -1,10 +1,12 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/account/views/bloc/account/account_cubit.dart';
 import 'package:Mawthoq/features/account/views/components/privacy_security_card.dart';
 import 'package:Mawthoq/features/account/views/components/privacy_security_container.dart';
 import 'package:Mawthoq/features/account/views/components/settings_toggle_container.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
 class PrivacyAndSecurityScreen extends StatelessWidget {
@@ -34,6 +36,8 @@ class PrivacyAndSecurityScreen extends StatelessWidget {
             height: 1.5.h,
           ),
           PrivacyAndSecurityContainer(
+            onTap: () =>
+                context.read<AccountCubit>().onPrivacyPoliticsClick(context),
             label: 'Privacy Politics',
             svgAsset: AppImages.account1,
           ),

@@ -1,5 +1,6 @@
 class AppImages {
-  static String developersLabel = "images/mawthouq.png";
+  static String developersLabel = "images/wathiq.png";
+  static String ownerLabel = "images/seamless.png";
 
   static String onBoardingImage1 = "images/on_boarding_1.svg";
   static String onBoardingImage2 = "images/on_boarding_2.svg";

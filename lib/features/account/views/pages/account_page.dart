@@ -71,24 +71,59 @@ class AccountPage extends StatelessWidget {
               ),
               Column(
                 children: [
-                  Text(
-                    'Developed by:',
-                    style: AppTheme.mainTextStyle(
-                      fontSize: 11.sp,
-                      color: AppTheme.neutral300,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        children: [
+                          Text(
+                            'Development:',
+                            style: AppTheme.mainTextStyle(
+                              fontSize: 11.sp,
+                              color: AppTheme.neutral300,
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {},
+                            child: Image.asset(
+                              filterQuality: FilterQuality.medium,
+                              AppImages.developersLabel,
+                              height: 6.h,
+                              width: 12.h,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            'All copyrights to:',
+                            style: AppTheme.mainTextStyle(
+                              fontSize: 11.sp,
+                              color: AppTheme.neutral300,
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {},
+                            child: Image.asset(
+                              filterQuality: FilterQuality.medium,
+                              AppImages.ownerLabel,
+                              height: 6.h,
+                              width: 12.h,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                   Space(
-                    height: 1.h,
+                    height: 3.h,
                   ),
-                  InkWell(
-                    onTap: () {},
-                    child: Image.asset(
-                      filterQuality: FilterQuality.medium,
-                      AppImages.developersLabel,
-                      height: 5.h,
-                      width: 11.h,
-                      color: AppTheme.primary900.withOpacity(0.7),
+                  Text(
+                    'Version 1.0.0',
+                    style: AppTheme.mainTextStyle(
+                      fontSize: 10.sp,
+                      color: AppTheme.neutral400,
                     ),
                   ),
                 ],

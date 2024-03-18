@@ -1,11 +1,16 @@
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/selling/components/main_button.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:Mawthoq/features/selling/views/closed_selling_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class SellingHeading extends StatelessWidget {
+  void navigateToClosedSellingScreen(BuildContext context) {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (_) => const ClosedSellingScreen()));
+  }
+
   const SellingHeading({super.key});
 
   @override
@@ -63,6 +68,7 @@ class SellingHeading extends StatelessWidget {
           ),
           MainSellingButton(
             label: 'Selling with Seamless',
+            onTap: () => navigateToClosedSellingScreen(context),
           ),
         ],
       ),

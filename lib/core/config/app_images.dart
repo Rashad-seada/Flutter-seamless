@@ -1,5 +1,6 @@
 class AppImages {
-  static String developersLabel = "images/mawthouq.png";
+  static String developersLabel = "images/wathiq.png";
+  static String ownerLabel = "images/seamless.png";
 
   static String onBoardingImage1 = "images/on_boarding_1.png";
   static String onBoardingImage2 = "images/on_boarding_2.png";
@@ -7,6 +8,11 @@ class AppImages {
   static String authMethods = "images/start_screen.png";
 
   static String confirmEmailImage = "images/confirm_email _image.png";
+  static String id1Image = "images/id1.png";
+  static String id2Image = "images/id2.png";
+  static String id3Image = "images/id3.png";
+  static String id4Image = "images/id4.png";
+  static String uploadId = "images/upload_id.png";
 
   static String login = "images/login.svg";
   static String email = "images/email.svg";

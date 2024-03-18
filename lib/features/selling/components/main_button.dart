@@ -2,15 +2,12 @@ import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import '../screens/07_upload_id1.dart';
-
-class VerficationStepsButton extends StatelessWidget {
+class MainSellingButton extends StatelessWidget {
   String label;
   String? string;
   void Function()? onTap;
 
-  VerficationStepsButton(
-      {super.key, required this.label, this.string, this.onTap});
+  MainSellingButton({super.key, required this.label, this.string, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +16,7 @@ class VerficationStepsButton extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 2.w),
         decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.1),
-              spreadRadius: 5,
-              blurRadius: 7,
-              offset: Offset(0, 3),
-            ),
-          ],
-          color: AppTheme.primary900,
+          color: AppTheme.secondary900,
           borderRadius: BorderRadius.circular(
             2.w,
           ),
@@ -42,6 +31,7 @@ class VerficationStepsButton extends StatelessWidget {
                 style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 11.sp,
+                  color: Colors.white,
                 ),
               ),
             ],

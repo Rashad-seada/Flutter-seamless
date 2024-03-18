@@ -134,7 +134,14 @@
   "pay_now": "Pay now",
 
   "monthly_rent": "Monthly rent",
-  "capital_growth": "Capital growth"
+  "capital_growth": "Capital growth",
 
+  "property_price": "Property price",
+  "investors": "investors",
+  "closed_on": "Closed on",
+  "funded": "funded",
+  "funded_data": "Funded data",
+  "purchase_price": "Purchase price",
+  "rental_income": "Rental income paid"
 
 }

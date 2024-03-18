@@ -1,10 +1,11 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
-import 'package:Mawthoq/features/auth/components/verfication_steps_button.dart';
-import 'package:Mawthoq/features/auth/components/verfication_steps_card.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+
+import '../components/verfication_steps_button.dart';
+import '../components/verfication_steps_card.dart';
 
 // created
 class VerficationScreen extends StatelessWidget {
@@ -43,7 +44,7 @@ class VerficationScreen extends StatelessWidget {
                 Space(
                   height: 3.h,
                 ),
-                VerficationStepsCard(
+                VerificationStepsCard(
                   label: 'Register',
                   svgAsset: AppImages.plus,
                   step: 'Step 1',
@@ -51,7 +52,7 @@ class VerficationScreen extends StatelessWidget {
                 Space(
                   height: 1.5.h,
                 ),
-                VerficationStepsCard(
+                VerificationStepsCard(
                   label: 'What is your job?',
                   svgAsset: AppImages.plus,
                   step: 'Step 2',
@@ -59,7 +60,7 @@ class VerficationScreen extends StatelessWidget {
                 Space(
                   height: 1.5.h,
                 ),
-                VerficationStepsCard(
+                VerificationStepsCard(
                   label: 'Address Verfication',
                   svgAsset: AppImages.plus,
                   step: 'Step 3',
@@ -67,7 +68,7 @@ class VerficationScreen extends StatelessWidget {
                 Space(
                   height: 1.5.h,
                 ),
-                VerficationStepsCard(
+                VerificationStepsCard(
                   label: 'ID Verfication',
                   svgAsset: AppImages.plus,
                   step: 'Step 4',

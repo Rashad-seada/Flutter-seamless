@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 abstract class AppTheme {
   static TextStyle? mainTextStyle({
@@ -56,7 +55,6 @@ abstract class AppTheme {
         hintColor: neutral300, // Accent color used for buttons, etc.
 
         scaffoldBackgroundColor: backgroundColor,
-        textTheme: GoogleFonts.almaraiTextTheme(),
         fontFamily: 'Almarai',
         // Button theme
         elevatedButtonTheme: ElevatedButtonThemeData(

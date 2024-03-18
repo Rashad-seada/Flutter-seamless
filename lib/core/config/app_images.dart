@@ -44,4 +44,10 @@ class AppImages {
 
   static String investment = "images/investment.png";
   static String rewardLimits = "images/real-state.png";
+
+  static String saudiArabia = "images/Saudi_Arabia.svg";
+
+  static String infoCircle = "images/info_circle.svg";
+  static String location = "images/location.svg";
+
 }

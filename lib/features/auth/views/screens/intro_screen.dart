@@ -6,6 +6,7 @@ import 'package:Mawthoq/features/onboarding/view/screens/00_on_boarding_screen.d
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -16,50 +17,62 @@ class IntroScreen extends StatefulWidget {
 
 class _IntroScreenState extends State<IntroScreen> {
 
-  @override
-  void initState() {
+  void setupSystemNavigationBar() async {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       systemNavigationBarIconBrightness: Brightness.dark,
-      systemNavigationBarColor: AppTheme.secondary900,
-      statusBarColor: AppTheme.secondary900,
+      systemNavigationBarColor: Colors.transparent,
+      statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,
     ));
-    
-    Future.delayed(Duration(seconds: 3)).then((value) {
-      Navigator.push(context,MaterialPageRoute(builder: (_)=> OnBoardingScreen()));
-      AppTheme.initSystemNavAndStatusBar();
-    });
-    super.initState();
+
+    await Future.delayed(Duration(seconds: 3)).then(
+            (value) => Navigator.push(context, MaterialPageRoute(builder: (_)=> OnBoardingScreen()))
+    );
   }
+
+  void disposeSystemNavigationBar() {
+    AppTheme.initSystemNavAndStatusBar();
+  }
+
 
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child:
-    Scaffold(
-      backgroundColor: AppTheme.secondary900,
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-        
-            Container(
-                alignment: Alignment.center,
-                child: Image.asset("images/logo.jpeg",width:100.w,height: 30.w,fit: BoxFit.fitWidth,)),
-            Space(height: 2.h,),
-            SizedBox(
-              width: 5.w,height: 5.w,
-              child: CircularProgressIndicator(
-                color: AppTheme.primary900,
-                strokeWidth: 0.5.w,
-              ),
-            )
-        
-          ],
+    return VisibilityDetector(
+      key: Key('uniqueKey'),
+      onVisibilityChanged: (VisibilityInfo info) {
+        if (info.visibleFraction == 0) {
+          // Call your function here when the widget is not visible
+          disposeSystemNavigationBar();
+        }else {
+          setupSystemNavigationBar();
+        }
+      },
+      child: Scaffold(
+        backgroundColor: AppTheme.secondary900,
+        body: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+
+              Container(
+                  alignment: Alignment.center,
+                  child: Image.asset("images/logo.jpeg",width:100.w,height: 30.w,fit: BoxFit.fitWidth,)),
+              Space(height: 2.h,),
+              SizedBox(
+                width: 5.w,height: 5.w,
+                child: CircularProgressIndicator(
+                  color: AppTheme.primary900,
+                  strokeWidth: 0.5.w,
+                ),
+              )
+
+            ],
+          ),
         ),
       ),
-    ));
+    );
   }
 }

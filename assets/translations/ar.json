@@ -134,8 +134,14 @@
   "pay_now": "الدفع الان",
 
   "monthly_rent": "الايجار الشهري",
-  "capital_growth": "نمو راس المال"
+  "capital_growth": "نمو راس المال",
 
-
+  "property_price": "سعر العقار",
+  "investors": "المستثمرون",
+  "closed_on": "أغلق في",
+  "funded": "تم التمويل",
+  "funded_data": "بيانات التمويل",
+  "purchase_price": "سعر الشراء",
+  "rental_income": "الدخل الإيجاري المدفوع"
 
 }

@@ -43,6 +43,7 @@ dependencies:
   equatable:
   regexpattern:
   async:
+  intl:
 
   # Local Storage
   floor:
@@ -57,7 +58,6 @@ dependencies:
 #  activout_firebase_options_selector:
 
   # UI
-  google_fonts:
   sizer:
   easy_localization:
   flutter_svg:
@@ -67,6 +67,10 @@ dependencies:
   pinput:
   cached_network_image:
   syncfusion_flutter_sliders:
+  visibility_detector:
+  fl_chart:
+  readmore:
+
 
   # Service
   internet_connection_checker_plus:

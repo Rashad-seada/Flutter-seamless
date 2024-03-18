@@ -46,7 +46,7 @@ class PrivacyAndSecurityScreen extends StatelessWidget {
             Space(
               height: .5.h,
             ),
-            PrivacyAndSecurityContainer(),
+            PrivacyAndSecurityContainer(label: '', svgAsset: '',),
             Space(
               height: 2.h,
             ),

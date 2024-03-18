@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-// ignore_for_file: prefer_single_quotes
+// ignore_for_file: prefer_single_quotes, avoid_renaming_method_parameters
 
 import 'dart:ui';
 
@@ -117,7 +117,14 @@ class CodegenLoader extends AssetLoader{
   "total": "القيمه الاجماليه",
   "pay_now": "الدفع الان",
   "monthly_rent": "الايجار الشهري",
-  "capital_growth": "نمو راس المال"
+  "capital_growth": "نمو راس المال",
+  "property_price": "سعر العقار",
+  "investors": "المستثمرون",
+  "closed_on": "أغلق في",
+  "funded": "تم التمويل",
+  "funded_data": "بيانات التمويل",
+  "purchase_price": "سعر الشراء",
+  "rental_income": "الدخل الإيجاري المدفوع"
 };
 static const Map<String,dynamic> en = {
   "on_boarding_title_1": "The Latest Way to Invest in Real Estate",
@@ -222,7 +229,14 @@ static const Map<String,dynamic> en = {
   "total": "total value",
   "pay_now": "Pay now",
   "monthly_rent": "Monthly rent",
-  "capital_growth": "Capital growth"
+  "capital_growth": "Capital growth",
+  "property_price": "Property price",
+  "investors": "investors",
+  "closed_on": "Closed on",
+  "funded": "funded",
+  "funded_data": "Funded data",
+  "purchase_price": "Purchase price",
+  "rental_income": "Rental income paid"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

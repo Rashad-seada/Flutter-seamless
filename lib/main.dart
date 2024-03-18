@@ -1,6 +1,7 @@
 import 'package:Mawthoq/features/account/views/bloc/account/account_cubit.dart';
 import 'package:Mawthoq/features/account/views/bloc/settings/settings_cubit.dart';
 import 'package:Mawthoq/features/home/views/bloc/home/home_cubit.dart';
+import 'package:Mawthoq/features/home/views/bloc/home_details/home_details_cubit.dart';
 import 'package:Mawthoq/features/main/bloc/main/main_cubit.dart';
 import 'package:Mawthoq/features/wallet/views/blocs/wallet/wallet_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => SettingsCubit()),
         BlocProvider(create: (_) => HomeCubit()),
         BlocProvider(create: (_) => WalletCubit()),
+        BlocProvider(create: (_) => HomeDetailsCubit()),
 
       ],
       child: Sizer(

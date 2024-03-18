@@ -10,8 +10,8 @@ import 'package:sizer/sizer.dart';
 import '../../../../generated/locale_keys.g.dart';
 import '../components/custom_app_bar.dart';
 
-class BlogScreeen extends StatelessWidget {
-  const BlogScreeen({super.key});
+class BlogScreen extends StatelessWidget {
+  const BlogScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

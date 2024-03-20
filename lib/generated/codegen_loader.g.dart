@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-// ignore_for_file: prefer_single_quotes
+// ignore_for_file: prefer_single_quotes, avoid_renaming_method_parameters
 
 import 'dart:ui';
 
@@ -15,12 +15,12 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> ar = {
-  "on_boarding_title_1": "فهرس رقمي",
-  "on_boarding_title_2": "قصص المنزل",
-  "on_boarding_title_3": "إدارة مبسّطة",
-  "on_boarding_description_1": "الوصف: نظم ووثق أثاثك بسهولة مع هذا الفهرس الرقمي السهل الاستخدام",
-  "on_boarding_description_2": "الوصف: التقط وشارك القصص الفريدة وراء أثاثك، محولًا إياها إلى عناصر تحبس الأنفاس في رواية منزلك.",
-  "on_boarding_description_3": "الوصف: بسّط إدارة قطع الأثاث مع هذا التطبيق البديهي، مما يضمن تتبعًا وثائقًا سهلين.",
+  "on_boarding_title_1": "أحدث طريقه للاستثمار في العقارات",
+  "on_boarding_title_2": "ملف مستثمر متكامل",
+  "on_boarding_title_3": "اصدار شهادات ملكية",
+  "on_boarding_description_1": "نوفر لك طرق حديثه للاستثمار في العقارات بشكل أمن وموثق",
+  "on_boarding_description_2": "نوفر لك لوحة تحكم متكاملة وسلسه لمتابعة استثماراتك واموالك من خلال المحفظة",
+  "on_boarding_description_3": "نصدر لجميع مستثمرين سيملس شهادات ملكية للاستثمار الخاص بهم",
   "next": "التالي",
   "skip": "تخطي",
   "auth_method_title": "احدث طرق الاستثمار",
@@ -111,15 +111,28 @@ class CodegenLoader extends AssetLoader{
   "privacy_security": "الخصوصية والأمان",
   "help_center": "مركز المساعدة",
   "blog": "المدونة",
-  "logout": "تسجيل الخروج"
+  "logout": "تسجيل الخروج",
+  "investing_cart": "عربه الاستثمار",
+  "add_real_state": "اضف عقار جديد",
+  "total": "القيمه الاجماليه",
+  "pay_now": "الدفع الان",
+  "monthly_rent": "الايجار الشهري",
+  "capital_growth": "نمو راس المال",
+  "property_price": "سعر العقار",
+  "investors": "المستثمرون",
+  "closed_on": "أغلق في",
+  "funded": "تم التمويل",
+  "funded_data": "بيانات التمويل",
+  "purchase_price": "سعر الشراء",
+  "rental_income": "الدخل الإيجاري المدفوع"
 };
 static const Map<String,dynamic> en = {
-  "on_boarding_title_1": "Digital Catalog",
-  "on_boarding_title_2": "Home Stories",
-  "on_boarding_title_3": "Simplified Management",
-  "on_boarding_description_1": "Effortlessly organize and document your furniture pieces with this user-friendly digital catalog.",
-  "on_boarding_description_2": "Capture and share the unique stories behind your furniture, turning them into cherished elements of your home's narrative.",
-  "on_boarding_description_3": "Streamline the management of your furniture pieces with this intuitive app, ensuring easy tracking and documentation.",
+  "on_boarding_title_1": "The Latest Way to Invest in Real Estate",
+  "on_boarding_title_2": "Comprehensive Investor Profile",
+  "on_boarding_title_3": "Issuance of Ownership Certificates",
+  "on_boarding_description_1": "We provide you with modern ways to invest in real estate securely and authentically.",
+  "on_boarding_description_2": "We offer you a comprehensive and seamless dashboard to track your investments and funds through the portfolio.",
+  "on_boarding_description_3": "We issue seamless ownership certificates for all investors to invest in their properties.",
   "next": "Next",
   "skip": "Skip",
   "auth_method_title": "The latest investments methods",
@@ -210,7 +223,20 @@ static const Map<String,dynamic> en = {
   "privacy_security": "Privacy and security",
   "help_center": "Help center",
   "blog": "Blog",
-  "logout": "Logout"
+  "logout": "Logout",
+  "investing_cart": "Investing cart",
+  "add_real_state": "Add real-state",
+  "total": "total value",
+  "pay_now": "Pay now",
+  "monthly_rent": "Monthly rent",
+  "capital_growth": "Capital growth",
+  "property_price": "Property price",
+  "investors": "investors",
+  "closed_on": "Closed on",
+  "funded": "funded",
+  "funded_data": "Funded data",
+  "purchase_price": "Purchase price",
+  "rental_income": "Rental income paid"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

@@ -20,7 +20,10 @@ class HomePage extends StatelessWidget {
         shrinkWrap: true,
         children: [
 
-          HomeAppBar(),
+          HomeAppBar(
+            onCartTap: ()=> context.read<HomeCubit>().onCartTap(context),
+            onFavoriteTap: ()=> context.read<HomeCubit>().onFavoriteTap(context),
+          ),
 
           Space(height: 2.5.h,),
 
@@ -54,7 +57,6 @@ class HomePage extends StatelessWidget {
                 HomeCard(),
 
                 HomeCard(),
-
 
               ],
             ),

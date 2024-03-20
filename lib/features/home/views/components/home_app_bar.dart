@@ -9,7 +9,10 @@ import 'package:sizer/sizer.dart';
 import '../../../../core/config/app_theme.dart';
 
 class HomeAppBar extends StatelessWidget {
-  const HomeAppBar({super.key});
+  void Function()? onFavoriteTap;
+  void Function()? onCartTap;
+
+  HomeAppBar({super.key,this.onFavoriteTap,this.onCartTap});
 
   @override
   Widget build(BuildContext context) {
@@ -32,49 +35,46 @@ class HomeAppBar extends StatelessWidget {
         children: [
           Text(
             LocaleKeys.real_state,
-            style: TextStyle(
-              color: AppTheme.secondary900,
-              fontSize: 18.sp,
-            ),
+            style: AppTheme.mainTextStyle(
+                color: AppTheme.neutral900, fontSize: 17.sp,fontWeight: FontWeight.w600),
           ).tr(),
+
+
           Row(
             children: [
               InkWell(
-                onTap: () {},
-                child: Icon(
-                  Icons.notifications_none_outlined,
+                onTap: onFavoriteTap,
+                child: SvgPicture.asset(
+                    width: 6.5.w,
+                    height: 6.5.w,
+                    AppImages.heart
                 ),
               ),
-              Space(
-                width: 2.w,
+
+              Space(width: 2.w,),
+
+              InkWell(
+                onTap: onCartTap,
+                child: SvgPicture.asset(
+                    width: 6.5.w,
+                    height: 6.5.w,
+                    AppImages.cart,
+                  color: AppTheme.primary900,
+                ),
               ),
-              SvgPicture.asset(
-                width: 6.5.w,
-                height: 6.5.w,
-                AppImages.heart,
-              ),
-              Space(
-                width: 2.w,
-              ),
-              SvgPicture.asset(
-                width: 6.5.w,
-                height: 6.5.w,
-                AppImages.cart,
-                color: AppTheme.primary900,
-              ),
-              Space(
-                width: 1.w,
-              ),
+              Space(width: 1.w,),
+
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 0.4),
+                padding: EdgeInsets.symmetric(horizontal: 3.w,vertical: 0.4),
                 decoration: BoxDecoration(
-                    color: AppTheme.primary900,
-                    borderRadius: BorderRadius.circular(100)),
+                  color: AppTheme.primary900,
+                  borderRadius: BorderRadius.circular(100)
+                ),
                 child: Text(
                   "2",
                   style: AppTheme.mainTextStyle(
                     fontSize: 10.sp,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w700
                   ),
                 ),
               )

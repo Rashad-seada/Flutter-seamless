@@ -18,8 +18,8 @@ class CustomPageIndicator extends StatelessWidget {
       effect: WormEffect(
         dotColor: AppTheme.neutral200,
         activeDotColor: AppTheme.primary900,
-        dotHeight: 2.5.w,
-        dotWidth: 2.5.w
+        dotHeight: 2.w,
+        dotWidth: 2.w
       ),
     );
   }

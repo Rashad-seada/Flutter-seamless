@@ -98,5 +98,18 @@ abstract class  LocaleKeys {
   static const help_center = 'help_center';
   static const blog = 'blog';
   static const logout = 'logout';
+  static const investing_cart = 'investing_cart';
+  static const add_real_state = 'add_real_state';
+  static const total = 'total';
+  static const pay_now = 'pay_now';
+  static const monthly_rent = 'monthly_rent';
+  static const capital_growth = 'capital_growth';
+  static const property_price = 'property_price';
+  static const investors = 'investors';
+  static const closed_on = 'closed_on';
+  static const funded = 'funded';
+  static const funded_data = 'funded_data';
+  static const purchase_price = 'purchase_price';
+  static const rental_income = 'rental_income';
 
 }

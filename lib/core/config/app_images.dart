@@ -2,9 +2,9 @@ class AppImages {
   static String developersLabel = "images/wathiq.png";
   static String ownerLabel = "images/seamless.png";
 
-  static String onBoardingImage1 = "images/on_boarding_1.svg";
-  static String onBoardingImage2 = "images/on_boarding_2.svg";
-  static String onBoardingImage3 = "images/on_boarding_3.svg";
+  static String onBoardingImage1 = "images/on_boarding_1.png";
+  static String onBoardingImage2 = "images/on_boarding_2.png";
+  static String onBoardingImage3 = "images/on_boarding_3.png";
   static String authMethods = "images/start_screen.png";
 
   static String confirmEmailImage = "images/confirm_email _image.png";
@@ -50,4 +50,10 @@ class AppImages {
 
   static String investment = "images/investment.png";
   static String rewardLimits = "images/real-state.png";
+
+  static String saudiArabia = "images/Saudi_Arabia.svg";
+
+  static String infoCircle = "images/info_circle.svg";
+  static String location = "images/location.svg";
+
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 abstract class AppTheme {
   static TextStyle? mainTextStyle({
@@ -26,7 +25,7 @@ abstract class AppTheme {
   static const Color neutral100 = Color(0xffF4F4F5);
 
   static const Color primary900 = Color(0xffd1bc4a);
-  static const Color secondary900 = Color(0xff12223c);
+  static const Color secondary900 = Color(0xff0b182b);
   static const Color tertiary900 = Color(0xffecf1fd);
 
   static const Color primary800 = Color(0xffE61E29);
@@ -56,7 +55,6 @@ abstract class AppTheme {
         hintColor: neutral300, // Accent color used for buttons, etc.
 
         scaffoldBackgroundColor: backgroundColor,
-        textTheme: GoogleFonts.almaraiTextTheme(),
         fontFamily: 'Almarai',
         // Button theme
         elevatedButtonTheme: ElevatedButtonThemeData(

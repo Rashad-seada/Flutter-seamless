@@ -10,14 +10,27 @@ import '../../../../core/views/widgets/custom_page_indicator.dart';
 import '../../../../core/views/widgets/main_button.dart';
 import '../pages/on_boarding_page.dart';
 
-class OnBoardingScreen extends StatelessWidget {
+class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
+
+  @override
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+}
+
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
+
+  @override
+  void initState() {
+    context.read<OnBoardingCubit>().index = 0;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Stack(
+          fit: StackFit.expand,
           alignment: Alignment.bottomCenter,
           children: [
 
@@ -77,7 +90,7 @@ class OnBoardingScreen extends StatelessWidget {
                     label: Text(
                       LocaleKeys.next,
                       style: AppTheme.mainTextStyle(
-                          color: AppTheme.neutral100, fontSize: 15.sp),
+                          color: AppTheme.secondary900, fontSize: 15.sp),
                     ).tr(),
                     onTap: ()=> context.read<OnBoardingCubit>().onNextClick(context),
                   );

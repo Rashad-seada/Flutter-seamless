@@ -4,11 +4,11 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
-class VerficationStepsCard extends StatelessWidget {
+class VerificationStepsCard extends StatelessWidget {
   String label;
   String svgAsset;
   String step;
-  VerficationStepsCard(
+  VerificationStepsCard(
       {super.key,
       required this.label,
       required this.svgAsset,

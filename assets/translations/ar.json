@@ -1,74 +1,98 @@
 {
-  "on_boarding_title_1": "فهرس رقمي",
-  "on_boarding_title_2": "قصص المنزل",
-  "on_boarding_title_3": "إدارة مبسّطة",
-  "on_boarding_description_1": "الوصف: نظم ووثق أثاثك بسهولة مع هذا الفهرس الرقمي السهل الاستخدام",
-  "on_boarding_description_2": "الوصف: التقط وشارك القصص الفريدة وراء أثاثك، محولًا إياها إلى عناصر تحبس الأنفاس في رواية منزلك.",
-  "on_boarding_description_3": "الوصف: بسّط إدارة قطع الأثاث مع هذا التطبيق البديهي، مما يضمن تتبعًا وثائقًا سهلين.",
+  "on_boarding_title_1": "أحدث طريقه للاستثمار في العقارات",
+  "on_boarding_title_2": "ملف مستثمر متكامل",
+  "on_boarding_title_3": "اصدار شهادات ملكية",
+
+  "on_boarding_description_1": "نوفر لك طرق حديثه للاستثمار في العقارات بشكل أمن وموثق",
+  "on_boarding_description_2": "نوفر لك لوحة تحكم متكاملة وسلسه لمتابعة استثماراتك واموالك من خلال المحفظة",
+  "on_boarding_description_3": "نصدر لجميع مستثمرين سيملس شهادات ملكية للاستثمار الخاص بهم",
+
   "next": "التالي",
   "skip": "تخطي",
+
   "auth_method_title": "احدث طرق الاستثمار",
   "auth_method_description": "اختر بين تسجيل الدخول الآمن أو التسجيل السريع لتخصيص وصولك.",
+
   "login": "تسجيل الدخول",
   "register": "انشاء حساب",
   "register_tailor": "انشاء حساب كخياط",
   "register_buyer": "انشاء حساب كمشتري",
+
   "login_description": "سجل دخول الان",
   "register_description": "انشاء حساب الان",
+
   "username": "اسم المستخدم",
   "phone_number": "رقم الهاتف",
   "trade_register": "السجل التجاري",
   "tax_id_number": "الرقم الضريبي",
+
   "email": "البريد الالكتروني",
   "password": "الرقم السري",
+
   "username_hint": "ادخل اسم المستخدم",
   "phone_number_hint": "ادخل رقم الهاتف",
   "trade_register_hint": "ادخل السجل التجاري",
   "tax_id_number_hint": "ادخل الرقم الضريبي",
   "upload": "رفع الملف",
   "registration_certificate": "صوره شهاده التسجيل",
+
   "email_hint": "ادخل البريد الاكتروني",
   "password_hint": "ادخل كلمه المرور الخاصه بك",
+
   "remember_me": "تذكرني",
   "forgot_password": "نسيت كلمه المرور؟",
+
   "dont_have_account": "ليس لديك حساب",
+
   "already_have_account": "لديك حساب بالفعل",
+
   "done": "تم",
   "all_done": "كل شسء تم",
   "all_done_description": "لقد ارسلنا لك رساله بريديه تحقق منها لتاكيد حساب",
+
   "have_no_products": "ليس لديك منتجات",
   "have_no_products_description": "جرب إضافة بعض المنتجات وستظهر في هذه الصفحة من خلال الرمز زائد أدناه",
+
   "add": "اضف",
   "add_product": "اضف منتج",
   "home": "الرئيسيه",
   "our_terms": "مرحبًا بك في تطبيق تطوير شركة SSH، حيث نقدم لك أداة قوية تهدف إلى تسهيل عمليات تطوير وتحسين الأداء داخل شركتك. يعتبر الإبداع والابتكار جزءاً أساسياً من رحلة نجاح الشركات",
-  "reset_password": "اعاده تعيين كلمه المرور",
-  "reset_password_sub_text": "ادخل رقم الهاتف الخاص بك وسوف نقوم بارسال رساله نصحيه تحتوي على اربع ارقام, لا تقم بمشاركه هذا الرقم مع احد",
-  "confirm_code": "تاكيد الكود",
-  "confirm_code_sub_text": "تم ارسال كود مكون من اربع ارقام في رساله نصيه لرقم الهاتف الخاص بك, ادخل الكود بالاسفل",
-  "didnt_recive_code": "لم اتلقى اي رسائل؟",
-  "resend": "اعاده الارسال",
-  "confirm": "تاكيد",
+
+  "reset_password" : "اعاده تعيين كلمه المرور",
+  "reset_password_sub_text" : "ادخل رقم الهاتف الخاص بك وسوف نقوم بارسال رساله نصحيه تحتوي على اربع ارقام, لا تقم بمشاركه هذا الرقم مع احد",
+
+  "confirm_code" : "تاكيد الكود",
+  "confirm_code_sub_text" : "تم ارسال كود مكون من اربع ارقام في رساله نصيه لرقم الهاتف الخاص بك, ادخل الكود بالاسفل",
+  "didnt_recive_code" : "لم اتلقى اي رسائل؟",
+  "resend" : "اعاده الارسال",
+  "confirm" : "تاكيد",
+
   "real_state": "العقارات",
   "wallet": "المحفظه",
   "documents": "الملفات",
   "rewards": "المكافآت",
   "account": "حسابي",
   "sold": "مباع",
+
   "annual_return": "العائد السنوي",
   "expected_growth": "النمو المتوقع",
-  "expected_rental_return": "عائد الايجار المتوقع",
-  "net_rental_return": "العايد الصافي للايجار",
-  "investor_profile": "الملف الاستثماري",
-  "investment_value": "قيمه ملفك الاستثماري",
+  "expected_rental_return" : "عائد الايجار المتوقع",
+  "net_rental_return" : "العايد الصافي للايجار",
+
+  "investor_profile" : "الملف الاستثماري",
+
+  "investment_value" : "قيمه ملفك الاستثماري",
+
   "invest": "استثمر",
   "deposit": "إيداع",
+
   "start_selling": "بدء البيع",
   "begin_investing": "ابدأ الاستثمار الآن",
   "begin_investing_sub_text": "رحلتك في الاستثمار تبدأ من هنا",
   "begin_investing_step1": "سوف تتلقى مستندات الملكية القانونية من المنصة",
   "begin_investing_step2": "ستحصل على عوائد إيجار شهرية",
   "begin_investing_step3": "سيتم الحفاظ على جميع أصولك مع مرور الوقت",
+
   "money_grows": "كيف ستنمو اموالك؟",
   "monthly_deposits": "ودائعك الشهريه",
   "expected_investments_value": "قيمه ملفك الاستثماري على",
@@ -77,23 +101,47 @@
   "net_return": "صافي العائد",
   "view_investments_chances": "مشاهده فرص استثماريه مميزه",
   "view_investments_chances_sub_text": "تصفح الان فرص مميزه للاستثمار في العقارات",
+
   "explore_real_estate": "تصفح العقارات",
+
   "investment_limit": "حد الاستثمار",
   "investment_limit_sub_text": "ابدأ الاستثمار الآن للحصول على عائد أعلى",
+
   "profits": "الأرباح",
+
   "Invite_friends": "ادعو أصدقائك واربح الآن!!",
   "Invite_friends_sub_text": "ادعو أصدقاءك وسيتم مكافأتك برصيد للاستثمار بحرية وأمان",
   "Invite_friends_cta": "مشاركة الرابط",
+
   "balance": "رصيدك",
+
   "withdraw": "سحب",
   "transactions": "المعاملات",
   "no_transactions": "لا توجد معاملات",
   "no_transactions_sub_text": "ابدأ الاستثمار الآن في العقارات",
   "invest_now": "استثمر الآن",
+
   "show_account_info": "إظهار معلومات حسابك",
   "settings": "الإعدادات",
   "privacy_security": "الخصوصية والأمان",
   "help_center": "مركز المساعدة",
   "blog": "المدونة",
-  "logout": "تسجيل الخروج"
+  "logout": "تسجيل الخروج",
+
+  "investing_cart": "عربه الاستثمار",
+  "add_real_state": "اضف عقار جديد",
+  "total": "القيمه الاجماليه",
+  "pay_now": "الدفع الان",
+
+  "monthly_rent": "الايجار الشهري",
+  "capital_growth": "نمو راس المال",
+
+  "property_price": "سعر العقار",
+  "investors": "المستثمرون",
+  "closed_on": "أغلق في",
+  "funded": "تم التمويل",
+  "funded_data": "بيانات التمويل",
+  "purchase_price": "سعر الشراء",
+  "rental_income": "الدخل الإيجاري المدفوع"
+
 }

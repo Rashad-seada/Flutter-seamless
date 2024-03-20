@@ -7,8 +7,14 @@ class PrivacyAndSecurityCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(3.w),
+    return  Container(
+      padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 3.w),
+      decoration: BoxDecoration(
+        color: AppTheme.primary900.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(
+          2.w,
+        ),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

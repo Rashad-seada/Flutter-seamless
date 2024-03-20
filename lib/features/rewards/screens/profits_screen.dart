@@ -22,6 +22,7 @@ class ProfitsScreen extends StatelessWidget {
         ),
       ),
       body: ListView(
+
         children: [
           Padding(
             padding: EdgeInsets.all(6.w),
@@ -58,6 +59,8 @@ class ProfitsScreen extends StatelessWidget {
                   height: 1.5.h,
                 ),
                 ShareRewardLinkCard(),
+
+
               ],
             ),
           ),

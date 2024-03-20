@@ -29,7 +29,7 @@ class AccountPageAppBar extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100.w),
-            color: Color(0xffecf1fd),
+            color: AppTheme.tertiary900,
           ),
           clipBehavior: Clip.none,
           child: Row(

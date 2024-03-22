@@ -1,7 +1,6 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/bloc/account/account_cubit.dart';
-import 'package:Mawthoq/features/account/views/components/account_logout_botton.dart';
 import 'package:Mawthoq/features/account/views/components/account_page_app_bar.dart';
 import 'package:Mawthoq/features/account/views/components/account_page_card.dart';
 import 'package:Mawthoq/features/account/views/components/account_page_container.dart';

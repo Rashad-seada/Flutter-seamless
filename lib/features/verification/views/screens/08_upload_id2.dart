@@ -1,9 +1,10 @@
 import 'package:Mawthoq/core/views/widgets/space.dart';
-import 'package:Mawthoq/features/auth/components/upload_id_card.dart';
-import 'package:Mawthoq/features/auth/components/verfication_steps_button.dart';
-import 'package:Mawthoq/features/auth/components/verfication_text_card.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+
+import '../components/upload_id_card.dart';
+import '../components/verfication_steps_button.dart';
+import '../components/verfication_text_card.dart';
 
 class UploadId2Screen extends StatelessWidget {
   const UploadId2Screen({super.key});

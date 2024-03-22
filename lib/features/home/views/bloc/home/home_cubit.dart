@@ -1,5 +1,6 @@
 import 'package:Mawthoq/features/cart/views/screens/cart_screen.dart';
 import 'package:Mawthoq/features/home/views/screens/home_details_screen.dart';
+import 'package:Mawthoq/features/notifications/views/screen/notifications_screen.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -29,6 +30,9 @@ class HomeCubit extends Cubit<HomeState> {
 
   }
 
+  onNotificationTap(BuildContext context) {
+    _navigateToNotificationScreen(context);
+  }
 
   onHomeCardClick(BuildContext context){
     _navigateToHomeDetailsScreen(context);
@@ -40,6 +44,11 @@ class HomeCubit extends Cubit<HomeState> {
 
   _navigateToHomeDetailsScreen(BuildContext context){
     Navigator.push(context, MaterialPageRoute(builder: (_)=> HomeDetailsScreen()));
+  }
+
+
+  _navigateToNotificationScreen(BuildContext context){
+    Navigator.push(context, MaterialPageRoute(builder: (_)=> NotificationsScreen()));
   }
 
 

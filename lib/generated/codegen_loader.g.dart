@@ -124,7 +124,11 @@ class CodegenLoader extends AssetLoader{
   "funded": "تم التمويل",
   "funded_data": "بيانات التمويل",
   "purchase_price": "سعر الشراء",
-  "rental_income": "الدخل الإيجاري المدفوع"
+  "rental_income": "الدخل الإيجاري المدفوع",
+  "language": "اللغه",
+  "arabic": "العربيه",
+  "english": "الانجليزيه",
+  "account_verification": "الرجاء التحقق من حسابك للوصول إلى تفاصيل العقارات وإجراء الاستثمارات"
 };
 static const Map<String,dynamic> en = {
   "on_boarding_title_1": "The Latest Way to Invest in Real Estate",
@@ -236,7 +240,11 @@ static const Map<String,dynamic> en = {
   "funded": "funded",
   "funded_data": "Funded data",
   "purchase_price": "Purchase price",
-  "rental_income": "Rental income paid"
+  "rental_income": "Rental income paid",
+  "language": "Language",
+  "arabic": "Arabic",
+  "english": "English",
+  "account_verification": "Please verify your account to gain access to property details and make investments"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

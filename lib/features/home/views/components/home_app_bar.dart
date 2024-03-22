@@ -11,8 +11,9 @@ import '../../../../core/config/app_theme.dart';
 class HomeAppBar extends StatelessWidget {
   void Function()? onFavoriteTap;
   void Function()? onCartTap;
+  void Function()? onNotificationTap;
 
-  HomeAppBar({super.key,this.onFavoriteTap,this.onCartTap});
+  HomeAppBar({super.key,this.onFavoriteTap,this.onCartTap,this.onNotificationTap});
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +43,18 @@ class HomeAppBar extends StatelessWidget {
 
           Row(
             children: [
+
+              InkWell(
+                onTap: onNotificationTap,
+                child: SvgPicture.asset(
+                    width: 6.5.w,
+                    height: 6.5.w,
+                    AppImages.notification
+                ),
+              ),
+
+              Space(width: 2.w,),
+
               InkWell(
                 onTap: onFavoriteTap,
                 child: SvgPicture.asset(

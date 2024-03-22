@@ -111,5 +111,9 @@ abstract class  LocaleKeys {
   static const funded_data = 'funded_data';
   static const purchase_price = 'purchase_price';
   static const rental_income = 'rental_income';
+  static const language = 'language';
+  static const arabic = 'arabic';
+  static const english = 'english';
+  static const account_verification = 'account_verification';
 
 }

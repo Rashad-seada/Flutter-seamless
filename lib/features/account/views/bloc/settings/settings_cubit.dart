@@ -1,6 +1,8 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/features/account/views/bloc/settings/settings_states.dart';
 import 'package:Mawthoq/features/account/views/utils/account_model.dart';
+import 'package:Mawthoq/features/language/views/blocs/language/language_cubit.dart';
+import 'package:Mawthoq/features/language/views/screens/language_screen.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
@@ -13,17 +15,13 @@ class SettingsCubit extends Cubit<SettingsState> {
     _showLanguageMenu(context);
   }
 
-  List<SettingsModel> get settingsInfo => [
-        SettingsModel<LanguageModel>(
-            AppImages.email, 'Language', 'English', () {}, [
-          LanguageModel('English', () {}),
-          LanguageModel('Arabic', () {}),
-        ]),
-        SettingsModel<CurrencyModel>(
-            AppImages.phone, 'The currency', 'SAR', () {}, [
-          CurrencyModel('Saudi Arabia Riyal', 'SAR', () {}),
-          CurrencyModel('Kuwaiti Dinar', 'KWD', () {}),
-        ]),
+  List<SettingsModel> settingsInfo(context) => [
+        SettingsModel(
+            AppImages.language, 'Language', 'English', () =>
+          _navigateToLanguageScreen(context)
+        ),
+        SettingsModel(
+            AppImages.coin, 'The currency', 'SAR', () {}),
       ];
 
   List<SettingsCardModel> get settingsCardInfo1 => [
@@ -33,4 +31,8 @@ class SettingsCubit extends Cubit<SettingsState> {
   List<SettingsCardModel> get settingsCardInfo2 => [
         SettingsCardModel(AppImages.phone, 'The currency', false),
       ];
+
+  _navigateToLanguageScreen(BuildContext context){
+    Navigator.push(context,MaterialPageRoute(builder: (_)=> LanguageScreen()));
+  }
 }

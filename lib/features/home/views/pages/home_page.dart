@@ -3,9 +3,8 @@ import 'package:Mawthoq/features/home/views/bloc/home/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
-
-import '../../../../core/views/widgets/custom_tab.dart';
 import '../../../investor_profile/views/components/home_taps.dart';
+import '../../../verification/views/components/account_verification_card.dart';
 import '../components/home_app_bar.dart';
 import '../components/home_card.dart';
 
@@ -21,8 +20,16 @@ class HomePage extends StatelessWidget {
         children: [
 
           HomeAppBar(
+            onNotificationTap: ()=>  context.read<HomeCubit>().onNotificationTap(context),
             onCartTap: ()=> context.read<HomeCubit>().onCartTap(context),
             onFavoriteTap: ()=> context.read<HomeCubit>().onFavoriteTap(context),
+          ),
+
+          Space(height: 2.5.h,),
+
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 7.w),
+            child: AccountVerificationCard(),
           ),
 
           Space(height: 2.5.h,),

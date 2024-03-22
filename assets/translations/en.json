@@ -142,6 +142,15 @@
   "funded": "funded",
   "funded_data": "Funded data",
   "purchase_price": "Purchase price",
-  "rental_income": "Rental income paid"
+  "rental_income": "Rental income paid",
+
+  "language": "Language",
+  "arabic": "Arabic",
+  "english": "English",
+
+
+  "account_verification": "Please verify your account to gain access to property details and make investments"
+
+
 
 }

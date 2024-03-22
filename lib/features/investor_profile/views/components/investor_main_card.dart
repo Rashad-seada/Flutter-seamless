@@ -1,9 +1,12 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/views/widgets/main_button.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/investor_profile/views/bloc/investor_profile/investor_profile_cubit.dart';
+import 'package:Mawthoq/features/main/bloc/main/main_cubit.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
@@ -73,10 +76,18 @@ class InvestorMainCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ctaButton(label: LocaleKeys.invest.tr(), icon: AppImages.coin, onTap: (){}),
-              ctaButton(label: LocaleKeys.deposit.tr(), icon: AppImages.plus, onTap: (){}),
-              ctaButton(label: LocaleKeys.rewards.tr(), icon: AppImages.reward, onTap: (){}),
-              ctaButton(label: LocaleKeys.start_selling.tr(), icon: AppImages.cart, onTap: (){}),
+              ctaButton(label: LocaleKeys.invest.tr(), icon: AppImages.coin, onTap: (){
+                context.read<MainCubit>().onNavItemTap(0);
+              }),
+              ctaButton(label: LocaleKeys.deposit.tr(), icon: AppImages.plus, onTap: (){
+                context.read<MainCubit>().onNavItemTap(1);
+              }),
+              ctaButton(label: LocaleKeys.rewards.tr(), icon: AppImages.reward, onTap: (){
+                context.read<MainCubit>().onNavItemTap(3);
+              }),
+              ctaButton(label: LocaleKeys.start_selling.tr(), icon: AppImages.cart, onTap: (){
+                context.read<InvestorProfileCubit>().onStartSellingTap(context);
+              }),
 
             ],
           ),
@@ -89,32 +100,36 @@ class InvestorMainCard extends StatelessWidget {
   }
 
   Widget ctaButton({required String label,required String icon,required void Function() onTap}){
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        MainButton(
-          borderRadius: BorderRadius.circular(2.w),
-          height: 10.w,
-          width: 11.w,
-          label: SvgPicture.asset(
-            height: 6.w,
-            width: 6.w,
-            icon,
-          color: AppTheme.neutral200,
+    return InkWell(
+      borderRadius: BorderRadius.circular(2.w),
+      onTap: onTap,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          MainButton(
+            borderRadius: BorderRadius.circular(2.w),
+            height: 10.w,
+            width: 11.w,
+            label: SvgPicture.asset(
+              height: 6.w,
+              width: 6.w,
+              icon,
+            color: AppTheme.neutral200,
+            ),
           ),
-        ),
 
-        Space(
-          height: .8.h,
-        ),
+          Space(
+            height: .8.h,
+          ),
 
-        Text(
-          label,
-          style: AppTheme.mainTextStyle(
-              color: AppTheme.neutral900, fontSize: 8.sp),
-        ),
-      ],
+          Text(
+            label,
+            style: AppTheme.mainTextStyle(
+                color: AppTheme.neutral900, fontSize: 8.sp),
+          ),
+        ],
+      ),
     );
   }
 }

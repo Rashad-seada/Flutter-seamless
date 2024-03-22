@@ -1,14 +1,15 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
-import 'package:Mawthoq/features/auth/components/id_activation_card.dart';
-import 'package:Mawthoq/features/auth/components/verfication_steps_button.dart';
-import 'package:Mawthoq/features/auth/components/verfication_text_card.dart';
-import 'package:Mawthoq/features/auth/views/screens/08_upload_id2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sizer/sizer.dart';
+
+import '../components/id_activation_card.dart';
+import '../components/verfication_steps_button.dart';
+import '../components/verfication_text_card.dart';
+import '08_upload_id2.dart';
 
 class UploadId1Screen extends StatelessWidget {
   void navigateToUploadIdPage(BuildContext context) {

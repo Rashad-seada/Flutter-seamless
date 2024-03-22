@@ -10,25 +10,10 @@ class SettingsModel<T> {
   String leadingLabel;
   String trailingLabel;
   void Function() onTap;
-  List<T> object;
   SettingsModel(this.leadingIcon, this.leadingLabel, this.trailingLabel,
-      this.onTap, this.object);
+      this.onTap);
 }
 
-class LanguageModel {
-  String name;
-  void Function() onTap;
-
-  LanguageModel(this.name, this.onTap);
-}
-
-class CurrencyModel {
-  String name;
-  String tag;
-  void Function() onTap;
-
-  CurrencyModel(this.name, this.tag, this.onTap);
-}
 
 class SettingsCardModel {
   String settingIcon;

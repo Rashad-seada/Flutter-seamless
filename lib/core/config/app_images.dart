@@ -55,5 +55,12 @@ class AppImages {
 
   static String infoCircle = "images/info_circle.svg";
   static String location = "images/location.svg";
+  static String notification = "images/notification.svg";
+
+  static String language = "images/language.svg";
+
+  static String arabic = "images/arabic.png";
+  static String english = "images/english.png";
+
 
 }

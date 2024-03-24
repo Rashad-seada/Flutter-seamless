@@ -2,8 +2,6 @@ import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import '../screens/07_upload_id1.dart';
-
 class VerficationStepsButton extends StatelessWidget {
   String label;
   String? string;

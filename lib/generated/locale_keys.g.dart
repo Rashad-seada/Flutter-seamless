@@ -111,5 +111,19 @@ abstract class  LocaleKeys {
   static const funded_data = 'funded_data';
   static const purchase_price = 'purchase_price';
   static const rental_income = 'rental_income';
+  static const account_info = 'account_info';
+  static const account_data = 'account_data';
+  static const phone = 'phone';
+  static const used = 'used';
+  static const from_limit = 'from_limit';
+  static const invested_this_year = 'invested_this_year';
+  static const available_currency_to_invest = 'available_currency_to_invest';
+  static const new_investor = 'new_investor';
+  static const update = 'update';
+  static const privacy = 'privacy';
+  static const privacy_policy = 'privacy_policy';
+  static const your_safety = 'your_safety';
+  static const security_message = 'security_message';
+  static const safety = 'safety';
 
 }

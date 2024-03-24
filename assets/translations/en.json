@@ -2,97 +2,73 @@
   "on_boarding_title_1": "The Latest Way to Invest in Real Estate",
   "on_boarding_title_2": "Comprehensive Investor Profile",
   "on_boarding_title_3": "Issuance of Ownership Certificates",
-
   "on_boarding_description_1": "We provide you with modern ways to invest in real estate securely and authentically.",
   "on_boarding_description_2": "We offer you a comprehensive and seamless dashboard to track your investments and funds through the portfolio.",
   "on_boarding_description_3": "We issue seamless ownership certificates for all investors to invest in their properties.",
-
   "next": "Next",
   "skip": "Skip",
-
   "auth_method_title": "The latest investments methods",
   "auth_method_description": "choose between secure login or quick registration to tailor your access.",
-
   "login": "Login",
   "register": "Register",
   "register_tailor": "Register as Tailor",
   "register_buyer": "Register as Buyer",
-
   "login_description": "login to your account",
   "register_description": "Create a new account",
-
   "username": "Username",
   "phone_number": "Phone number",
   "trade_register": "Trade register",
   "tax_id_number": "Tax ID number",
   "upload": "Upload",
   "registration_certificate": "Registration Certificate",
-
   "email": "Email",
   "password": "Password",
-
   "username_hint": "Enter username",
   "phone_number_hint": "Enter phone number",
   "trade_register_hint": "Enter trade register",
   "tax_id_number_hint": "Enter tax id number",
-
   "email_hint": "Enter your email",
   "password_hint": "Enter your password",
-
   "remember_me": "Remember me",
   "forgot_password": "Forgot password?",
-
   "dont_have_account": "don't have an account?",
-
   "already_have_account": "Already have an account?",
-
   "done": "Done",
   "all_done": "All Done",
   "all_done_description": "We have sent you an email, check your inbox",
-
   "have_no_products": "You have no products",
   "have_no_products_description": "Try adding some products and it will appear in this page from the plus icon below",
-
   "add": "Add",
   "add_product": "Add Product",
   "home": "Home",
   "our_terms": "Welcome to the SSH Company Development application, where we provide you with a powerful tool aimed at facilitating development processes and improving performance within your company",
-
-  "reset_password" : "Reset password",
-  "reset_password_sub_text" : "Enter your phone number, and we will send a text message containing four digits of advice. Do not share this number with anyone.",
+  "reset_password": "Reset password",
+  "reset_password_sub_text": "Enter your phone number, and we will send a text message containing four digits of advice. Do not share this number with anyone.",
   "confirm_code": "Confirm Code",
   "confirm_code_sub_text": "A four-digit code has been sent to your phone number via text message. Enter the code below.",
   "didnt_recive_code": "Didn't Receive Any Messages?",
   "resend": "Resend",
   "confirm": "Confirm",
-
   "real_state": "Real-state",
   "wallet": "Wallet",
   "documents": "Documents",
   "rewards": "Rewards",
   "account": "Account",
   "sold": "Sold",
-
   "annual_return": "Annual return",
   "expected_growth": "Expected growth",
-  "expected_rental_return" : "Expected rental return",
-  "net_rental_return" : "Net rental return",
-
-  "investor_profile" : "Investor profile",
-
-  "investment_value" : "Your Investments value",
-
-  "invest" : "Invest",
-  "deposit" : "Deposit",
-  "start_selling" : "start selling",
-
-  "begin_investing" : "Begin investing now",
-  "begin_investing_sub_text" : "Your investing journey starts from here",
-
-  "begin_investing_step1" : "You will receive legal ownership documents from the platform",
-  "begin_investing_step2" : "You will get monthly rent returns",
-  "begin_investing_step3" : "All your assets will be preserved by time",
-
+  "expected_rental_return": "Expected rental return",
+  "net_rental_return": "Net rental return",
+  "investor_profile": "Investor profile",
+  "investment_value": "Your Investments value",
+  "invest": "Invest",
+  "deposit": "Deposit",
+  "start_selling": "start selling",
+  "begin_investing": "Begin investing now",
+  "begin_investing_sub_text": "Your investing journey starts from here",
+  "begin_investing_step1": "You will receive legal ownership documents from the platform",
+  "begin_investing_step2": "You will get monthly rent returns",
+  "begin_investing_step3": "All your assets will be preserved by time",
   "money_grows": "How will your money grow?",
   "monthly_deposits": "Monthly Deposits",
   "expected_investments_value": "Expected Investment Value on",
@@ -102,46 +78,49 @@
   "view_investments_chances": "View Investment Opportunities",
   "view_investments_chances_sub_text": "Browse now exclusive investment opportunities in real estate",
   "explore_real_estate": "Explore real estate",
-
   "investment_limit": "Investment limit",
   "investment_limit_sub_text": "Start investing now to get higher",
-
   "profits": "Profits",
-
   "Invite_friends": "Invite your friends and win now!!",
   "Invite_friends_sub_text": "Invite your friends and you will be rewarded to your balance to invest freely and safely",
   "Invite_friends_cta": "Share link",
-
   "balance": "Balance",
-
   "withdraw": "Withdraw",
   "transactions": "Transactions",
   "no_transactions": "No transactions",
   "no_transactions_sub_text": "Start investing now in real-estate",
   "invest_now": "Invest now",
-
   "show_account_info": "Show your account info",
   "settings": "Settings",
   "privacy_security": "Privacy and security",
   "help_center": "Help center",
-
   "blog": "Blog",
   "logout": "Logout",
-
   "investing_cart": "Investing cart",
   "add_real_state": "Add real-state",
   "total": "total value",
   "pay_now": "Pay now",
-
   "monthly_rent": "Monthly rent",
   "capital_growth": "Capital growth",
-
   "property_price": "Property price",
   "investors": "investors",
   "closed_on": "Closed on",
   "funded": "funded",
   "funded_data": "Funded data",
   "purchase_price": "Purchase price",
-  "rental_income": "Rental income paid"
-
+  "rental_income": "Rental income paid",
+  "account_info": "Account Information",
+  "account_data": "Account data",
+  "phone": "Phone",
+  "used": "Used",
+  "from_limit": "from limit",
+  "invested_this_year": "Invested this year",
+  "available_currency_to_invest": "Available currency to invest",
+  "new_investor": "New Investor",
+  "update": "Update",
+  "privacy": "Privacy",
+  "privacy_policy": "Privacy Policy",
+  "your_safety": "Your safety is important",
+  "security_message": "We care very much about the security of your account and add multiple layers of protection to develop our security and protection",
+  "safety": "Safety"
 }

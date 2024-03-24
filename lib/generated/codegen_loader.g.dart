@@ -124,7 +124,21 @@ class CodegenLoader extends AssetLoader{
   "funded": "تم التمويل",
   "funded_data": "بيانات التمويل",
   "purchase_price": "سعر الشراء",
-  "rental_income": "الدخل الإيجاري المدفوع"
+  "rental_income": "الدخل الإيجاري المدفوع",
+  "account_info": "معلومات الحساب",
+  "account_data": "بيانات الحساب",
+  "phone": "الهاتف",
+  "used": "مستخدم",
+  "from_limit": "من الحد",
+  "invested_this_year": "مستثمر هذا العام",
+  "available_currency_to_invest": "القيمة المتاحة للإستثمار",
+  "new_investor": "مستثمر جديد",
+  "update": "تحديث",
+  "privacy": "الخصوصية",
+  "privacy_policy": "سياسة الخصوصية",
+  "your_safety": "سلامتك مهمة",
+  "security_message": "نحن نهتم كثيرًا بأمان حسابك ونضيف طبقات متعددة من الحماية لتطوير أماننا وحمايتك",
+  "safety": "الأمان"
 };
 static const Map<String,dynamic> en = {
   "on_boarding_title_1": "The Latest Way to Invest in Real Estate",
@@ -236,7 +250,20 @@ static const Map<String,dynamic> en = {
   "funded": "funded",
   "funded_data": "Funded data",
   "purchase_price": "Purchase price",
-  "rental_income": "Rental income paid"
+  "rental_income": "Rental income paid",
+  "account_info": "Account Information",
+  "account_data": "Account data",
+  "phone": "Phone",
+  "used": "Used",
+  "from_limit": "from limit",
+  "invested_this_year": "Invested this year",
+  "available_currency_to_invest": "Available currency to invest",
+  "new_investor": "New Investor",
+  "update": "Update",
+  "privacy": "Privacy",
+  "privacy_policy": "Privacy Policy",
+  "your_safety": "Your safety is important",
+  "security_message": "We care very much about the security of your account and add multiple layers of protection to develop our security and protection"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

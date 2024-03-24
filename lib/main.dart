@@ -16,7 +16,6 @@ import 'features/auth/views/blocs/login/login_cubit.dart';
 import 'features/auth/views/blocs/register/register_cubit.dart';
 import 'features/auth/views/screens/intro_screen.dart';
 import 'features/onboarding/view/bloc/on_boarding_cubit.dart';
-import 'features/onboarding/view/screens/00_on_boarding_screen.dart';
 import 'generated/codegen_loader.g.dart';
 
 void main() async {

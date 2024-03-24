@@ -21,17 +21,15 @@ class SettingsScreen extends StatelessWidget {
           shrinkWrap: true,
           padding: EdgeInsets.symmetric(horizontal: 7.w),
           children: [
-
             Space(
               height: 2.h,
             ),
-
-            CustomAppBar(label: LocaleKeys.settings.tr(),),
-
+            CustomAppBar(
+              label: LocaleKeys.settings.tr(),
+            ),
             Space(
               height: 3.h,
             ),
-
             ListView.separated(
                 shrinkWrap: true,
                 itemBuilder: (context, index) {

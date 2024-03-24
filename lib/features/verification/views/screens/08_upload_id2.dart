@@ -1,7 +1,7 @@
 import 'package:Mawthoq/core/views/widgets/space.dart';
-import 'package:Mawthoq/features/auth/components/upload_id_card.dart';
-import 'package:Mawthoq/features/auth/components/verfication_steps_button.dart';
-import 'package:Mawthoq/features/auth/components/verfication_text_card.dart';
+import 'package:Mawthoq/features/verification/views/components/upload_id_card.dart';
+import 'package:Mawthoq/features/verification/views/components/verfication_steps_button.dart';
+import 'package:Mawthoq/features/verification/views/components/verfication_text_card.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 

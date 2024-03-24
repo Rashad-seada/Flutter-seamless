@@ -80,8 +80,8 @@ class AccountCubit extends Cubit<AccountState> {
   }
 
   List<AccountContainerModel> get accountScreenInfo => [
-        AccountContainerModel(AppImages.email, 'Email', () {}),
-        AccountContainerModel(AppImages.phone, 'Phone', () {}),
+        AccountContainerModel(AppImages.email, LocaleKeys.email.tr(), () {}),
+        AccountContainerModel(AppImages.phone, LocaleKeys.phone.tr(), () {}),
       ];
 
   List<AccountContainerModel> get privacyAndSecurityScreenInfo => [

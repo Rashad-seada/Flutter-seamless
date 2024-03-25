@@ -1,6 +1,8 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/verification/views/blocs/verification_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
 import '../components/verfication_steps_button.dart';
@@ -41,23 +43,25 @@ class VerficationScreen extends StatelessWidget {
                 ),
                 VerificationStepsCard(
                   label: 'Register',
-                  svgAsset: AppImages.plus,
                   step: 'Step 1',
+                    isChecked: true
+
                 ),
                 Space(
                   height: 1.5.h,
                 ),
                 VerificationStepsCard(
                   label: 'What is your job?',
-                  svgAsset: AppImages.plus,
                   step: 'Step 2',
+                  onTap: ()=> context.read<VerificationCubit>()..navigateToYourJobScreen(context),
                 ),
                 Space(
                   height: 1.5.h,
                 ),
                 VerificationStepsCard(
                   label: 'Address Verfication',
-                  svgAsset: AppImages.plus,
+                  onTap: ()=> context.read<VerificationCubit>()..navigateToYourAddressScreen(context),
+
                   step: 'Step 3',
                 ),
                 Space(
@@ -65,7 +69,6 @@ class VerficationScreen extends StatelessWidget {
                 ),
                 VerificationStepsCard(
                   label: 'ID Verfication',
-                  svgAsset: AppImages.plus,
                   step: 'Step 4',
                 ),
                 Space(

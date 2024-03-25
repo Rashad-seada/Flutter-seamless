@@ -62,5 +62,6 @@ class AppImages {
   static String arabic = "images/arabic.png";
   static String english = "images/english.png";
 
+  static String job = "images/job.svg";
 
 }

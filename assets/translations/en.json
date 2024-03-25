@@ -149,8 +149,27 @@
   "english": "English",
 
 
-  "account_verification": "Please verify your account to gain access to property details and make investments"
+  "account_verification": "Please verify your account to gain access to property details and make investments",
+
+  "your_job": "Your job",
+  "your_job_text": "Tell us about your job",
+  "your_job_sub_text": "Tell us about your job to have a personalized experience in the application",
+
+  "your_job_q1": "What is your job?",
+  "your_job_q2": "Are you currently working?",
 
 
+  "your_address": "Your address",
+  "your_address_text": "Tell us where you live",
+  "your_address_sub_text": "This adds to the security of the application and keeps you safe from any fraud individuals",
+
+  "country": "Country",
+  "city": "City",
+  "governorate": "Governorate",
+  "address_line_1": "Address Line 1",
+  "address_line_2": "Address Line 2",
+
+
+  "currency": "Currency"
 
 }

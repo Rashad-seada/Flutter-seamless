@@ -128,7 +128,21 @@ class CodegenLoader extends AssetLoader{
   "language": "اللغه",
   "arabic": "العربيه",
   "english": "الانجليزيه",
-  "account_verification": "الرجاء التحقق من حسابك للوصول إلى تفاصيل العقارات وإجراء الاستثمارات"
+  "account_verification": "الرجاء التحقق من حسابك للوصول إلى تفاصيل العقارات وإجراء الاستثمارات",
+  "your_job": "وظيفتك",
+  "your_job_text": "أخبرنا عن وظيفتك",
+  "your_job_sub_text": "أخبرنا عن وظيفتك لتحصل على تجربة شخصية في التطبيق",
+  "your_job_q1": "ما هي وظيفتك؟",
+  "your_job_q2": "هل تعمل حاليا؟",
+  "your_address": "عنوانك",
+  "your_address_text": "أخبرنا أين تعيش",
+  "your_address_sub_text": "يضيف هذا إلى أمان التطبيق ويحميك من أي أفراد احتياليين",
+  "country": "الدولة",
+  "city": "المدينة",
+  "governorate": "المحافظة",
+  "address_line_1": "العنوان الأول",
+  "address_line_2": "العنوان الثاني",
+  "currency": "العمله"
 };
 static const Map<String,dynamic> en = {
   "on_boarding_title_1": "The Latest Way to Invest in Real Estate",
@@ -244,7 +258,21 @@ static const Map<String,dynamic> en = {
   "language": "Language",
   "arabic": "Arabic",
   "english": "English",
-  "account_verification": "Please verify your account to gain access to property details and make investments"
+  "account_verification": "Please verify your account to gain access to property details and make investments",
+  "your_job": "Your job",
+  "your_job_text": "Tell us about your job",
+  "your_job_sub_text": "Tell us about your job to have a personalized experience in the application",
+  "your_job_q1": "What is your job?",
+  "your_job_q2": "Are you currently working?",
+  "your_address": "Your address",
+  "your_address_text": "Tell us where you live",
+  "your_address_sub_text": "This adds to the security of the application and keeps you safe from any fraud individuals",
+  "country": "Country",
+  "city": "City",
+  "governorate": "Governorate",
+  "address_line_1": "Address Line 1",
+  "address_line_2": "Address Line 2",
+  "currency": "Currency"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

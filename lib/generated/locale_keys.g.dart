@@ -115,5 +115,19 @@ abstract class  LocaleKeys {
   static const arabic = 'arabic';
   static const english = 'english';
   static const account_verification = 'account_verification';
+  static const your_job = 'your_job';
+  static const your_job_text = 'your_job_text';
+  static const your_job_sub_text = 'your_job_sub_text';
+  static const your_job_q1 = 'your_job_q1';
+  static const your_job_q2 = 'your_job_q2';
+  static const your_address = 'your_address';
+  static const your_address_text = 'your_address_text';
+  static const your_address_sub_text = 'your_address_sub_text';
+  static const country = 'country';
+  static const city = 'city';
+  static const governorate = 'governorate';
+  static const address_line_1 = 'address_line_1';
+  static const address_line_2 = 'address_line_2';
+  static const currency = 'currency';
 
 }

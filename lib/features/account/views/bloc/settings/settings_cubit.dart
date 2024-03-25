@@ -1,5 +1,6 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/features/account/views/bloc/settings/settings_states.dart';
+import 'package:Mawthoq/features/account/views/screens/currency_screen.dart';
 import 'package:Mawthoq/features/account/views/utils/account_model.dart';
 import 'package:Mawthoq/features/language/views/blocs/language/language_cubit.dart';
 import 'package:Mawthoq/features/language/views/screens/language_screen.dart';
@@ -21,7 +22,9 @@ class SettingsCubit extends Cubit<SettingsState> {
           _navigateToLanguageScreen(context)
         ),
         SettingsModel(
-            AppImages.coin, 'The currency', 'SAR', () {}),
+            AppImages.coin, 'The currency', 'SAR', () =>
+        _navigateToCurrencyScreen(context)
+        ),
       ];
 
   List<SettingsCardModel> get settingsCardInfo1 => [
@@ -34,5 +37,9 @@ class SettingsCubit extends Cubit<SettingsState> {
 
   _navigateToLanguageScreen(BuildContext context){
     Navigator.push(context,MaterialPageRoute(builder: (_)=> LanguageScreen()));
+  }
+
+  _navigateToCurrencyScreen(BuildContext context){
+    Navigator.push(context,MaterialPageRoute(builder: (_)=> CurrencyScreen()));
   }
 }

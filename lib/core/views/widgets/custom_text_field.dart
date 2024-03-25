@@ -88,7 +88,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           ),
         ) : null,
         contentPadding: EdgeInsets.symmetric(
-            vertical: (widget.height == null) ? 1.5.h : widget.height!, horizontal: 1.w),
+            vertical: (widget.height == null) ? 1.5.h : widget.height!, horizontal: 3.w),
         // Adjust the vertical padding as needed
 
 

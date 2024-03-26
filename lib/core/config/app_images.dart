@@ -63,5 +63,6 @@ class AppImages {
   static String english = "images/english.png";
 
   static String job = "images/job.svg";
+  static String error = "images/error.svg";
 
 }

@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:meta/meta.dart';
 
+import '../../features/auth/data/data_source/local/auth_local_data_source.dart';
 import '../config/app_theme.dart';
 import '../di/app_module.dart';
 import '../infrastructure/database/database.dart';
@@ -28,6 +29,8 @@ class CoreCubit extends Cubit<CoreState> {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+
+    AuthLocalDataSourceImpl.initHive();
 
     // initialize Firebase
     // await Firebase.initializeApp(

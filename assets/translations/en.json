@@ -170,6 +170,14 @@
   "address_line_2": "Address Line 2",
 
 
-  "currency": "Currency"
+  "currency": "Currency",
+
+  "employed": "Employed",
+  "name_of_work_place": "The name of your work place",
+  "name_of_work_owner": "What's the name of your work owner?",
+  "address_of_work": "What's the address of your work place?",
+  "your_job_title": "What's your job title?",
+  "your_job_field": "What's your job field?",
+  "your_main_income": "What's your main income?"
 
 }

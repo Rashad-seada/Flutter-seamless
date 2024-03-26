@@ -169,6 +169,16 @@
   "address_line_1": "العنوان الأول",
   "address_line_2": "العنوان الثاني",
 
-  "currency": "العمله"
+  "currency": "العمله",
+
+  "employed": "موظف",
+  "name_of_work_place": "اسم مكان عملك",
+  "name_of_work_owner": "ما اسم صاحب عملك؟",
+  "address_of_work": "ما هو عنوان مكان عملك؟",
+  "your_job_title": "ما هو عنوان وظيفتك؟",
+  "your_job_field": "ما هي مجالات عملك؟",
+  "your_main_income": "ما هو دخلك الرئيسي؟"
+
+
 
 }

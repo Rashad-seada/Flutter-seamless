@@ -30,16 +30,10 @@ class YourJobScreen extends StatelessWidget {
 
           CustomAppBar(label: LocaleKeys.your_job.tr()),
 
+
+
           Space(
             height: 5.h,
-          ),
-
-          CustomCircleAvatar(
-            assetName: AppImages.job,
-          ),
-
-          Space(
-            height: 4.h,
           ),
 
           Text(
@@ -62,40 +56,110 @@ class YourJobScreen extends StatelessWidget {
           ).tr(),
 
           Space(
-            height: 4.h,
-          ),
-
-          CustomTextField(
-            // controller: context.read<LoginCubit>().emailController,
-            // validator: (_)=> context.read<LoginCubit>().validateEmail(),
-
-
-            label: LocaleKeys.your_job_q1.tr(),
-
-            // ),
-          ),
-          Space(
             height: 2.h,
           ),
 
-          CustomTextField(
-            // controller: context.read<LoginCubit>().emailController,
-            // validator: (_)=> context.read<LoginCubit>().validateEmail(),
+          Container(
+            clipBehavior: Clip.hardEdge,
+            padding: EdgeInsets.symmetric(horizontal: 5.w,vertical: 8.w),
+            margin: EdgeInsets.only(bottom: 3.h),
+            alignment: Alignment.center,
+            width: double.infinity,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(3.5.w),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+                color: Colors.white),
+            child: Column(
+              children: [
+                CustomTextField(
+                  // controller: context.read<LoginCubit>().emailController,
+                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
+                  label: LocaleKeys.employed.tr(),
+                  fillColor: Colors.transparent,
+                  // ),
+                ),
+                Space(
+                  height: 2.h,
+                ),
 
-            label: LocaleKeys.your_job_q2.tr(),
+                CustomTextField(
+                  // controller: context.read<LoginCubit>().emailController,
+                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
+                  fillColor: Colors.transparent,
+                  label: LocaleKeys.name_of_work_place.tr(),
+                ),
+                Space(
+                  height: 2.h,
+                ),
+
+                CustomTextField(
+                  // controller: context.read<LoginCubit>().emailController,
+                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
+                  fillColor: Colors.transparent,
+                  label: LocaleKeys.name_of_work_owner.tr(),
+                ),
+                Space(
+                  height: 2.h,
+                ),
+
+                CustomTextField(
+                  // controller: context.read<LoginCubit>().emailController,
+                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
+                  fillColor: Colors.transparent,
+                  label: LocaleKeys.address_of_work.tr(),
+                ),
+                Space(
+                  height: 2.h,
+                ),
+
+                CustomTextField(
+                  // controller: context.read<LoginCubit>().emailController,
+                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
+                  fillColor: Colors.transparent,
+                  label: LocaleKeys.your_job_title.tr(),
+                ),
+                Space(
+                  height: 2.h,
+                ),
+
+                CustomTextField(
+                  // controller: context.read<LoginCubit>().emailController,
+                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
+                  fillColor: Colors.transparent,
+                  label: LocaleKeys.your_job_field.tr(),
+                ),
+                Space(
+                  height: 2.h,
+                ),
+
+                CustomTextField(
+                  // controller: context.read<LoginCubit>().emailController,
+                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
+                  fillColor: Colors.transparent,
+                  label: LocaleKeys.your_main_income.tr(),
+                ),
+
+              ],
+            ),
           ),
-          Space(
-            height: 4.h,
-          ),
+
+
 
           MainButton(
-            color: AppTheme.secondary900,
+            color: AppTheme.primary900,
             width: 86.w,
             height: 6.h,
             label: Text(
               LocaleKeys.next,
               style: AppTheme.mainTextStyle(
-                  color: AppTheme.neutral100, fontSize: 12.sp),
+                  color: AppTheme.secondary900, fontSize: 12.sp),
             ).tr(),
             //onTap: ()=> context.read<LoginCubit>().onLoginClick(context),
           ),

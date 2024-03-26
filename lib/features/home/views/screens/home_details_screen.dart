@@ -1,9 +1,11 @@
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/home/views/bloc/home_details/home_details_cubit.dart';
 import 'package:Mawthoq/features/home/views/components/location.dart';
 import 'package:Mawthoq/features/home/views/components/property_overview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -13,15 +15,19 @@ import '../components/details_header_component.dart';
 import '../components/details_image_slider.dart';
 import '../components/financials.dart';
 import '../components/funding_timeline.dart';
-import '../components/home_card.dart';
 import '../components/home_investor_calculator.dart';
 import '../components/property_details.dart';
 import '../components/title_card.dart';
 
-class HomeDetailsScreen extends StatelessWidget {
-  const HomeDetailsScreen({super.key});
+class HomeDetailsScreen extends StatefulWidget {
+  int propertyId;
+  HomeDetailsScreen({super.key , required this.propertyId});
 
+  @override
+  State<HomeDetailsScreen> createState() => _HomeDetailsScreenState();
+}
 
+class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
   void setupSystemNavigationBar() {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       systemNavigationBarIconBrightness: Brightness.dark,
@@ -33,6 +39,12 @@ class HomeDetailsScreen extends StatelessWidget {
 
   void disposeSystemNavigationBar() {
     AppTheme.initSystemNavAndStatusBar();
+  }
+
+  @override
+  void initState() {
+    context.read<HomeDetailsCubit>().getOnProperty(widget.propertyId);
+    super.initState();
   }
 
   @override
@@ -76,8 +88,6 @@ class HomeDetailsScreen extends StatelessWidget {
                 Space(height: 2.h,),
 
                 DetailsCard(),
-
-
 
                 Space(
                   height: 1.5.h,
@@ -141,20 +151,7 @@ class HomeDetailsScreen extends StatelessWidget {
                   height: 4.h,
                 ),
 
-                ListView(
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  children: [
 
-                    HomeCard(),
-
-                    HomeCard(),
-
-                    HomeCard(),
-
-
-                  ],
-                ),
 
               ],
             ),

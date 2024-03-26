@@ -37,11 +37,9 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   onLoginClick(BuildContext context){
-    // if(formKey.currentState!.validate()) {
-    //   login(context);
-    // }
-    navigateToMainScreen(context);
-
+    if(formKey.currentState!.validate()) {
+      login(context);
+    }
   }
 
   onRegisterClick(BuildContext context){

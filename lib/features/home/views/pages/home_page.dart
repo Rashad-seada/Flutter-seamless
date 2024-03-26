@@ -1,3 +1,5 @@
+import 'package:Mawthoq/core/views/widgets/custom_progress_indicator.dart';
+import 'package:Mawthoq/core/views/widgets/custom_error_widget.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/home/views/bloc/home/home_cubit.dart';
 import 'package:flutter/material.dart';
@@ -7,10 +9,23 @@ import '../../../investor_profile/views/components/home_taps.dart';
 import '../../../verification/views/components/account_verification_card.dart';
 import '../components/home_app_bar.dart';
 import '../components/home_card.dart';
+import '../components/home_card_loading.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  
+  @override
+  void initState() {
+    context.read<HomeCubit>().getAllProperties();
+    super.initState();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -50,23 +65,45 @@ class HomePage extends StatelessWidget {
 
           Space(height: 2.5.h,),
 
-          Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 7.w),
-            child: ListView(
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              children: [
+          BlocConsumer<HomeCubit,HomeState>(
+            listener: (context, state) {},
+            builder: (context, state) {
+              if(state is HomeIsLoading){
 
-                HomeCard(),
+                return ListView(
+                  padding:  EdgeInsets.symmetric(horizontal: 7.w),
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  children: [
+                    HomeCardLoading(),
+                    HomeCardLoading(),
+                    HomeCardLoading(),
+                    HomeCardLoading(),
+                  ],
+                );
 
-                HomeCard(),
+              }else if(state is HomeError){
 
-                HomeCard(),
+                return CustomErrorWidget(
+                  errorMessage: HomeError.failure?.message ?? "Unknown",
+                  onTap: ()=> context.read<HomeCubit>().getAllProperties() ,
+                );
 
-                HomeCard(),
+              }else if(state is HomeSuccess){
+                return ListView.builder(
+                  padding:  EdgeInsets.symmetric(horizontal: 7.w),
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: HomeSuccess.properties.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return HomeCard(propertyEntity: HomeSuccess.properties[index],);
+                  },
+                );
+              }
 
-              ],
-            ),
+              return SizedBox();
+
+            },
           )
 
         ],

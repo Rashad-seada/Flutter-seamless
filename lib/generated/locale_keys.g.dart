@@ -129,5 +129,12 @@ abstract class  LocaleKeys {
   static const address_line_1 = 'address_line_1';
   static const address_line_2 = 'address_line_2';
   static const currency = 'currency';
+  static const employed = 'employed';
+  static const name_of_work_place = 'name_of_work_place';
+  static const name_of_work_owner = 'name_of_work_owner';
+  static const address_of_work = 'address_of_work';
+  static const your_job_title = 'your_job_title';
+  static const your_job_field = 'your_job_field';
+  static const your_main_income = 'your_main_income';
 
 }

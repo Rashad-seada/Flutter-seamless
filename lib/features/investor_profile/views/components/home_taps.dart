@@ -45,7 +45,7 @@ class HomeTaps extends StatelessWidget {
                 style: AppTheme.mainTextStyle(
                     color: AppTheme.neutral900,
                     fontWeight: FontWeight.w600,
-                    fontSize: 10.sp),
+                    fontSize: 9.sp),
               ),
         ),
       ),

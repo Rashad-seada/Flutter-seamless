@@ -1,3 +1,5 @@
+import 'package:Mawthoq/core/config/app_consts.dart';
+import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/views/widgets/custom_progress_indicator.dart';
 import 'package:Mawthoq/features/cart/views/bloc/cart/cart_cubit.dart';
 import 'package:Mawthoq/features/cart/views/components/cart_pay_now_card.dart';
@@ -44,7 +46,11 @@ class _CartScreenState extends State<CartScreen> {
                 height: 2.h,
               ),
 
-              CartAppBar(),
+              ListenableBuilder(listenable: context.read<CartCubit>().cartItemsCount,
+                builder: (context,widget){
+                  return CartAppBar();
+                }
+              ),
 
               Space(
                 height: 3.h,
@@ -58,57 +64,78 @@ class _CartScreenState extends State<CartScreen> {
                     return CustomProgressIndicator();
 
                   } else if(state is CartError) {
-                    return CustomErrorWidget(
-                      errorMessage: CartError.failure.message ?? "Unknown",
-                      onTap: () => context.read<CartCubit>().getCart(),
+                    return Padding(
+                      padding: EdgeInsets.only(top: 10.h),
+                      child: CustomErrorWidget(
+                        errorMessage: CartError.failure.message ?? "Unknown",
+                        onTap: () => context.read<CartCubit>().getCart(),
+                      ),
                     );
 
-                  } else if(state is CartSuccess){
-                    return ListView.separated(
+                  } else if(state is CartSuccess && ( CartSuccess.getCartResponse?.data?.isNotEmpty ?? false) ){
+                    return ListView(
                       physics: NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
-                      itemBuilder: (context, index) {
-                        return CartItem();
-                      },
-                      separatorBuilder: (BuildContext context, int index) {
-                        return Space(height: 1.h,);
-                      },
-                      itemCount: CartSuccess.getCartResponse?.data?.length ?? 0,
+                      children: [
+                        ListView.separated(
+                          physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) {
+                            return CartItem(
+                                label: CartSuccess.getCartResponse?.data?[index].property?.name ?? '',
+                                imageUrl: AppConsts.imageUrl + (CartSuccess.getCartResponse?.data?[index].property?.image ?? ''),
+                                monthlyRent: (double.tryParse(CartSuccess.getCartResponse?.data?[index].property?.annualRentIncome ?? "") ?? 0)/100 * (double.tryParse(CartSuccess.getCartResponse?.data?[index].amount ?? '') ?? 0),
+                                capitalGrowth: (double.tryParse(CartSuccess.getCartResponse?.data?[index].property?.annualExpectedGrowth ?? "") ?? 0)/100 * (double.tryParse(CartSuccess.getCartResponse?.data?[index].amount ?? '') ?? 0),
+                                investedValue: double.tryParse(CartSuccess.getCartResponse?.data?[index].amount ?? '') ?? 0
+                            );
+                          },
+                          separatorBuilder: (BuildContext context, int index) {
+                            return Space(height: 2.h,);
+                          },
+                          itemCount: CartSuccess.getCartResponse?.data?.length ?? 0,
+                        ),
+
+                        Space(
+                          height: 2.h,
+                        ),
+
+                        MainButton(
+                          color: Colors.transparent,
+                          height: 5.h,
+                          width: 10.w,
+                          border: Border.all(color: AppTheme.neutral300),
+                          label: Text(
+                            LocaleKeys.add_real_state,
+                            style: AppTheme.mainTextStyle(
+                                fontSize: 9.sp,
+                                color: AppTheme.secondary900,
+                                fontWeight: FontWeight.w600
+
+                            ),
+                          ).tr(),
+                          onTap: () {
+                            Navigator.push(
+                                context, MaterialPageRoute(builder: (_) => MainScreen()));
+                          },
+                        ),
+
+                        Space(
+                          height: 2.h,
+                        ),
+
+                        CartPayNowCard(totalCartValue: context.read<CartCubit>().getCartTotalAmount(),),
+
+                        Space(height: 5.h,),
+
+                      ],
                     );
                   }
-                  return SizedBox();
+                  return const SizedBox();
                 },
               ),
 
 
-              Space(
-                height: 2.h,
-              ),
 
-              MainButton(
-                color: Colors.transparent,
-                height: 5.h,
-                width: 10.w,
-                border: Border.all(color: AppTheme.neutral300),
-                label: Text(
-                  LocaleKeys.add_real_state,
-                  style: AppTheme.mainTextStyle(
-                      fontSize: 9.sp,
-                      color: AppTheme.secondary900,
-                      fontWeight: FontWeight.w600
-
-                  ),
-                ).tr(),
-                onTap: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => MainScreen()));
-                },
-              ),
-              Space(
-                height: 2.h,
-              ),
-
-              CartPayNowCard()
 
             ],
           ),

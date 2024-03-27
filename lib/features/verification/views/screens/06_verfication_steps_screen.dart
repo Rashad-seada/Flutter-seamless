@@ -53,14 +53,14 @@ class VerficationScreen extends StatelessWidget {
                 VerificationStepsCard(
                   label: 'What is your job?',
                   step: 'Step 2',
-                  onTap: ()=> context.read<VerificationCubit>()..navigateToYourJobScreen(context),
+                  onTap: ()=> context.read<VerificationCubit>()..onStep2Tap(context),
                 ),
                 Space(
                   height: 1.5.h,
                 ),
                 VerificationStepsCard(
                   label: 'Address Verfication',
-                  onTap: ()=> context.read<VerificationCubit>()..navigateToYourAddressScreen(context),
+                  onTap: ()=> context.read<VerificationCubit>()..onStep3Tap(context),
 
                   step: 'Step 3',
                 ),
@@ -70,13 +70,15 @@ class VerficationScreen extends StatelessWidget {
                 VerificationStepsCard(
                   label: 'ID Verfication',
                   step: 'Step 4',
+                  onTap: () => navigateToUploadIdPage(context),
+
                 ),
                 Space(
                   height: 1.5.h,
                 ),
                 VerficationStepsButton(
                   label: 'Continue',
-                  onTap: () => navigateToUploadIdPage(context),
+                  //onTap: () => navigateToUploadIdPage(context),
                 ),
               ],
             ),

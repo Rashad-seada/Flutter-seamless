@@ -1,6 +1,5 @@
 import 'package:Mawthoq/core/di/app_module.dart';
 import 'package:Mawthoq/core/errors/failure.dart';
-import 'package:Mawthoq/core/usecases/validate_username_use_case.dart';
 import 'package:Mawthoq/features/cart/data/entities/get_cart_response.dart';
 import 'package:Mawthoq/features/cart/domain/usecase/add_to_cart_use_case.dart';
 import 'package:Mawthoq/features/cart/domain/usecase/get_cart_use_case.dart';
@@ -21,6 +20,18 @@ class CartCubit extends Cubit<CartState> {
 
   TextEditingController amountController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  double _cartTotalAmount = 0.0;
+
+  final ValueNotifier<int> cartItemsCount = ValueNotifier<int>(0);
+
+
+  double getCartTotalAmount(){
+    _cartTotalAmount = 0;
+    CartSuccess.getCartResponse?.data?.forEach((e) => _cartTotalAmount += double.tryParse(e.amount ?? '') ?? 0);
+    return _cartTotalAmount;
+  }
+
+
 
   onConfirmTap(BuildContext context, int propertyId){
     if(formKey.currentState!.validate()){
@@ -49,6 +60,7 @@ class CartCubit extends Cubit<CartState> {
   }
 
   getCart() {
+    cartItemsCount.value = 0;
     emit(CartIsLoading());
     getIt<GetCartUseCase>().call().then(
             (value) => value.fold(
@@ -58,6 +70,7 @@ class CartCubit extends Cubit<CartState> {
             },
                 (success) {
               emit(CartSuccess(getCartResponse: success));
+              cartItemsCount.value =  CartSuccess.getCartResponse?.data?.length ?? 0;
 
             }
         )

@@ -3,10 +3,12 @@ import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/config/app_theme.dart';
+import '../../../cart/views/bloc/cart/cart_cubit.dart';
 
 class HomeAppBar extends StatelessWidget {
   void Function()? onFavoriteTap;
@@ -66,31 +68,52 @@ class HomeAppBar extends StatelessWidget {
 
               Space(width: 2.w,),
 
-              InkWell(
-                onTap: onCartTap,
-                child: SvgPicture.asset(
-                    width: 6.5.w,
-                    height: 6.5.w,
-                    AppImages.cart,
-                  color: AppTheme.primary900,
-                ),
-              ),
+              ListenableBuilder(listenable: context.read<CartCubit>().cartItemsCount,
+                  builder: (context,widget){
+
+                    return InkWell(
+                        onTap: onCartTap,
+                        child: SvgPicture.asset(
+                        width: 6.5.w,
+                        height: 6.5.w,
+                        AppImages.cart,
+                        color: (context.read<CartCubit>().cartItemsCount.value == 0)? AppTheme.secondary900 : AppTheme.primary900,
+                        ),
+                    );
+
+                  }),
+
+
+
               Space(width: 1.w,),
 
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 3.w,vertical: 0.4),
-                decoration: BoxDecoration(
-                  color: AppTheme.primary900,
-                  borderRadius: BorderRadius.circular(100)
-                ),
-                child: Text(
-                  "2",
-                  style: AppTheme.mainTextStyle(
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w700
-                  ),
-                ),
-              )
+              ListenableBuilder(listenable: context.read<CartCubit>().cartItemsCount,
+                  builder: (context,widget){
+
+                if(context.read<CartCubit>().cartItemsCount.value == 0){
+                  return SizedBox();
+                }else {
+                  return Container(
+                    padding: EdgeInsets.symmetric(horizontal: 3.w,vertical: 0.4),
+                    decoration: BoxDecoration(
+                        color: AppTheme.primary900,
+                        borderRadius: BorderRadius.circular(100)
+                    ),
+                    child: Text(
+                      "( ${context.read<CartCubit>().cartItemsCount.value.toString()} )",
+                      style: AppTheme.mainTextStyle(
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w700
+                      ),
+                    ),
+                  );
+                }
+
+
+
+              }),
+
+
             ],
           )
         ],

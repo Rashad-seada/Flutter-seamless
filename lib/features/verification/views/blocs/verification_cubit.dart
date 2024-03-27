@@ -20,11 +20,11 @@ class VerificationCubit extends Cubit<VerificationState> {
     Navigator.push(context, MaterialPageRoute(builder: (_)=> VerficationScreen()));
   }
 
-  navigateToYourJobScreen(BuildContext context){
+  onStep2Tap(BuildContext context){
     Navigator.push(context, MaterialPageRoute(builder: (_)=> YourJobScreen()));
   }
 
-  navigateToYourAddressScreen(BuildContext context){
+  onStep3Tap(BuildContext context){
     Navigator.push(context, MaterialPageRoute(builder: (_)=> YourAddressScreen()));
   }
 

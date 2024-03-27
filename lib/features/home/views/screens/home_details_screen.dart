@@ -37,6 +37,7 @@ class HomeDetailsScreen extends StatefulWidget {
 
   @override
   State<HomeDetailsScreen> createState() => _HomeDetailsScreenState();
+
 }
 
 class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
@@ -57,7 +58,6 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
   @override
   void initState() {
     context.read<HomeDetailsCubit>().getOnProperty(widget.propertyId);
-
     super.initState();
   }
   

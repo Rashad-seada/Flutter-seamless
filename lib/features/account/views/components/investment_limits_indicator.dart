@@ -1,3 +1,4 @@
+import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/bloc/account/account_cubit.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
@@ -57,9 +58,9 @@ class InvestmentLimitsIndicator extends StatelessWidget {
               children: [
                 if (svgAsset != null)
                   SvgPicture.asset(
-                    svgAsset!,
-                    height: 2.5.h,
-                    width: 2.5.h,
+                    AppImages.trendUp2,
+                    height: 3.h,
+                    width: 3.h,
                     color: AppTheme.primary900,
                   ),
                 Space(

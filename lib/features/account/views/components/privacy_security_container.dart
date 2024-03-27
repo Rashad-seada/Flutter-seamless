@@ -47,11 +47,11 @@ class PrivacyAndSecurityContainer extends StatelessWidget {
                   SvgPicture.asset(
                     svgAsset,
                     color: AppTheme.primary900,
-                    height: 4.h,
-                    width: 4.h,
+                    height: 3.h,
+                    width: 3.h,
                   ),
                   Space(
-                    width: 1.w,
+                    width: 2.w,
                   ),
                   Text(
                     label,

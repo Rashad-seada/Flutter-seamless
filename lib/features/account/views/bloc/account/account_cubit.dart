@@ -90,14 +90,19 @@ class AccountCubit extends Cubit<AccountState> {
       ];
 
   List<AccountContainerModel> get helpCenterScreenInfo1 => [
-        AccountContainerModel(AppImages.password, 'Ask & Answer', () {}),
-        AccountContainerModel(AppImages.documents, 'How it works', () {}),
+        AccountContainerModel(
+            AppImages.questionMark, LocaleKeys.ask_and_answer.tr(), () {}),
+        AccountContainerModel(
+            AppImages.videoPlay, LocaleKeys.how_it_works.tr(), () {}),
       ];
 
   List<AccountContainerModel> get helpCenterScreenInfo2 => [
-        AccountContainerModel(AppImages.email, 'Direct chat', () {}),
-        AccountContainerModel(AppImages.phone, 'Whatsapp contact', () {}),
-        AccountContainerModel(AppImages.email, 'Email contact', () {}),
+        AccountContainerModel(
+            AppImages.messege, LocaleKeys.direct_chat.tr(), () {}),
+        AccountContainerModel(
+            AppImages.phone, LocaleKeys.whatsapp_contact.tr(), () {}),
+        AccountContainerModel(
+            AppImages.email, LocaleKeys.email_contact.tr(), () {}),
       ];
 
   List<AccountContainerModel> get blogScreenInfo => [

@@ -1,3 +1,4 @@
+import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/bloc/settings/settings_cubit.dart';
 import 'package:Mawthoq/features/account/views/components/settings_card.dart';
@@ -46,11 +47,19 @@ class SettingsScreen extends StatelessWidget {
             Space(
               height: 2.h,
             ),
-            SettingsToggleCard(),
+            SettingsToggleCard(
+              title: 'Notifications',
+              subTitle: LocaleKeys.rent_paid_notifications.tr(),
+              svgAsset: AppImages.notifications,
+            ),
             Space(
               height: 2.h,
             ),
-            SettingsToggleCard(),
+            SettingsToggleCard(
+              title: LocaleKeys.email_for_offers.tr(),
+              subTitle: LocaleKeys.email_notifications_properties.tr(),
+              svgAsset: AppImages.email,
+            ),
           ],
         ),
       ),

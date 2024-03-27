@@ -63,7 +63,7 @@ class RewardsIndicator extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        LocaleKeys.investment_limit,
+                        LocaleKeys.silver_category,
                         style: AppTheme.mainTextStyle(
                           fontWeight: FontWeight.bold,
                         ),

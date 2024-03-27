@@ -1,5 +1,6 @@
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -29,8 +30,8 @@ class ProfitsCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          interior(context, 'Cashback', '0'),
-          interior(context, 'Referrals', '0'),
+          interior(context, LocaleKeys.cashback.tr(), '0'),
+          interior(context, LocaleKeys.referrals.tr(), '0'),
         ],
       ),
     );

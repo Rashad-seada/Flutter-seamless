@@ -19,40 +19,37 @@ class HelpCenterScreen extends StatelessWidget {
       child: Scaffold(
         body: ListView(
           padding: EdgeInsets.symmetric(horizontal: 7.w),
-      
           children: [
             Space(
               height: 2.h,
             ),
-
-            CustomAppBar(label: LocaleKeys.help_center.tr(),),
-
+            CustomAppBar(
+              label: LocaleKeys.help_center.tr(),
+            ),
             Space(
               height: 3.h,
             ),
             Text(
-              'Help links',
+              LocaleKeys.help_links,
               style: AppTheme.mainTextStyle(
-                color:AppTheme.neutral400,
-
+                color: AppTheme.neutral400,
                 fontWeight: FontWeight.w600,
                 fontSize: 11.sp,
               ),
-            ),
+            ).tr(),
             Space(
               height: .5.h,
             ),
             AccountPageContainer(
-              iconColor: AppTheme.primary900,
+                iconColor: AppTheme.primary900,
                 info: context.read<AccountCubit>().helpCenterScreenInfo1),
             Space(
               height: 2.h,
             ),
             Text(
-              'Contact us',
+              LocaleKeys.contact_us.tr(),
               style: AppTheme.mainTextStyle(
-                color:AppTheme.neutral400,
-
+                color: AppTheme.neutral400,
                 fontWeight: FontWeight.w600,
                 fontSize: 11.sp,
               ),

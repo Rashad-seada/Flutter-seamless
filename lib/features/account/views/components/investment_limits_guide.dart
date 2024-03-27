@@ -10,21 +10,21 @@ import 'package:sizer/sizer.dart';
 class InvestmentLimitsGuide extends StatelessWidget {
   String question;
   String answer;
-  String svgAsset;
+  IconData iconData;
   InvestmentLimitsGuide(
       {super.key,
       required this.question,
       required this.answer,
-      required this.svgAsset});
+      required this.iconData});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SvgPicture.asset(
-          svgAsset,
-          color: AppTheme.secondary900,
+        Icon(
+          iconData,
+          color: AppTheme.primary900,
         ),
         Space(
           width: 2.w,

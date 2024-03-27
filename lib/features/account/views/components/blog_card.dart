@@ -2,11 +2,14 @@ import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 class BlogCard extends StatelessWidget {
-  const BlogCard({super.key});
+  String label;
+  IconData icon;
+  BlogCard({super.key, required this.label, required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +35,9 @@ class BlogCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SvgPicture.asset(
-                AppImages.documents,
-                color: Colors.black,
+              Icon(
+                icon,
+                size: 7.w,
               ),
               SvgPicture.asset(
                 AppImages.arrowRight,
@@ -45,7 +48,7 @@ class BlogCard extends StatelessWidget {
             height: 2.h,
           ),
           Text(
-            'Label',
+            label,
             style: AppTheme.mainTextStyle(
               fontWeight: FontWeight.w600,
             ),

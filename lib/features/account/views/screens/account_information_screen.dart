@@ -62,7 +62,7 @@ class AccountInformationScreen extends StatelessWidget {
             ),
             InvestmentLimitsIndicator(
               headLabel: LocaleKeys.investment_limit.tr(),
-              svgAsset: AppImages.documents,
+              svgAsset: AppImages.invLimit,
               isInvetmentLimit: false,
               raisedFunds: 5000,
               requestedFunds: 10000,

@@ -53,8 +53,7 @@ class AccountPageContainer extends StatelessWidget {
                           info[index].icon!,
                           height: 2.5.h,
                           width: 2.5.h,
-                          color: iconColor ?? AppTheme.neutral900,
-
+                          color: iconColor ?? AppTheme.primary900,
                         ),
                       Space(
                         width: 3.w,

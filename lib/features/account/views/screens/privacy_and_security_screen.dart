@@ -4,6 +4,7 @@ import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/components/privacy_security_card.dart';
 import 'package:Mawthoq/features/account/views/components/privacy_security_container.dart';
 import 'package:Mawthoq/features/account/views/components/settings_toggle_card.dart';
+import 'package:Mawthoq/features/account/views/components/toggle_button.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -47,7 +48,7 @@ class PrivacyAndSecurityScreen extends StatelessWidget {
             ),
             PrivacyAndSecurityContainer(
               label: LocaleKeys.privacy_policy.tr(),
-              svgAsset: AppImages.coin,
+              svgAsset: AppImages.global,
             ),
             Space(
               height: 2.h,
@@ -63,7 +64,11 @@ class PrivacyAndSecurityScreen extends StatelessWidget {
             Space(
               height: .5.h,
             ),
-            SettingsToggleCard(),
+            SettingsToggleCard(
+              title: LocaleKeys.biometric_authentication.tr(),
+              subTitle: LocaleKeys.more_security_factors.tr(),
+              svgAsset: AppImages.email,
+            ),
           ],
         ),
       ),

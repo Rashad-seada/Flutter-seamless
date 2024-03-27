@@ -15,5 +15,5 @@ class AppConsts {
 
   static const String getAllPropertiesEndPoint = "/properties";
   static const String getOnePropertyEndPoint = "/properties";
-
+  static const String cartEndPoint = "/cart";
 }

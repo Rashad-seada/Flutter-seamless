@@ -9,8 +9,8 @@ class CustomShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: AppTheme.neutral100,
-      highlightColor: AppTheme.neutral200,
+      baseColor: AppTheme.neutral200,
+      highlightColor: AppTheme.neutral300,
       child: child,
     );
   }

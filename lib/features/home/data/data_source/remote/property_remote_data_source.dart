@@ -39,9 +39,6 @@ class PropertyRemoteDataSourceImpl implements PropertyRemoteDataSource {
           data: requestData
       );
 
-      if(response.statusCode! >= 500){
-        throw RemoteDataException("The was a server internal error");
-      }
 
       Map<String,dynamic> responseData = response.data;
 
@@ -65,10 +62,6 @@ class PropertyRemoteDataSourceImpl implements PropertyRemoteDataSource {
             "Authorization": "Bearer $token"
           },
       );
-
-      if(response.statusCode! >= 500){
-        throw RemoteDataException("The was a server internal error");
-      }
 
       Map<String,dynamic> responseData = response.data;
 

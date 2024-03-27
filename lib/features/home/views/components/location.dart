@@ -7,7 +7,8 @@ import '../../../../core/config/app_theme.dart';
 import '../../../../core/views/widgets/space.dart';
 
 class Location extends StatelessWidget {
-  const Location({super.key});
+  String location;
+  Location({super.key,required this.location});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +49,7 @@ class Location extends StatelessWidget {
 
             Expanded(
               child: Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
+                location,
                 style: AppTheme.mainTextStyle(
                     fontWeight: FontWeight.w500,
                     color: AppTheme.neutral500,
@@ -61,18 +62,7 @@ class Location extends StatelessWidget {
             
           ],
         ),
-
-        Space(
-          height: 2.h,
-        ),
-
-        Text(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-          style: AppTheme.mainTextStyle(
-              fontWeight: FontWeight.w400,
-              color: AppTheme.neutral400,
-              fontSize: 10.sp),
-        ),
+        
 
       ],
     );

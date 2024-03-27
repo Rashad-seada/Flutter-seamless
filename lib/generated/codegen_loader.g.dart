@@ -149,7 +149,9 @@ class CodegenLoader extends AssetLoader{
   "address_of_work": "ما هو عنوان مكان عملك؟",
   "your_job_title": "ما هو عنوان وظيفتك؟",
   "your_job_field": "ما هي مجالات عملك؟",
-  "your_main_income": "ما هو دخلك الرئيسي؟"
+  "your_main_income": "ما هو دخلك الرئيسي؟",
+  "add_to_cart": "أضف إلى السلة",
+  "investment_amount": "مبلغ الاستثمار"
 };
 static const Map<String,dynamic> en = {
   "on_boarding_title_1": "The Latest Way to Invest in Real Estate",
@@ -286,7 +288,9 @@ static const Map<String,dynamic> en = {
   "address_of_work": "What's the address of your work place?",
   "your_job_title": "What's your job title?",
   "your_job_field": "What's your job field?",
-  "your_main_income": "What's your main income?"
+  "your_main_income": "What's your main income?",
+  "add_to_cart": "Add to cart",
+  "investment_amount": "Investment amount"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

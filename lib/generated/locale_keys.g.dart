@@ -136,5 +136,7 @@ abstract class  LocaleKeys {
   static const your_job_title = 'your_job_title';
   static const your_job_field = 'your_job_field';
   static const your_main_income = 'your_main_income';
+  static const add_to_cart = 'add_to_cart';
+  static const investment_amount = 'investment_amount';
 
 }

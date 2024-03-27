@@ -11,7 +11,16 @@ import 'details_image_slider.dart';
 import 'home_details_funds_component.dart';
 
 class DetailsHeaderComponent extends StatelessWidget {
-  const DetailsHeaderComponent({super.key});
+  double price;
+  double raisedFunds;
+  int investors;
+  DetailsHeaderComponent({super.key,
+    required this.price,
+    required this.raisedFunds,
+    required this.investors
+  });
+
+  NumberFormat formatter = NumberFormat('#,##0');
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +65,7 @@ class DetailsHeaderComponent extends StatelessWidget {
                     width: 1.5.w,
                   ),
                   Text(
-                    "107,000,00",
+                    formatter.format(price),
                     style: AppTheme.mainTextStyle(
                         fontWeight: FontWeight.w600,
                         color: AppTheme.primary900,
@@ -71,15 +80,15 @@ class DetailsHeaderComponent extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Center(child: HomeDetailsChip(label: "257 " + LocaleKeys.investors.tr())),
+                  Center(child: HomeDetailsChip(label: "$investors ${LocaleKeys.investors.tr()}")),
                 ],
               ),
               Space(
                 height: 2.h,
               ),
               HomeDetailsFundsComponents(
-                raisedFunds: 170,
-                requestedFunds: 200,
+                raisedFunds: raisedFunds,
+                requestedFunds: price,
                 width: 78.w,
               ),
 

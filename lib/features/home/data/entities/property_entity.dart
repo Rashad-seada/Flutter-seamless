@@ -20,7 +20,7 @@ class PropertyEntity {
   String? fundingDate;
   int? investorsCount;
   int? isProtected;
-  int? monthlyCurrentRent;
+  num? monthlyCurrentRent;
   String? propertyDescription;
   String? seamlessFee;
   String? servicesFees;

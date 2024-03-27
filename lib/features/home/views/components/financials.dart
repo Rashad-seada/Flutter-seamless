@@ -9,7 +9,13 @@ import '../../../investor_profile/views/components/home_taps.dart';
 import '../bloc/home_details/home_details_cubit.dart';
 
 class Financials extends StatelessWidget {
-  const Financials({super.key});
+  double price;
+  double seamlessFees;
+
+  double annualGrossRent;
+  double serviceCharges;
+  double maintenance;
+  Financials({super.key,required this.price, required this.seamlessFees,required this.annualGrossRent,required this.serviceCharges,required this.maintenance });
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +52,17 @@ class Financials extends StatelessWidget {
           height: 3.h,
         ),
 
-        _acquisition(propertyPrice: 1460000, transactionCost: 130542, seamlessFee: 1.5)
+        BlocConsumer<HomeDetailsCubit, HomeDetailsState>(
+          listener: (context, state) {},
+          builder: (context, state) {
+            if(context.read<HomeDetailsCubit>().selectedIndex ==0){
+              return _acquisition(propertyPrice: price, seamlessFee: seamlessFees);
+
+            }
+            return _rentalIncome(annualGrossRent: annualGrossRent, serviceCharges: serviceCharges, maintenance: maintenance);
+
+          },
+        )
 
 
       ],
@@ -56,7 +72,6 @@ class Financials extends StatelessWidget {
 
   Widget _acquisition({
     required double propertyPrice,
-    required double transactionCost,
     required double seamlessFee,
   }){
     return Column(
@@ -89,32 +104,6 @@ class Financials extends StatelessWidget {
           height: 1.5.h,
         ),
 
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-
-            Text(
-              "Transaction costs",
-              style: AppTheme.mainTextStyle(
-                  fontWeight: FontWeight.w500,
-                  color: AppTheme.neutral500,
-                  fontSize: 12.sp),
-            ),
-
-            Text(
-              "AED ${ NumberFormat.decimalPattern().format(transactionCost)}",
-              style: AppTheme.mainTextStyle(
-                  fontWeight: FontWeight.w600,
-                  color: AppTheme.secondary900,
-                  fontSize: 12.sp),
-            ),
-
-          ],
-        ),
-        Space(
-          height: 1.5.h,
-        ),
 
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -163,7 +152,130 @@ class Financials extends StatelessWidget {
             ),
 
             Text(
-              "AED ${ NumberFormat.decimalPattern().format(propertyPrice + transactionCost)}",
+              "AED ${ NumberFormat.decimalPattern().format( propertyPrice + propertyPrice * (seamlessFees / 100))}",
+              style: AppTheme.mainTextStyle(
+                  fontWeight: FontWeight.w600,
+                  color: AppTheme.primary900,
+                  fontSize: 14.sp),
+            ),
+
+          ],
+        ),
+
+      ],
+    );
+  }
+
+  Widget _rentalIncome({
+    required double annualGrossRent,
+    required double serviceCharges,
+    required double maintenance,
+  }){
+    return Column(
+      children: [
+
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+
+            Text(
+              "Annual gross rent",
+              style: AppTheme.mainTextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: AppTheme.neutral500,
+                  fontSize: 12.sp),
+            ),
+
+            Text(
+              "AED ${ NumberFormat.decimalPattern().format(annualGrossRent)}",
+              style: AppTheme.mainTextStyle(
+                  fontWeight: FontWeight.w600,
+                  color: AppTheme.secondary900,
+                  fontSize: 12.sp),
+            ),
+
+          ],
+        ),
+        Space(
+          height: 1.5.h,
+        ),
+
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+
+            Text(
+              "Service charges",
+              style: AppTheme.mainTextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: AppTheme.neutral500,
+                  fontSize: 12.sp),
+            ),
+
+            Text(
+              "AED ${ NumberFormat.decimalPattern().format(serviceCharges)}",
+              style: AppTheme.mainTextStyle(
+                  fontWeight: FontWeight.w600,
+                  color: AppTheme.secondary900,
+                  fontSize: 12.sp),
+            ),
+
+          ],
+        ),
+        Space(
+          height: 1.5.h,
+        ),
+
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+
+            Text(
+              "maintenance",
+              style: AppTheme.mainTextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: AppTheme.neutral500,
+                  fontSize: 12.sp),
+            ),
+
+            Text(
+              "AED ${ NumberFormat.decimalPattern().format(maintenance)}",
+              style: AppTheme.mainTextStyle(
+                  fontWeight: FontWeight.w600,
+                  color: AppTheme.secondary900,
+                  fontSize: 12.sp),
+            ),
+
+          ],
+        ),
+        Space(
+          height: 1.4.h,
+        ),
+        Divider(
+          color: AppTheme.neutral200,
+          thickness: .2.w,
+        ),
+        Space(
+          height: 1.4.h,
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+
+            Text(
+              "Net income",
+              style: AppTheme.mainTextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: AppTheme.neutral500,
+                  fontSize: 12.sp),
+            ),
+
+            Text(
+              "AED ${ NumberFormat.decimalPattern().format(annualGrossRent - (serviceCharges + maintenance))}",
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w600,
                   color: AppTheme.primary900,
@@ -177,5 +289,7 @@ class Financials extends StatelessWidget {
     );
   }
 }
+
+
 
 

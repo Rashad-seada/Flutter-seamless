@@ -14,10 +14,10 @@ class HomeDetailsCubit extends Cubit<HomeDetailsState> {
 
   int selectedIndex = 0;
 
-  onTabChange(int index) {
+  onTabChange(int index,) {
     emit(HomeDetailsPageChanges());
     selectedIndex = index;
-    emit(HomeDetailsInitial());
+    emit(HomeDetailsSuccess(HomeDetailsSuccess.propertyEntity));
   }
 
   getOnProperty(int propertyId){

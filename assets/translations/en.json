@@ -178,6 +178,9 @@
   "address_of_work": "What's the address of your work place?",
   "your_job_title": "What's your job title?",
   "your_job_field": "What's your job field?",
-  "your_main_income": "What's your main income?"
+  "your_main_income": "What's your main income?",
+
+  "add_to_cart": "Add to cart",
+  "investment_amount": "Investment amount"
 
 }

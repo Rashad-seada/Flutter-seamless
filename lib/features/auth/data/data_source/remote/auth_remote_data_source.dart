@@ -41,9 +41,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           data: requestData
       );
 
-      if(response.statusCode! >= 500){
-        throw RemoteDataException("The was a server internal error");
-      }
 
       Map<String,dynamic> responseData = response.data;
 
@@ -74,16 +71,13 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           data: requestData
       );
 
-      if(response.statusCode! >= 500){
-        throw RemoteDataException("The was a server internal error");
-      }
-
       Map<String,dynamic> responseData = response.data;
 
       return AuthResponse.fromJson(responseData);
 
     } catch (e) {
       throw RemoteDataException(e.toString());
+
     }
   }
 
@@ -99,10 +93,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
             "Authorization": "Bearer $token"
           },
       );
-
-      if(response.statusCode! >= 500){
-        throw RemoteDataException("The was a server internal error");
-      }
 
       Map<String,dynamic> responseData = response.data;
 
@@ -125,10 +115,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           "Authorization": "Bearer $token"
         },
       );
-
-      if(response.statusCode! >= 500){
-        throw RemoteDataException("The was a server internal error");
-      }
 
       Map<String,dynamic> responseData = response.data;
 

@@ -6,11 +6,14 @@ import '../../../../core/config/app_theme.dart';
 import '../../../../core/views/widgets/space.dart';
 
 class PropertyOverview extends StatelessWidget {
-  const PropertyOverview({super.key});
+  String overview;
+
+  PropertyOverview({super.key,required this.overview});
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
@@ -27,7 +30,7 @@ class PropertyOverview extends StatelessWidget {
           height: 2.2.h,
         ),
         ReadMoreText(
-         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          overview,
           trimLines: 3,
           colorClickableText: AppTheme.secondary900,
           trimMode: TrimMode.Line,

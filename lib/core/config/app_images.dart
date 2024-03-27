@@ -41,6 +41,7 @@ class AppImages {
   static String account1 = "images/accout1.svg";
   static String cart = "images/cart.svg";
   static String heart = "images/heart.svg";
+  static String invLimit = "images/inv_limit_icon.png";
 
   static String image = "images/image.svg";
   static String imageError = "images/imageError.svg";
@@ -65,4 +66,14 @@ class AppImages {
   static String job = "images/job.svg";
   static String error = "images/error.svg";
 
+  static String dolar = "images/dolar.svg";
+  static String home = "images/homer.svg";
+  static String messege = 'images/messegedouble.svg';
+  static String moneyUp = "images/moneyup.svg";
+  static String questionMark = "images/questionmark.svg";
+  static String trendUp = "images/trend_up.svg";
+  static String trendUp2 = "images/trendUp.svg";
+  static String videoPlay = "images/videoplay.svg";
+  static String global = "images/global.svg";
+  static String notifications = "images/notifications.svg";
 }

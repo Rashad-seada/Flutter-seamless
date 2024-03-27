@@ -1,10 +1,8 @@
-import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/components/blog_card.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../generated/locale_keys.g.dart';
@@ -19,26 +17,23 @@ class BlogScreen extends StatelessWidget {
       child: Scaffold(
         body: ListView(
           padding: EdgeInsets.symmetric(horizontal: 7.w),
-
           children: [
-
             Space(
               height: 2.h,
             ),
-
-            CustomAppBar(label: LocaleKeys.blog.tr(),),
-
+            CustomAppBar(
+              label: LocaleKeys.blog.tr(),
+            ),
             Space(
               height: 3.h,
             ),
-
             Text(
-              'Learn more about investing',
+              LocaleKeys.learn_more_investing,
               style: AppTheme.mainTextStyle(
                 color: AppTheme.neutral500,
                 fontSize: 12.sp,
               ),
-            ),
+            ).tr(),
             Space(
               height: 1.5.h,
             ),
@@ -49,10 +44,22 @@ class BlogScreen extends StatelessWidget {
               mainAxisSpacing: 10,
               crossAxisSpacing: 10,
               children: [
-                BlogCard(),
-                BlogCard(),
-                BlogCard(),
-                BlogCard(),
+                BlogCard(
+                  label: LocaleKeys.how_platform_works.tr(),
+                  icon: Icons.question_mark_outlined,
+                ),
+                BlogCard(
+                  label: LocaleKeys.how_returns_work.tr(),
+                  icon: Icons.trending_up_outlined,
+                ),
+                BlogCard(
+                  label: LocaleKeys.receive_documents.tr(),
+                  icon: Icons.document_scanner_outlined,
+                ),
+                BlogCard(
+                  label: LocaleKeys.calculate_investment_value.tr(),
+                  icon: Icons.currency_exchange_outlined,
+                ),
               ],
             ),
           ],

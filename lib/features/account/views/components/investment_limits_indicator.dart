@@ -1,5 +1,8 @@
+import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/bloc/account/account_cubit.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -55,9 +58,9 @@ class InvestmentLimitsIndicator extends StatelessWidget {
               children: [
                 if (svgAsset != null)
                   SvgPicture.asset(
-                    svgAsset!,
-                    height: 2.5.h,
-                    width: 2.5.h,
+                    AppImages.trendUp2,
+                    height: 3.h,
+                    width: 3.h,
                     color: AppTheme.primary900,
                   ),
                 Space(
@@ -71,7 +74,7 @@ class InvestmentLimitsIndicator extends StatelessWidget {
                   ),
                 Text(
                   headLabel,
-                  style: TextStyle(
+                  style: AppTheme.mainTextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -124,11 +127,11 @@ class InvestmentLimitsIndicator extends StatelessWidget {
                         width: 1.w,
                       ),
                       Text(
-                        'Used',
+                        LocaleKeys.used,
                         style: AppTheme.mainTextStyle(
                           fontWeight: FontWeight.bold,
                         ),
-                      ),
+                      ).tr(),
                     ],
                   ),
                   Row(
@@ -160,12 +163,12 @@ class InvestmentLimitsIndicator extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Invested this year',
+                        LocaleKeys.invested_this_year,
                         style: AppTheme.mainTextStyle(
                           fontSize: 11.sp,
                           color: AppTheme.neutral400,
                         ),
-                      ),
+                      ).tr(),
                       Text(
                         '$raisedFunds SAR',
                         style: AppTheme.mainTextStyle(
@@ -179,12 +182,12 @@ class InvestmentLimitsIndicator extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Available currency to invest',
+                        LocaleKeys.available_currency_to_invest,
                         style: AppTheme.mainTextStyle(
                           fontSize: 11.sp,
                           color: AppTheme.neutral400,
                         ),
-                      ),
+                      ).tr(),
                       Text(
                         '$requestedFunds SAR',
                         style: AppTheme.mainTextStyle(

@@ -3,6 +3,8 @@ import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/rewards/components/profits_card.dart';
 import 'package:Mawthoq/features/rewards/components/profits_container.dart';
 import 'package:Mawthoq/features/rewards/components/share_reward_link_card.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -15,26 +17,25 @@ class ProfitsScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          'Profits',
+          LocaleKeys.profits,
           style: AppTheme.mainTextStyle(
             color: AppTheme.secondary900,
           ),
-        ),
+        ).tr(),
       ),
       body: ListView(
-
         children: [
           Padding(
             padding: EdgeInsets.all(6.w),
             child: Column(
               children: [
                 Text(
-                  'Your rewards',
+                  LocaleKeys.your_rewards,
                   style: AppTheme.mainTextStyle(
                     fontSize: 12.sp,
                     color: AppTheme.neutral400,
                   ),
-                ),
+                ).tr(),
                 Space(
                   height: 1.5.h,
                 ),
@@ -53,14 +54,12 @@ class ProfitsScreen extends StatelessWidget {
                   height: 1.5.h,
                 ),
                 ProfitsContainer(
-                  label: 'Watch Wallet',
+                  label: LocaleKeys.wallet.tr(),
                 ),
                 Space(
                   height: 1.5.h,
                 ),
                 ShareRewardLinkCard(),
-
-
               ],
             ),
           ),

@@ -4,6 +4,8 @@ import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/components/investment_limits_indicator.dart';
 import 'package:Mawthoq/features/account/views/components/investment_limits_guide.dart';
 import 'package:Mawthoq/features/account/views/components/privacy_security_container.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -15,11 +17,11 @@ class InvestmentLimitsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Investment Limits',
+          LocaleKeys.investment_limit,
           style: AppTheme.mainTextStyle(
             fontWeight: FontWeight.bold,
           ),
-        ),
+        ).tr(),
       ),
       body: Padding(
         padding: EdgeInsets.all(6.w),
@@ -27,7 +29,7 @@ class InvestmentLimitsScreen extends StatelessWidget {
           children: [
             InvestmentLimitsIndicator(
               isInvetmentLimit: true,
-              headLabel: "from limit",
+              headLabel: LocaleKeys.from_limit.tr(),
               raisedFunds: 5000,
               requestedFunds: 10000,
               width: 86.w,
@@ -36,34 +38,31 @@ class InvestmentLimitsScreen extends StatelessWidget {
               height: 3.h,
             ),
             PrivacyAndSecurityContainer(
-              label: 'New Investor',
+              label: LocaleKeys.new_investor.tr(),
               svgAsset: AppImages.account1,
-              string: 'Update',
+              string: LocaleKeys.update.tr(),
             ),
             Space(
               height: 3.h,
             ),
             InvestmentLimitsGuide(
-                question: 'When will my investment limit be reset?',
-                answer:
-                    'Your annual investment limit will be restored on January 1, 2025',
-                svgAsset: AppImages.heart),
+                question: LocaleKeys.investment_limit_reset.tr(),
+                answer: LocaleKeys.annual_investment_limit.tr(),
+                iconData: Icons.calendar_month_outlined),
             Space(
               height: 3.h,
             ),
             InvestmentLimitsGuide(
-                question: 'Why is the limit applied to my investment?',
-                answer:
-                    'Local regulations limit individual investors to a maximum investment of 50,000 American dollars on the Seamless platform per calendar year.',
-                svgAsset: AppImages.password),
+                question: LocaleKeys.why_limit_applied.tr(),
+                answer: LocaleKeys.local_regulations.tr(),
+                iconData: Icons.lock_outline),
             Space(
               height: 3.h,
             ),
             InvestmentLimitsGuide(
-                question: 'How do I become a professional investor?',
-                answer:
-                    'If you have assets worth more than one million dollars, you can contact us to be classified as a professional investor. Conditions mentioned above vary.',
-                svgAsset: AppImages.coin),
+                question: LocaleKeys.how_to_become_professional_investor.tr(),
+                answer: LocaleKeys.professional_investor_conditions.tr(),
+                iconData: Icons.arrow_upward_outlined),
           ],
         ),
       ),

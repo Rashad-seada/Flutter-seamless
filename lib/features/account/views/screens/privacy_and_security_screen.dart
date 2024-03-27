@@ -1,12 +1,13 @@
+import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/components/privacy_security_card.dart';
 import 'package:Mawthoq/features/account/views/components/privacy_security_container.dart';
 import 'package:Mawthoq/features/account/views/components/settings_toggle_card.dart';
+import 'package:Mawthoq/features/account/views/components/toggle_button.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
 import '../../../../generated/locale_keys.g.dart';
 import '../components/custom_app_bar.dart';
 
@@ -21,13 +22,12 @@ class PrivacyAndSecurityScreen extends StatelessWidget {
           shrinkWrap: true,
           padding: EdgeInsets.symmetric(horizontal: 7.w),
           children: [
-
             Space(
               height: 2.h,
             ),
-
-            CustomAppBar(label: LocaleKeys.privacy_security.tr(),),
-
+            CustomAppBar(
+              label: LocaleKeys.privacy_security.tr(),
+            ),
             Space(
               height: 3.h,
             ),
@@ -36,33 +36,39 @@ class PrivacyAndSecurityScreen extends StatelessWidget {
               height: 3.h,
             ),
             Text(
-              'Privacy',
+              LocaleKeys.privacy,
               style: AppTheme.mainTextStyle(
-                color:AppTheme.neutral400,
+                color: AppTheme.neutral400,
                 fontWeight: FontWeight.w600,
                 fontSize: 11.sp,
               ),
-            ),
+            ).tr(),
             Space(
               height: .5.h,
             ),
-            PrivacyAndSecurityContainer(label: '', svgAsset: '',),
+            PrivacyAndSecurityContainer(
+              label: LocaleKeys.privacy_policy.tr(),
+              svgAsset: AppImages.global,
+            ),
             Space(
               height: 2.h,
             ),
             Text(
-              'Safety',
+              LocaleKeys.safety,
               style: AppTheme.mainTextStyle(
-                color:AppTheme.neutral400,
-
+                color: AppTheme.neutral400,
                 fontWeight: FontWeight.w600,
                 fontSize: 11.sp,
               ),
-            ),
+            ).tr(),
             Space(
               height: .5.h,
             ),
-            SettingsToggleCard(),
+            SettingsToggleCard(
+              title: LocaleKeys.biometric_authentication.tr(),
+              subTitle: LocaleKeys.more_security_factors.tr(),
+              svgAsset: AppImages.email,
+            ),
           ],
         ),
       ),

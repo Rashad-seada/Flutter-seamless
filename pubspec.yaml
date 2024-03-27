@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+
   # State management
   bloc:
   flutter_bloc:

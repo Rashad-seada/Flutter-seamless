@@ -1,4 +1,4 @@
-package com.domain.appname
+package com.domain.seamless
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -18,58 +18,56 @@ class AccountInformationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+      body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 7.w),
-        child: ListView(
-          children: [
-            Space(
-              height: 2.h,
-            ),
-            CustomAppBar(
-              label: LocaleKeys.account_info.tr(),
-            ),
-            Space(
-              height: 3.h,
-            ),
-            AccountPageCard(
-              title: 'Youssef Ashour',
-              subTitle: 'Since 2015',
-              showArrow: false,
-            ),
-            Space(
-              height: 3.h,
-            ),
-            Text(
-              LocaleKeys.account_data,
-              style: AppTheme.mainTextStyle(
-                  fontWeight: FontWeight.bold, fontSize: 13.sp),
-            ).tr(),
-            Space(
-              height: 1.5.h,
-            ),
-            AccountPageContainer(
-                info: context.read<AccountCubit>().accountScreenInfo),
-            Space(
-              height: 3.h,
-            ),
-            Text(
-              LocaleKeys.investment_limit,
-              style: AppTheme.mainTextStyle(
-                  fontWeight: FontWeight.bold, fontSize: 13.sp),
-            ).tr(),
-            Space(
-              height: 1.5.h,
-            ),
-            InvestmentLimitsIndicator(
-              headLabel: LocaleKeys.investment_limit.tr(),
-              svgAsset: AppImages.invLimit,
-              isInvetmentLimit: false,
-              raisedFunds: 5000,
-              requestedFunds: 10000,
-              width: 86.w,
-            ),
-          ],
-        ),
+        children: [
+          Space(
+            height: 2.h,
+          ),
+          CustomAppBar(
+            label: LocaleKeys.account_info.tr(),
+          ),
+          Space(
+            height: 3.h,
+          ),
+          AccountPageCard(
+            title: 'Youssef Ashour',
+            subTitle: 'Since 2015',
+            showArrow: false,
+          ),
+          Space(
+            height: 3.h,
+          ),
+          Text(
+            LocaleKeys.account_data,
+            style: AppTheme.mainTextStyle(
+                fontWeight: FontWeight.bold, fontSize: 13.sp),
+          ).tr(),
+          Space(
+            height: 1.5.h,
+          ),
+          AccountPageContainer(
+              info: context.read<AccountCubit>().accountScreenInfo),
+          Space(
+            height: 3.h,
+          ),
+          Text(
+            LocaleKeys.investment_limit,
+            style: AppTheme.mainTextStyle(
+                fontWeight: FontWeight.bold, fontSize: 13.sp),
+          ).tr(),
+          Space(
+            height: 1.5.h,
+          ),
+          InvestmentLimitsIndicator(
+            headLabel: LocaleKeys.investment_limit.tr(),
+            svgAsset: AppImages.invLimit,
+            isInvetmentLimit: false,
+            raisedFunds: 5000,
+            requestedFunds: 10000,
+            width: 86.w,
+          ),
+        ],
       ),
     );
   }

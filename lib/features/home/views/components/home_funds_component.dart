@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/config/app_theme.dart';
+import 'package:intl/intl.dart';
 
 // ignore: must_be_immutable
 class HomeFundsComponents extends StatelessWidget {
@@ -21,6 +22,8 @@ class HomeFundsComponents extends StatelessWidget {
     return raisedFunds / requestedFunds;
   }
 
+  NumberFormat formatter = NumberFormat('#,##0');
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,7 +35,7 @@ class HomeFundsComponents extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  raisedFunds.toStringAsFixed(1),
+                  formatter.format(raisedFunds),
                   style: AppTheme.mainTextStyle(
                       fontWeight: FontWeight.w600,
                       color: AppTheme.primary900,

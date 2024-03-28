@@ -8,7 +8,11 @@ import '../../../../core/views/widgets/space.dart';
 import '../../../../generated/locale_keys.g.dart';
 
 class CartPayNowCard extends StatelessWidget {
-  const CartPayNowCard({super.key});
+  double totalCartValue;
+
+  CartPayNowCard({super.key,required this.totalCartValue});
+
+  NumberFormat formatter = NumberFormat('#,##0');
 
   @override
   Widget build(BuildContext context) {
@@ -61,13 +65,14 @@ class CartPayNowCard extends StatelessWidget {
                   Space(width: 1.w,),
 
                   Text(
-                    "1500",
+                    formatter.format(totalCartValue),
                     style: AppTheme.mainTextStyle(
                         fontSize: 15.sp,
                         color: AppTheme.neutral900,
                         fontWeight: FontWeight.w600
                     ),
                   ).tr(),
+
                 ],
               ),
 

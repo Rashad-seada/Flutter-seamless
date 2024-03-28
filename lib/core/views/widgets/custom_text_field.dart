@@ -24,7 +24,7 @@ class CustomTextField extends StatefulWidget {
   bool enabled;
   FocusNode? focusNode;
   bool isSecure;
-
+  Color? fillColor;
   CustomTextField({
     Key? key,
     this.width,
@@ -44,7 +44,8 @@ class CustomTextField extends StatefulWidget {
     this.onFieldSubmitted,
     this.enabled = true,
     this.focusNode,
-    this.isSecure = false
+    this.isSecure = false,
+    this.fillColor
   }) : super(key: key);
 
   @override
@@ -71,7 +72,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       decoration: InputDecoration(
         filled: true,
 
-        fillColor: Color(0xffecf1fd),
+        fillColor: widget.fillColor ?? Color(0xffecf1fd),
 
         suffixIcon: (widget.isSecure)? Padding(
           padding: EdgeInsets.all(3.w),
@@ -88,7 +89,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           ),
         ) : null,
         contentPadding: EdgeInsets.symmetric(
-            vertical: (widget.height == null) ? 1.5.h : widget.height!, horizontal: 1.w),
+            vertical: (widget.height == null) ? 1.5.h : widget.height!, horizontal: 3.w),
         // Adjust the vertical padding as needed
 
 
@@ -97,8 +98,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
         labelStyle: TextStyle(
           color: AppTheme.neutral400,
-          fontSize: AppTheme.font16.sp,
-          fontWeight: FontWeight.w400,
+          fontSize: 10.sp,
+          fontWeight: FontWeight.w500,
         ),
 
 
@@ -107,8 +108,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
         hintStyle: TextStyle(
           color: AppTheme.neutral400,
-          fontSize: AppTheme.font14.sp,
-          fontWeight: FontWeight.w400,
+          fontSize: 10.sp,
+          fontWeight: FontWeight.w500,
         ),
 
         disabledBorder: OutlineInputBorder(
@@ -118,7 +119,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
         enabledBorder: OutlineInputBorder(
             borderSide:
-                const BorderSide(color: AppTheme.neutral100, width: 1),
+                const BorderSide(color: AppTheme.neutral200, width: 1),
             borderRadius: widget.borderRadius),
 
         focusedBorder: OutlineInputBorder(

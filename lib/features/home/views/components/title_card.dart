@@ -5,7 +5,12 @@ import 'package:sizer/sizer.dart';
 import '../../../../core/config/app_theme.dart';
 
 class TitleCard extends StatelessWidget {
-  const TitleCard({super.key});
+  String title;
+  String bedrooms;
+  String bathrooms;
+  String area;
+
+  TitleCard({super.key , required this.title,required this.bedrooms,required this.bathrooms,required this.area});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +20,7 @@ class TitleCard extends StatelessWidget {
 
 
         Text(
-          "2 Bed al Majara 1 (407)",
+          title,
           style: AppTheme.mainTextStyle(
               fontWeight: FontWeight.w400,
               color: AppTheme.secondary900,
@@ -24,7 +29,7 @@ class TitleCard extends StatelessWidget {
 
 
         Space(
-          height: 0.8.h,
+          height: 2.h,
         ),
 
 
@@ -32,7 +37,7 @@ class TitleCard extends StatelessWidget {
           children: [
 
             Text(
-              "2 Bed",
+              "$bedrooms Bedrooms",
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w400,
                   color: AppTheme.neutral500,
@@ -47,7 +52,7 @@ class TitleCard extends StatelessWidget {
             ),
 
             Text(
-              "2 bath",
+              "$bathrooms Bathrooms",
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w400,
                   color: AppTheme.neutral500,
@@ -63,7 +68,7 @@ class TitleCard extends StatelessWidget {
 
 
             Text(
-              "1,338 sq.ft",
+              "$area sq.ft",
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w400,
                   color: AppTheme.neutral500,

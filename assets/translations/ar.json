@@ -2,73 +2,97 @@
   "on_boarding_title_1": "أحدث طريقه للاستثمار في العقارات",
   "on_boarding_title_2": "ملف مستثمر متكامل",
   "on_boarding_title_3": "اصدار شهادات ملكية",
+
   "on_boarding_description_1": "نوفر لك طرق حديثه للاستثمار في العقارات بشكل أمن وموثق",
   "on_boarding_description_2": "نوفر لك لوحة تحكم متكاملة وسلسه لمتابعة استثماراتك واموالك من خلال المحفظة",
   "on_boarding_description_3": "نصدر لجميع مستثمرين سيملس شهادات ملكية للاستثمار الخاص بهم",
+
   "next": "التالي",
   "skip": "تخطي",
+
   "auth_method_title": "احدث طرق الاستثمار",
   "auth_method_description": "اختر بين تسجيل الدخول الآمن أو التسجيل السريع لتخصيص وصولك.",
+
   "login": "تسجيل الدخول",
   "register": "انشاء حساب",
   "register_tailor": "انشاء حساب كخياط",
   "register_buyer": "انشاء حساب كمشتري",
+
   "login_description": "سجل دخول الان",
   "register_description": "انشاء حساب الان",
+
   "username": "اسم المستخدم",
   "phone_number": "رقم الهاتف",
   "trade_register": "السجل التجاري",
   "tax_id_number": "الرقم الضريبي",
+
   "email": "البريد الالكتروني",
   "password": "الرقم السري",
+
   "username_hint": "ادخل اسم المستخدم",
   "phone_number_hint": "ادخل رقم الهاتف",
   "trade_register_hint": "ادخل السجل التجاري",
   "tax_id_number_hint": "ادخل الرقم الضريبي",
   "upload": "رفع الملف",
   "registration_certificate": "صوره شهاده التسجيل",
+
   "email_hint": "ادخل البريد الاكتروني",
   "password_hint": "ادخل كلمه المرور الخاصه بك",
+
   "remember_me": "تذكرني",
   "forgot_password": "نسيت كلمه المرور؟",
+
   "dont_have_account": "ليس لديك حساب",
+
   "already_have_account": "لديك حساب بالفعل",
+
   "done": "تم",
   "all_done": "كل شسء تم",
   "all_done_description": "لقد ارسلنا لك رساله بريديه تحقق منها لتاكيد حساب",
+
   "have_no_products": "ليس لديك منتجات",
   "have_no_products_description": "جرب إضافة بعض المنتجات وستظهر في هذه الصفحة من خلال الرمز زائد أدناه",
+
   "add": "اضف",
   "add_product": "اضف منتج",
   "home": "الرئيسيه",
   "our_terms": "مرحبًا بك في تطبيق تطوير شركة SSH، حيث نقدم لك أداة قوية تهدف إلى تسهيل عمليات تطوير وتحسين الأداء داخل شركتك. يعتبر الإبداع والابتكار جزءاً أساسياً من رحلة نجاح الشركات",
-  "reset_password": "اعاده تعيين كلمه المرور",
-  "reset_password_sub_text": "ادخل رقم الهاتف الخاص بك وسوف نقوم بارسال رساله نصحيه تحتوي على اربع ارقام, لا تقم بمشاركه هذا الرقم مع احد",
-  "confirm_code": "تاكيد الكود",
-  "confirm_code_sub_text": "تم ارسال كود مكون من اربع ارقام في رساله نصيه لرقم الهاتف الخاص بك, ادخل الكود بالاسفل",
-  "didnt_recive_code": "لم اتلقى اي رسائل؟",
-  "resend": "اعاده الارسال",
-  "confirm": "تاكيد",
+
+  "reset_password" : "اعاده تعيين كلمه المرور",
+  "reset_password_sub_text" : "ادخل رقم الهاتف الخاص بك وسوف نقوم بارسال رساله نصحيه تحتوي على اربع ارقام, لا تقم بمشاركه هذا الرقم مع احد",
+
+  "confirm_code" : "تاكيد الكود",
+  "confirm_code_sub_text" : "تم ارسال كود مكون من اربع ارقام في رساله نصيه لرقم الهاتف الخاص بك, ادخل الكود بالاسفل",
+  "didnt_recive_code" : "لم اتلقى اي رسائل؟",
+  "resend" : "اعاده الارسال",
+  "confirm" : "تاكيد",
+
   "real_state": "العقارات",
   "wallet": "المحفظه",
   "documents": "الملفات",
   "rewards": "المكافآت",
   "account": "حسابي",
   "sold": "مباع",
+
   "annual_return": "العائد السنوي",
   "expected_growth": "النمو المتوقع",
-  "expected_rental_return": "عائد الايجار المتوقع",
-  "net_rental_return": "العايد الصافي للايجار",
-  "investor_profile": "الملف الاستثماري",
-  "investment_value": "قيمه ملفك الاستثماري",
+  "expected_rental_return" : "عائد الايجار المتوقع",
+  "net_rental_return" : "العايد الصافي للايجار",
+
+  "investor_profile" : "الملف الاستثماري",
+
+  "investment_value" : "قيمه ملفك الاستثماري",
+
   "invest": "استثمر",
   "deposit": "إيداع",
+
   "start_selling": "بدء البيع",
   "begin_investing": "ابدأ الاستثمار الآن",
   "begin_investing_sub_text": "رحلتك في الاستثمار تبدأ من هنا",
   "begin_investing_step1": "سوف تتلقى مستندات الملكية القانونية من المنصة",
   "begin_investing_step2": "ستحصل على عوائد إيجار شهرية",
   "begin_investing_step3": "سيتم الحفاظ على جميع أصولك مع مرور الوقت",
+
   "money_grows": "كيف ستنمو اموالك؟",
   "monthly_deposits": "ودائعك الشهريه",
   "expected_investments_value": "قيمه ملفك الاستثماري على",
@@ -77,31 +101,41 @@
   "net_return": "صافي العائد",
   "view_investments_chances": "مشاهده فرص استثماريه مميزه",
   "view_investments_chances_sub_text": "تصفح الان فرص مميزه للاستثمار في العقارات",
+
   "explore_real_estate": "تصفح العقارات",
+
   "investment_limit": "حد الاستثمار",
   "investment_limit_sub_text": "ابدأ الاستثمار الآن للحصول على عائد أعلى",
+
   "profits": "الأرباح",
+
   "Invite_friends": "ادعو أصدقائك واربح الآن!!",
   "Invite_friends_sub_text": "ادعو أصدقاءك وسيتم مكافأتك برصيد للاستثمار بحرية وأمان",
   "Invite_friends_cta": "مشاركة الرابط",
+
   "balance": "رصيدك",
+
   "withdraw": "سحب",
   "transactions": "المعاملات",
   "no_transactions": "لا توجد معاملات",
   "no_transactions_sub_text": "ابدأ الاستثمار الآن في العقارات",
   "invest_now": "استثمر الآن",
+
   "show_account_info": "إظهار معلومات حسابك",
   "settings": "الإعدادات",
   "privacy_security": "الخصوصية والأمان",
   "help_center": "مركز المساعدة",
   "blog": "المدونة",
   "logout": "تسجيل الخروج",
+
   "investing_cart": "عربه الاستثمار",
   "add_real_state": "اضف عقار جديد",
   "total": "القيمه الاجماليه",
   "pay_now": "الدفع الان",
+
   "monthly_rent": "الايجار الشهري",
   "capital_growth": "نمو راس المال",
+
   "property_price": "سعر العقار",
   "investors": "المستثمرون",
   "closed_on": "أغلق في",
@@ -109,6 +143,45 @@
   "funded_data": "بيانات التمويل",
   "purchase_price": "سعر الشراء",
   "rental_income": "الدخل الإيجاري المدفوع",
+
+
+  "language": "اللغه",
+  "arabic": "العربيه",
+  "english": "الانجليزيه",
+
+  "account_verification": "الرجاء التحقق من حسابك للوصول إلى تفاصيل العقارات وإجراء الاستثمارات",
+
+
+  "your_job": "وظيفتك",
+  "your_job_text": "أخبرنا عن وظيفتك",
+  "your_job_sub_text": "أخبرنا عن وظيفتك لتحصل على تجربة شخصية في التطبيق",
+
+  "your_job_q1": "ما هي وظيفتك؟",
+  "your_job_q2": "هل تعمل حاليا؟",
+
+  "your_address": "عنوانك",
+  "your_address_text": "أخبرنا أين تعيش",
+  "your_address_sub_text": "يضيف هذا إلى أمان التطبيق ويحميك من أي أفراد احتياليين",
+
+  "country": "الدولة",
+  "city": "المدينة",
+  "governorate": "المحافظة",
+  "address_line_1": "العنوان الأول",
+  "address_line_2": "العنوان الثاني",
+
+  "currency": "العمله",
+
+  "employed": "موظف",
+  "name_of_work_place": "اسم مكان عملك",
+  "name_of_work_owner": "ما اسم صاحب عملك؟",
+  "address_of_work": "ما هو عنوان مكان عملك؟",
+  "your_job_title": "ما هو عنوان وظيفتك؟",
+  "your_job_field": "ما هي مجالات عملك؟",
+  "your_main_income": "ما هو دخلك الرئيسي؟",
+
+  "add_to_cart": "أضف إلى السلة",
+  "investment_amount": "مبلغ الاستثمار",
+
   "account_info": "معلومات الحساب",
   "account_data": "بيانات الحساب",
   "phone": "الهاتف",
@@ -150,5 +223,18 @@
   "how_platform_works": "كيف تعمل المنصة؟",
   "how_returns_work": "كيف تعمل العوائد؟",
   "receive_documents": "متى سأتلقى الوثائق؟",
-  "calculate_investment_value": "احتساب قيمة الاستثمار"
+  "calculate_investment_value": "احتساب قيمة الاستثمار",
+
+  "investment_plan": "تخطيط الاستثمار",
+  "investment_plan_sub_text": "كم كنت تخطط للاستثمار في الاشهر ال 12 المقبله؟",
+  "start_with_us": "ابدا الان معنا",
+
+  "investment_starts_from": "استثماري يبدأ من",
+
+  "investment_plan_1": "1000 ريال سعودي للبدأ في الاستثمار",
+  "investment_plan_2": "مناسبات حصريه للاعضاء",
+  "investment_plan_3": "أحدث التقارير في سوق العقارات"
+
+
+
 }

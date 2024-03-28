@@ -2,9 +2,11 @@ import 'dart:async';
 
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/auth/views/blocs/intro/intro_cubit.dart';
 import 'package:Mawthoq/features/onboarding/view/screens/00_on_boarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -26,7 +28,7 @@ class _IntroScreenState extends State<IntroScreen> {
     ));
 
     await Future.delayed(Duration(seconds: 3)).then(
-            (value) => Navigator.push(context, MaterialPageRoute(builder: (_)=> OnBoardingScreen()))
+            (value) => context.read<IntroCubit>().getUser(context)
     );
   }
 

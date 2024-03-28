@@ -7,7 +7,12 @@ import '../../../../core/config/app_theme.dart';
 import '../../../../generated/locale_keys.g.dart';
 
 class DetailsCard extends StatelessWidget {
-  const DetailsCard({super.key});
+  String fundedData;
+  double price;
+  double rentalIncome;
+  DetailsCard({super.key, required this.fundedData, required this.price , required this.rentalIncome });
+
+  NumberFormat formatter = NumberFormat('#,##0');
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +40,7 @@ class DetailsCard extends StatelessWidget {
               ).tr(),
 
               Text(
-                "7 Apr 2021",
+                fundedData,
                 style: AppTheme.mainTextStyle(
                     fontWeight: FontWeight.w600,
                     color: AppTheme.secondary900,
@@ -59,7 +64,7 @@ class DetailsCard extends StatelessWidget {
               ).tr(),
 
               Text(
-                "SAR 107,000,000",
+                "${formatter.format(price)} SAR",
                 style: AppTheme.mainTextStyle(
                     fontWeight: FontWeight.w600,
                     color: AppTheme.secondary900,
@@ -84,7 +89,7 @@ class DetailsCard extends StatelessWidget {
               ).tr(),
 
               Text(
-                "SAR 7,000",
+                "${formatter.format(rentalIncome)} SAR",
                 style: AppTheme.mainTextStyle(
                     fontWeight: FontWeight.w600,
                     color: AppTheme.secondary900,

@@ -31,7 +31,7 @@ class CustomAppBar extends StatelessWidget {
             child:SvgPicture.asset(AppImages.arrow,
               width: 6.w,
               height: 6.w,
-              color: AppTheme.neutral400,
+              color: AppTheme.secondary900,
             ),
         ),
 
@@ -39,13 +39,14 @@ class CustomAppBar extends StatelessWidget {
           label,
           style: AppTheme.mainTextStyle(
             color: AppTheme.neutral700,
+            fontWeight: FontWeight.w600,
             fontSize: 14.sp,
           ),
         ),
 
         SizedBox(
           width: 7.w,
-        )
+        ),
 
 
 

@@ -1,11 +1,14 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
-import 'package:Mawthoq/features/verification/views/components/verfication_steps_button.dart';
-import 'package:Mawthoq/features/verification/views/components/verfication_steps_card.dart';
-import 'package:Mawthoq/features/verification/views/components/verfication_text_card.dart';
-import 'package:Mawthoq/features/verification/views/screens/07_upload_id1.dart';
+import 'package:Mawthoq/features/verification/views/blocs/verification_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
+
+import '../components/verfication_steps_button.dart';
+import '../components/verfication_steps_card.dart';
+import '../components/verfication_text_card.dart';
+import '07_upload_id1.dart';
 
 // created
 class VerficationScreen extends StatelessWidget {
@@ -40,23 +43,25 @@ class VerficationScreen extends StatelessWidget {
                 ),
                 VerificationStepsCard(
                   label: 'Register',
-                  svgAsset: AppImages.plus,
                   step: 'Step 1',
+                    isChecked: true
+
                 ),
                 Space(
                   height: 1.5.h,
                 ),
                 VerificationStepsCard(
                   label: 'What is your job?',
-                  svgAsset: AppImages.plus,
                   step: 'Step 2',
+                  onTap: ()=> context.read<VerificationCubit>()..onStep2Tap(context),
                 ),
                 Space(
                   height: 1.5.h,
                 ),
                 VerificationStepsCard(
                   label: 'Address Verfication',
-                  svgAsset: AppImages.plus,
+                  onTap: ()=> context.read<VerificationCubit>()..onStep3Tap(context),
+
                   step: 'Step 3',
                 ),
                 Space(
@@ -64,15 +69,16 @@ class VerficationScreen extends StatelessWidget {
                 ),
                 VerificationStepsCard(
                   label: 'ID Verfication',
-                  svgAsset: AppImages.plus,
                   step: 'Step 4',
+                  onTap: () => navigateToUploadIdPage(context),
+
                 ),
                 Space(
                   height: 1.5.h,
                 ),
                 VerficationStepsButton(
                   label: 'Continue',
-                  onTap: () => navigateToUploadIdPage(context),
+                  //onTap: () => navigateToUploadIdPage(context),
                 ),
               ],
             ),

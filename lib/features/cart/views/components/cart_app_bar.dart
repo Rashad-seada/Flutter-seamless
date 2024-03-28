@@ -1,6 +1,7 @@
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
@@ -8,6 +9,7 @@ import '../../../../core/config/app_images.dart';
 import '../../../../core/config/app_theme.dart';
 import '../../../../core/views/widgets/custom_network_image.dart';
 import '../../../../core/views/widgets/space.dart';
+import '../bloc/cart/cart_cubit.dart';
 
 class CartAppBar extends StatelessWidget {
   void Function()? onPressed;
@@ -60,7 +62,7 @@ class CartAppBar extends StatelessWidget {
 
         Space(width: 1.5.w,),
         Text(
-          "(1)",
+          "( ${context.read<CartCubit>().cartItemsCount.value} )",
           style: AppTheme.mainTextStyle(
             color: AppTheme.neutral700,
             fontWeight: FontWeight.w700,

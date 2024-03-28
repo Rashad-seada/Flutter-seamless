@@ -111,6 +111,33 @@ abstract class  LocaleKeys {
   static const funded_data = 'funded_data';
   static const purchase_price = 'purchase_price';
   static const rental_income = 'rental_income';
+  static const language = 'language';
+  static const arabic = 'arabic';
+  static const english = 'english';
+  static const account_verification = 'account_verification';
+  static const your_job = 'your_job';
+  static const your_job_text = 'your_job_text';
+  static const your_job_sub_text = 'your_job_sub_text';
+  static const your_job_q1 = 'your_job_q1';
+  static const your_job_q2 = 'your_job_q2';
+  static const your_address = 'your_address';
+  static const your_address_text = 'your_address_text';
+  static const your_address_sub_text = 'your_address_sub_text';
+  static const country = 'country';
+  static const city = 'city';
+  static const governorate = 'governorate';
+  static const address_line_1 = 'address_line_1';
+  static const address_line_2 = 'address_line_2';
+  static const currency = 'currency';
+  static const employed = 'employed';
+  static const name_of_work_place = 'name_of_work_place';
+  static const name_of_work_owner = 'name_of_work_owner';
+  static const address_of_work = 'address_of_work';
+  static const your_job_title = 'your_job_title';
+  static const your_job_field = 'your_job_field';
+  static const your_main_income = 'your_main_income';
+  static const add_to_cart = 'add_to_cart';
+  static const investment_amount = 'investment_amount';
   static const account_info = 'account_info';
   static const account_data = 'account_data';
   static const phone = 'phone';
@@ -153,5 +180,12 @@ abstract class  LocaleKeys {
   static const how_returns_work = 'how_returns_work';
   static const receive_documents = 'receive_documents';
   static const calculate_investment_value = 'calculate_investment_value';
+  static const investment_plan = 'investment_plan';
+  static const investment_plan_sub_text = 'investment_plan_sub_text';
+  static const start_with_us = 'start_with_us';
+  static const investment_starts_from = 'investment_starts_from';
+  static const investment_plan_1 = 'investment_plan_1';
+  static const investment_plan_2 = 'investment_plan_2';
+  static const investment_plan_3 = 'investment_plan_3';
 
 }

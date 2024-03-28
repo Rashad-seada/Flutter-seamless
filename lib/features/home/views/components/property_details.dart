@@ -8,7 +8,15 @@ import '../../../../core/config/app_theme.dart';
 
 
 class PropertyDetails extends StatelessWidget {
-  const PropertyDetails({super.key});
+
+  String location;
+  String locationDescription;
+  bool isRented;
+  bool isProtected;
+  double rentPerMonth;
+  double expectedGrowth;
+
+  PropertyDetails({super.key, required this.location,required this.locationDescription,required this.isRented, required this.isProtected,required this.rentPerMonth,required this.expectedGrowth  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,28 +24,30 @@ class PropertyDetails extends StatelessWidget {
       children: [
 
         PropertyDetailsCard(leadingIcon: AppImages.realState,
-          title: 'Sudia Al reyad',
-          description: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
+          title: location,
+          description: locationDescription,
         ),
 
+        if(isRented)
         PropertyDetailsCard(leadingIcon: AppImages.realState,
           title: 'Rented',
           description: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
         ),
 
-        PropertyDetailsCard(leadingIcon: AppImages.realState,
+        if(isProtected)
+          PropertyDetailsCard(leadingIcon: AppImages.realState,
           title: '1 year rental protection',
           description: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
         ),
 
 
         PropertyDetailsCard(leadingIcon: AppImages.realState,
-          title: 'Current rent 7,000 per month',
+          title: 'Current rent $rentPerMonth per month',
           description: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
         ),
 
         PropertyDetailsCard(leadingIcon: AppImages.realState,
-          title: '7.84% annual gross yield',
+          title: '$expectedGrowth% annual gross yield',
           description: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
         ),
 

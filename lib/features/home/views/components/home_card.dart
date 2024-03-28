@@ -1,5 +1,7 @@
+import 'package:Mawthoq/core/config/app_consts.dart';
 import 'package:Mawthoq/core/views/widgets/custom_network_image.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/home/data/entities/property_entity.dart';
 import 'package:Mawthoq/features/home/views/bloc/home/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,13 +13,14 @@ import 'home_income_chip.dart';
 import 'home_info_chip.dart';
 
 class HomeCard extends StatelessWidget {
-  const HomeCard({super.key});
+  PropertyEntity propertyEntity;
+  HomeCard({super.key,required this.propertyEntity});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(3.5.w),
-      onTap: ()=> context.read<HomeCubit>().onHomeCardClick(context),
+      onTap: ()=> context.read<HomeCubit>().onHomeCardClick(context,propertyEntity.id ?? -1),
       child: Container(
         clipBehavior: Clip.hardEdge,
         padding: EdgeInsets.all(0),
@@ -43,8 +46,8 @@ class HomeCard extends StatelessWidget {
                   height: 23.h,
                   width: double.infinity,
                   fit: BoxFit.cover,
-                  url:
-                      "https://th.bing.com/th/id/R.d4ffd1d4dbdf170494f81c87e58753d2?rik=z%2fWIr5c13CFdIg&pid=ImgRaw&r=0"),
+                  url: AppConsts.imageUrl + (propertyEntity.image ?? "")
+              ),
             ),
             Space(
               height: 1.5.h,
@@ -55,10 +58,12 @@ class HomeCard extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      HomeInfoChip(label: "جده"),
+
+                      HomeInfoChip(label: propertyEntity.city ?? "Unknown"),
                       Space(
                         width: 2.w,
                       ),
+                      if(propertyEntity.isRented == 1)
                       HomeInfoChip(label: "مؤجر"),
                     ],
                   ),
@@ -66,7 +71,7 @@ class HomeCard extends StatelessWidget {
                     height: 1.h,
                   ),
                   Text(
-                    "شقه دورين فالرياض جرين لاند في الرياض من الداخل الشرقي",
+                    propertyEntity.name ?? "Unknown",
                     style: AppTheme.mainTextStyle(
                         color: AppTheme.neutral900,
                         fontWeight: FontWeight.w600,
@@ -76,18 +81,18 @@ class HomeCard extends StatelessWidget {
                     height: 1.h,
                   ),
                   HomeFundsComponents(
-                    raisedFunds: 170,
-                    requestedFunds: 200,
+                    raisedFunds: (propertyEntity.price ?? 0.0) * ((double.tryParse(propertyEntity.percentageSold ?? '') ?? 0.0) / 100),
+                    requestedFunds: propertyEntity.price?.toDouble() ?? 0.0,
                     width: 80.w,
                   ),
                   Space(
                     height: 1.5.h,
                   ),
                   HomeIncomeChip(
-                    annualReturn: 6,
-                    expectedGrowth: 5.6,
-                    expectedRentalReturn: 65,
-                    netRentalReturn: 9,
+                    annualReturn: double.tryParse(propertyEntity.annualIncome?? '') ?? 00,
+                    expectedGrowth: double.tryParse(propertyEntity.annualExpectedGrowth?? '') ?? 00,
+                    expectedRentalReturn: double.tryParse(propertyEntity.annualRentIncome?? '') ?? 00,
+                    netRentalReturn: double.tryParse(propertyEntity.annualNetRentIncome ?? '') ?? 00,
                   ),
                   Space(
                     height: 1.5.h,

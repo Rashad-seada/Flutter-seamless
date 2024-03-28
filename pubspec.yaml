@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+
   # State management
   bloc:
   flutter_bloc:
@@ -47,6 +48,9 @@ dependencies:
 
   # Local Storage
   floor:
+  hive:
+  hive_flutter:
+  path_provider:
 
   # Services
   image_picker:
@@ -70,7 +74,7 @@ dependencies:
   visibility_detector:
   fl_chart:
   readmore:
-
+  shimmer: ^3.0.0
 
   # Service
   internet_connection_checker_plus:
@@ -94,6 +98,7 @@ dev_dependencies:
 
 
   floor_generator:
+  hive_generator:
   build_runner:
 
   # The "flutter_lints" package below contains a set of recommended lints to

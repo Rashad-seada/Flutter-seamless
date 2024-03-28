@@ -73,26 +73,7 @@ class AccountPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Column(
-                        children: [
-                          Text(
-                            'Development:',
-                            style: AppTheme.mainTextStyle(
-                              fontSize: 11.sp,
-                              color: AppTheme.neutral300,
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () {},
-                            child: Image.asset(
-                              filterQuality: FilterQuality.medium,
-                              AppImages.developersLabel,
-                              height: 6.h,
-                              width: 12.h,
-                            ),
-                          ),
-                        ],
-                      ),
+
                       Column(
                         children: [
                           Text(
@@ -102,6 +83,7 @@ class AccountPage extends StatelessWidget {
                               color: AppTheme.neutral300,
                             ),
                           ),
+
                           InkWell(
                             onTap: () {},
                             child: Image.asset(
@@ -111,12 +93,13 @@ class AccountPage extends StatelessWidget {
                               width: 12.h,
                             ),
                           ),
+
                         ],
                       ),
                     ],
                   ),
                   Space(
-                    height: 3.h,
+                    height: 2.h,
                   ),
                   Text(
                     'Version 1.0.0',

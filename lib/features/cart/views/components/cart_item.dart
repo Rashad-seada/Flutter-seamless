@@ -9,7 +9,16 @@ import '../../../../core/views/widgets/main_button.dart';
 import '../../../../generated/locale_keys.g.dart';
 
 class CartItem extends StatelessWidget {
-  const CartItem({super.key});
+  String label;
+  String imageUrl;
+  double monthlyRent;
+  double capitalGrowth;
+  double investedValue;
+
+  CartItem({super.key,required this.label,required this.imageUrl,required this.monthlyRent,required this.capitalGrowth,required this.investedValue,});
+
+  NumberFormat formatter = NumberFormat('#,##0');
+
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +54,7 @@ class CartItem extends StatelessWidget {
                   clipBehavior: Clip.hardEdge,
                   child: CustomNetworkImage(
                     fit: BoxFit.cover,
-                    url:
-                    "https://th.bing.com/th/id/R.d4ffd1d4dbdf170494f81c87e58753d2?rik=z%2fWIr5c13CFdIg&pid=ImgRaw&r=0",
+                    url: imageUrl,
                     width: 20.w,
                     height: 6.h,
                   ),
@@ -55,7 +63,7 @@ class CartItem extends StatelessWidget {
 
                 Expanded(
                   child: Text(
-                    "شقه دورين فالرياض جرين لاند في الرياض من الداخل الشرقي",
+                    label,
                     style: AppTheme.mainTextStyle(
                       color: AppTheme.neutral700,
                       fontSize: 10.sp,
@@ -111,7 +119,7 @@ class CartItem extends StatelessWidget {
                       Space(width: 0.6.w,),
 
                       Text(
-                        "1500",
+                        formatter.format(investedValue),
                         style: AppTheme.mainTextStyle(
                           fontSize: 14.sp,
                           color: AppTheme.neutral900,
@@ -173,7 +181,7 @@ class CartItem extends StatelessWidget {
                   Space(width: 0.6.w,),
 
                   Text(
-                    "1500",
+                    formatter.format(monthlyRent),
                     style: AppTheme.mainTextStyle(
                         fontSize: 12.sp,
                         color: AppTheme.neutral900,
@@ -216,7 +224,7 @@ class CartItem extends StatelessWidget {
                   Space(width: 0.6.w,),
 
                   Text(
-                    "1500",
+                    formatter.format(capitalGrowth),
                     style: AppTheme.mainTextStyle(
                         fontSize: 12.sp,
                         color: AppTheme.neutral900,

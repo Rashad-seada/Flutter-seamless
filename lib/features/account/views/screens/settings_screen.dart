@@ -35,7 +35,7 @@ class SettingsScreen extends StatelessWidget {
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return SettingsCard(
-                    model: context.read<SettingsCubit>().settingsInfo[index],
+                    model: context.read<SettingsCubit>().settingsInfo(context)[index],
                   );
                 },
                 separatorBuilder: (context, index) {
@@ -43,7 +43,7 @@ class SettingsScreen extends StatelessWidget {
                     height: 2.h,
                   );
                 },
-                itemCount: context.read<SettingsCubit>().settingsInfo.length),
+                itemCount: context.read<SettingsCubit>().settingsInfo(context).length),
             Space(
               height: 2.h,
             ),

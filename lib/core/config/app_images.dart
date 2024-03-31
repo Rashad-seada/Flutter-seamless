@@ -87,4 +87,11 @@ class AppImages {
   static String restaurant = "images/restaurant.png";
   static String supermarket = "images/supermarket.png";
 
+  static String invest = "images/invest.png";
+  static String locationPng = "images/location.png";
+  static String money = "images/money.png";
+  static String protection = "images/protection.png";
+  static String rent = "images/rent.png";
+
+
 }

@@ -6,11 +6,20 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:meta/meta.dart';
 
 import '../screens/06_verfication_steps_screen.dart';
+import '../screens/investment_plan_screen.dart';
 
 part 'verification_state.dart';
 
 class VerificationCubit extends Cubit<VerificationState> {
   VerificationCubit() : super(VerificationInitial());
+
+  int investmentPlan = 5000;
+
+  onSliderChange(double newValue) {
+    emit(VerificationSliderChange());
+    investmentPlan = newValue.toInt();
+    emit(VerificationInitial());
+  }
 
   onAccountVerificationCardTap(BuildContext context) {
     navigateToVerificationStepsScreen(context);
@@ -23,7 +32,7 @@ class VerificationCubit extends Cubit<VerificationState> {
 
   onStep2Tap(BuildContext context) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (_) => InvestmentPlan()));
+        context, MaterialPageRoute(builder: (_) => InvestmentPlanScreen()));
   }
 
   onStep3Tap(BuildContext context) {

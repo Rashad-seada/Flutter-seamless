@@ -76,4 +76,15 @@ class AppImages {
   static String videoPlay = "images/videoplay.svg";
   static String global = "images/global.svg";
   static String notifications = "images/notifications.svg";
+
+  static String seamlessLetter = "images/seamless_letter.png";
+
+  static String balcony = "images/balcony.png";
+  static String garden = "images/garden.png";
+  static String gym = "images/gym.png";
+  static String parking = "images/parking.png";
+  static String pool = "images/pool.png";
+  static String restaurant = "images/restaurant.png";
+  static String supermarket = "images/supermarket.png";
+
 }

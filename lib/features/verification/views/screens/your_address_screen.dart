@@ -39,13 +39,14 @@ class YourAddressScreen extends StatelessWidget {
           Text(
             LocaleKeys.your_address_text,
             style: AppTheme.mainTextStyle(
-              fontSize: 15.sp,
-              color: AppTheme.secondary900,
+                fontSize: 18.sp,
+                color: AppTheme.secondary900,
+                fontWeight: FontWeight.w600
             ),
           ).tr(),
 
           Space(
-            height: 1.5.h,
+            height: 1.h,
           ),
           Text(
             LocaleKeys.your_address_sub_text,

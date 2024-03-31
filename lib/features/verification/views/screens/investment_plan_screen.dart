@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/config/app_theme.dart';
@@ -7,9 +8,11 @@ import '../../../../core/views/widgets/main_button.dart';
 import '../../../../core/views/widgets/space.dart';
 import '../../../../generated/locale_keys.g.dart';
 import '../../../account/views/components/custom_app_bar.dart';
+import '../components/investment_plan_card.dart';
+import '../components/investment_plan_slider.dart';
 
-class InvestmentPlan extends StatelessWidget {
-  const InvestmentPlan({super.key});
+class InvestmentPlanScreen extends StatelessWidget {
+  const InvestmentPlanScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,27 +26,27 @@ class InvestmentPlan extends StatelessWidget {
             height: 2.h,
           ),
 
-          CustomAppBar(label: LocaleKeys.your_address.tr()),
+          CustomAppBar(label: LocaleKeys.investment_plan.tr()),
 
           Space(
             height: 5.h,
           ),
 
-
-
           Text(
-            LocaleKeys.your_address_text,
+            LocaleKeys.investment_plan,
             style: AppTheme.mainTextStyle(
-              fontSize: 15.sp,
+              fontSize: 18.sp,
               color: AppTheme.secondary900,
+              fontWeight: FontWeight.w600
             ),
           ).tr(),
 
           Space(
-            height: 1.5.h,
+            height: 1.h,
           ),
+
           Text(
-            LocaleKeys.your_address_sub_text,
+            LocaleKeys.investment_plan_sub_text,
             style: AppTheme.mainTextStyle(
               fontSize: 11.sp,
               color: AppTheme.neutral400,
@@ -51,33 +54,20 @@ class InvestmentPlan extends StatelessWidget {
           ).tr(),
 
           Space(
-            height: 2.h,
+            height: 3.h,
           ),
 
-          Container(
-            clipBehavior: Clip.hardEdge,
-            padding: EdgeInsets.symmetric(horizontal: 5.w,vertical: 8.w),
-            margin: EdgeInsets.only(bottom: 3.h),
-            alignment: Alignment.center,
-            width: double.infinity,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(3.5.w),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.1),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    offset: Offset(0, 3), // changes position of shadow
-                  ),
-                ],
-                color: Colors.white),
-            child: Column(
-              children: [
+          InvestmentPlanSlider(),
 
-              ],
-            ),
+          Space(
+            height: 3.h,
           ),
 
+          InvestmentPlanCard(),
+
+          Space(
+            height: 3.h,
+          ),
 
           MainButton(
             color: AppTheme.primary900,

@@ -1,4 +1,4 @@
-import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import '../../errors/exception.dart';
 
 abstract class NetworkService {
@@ -9,13 +9,12 @@ abstract class NetworkService {
 
 class NetworkServiceImpl implements NetworkService {
 
-  InternetConnection internetConnection = InternetConnection();
-
-
   @override
   Future<bool> get isConnected async {
+    final connectivityResult = await (Connectivity().checkConnectivity());
+
     try {
-      return await InternetConnection().hasInternetAccess;
+      return connectivityResult == ConnectivityResult.mobile || connectivityResult == ConnectivityResult.wifi;
     } catch (e) {
       throw ServiceException("There was unexpected error, please try again");
     }

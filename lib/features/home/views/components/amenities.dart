@@ -47,25 +47,25 @@ class Amenities extends StatelessWidget {
            children: [
 
              if(hasBalacony)
-               amenities(AmenitiesModel(name: 'Balacony', image: AppImages.investment)),
+               amenities(AmenitiesModel(name: 'Balcony', image: AppImages.balcony)),
 
              if(hasGarden)
-               amenities(AmenitiesModel(name: 'Garden', image: AppImages.investment)),
+               amenities(AmenitiesModel(name: 'Garden', image: AppImages.garden)),
 
              if(hasGym)
-               amenities(AmenitiesModel(name: 'Gym', image: AppImages.investment)),
+               amenities(AmenitiesModel(name: 'Gym', image: AppImages.gym)),
 
              if(hasParking)
-               amenities(AmenitiesModel(name: 'Parking', image: AppImages.investment)),
+               amenities(AmenitiesModel(name: 'Parking', image: AppImages.parking)),
 
              if(hasPool)
-               amenities(AmenitiesModel(name: 'Pool', image: AppImages.documents)),
+               amenities(AmenitiesModel(name: 'Pool', image: AppImages.pool)),
 
              if(hasRestarrant)
-               amenities(AmenitiesModel(name: 'Restarrant', image: AppImages.documents)),
+               amenities(AmenitiesModel(name: 'Restaurant', image: AppImages.restaurant)),
 
              if(hasSupermarket)
-               amenities(AmenitiesModel(name: 'Supermarket', image: AppImages.documents)),
+               amenities(AmenitiesModel(name: 'Supermarket', image: AppImages.supermarket)),
 
            ],
         )
@@ -82,7 +82,7 @@ class Amenities extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
 
-          SvgPicture.asset(amenitiesModel.image,width: 8.w,height: 8.w,),
+          Image.asset(amenitiesModel.image,width: 6.w,height: 6.w,),
 
           Space(width: 3.w,),
 

@@ -77,7 +77,7 @@ dependencies:
   shimmer: ^3.0.0
 
   # Service
-  internet_connection_checker_plus:
+  connectivity_plus: 5.0.2
   get_it:
 
   # The following adds the Cupertino Icons font to your application.
@@ -96,7 +96,6 @@ flutter_icons:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
   floor_generator:
   hive_generator:

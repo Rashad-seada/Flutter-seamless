@@ -20,7 +20,7 @@ class HomeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(3.5.w),
-      onTap: ()=> context.read<HomeCubit>().onHomeCardClick(context,propertyEntity.id ?? -1),
+      onTap: ()=> context.read<HomeCubit>().onHomeCardClick(context,propertyEntity.id?.toInt() ?? -1),
       child: Container(
         clipBehavior: Clip.hardEdge,
         padding: EdgeInsets.all(0),

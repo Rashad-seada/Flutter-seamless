@@ -297,7 +297,7 @@ abstract class LocaleKeys {
   static const seamless_fee = 'seamless_fee';
   static const investment_cost = 'investment_cost';
   static const annual_gross_rent = 'annual_gross_rent';
-  static const service_charges = 'service_charges ';
+  static const service_charges = 'service_charges';
   static const maintenance = 'maintenance';
   static const net_income = 'net_income';
   static const location = 'location';
@@ -309,4 +309,5 @@ abstract class LocaleKeys {
   static const pool = 'pool';
   static const restaurant = 'restaurant';
   static const supermarket = 'supermarket';
+  static const your_file = 'your_file';
 }

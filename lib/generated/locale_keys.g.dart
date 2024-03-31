@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class LocaleKeys {
+abstract class  LocaleKeys {
   static const on_boarding_title_1 = 'on_boarding_title_1';
   static const on_boarding_title_2 = 'on_boarding_title_2';
   static const on_boarding_title_3 = 'on_boarding_title_3';
@@ -78,8 +78,7 @@ abstract class LocaleKeys {
   static const year = 'year';
   static const net_return = 'net_return';
   static const view_investments_chances = 'view_investments_chances';
-  static const view_investments_chances_sub_text =
-      'view_investments_chances_sub_text';
+  static const view_investments_chances_sub_text = 'view_investments_chances_sub_text';
   static const explore_real_estate = 'explore_real_estate';
   static const investment_limit = 'investment_limit';
   static const investment_limit_sub_text = 'investment_limit_sub_text';
@@ -157,10 +156,8 @@ abstract class LocaleKeys {
   static const annual_investment_limit = 'annual_investment_limit';
   static const why_limit_applied = 'why_limit_applied';
   static const local_regulations = 'local_regulations';
-  static const how_to_become_professional_investor =
-      'how_to_become_professional_investor';
-  static const professional_investor_conditions =
-      'professional_investor_conditions';
+  static const how_to_become_professional_investor = 'how_to_become_professional_investor';
+  static const professional_investor_conditions = 'professional_investor_conditions';
   static const your_rewards = 'your_rewards';
   static const cashback = 'cashback';
   static const referrals = 'referrals';
@@ -177,8 +174,7 @@ abstract class LocaleKeys {
   static const more_security_factors = 'more_security_factors';
   static const rent_paid_notifications = 'rent_paid_notifications';
   static const email_for_offers = 'email_for_offers';
-  static const email_notifications_properties =
-      'email_notifications_properties';
+  static const email_notifications_properties = 'email_notifications_properties';
   static const learn_more_investing = 'learn_more_investing';
   static const how_platform_works = 'how_platform_works';
   static const how_returns_work = 'how_returns_work';
@@ -210,8 +206,7 @@ abstract class LocaleKeys {
   static const sell_property_for_cash = 'sell_property_for_cash';
   static const timely_cash_offer = 'timely_cash_offer';
   static const competitive_offer_within_days = 'competitive_offer_within_days';
-  static const sell_property_whenever_you_want =
-      'sell_property_whenever_you_want';
+  static const sell_property_whenever_you_want = 'sell_property_whenever_you_want';
   static const offer_within_days = 'offer_within_days';
   static const hassle_free_exit = 'hassle_free_exit';
   static const cover_evaluations_marketing = 'cover_evaluations_marketing';
@@ -230,8 +225,7 @@ abstract class LocaleKeys {
   static const sell_your_stakes = 'sell_your_stakes';
   static const my_stakes = 'my_stakes';
   static const intro_investor = 'intro_investor';
-  static const for_every_qualified_invitation =
-      'for_every_qualified_invitation';
+  static const for_every_qualified_invitation = 'for_every_qualified_invitation';
   static const plus_investor = 'plus_investor';
   static const to_unlock = 'to_unlock';
   static const cashback_for_every_investment = 'cashback_for_every_investment';
@@ -271,8 +265,7 @@ abstract class LocaleKeys {
   static const invest_now_to_get_notified = 'invest_now_to_get_notified';
   static const favourites = 'favourites';
   static const no_favourite_properties_yet = 'no_favourite_properties_yet';
-  static const explore_properties_and_mark_favorites =
-      'explore_properties_and_mark_favorites';
+  static const explore_properties_and_mark_favorites = 'explore_properties_and_mark_favorites';
   static const rent_sub_text = 'rent_sub_text';
   static const protection = 'protection';
   static const protection_sub_text = 'protection_sub_text';
@@ -282,9 +275,8 @@ abstract class LocaleKeys {
   static const annual_gross_yield = 'annual_gross_yield';
   static const annual_gross_yield_sub_text = 'annual_gross_yield_sub_text';
   static const investments_calculator = 'investments_calculator';
-  static const investments_calculator_sub_text =
-      'investments_calculator_sub_text';
-  static const inn = 'in';
+  static const investments_calculator_sub_text = 'investments_calculator_sub_text';
+  static const inn = 'inn';
   static const value_growth = 'value_growth';
   static const total_rent = 'total_rent';
   static const investment = 'investment';
@@ -310,4 +302,15 @@ abstract class LocaleKeys {
   static const restaurant = 'restaurant';
   static const supermarket = 'supermarket';
   static const your_file = 'your_file';
+  static const terms_and_conditions = 'terms_and_conditions';
+  static const read_and_accept_terms_and_conditions = 'read_and_accept_terms_and_conditions';
+  static const terms_and_conditions_agreement = 'terms_and_conditions_agreement';
+  static const final_date = 'final_date';
+  static const property_funding_completion_date = 'property_funding_completion_date';
+  static const special_purpose_company_formed = 'special_purpose_company_formed';
+  static const spv_creation_and_property_deeds_distribution = 'spv_creation_and_property_deeds_distribution';
+  static const expected_first_rental_payment = 'expected_first_rental_payment';
+  static const expected_first_rent_payment_date = 'expected_first_rent_payment_date';
+  static const funding_timeline = 'funding_timeline';
+
 }

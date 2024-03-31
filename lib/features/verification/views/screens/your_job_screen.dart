@@ -1,19 +1,20 @@
-import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/features/verification/views/components/verfication_steps_button.dart';
+import 'package:Mawthoq/features/verification/views/screens/terms&conditions_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
-
 import '../../../../core/config/app_theme.dart';
-import '../../../../core/views/widgets/custom_circle_avatar.dart';
 import '../../../../core/views/widgets/custom_text_field.dart';
-import '../../../../core/views/widgets/main_button.dart';
 import '../../../../core/views/widgets/space.dart';
 import '../../../../generated/locale_keys.g.dart';
 import '../../../account/views/components/custom_app_bar.dart';
 
 class YourJobScreen extends StatelessWidget {
+  void navigateToTermsAndConditionsScreen(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => TermsAndConditionsScreen()));
+  }
+
   const YourJobScreen({super.key});
 
   @override
@@ -136,7 +137,7 @@ class YourJobScreen extends StatelessWidget {
           ),
           VerficationStepsButton(
             label: LocaleKeys.next.tr(),
-            // onTap: () => navigateToJobScreen(context),
+            onTap: () => navigateToTermsAndConditionsScreen(context),
           ),
         ],
       ),

@@ -274,7 +274,7 @@
   "annual_gross_yield_sub_text": "ستكون عائدات هذه الوحدة حسب تحليلنا تقريبًا",
   "investments_calculator": "حاسبة الاستثمارات",
   "investments_calculator_sub_text": "العائد المتوقع للمستثمرات هو",
-  "in": "في",
+  "inn": "في",
   "value_growth": "نمو القيمة",
   "total_rent": "إجمالي الإيجار",
   "investment": "الاستثمار",
@@ -299,5 +299,15 @@
   "pool": "حوض سباحة",
   "restaurant": "مطعم",
   "supermarket": "سوبر ماركت",
-  "your_file": "ملفك"
+  "your_file": "ملفك",
+  "terms_and_conditions": "الشروط والأحكام",
+  "read_and_accept_terms_and_conditions": "إقرأ واقبل الشروط والأحكام",
+  "terms_and_conditions_agreement": "اتفاقية الشروط والأحكام",
+  "final_date": "الموعد النهائي",
+  "property_funding_completion_date": "هذا هو تاريخ اكتمال تمويل العقار",
+  "special_purpose_company_formed": "تم تشكيل شركة ذات غرض خاص وتم توزيع مستند سند الملكية",
+  "spv_creation_and_property_deeds_distribution": "سيتم إنشاء SPV وسيتسلم جميع المستثمرين صكوك الملكية الخاصة بهم في غضون 2-3 أسابيع من إغلاق التمويل ، لإثبات ملكيتهم للعقار",
+  "expected_first_rental_payment": "الدفعة الأولى المتوقعة من الإيجار",
+  "expected_first_rent_payment_date": "من المتوقع أن يتم دفع أول دفعة إيجار لهذا العقار إلى المستثمرين بحلول إبريل 25، 2024",
+  "funding_timeline": "الجدول الزمني للتمويل"
 }

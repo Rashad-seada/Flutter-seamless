@@ -19,7 +19,7 @@ class SellingScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: ListView(
-          padding: EdgeInsets.all(2.w),
+          padding: EdgeInsets.symmetric(horizontal: 2.w),
           physics: const BouncingScrollPhysics(),
           children: [
             Space(

@@ -1,4 +1,7 @@
 import 'package:Mawthoq/core/config/app_images.dart';
+import 'package:Mawthoq/core/utils/is_locale_arabic.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
@@ -41,7 +44,7 @@ class _HomeInvestorCalculatorState extends State<HomeInvestorCalculator> {
         Row(
           children: [
             Text(
-              "Investment calculator",
+              LocaleKeys.investments_calculator.tr(),
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w600,
                   color: AppTheme.secondary900,
@@ -53,7 +56,7 @@ class _HomeInvestorCalculatorState extends State<HomeInvestorCalculator> {
           height: 2.2.h,
         ),
         Text(
-          "Projected investment return of",
+          LocaleKeys.investments_calculator_sub_text.tr(),
           style: AppTheme.mainTextStyle(
               fontWeight: FontWeight.w400,
               color: AppTheme.neutral500,
@@ -109,7 +112,7 @@ class _HomeInvestorCalculatorState extends State<HomeInvestorCalculator> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Initial investments",
+              LocaleKeys.init_investment.tr(),
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w400,
                   color: AppTheme.neutral500,
@@ -163,7 +166,8 @@ class _HomeInvestorCalculatorState extends State<HomeInvestorCalculator> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Property value growth (5 years)",
+              LocaleKeys.property_value_growth.tr(),
+
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w400,
                   color: AppTheme.neutral500,
@@ -215,7 +219,7 @@ class _HomeInvestorCalculatorState extends State<HomeInvestorCalculator> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Expected annual yield",
+              LocaleKeys.expected_annual_yield.tr(),
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w400,
                   color: AppTheme.neutral500,
@@ -314,7 +318,7 @@ class _InvestmentsCalculatorChart extends StatelessWidget {
               width: 11.w,
               height: columnHeight *  propertyValueGrowth / allMoneyGrowth ,
               decoration: BoxDecoration(
-                color: AppTheme.success,
+                color: Color(0xff1f5fcb),
                   borderRadius: BorderRadius.only(topRight: Radius.circular(2.w),topLeft: Radius.circular(2.w))
 
               ),
@@ -360,7 +364,7 @@ class _InvestmentsCalculatorChart extends StatelessWidget {
         ),
 
         Positioned(
-          left: 10.w,
+          left: isLocaleArabic(context) ? 0 : 10.w,
           bottom: -1.w,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -440,7 +444,7 @@ class _InvestmentsCalculatorCard extends StatelessWidget {
     return Container(
 
       clipBehavior: Clip.hardEdge,
-      padding: EdgeInsets.symmetric(horizontal: 2.5.w,vertical: 1.h),
+      padding: EdgeInsets.symmetric(horizontal: 4.w,vertical: 1.h),
       margin: EdgeInsets.only(bottom: 3.h),
       alignment: Alignment.center,
       width: double.infinity,
@@ -453,9 +457,9 @@ class _InvestmentsCalculatorCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          _InvestmentsCalculatorCardItem(dotColor: AppTheme.secondary900, title: "Investment", description: "AED ${ NumberFormat.decimalPattern().format(allMoneyGrowth)}"),
-          _InvestmentsCalculatorCardItem(dotColor: AppTheme.primary900, title: "Total rent", description: "AED ${ NumberFormat.decimalPattern().format(expectedAnnualRentalYield)}"),
-          _InvestmentsCalculatorCardItem(dotColor: AppTheme.success, title: "Value growth", description: "AED ${ NumberFormat.decimalPattern().format(propertyValueGrowth)}")
+          _InvestmentsCalculatorCardItem(dotColor: AppTheme.secondary900, title: LocaleKeys.investment.tr(), description: "AED ${ NumberFormat.decimalPattern().format(allMoneyGrowth)}"),
+          _InvestmentsCalculatorCardItem(dotColor: AppTheme.primary900, title: LocaleKeys.total_rent.tr(), description: "AED ${ NumberFormat.decimalPattern().format(expectedAnnualRentalYield)}"),
+          _InvestmentsCalculatorCardItem(dotColor: Color(0xff1f5fcb), title: LocaleKeys.value_growth.tr(), description: "AED ${ NumberFormat.decimalPattern().format(propertyValueGrowth)}")
 
         ],
       ),

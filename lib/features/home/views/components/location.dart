@@ -1,10 +1,12 @@
 import 'package:Mawthoq/core/config/app_images.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/config/app_theme.dart';
 import '../../../../core/views/widgets/space.dart';
+import '../../../../generated/locale_keys.g.dart';
 
 class Location extends StatelessWidget {
   String location;
@@ -19,7 +21,7 @@ class Location extends StatelessWidget {
         Row(
           children: [
             Text(
-              "Location",
+              LocaleKeys.location.tr(),
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w600,
                   color: AppTheme.secondary900,

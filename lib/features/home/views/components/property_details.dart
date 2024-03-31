@@ -78,13 +78,15 @@ class PropertyDetailsCard extends StatelessWidget {
 
           Container(
             clipBehavior: Clip.hardEdge,
+            alignment: Alignment.center,
+            padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.w),
             decoration: BoxDecoration(
-              shape: BoxShape.circle
-            ),
+                borderRadius: BorderRadius.circular(2.w),
+                color: AppTheme.tertiary900),
             child: Image.asset(
               leadingIcon,
-              height: 4.h,
-              width: 4.h,
+              height: 3.h,
+              width: 3.h,
             ),
           ),
           Space(width: 1.5.h,),

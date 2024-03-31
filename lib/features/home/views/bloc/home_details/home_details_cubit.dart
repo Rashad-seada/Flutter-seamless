@@ -3,14 +3,17 @@ import 'package:Mawthoq/core/errors/failure.dart';
 import 'package:Mawthoq/features/home/data/entities/property_entity.dart';
 import 'package:Mawthoq/features/home/domain/usecases/get_one_property_use_case.dart';
 import 'package:bloc/bloc.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:meta/meta.dart';
+
+import '../../../../../generated/locale_keys.g.dart';
 
 part 'home_details_state.dart';
 
 class HomeDetailsCubit extends Cubit<HomeDetailsState> {
   HomeDetailsCubit() : super(HomeDetailsInitial());
 
-  List<String> tabs = ["Acquisition", "Rental Income"];
+  List<String> get tabs => [LocaleKeys.acquisition.tr(), LocaleKeys.rental_income.tr()];
 
   int selectedIndex = 0;
 

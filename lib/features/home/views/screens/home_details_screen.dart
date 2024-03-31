@@ -20,12 +20,14 @@ import 'package:visibility_detector/visibility_detector.dart';
 import '../../../../core/views/widgets/custom_error_widget.dart';
 import '../../../../core/views/widgets/main_button.dart';
 import '../../../../generated/locale_keys.g.dart';
+import '../../../account/views/components/custom_app_bar.dart';
 import '../components/amenities.dart';
 import '../components/details_card.dart';
 import '../components/details_header_component.dart';
 import '../components/details_image_slider.dart';
 import '../components/financials.dart';
 import '../components/funding_timeline.dart';
+import '../components/home_details_appbar.dart';
 import '../components/home_investor_calculator.dart';
 import '../components/property_details.dart';
 import '../components/title_card.dart';
@@ -72,6 +74,13 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
         }
       },
       child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false, // Remove the back arrow
+          backgroundColor: AppTheme.neutral100,
+          surfaceTintColor: AppTheme.neutral100,
+          shadowColor: AppTheme.secondary900,
+          title: HomeDetailsAppbar(),
+        ),
         body: SingleChildScrollView(
           child: BlocConsumer<HomeDetailsCubit, HomeDetailsState>(
             listener: (context, state) {},
@@ -144,65 +153,54 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                         Space(
                           height: 2.h,
                         ),
-                        SizedBox(
+                        MainButton(
+                          color: AppTheme.primary900,
                           width: 86.w,
                           height: 6.h,
-                          child: Row(
+                          label: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Expanded(
-                                flex: 4,
-                                child: MainButton(
-                                  color: AppTheme.primary900,
-                                  width: 86.w,
-                                  height: 6.h,
-                                  label: Text(
-                                    LocaleKeys.invest,
-                                    style: AppTheme.mainTextStyle(
-                                        color: AppTheme.secondary900,
-                                        fontSize: 11.sp,
-                                        fontWeight: FontWeight.w600),
-                                  ).tr(),
-                                  //onTap: ()=> context.read<LoginCubit>().onLoginClick(context),
-                                ),
+
+
+                              Text(
+                                LocaleKeys.add_to_cart,
+                                style: AppTheme.mainTextStyle(
+                                    color: AppTheme.secondary900,
+                                    fontSize: 11.sp,
+                                    fontWeight: FontWeight.w600),
+                              ).tr(),
+                              Space(width: 2.w,),
+
+                              SvgPicture.asset(
+                                AppImages.cart,
+                                height: 2.5.h,
+                                width: 2.5.h,
+                                color: AppTheme.secondary900,
                               ),
-                              Space(
-                                width: 2.w,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: MainButton(
-                                  color: AppTheme.secondary900,
-                                  width: 86.w,
-                                  height: 6.h,
-                                  label: SvgPicture.asset(
-                                    AppImages.cart,
-                                    height: 3.h,
-                                    width: 3.h,
-                                    color: AppTheme.neutral100,
-                                  ),
-                                  onTap: () {
-                                    showDialog(
-                                      context: context,
-                                      builder: (BuildContext context) {
-                                        return AddToCartDialog(
-                                          label: HomeDetailsSuccess
-                                                  .propertyEntity?.name ??
-                                              '--',
-                                          image: HomeDetailsSuccess
-                                                  .propertyEntity?.image ??
-                                              '--',
-                                          propertyId: HomeDetailsSuccess
-                                                  .propertyEntity?.id
-                                                  ?.toInt() ??
-                                              -1,
-                                        );
-                                      },
-                                    );
-                                  },
-                                ),
-                              ),
+
                             ],
                           ),
+                          onTap: () {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AddToCartDialog(
+                                  label: HomeDetailsSuccess
+                                      .propertyEntity?.name ??
+                                      '--',
+                                  image: HomeDetailsSuccess
+                                      .propertyEntity?.image ??
+                                      '--',
+                                  propertyId: HomeDetailsSuccess
+                                      .propertyEntity?.id
+                                      ?.toInt() ??
+                                      -1,
+                                );
+                              },
+                            );
+                          },
                         ),
                         Space(
                           height: 2.h,

@@ -43,7 +43,7 @@ class HomeTaps extends StatelessWidget {
         child: AnimatedContainer(
           margin: EdgeInsets.only(right: (!isLastInRow) ? 1.5.w : 1.5.w),
           clipBehavior: Clip.hardEdge,
-          padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: .8.h),
+          padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: .8.h),
           alignment: Alignment.center,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(2.w),

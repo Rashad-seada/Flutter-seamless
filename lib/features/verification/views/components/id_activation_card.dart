@@ -1,4 +1,3 @@
-import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';

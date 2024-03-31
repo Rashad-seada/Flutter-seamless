@@ -43,7 +43,7 @@ class Selling4thHeading extends StatelessWidget {
           svgAsset: AppImages.wallet,
         ),
         Space(
-          height: 3.h,
+          height: 2.h,
         ),
         HowItWorksCard(
           title: LocaleKeys.sell_property_whenever_you_want.tr(),
@@ -51,7 +51,7 @@ class Selling4thHeading extends StatelessWidget {
           svgAsset: AppImages.realState,
         ),
         Space(
-          height: 3.h,
+          height: 2.h,
         ),
         HowItWorksCard(
           title: LocaleKeys.hassle_free_exit.tr(),
@@ -59,7 +59,7 @@ class Selling4thHeading extends StatelessWidget {
           svgAsset: AppImages.documents,
         ),
         Space(
-          height: 3.h,
+          height: 2.h,
         ),
         HowItWorksCard(
           title: LocaleKeys.tenants_can_stay.tr(),

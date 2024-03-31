@@ -1,6 +1,7 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/account/views/components/custom_app_bar.dart';
 import 'package:Mawthoq/features/selling/components/closed_selling_grid_item.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -13,12 +14,20 @@ class ClosedSellingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Padding(
-        padding: EdgeInsets.all(3.w),
-        child: ListView(
+    return SafeArea(
+      child: Scaffold(
+        body: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 7.w),
           children: [
+            Space(
+              height: 2.h,
+            ),
+            CustomAppBar(
+              label: LocaleKeys.selling_with_seamless.tr(),
+            ),
+            Space(
+              height: 3.h,
+            ),
             Column(
               children: [
                 Container(

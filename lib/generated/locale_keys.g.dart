@@ -266,5 +266,6 @@ abstract class  LocaleKeys {
   static const favourites = 'favourites';
   static const no_favourite_properties_yet = 'no_favourite_properties_yet';
   static const explore_properties_and_mark_favorites = 'explore_properties_and_mark_favorites';
+  static const your_file = 'your_file';
 
 }

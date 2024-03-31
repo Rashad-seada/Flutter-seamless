@@ -37,51 +37,65 @@ class InvestmentPlanCard extends StatelessWidget {
               color: Colors.white),
           child: Column(
             children: [
-
               Image.asset(
-                  height: 4.h,
-                  fit: BoxFit.fitHeight,
-                  AppImages.seamlessLetter),
-
-
-              Space(height: 1.5.h,),
-
+                  height: 4.h, fit: BoxFit.fitHeight, AppImages.seamlessLetter),
+              Space(
+                height: 1.5.h,
+              ),
               Text(
                 LocaleKeys.start_with_us,
                 style: AppTheme.mainTextStyle(
-                    color: AppTheme.secondary900, fontSize: 8.sp,fontWeight: FontWeight.w600),
+                    color: AppTheme.secondary900,
+                    fontSize: 8.sp,
+                    fontWeight: FontWeight.w600),
               ).tr(),
-
-              Space(height: 3.h,),
-
+              Space(
+                height: 3.h,
+              ),
               Text(
                 LocaleKeys.investment_starts_from,
                 style: AppTheme.mainTextStyle(
-                    color: AppTheme.secondary900, fontSize: 9.sp,fontWeight: FontWeight.w600),
-              ).tr(),
-
-              Space(height: 0.5.h,),
-
-              Text(
-                "SAR 1000",
-                style: AppTheme.mainTextStyle(
                     color: AppTheme.secondary900,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 30.sp
-                ),
+                    fontSize: 9.sp,
+                    fontWeight: FontWeight.w600),
               ).tr(),
-
-              Space(height: 2.h,),
-
+              Space(
+                height: 0.5.h,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    context.read<VerificationCubit>().investmentPlan.toString(),
+                    style: AppTheme.mainTextStyle(
+                        color: AppTheme.secondary900,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 30.sp),
+                  ).tr(),
+                  Space(
+                    width: 1.5.w,
+                  ),
+                  Text(
+                    'SAR',
+                    style: AppTheme.mainTextStyle(
+                        color: AppTheme.secondary900,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 30.sp),
+                  ).tr(),
+                ],
+              ),
+              Space(
+                height: 2.h,
+              ),
               Row(
                 children: [
                   Icon(
                     Icons.check,
                     color: AppTheme.neutral900,
                   ),
-
-                  Space(width: 2.w,),
-
+                  Space(
+                    width: 2.w,
+                  ),
                   Text(
                     LocaleKeys.investment_plan_1,
                     style: AppTheme.mainTextStyle(
@@ -89,16 +103,15 @@ class InvestmentPlanCard extends StatelessWidget {
                   ).tr(),
                 ],
               ),
-
               Row(
                 children: [
                   Icon(
                     Icons.check,
                     color: AppTheme.neutral900,
                   ),
-
-                  Space(width: 2.w,),
-
+                  Space(
+                    width: 2.w,
+                  ),
                   Text(
                     LocaleKeys.investment_plan_2,
                     style: AppTheme.mainTextStyle(
@@ -106,16 +119,15 @@ class InvestmentPlanCard extends StatelessWidget {
                   ).tr(),
                 ],
               ),
-
               Row(
                 children: [
                   Icon(
                     Icons.check,
                     color: AppTheme.neutral900,
                   ),
-
-                  Space(width: 2.w,),
-
+                  Space(
+                    width: 2.w,
+                  ),
                   Text(
                     LocaleKeys.investment_plan_3,
                     style: AppTheme.mainTextStyle(
@@ -123,9 +135,9 @@ class InvestmentPlanCard extends StatelessWidget {
                   ).tr(),
                 ],
               ),
-
-              Space(height: 1.h,),
-
+              Space(
+                height: 1.h,
+              ),
             ],
           ),
         );

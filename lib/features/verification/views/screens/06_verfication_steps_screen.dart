@@ -26,7 +26,7 @@ class VerficationScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 5.w),
+          padding: EdgeInsets.symmetric(horizontal: 7.w),
           children: [
             Space(
               height: 2.h,
@@ -55,7 +55,7 @@ class VerficationScreen extends StatelessWidget {
                   isChecked: true,
                 ),
                 Space(
-                  height: 1.5.h,
+                  height: 2.h,
                 ),
                 VerificationStepsCard(
                   label: LocaleKeys.what_is_your_job.tr(),
@@ -64,7 +64,7 @@ class VerficationScreen extends StatelessWidget {
                       context.read<VerificationCubit>()..onStep2Tap(context),
                 ),
                 Space(
-                  height: 1.5.h,
+                  height: 2.h,
                 ),
                 VerificationStepsCard(
                   label: LocaleKeys.address_verification.tr(),
@@ -73,7 +73,7 @@ class VerficationScreen extends StatelessWidget {
                   step: LocaleKeys.step_3.tr(),
                 ),
                 Space(
-                  height: 1.5.h,
+                  height: 2.h,
                 ),
                 VerificationStepsCard(
                   label: LocaleKeys.id_verification.tr(),
@@ -81,7 +81,7 @@ class VerficationScreen extends StatelessWidget {
                   onTap: () => navigateToUploadIdPage(context),
                 ),
                 Space(
-                  height: 1.5.h,
+                  height: 2.h,
                 ),
                 VerficationStepsButton(
                   label: LocaleKeys.continue_.tr(),

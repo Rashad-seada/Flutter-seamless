@@ -24,12 +24,13 @@ class MainCubit extends Cubit<MainState> {
   }
 
   List<PageModel> get pages => [
-      PageModel(LocaleKeys.real_state.tr(), AppImages.realState, HomePage()),
-      PageModel(LocaleKeys.wallet.tr(), AppImages.wallet, WalletPage()),
-      PageModel(LocaleKeys.documents.tr(), AppImages.documents, InvestorProfilePage()),
-      PageModel(LocaleKeys.rewards.tr(), AppImages.reward, RewardsPage()),
-      PageModel(LocaleKeys.account.tr(), AppImages.account, AccountPage()),
-  ];
+        PageModel(LocaleKeys.real_state.tr(), AppImages.realState, HomePage()),
+        PageModel(LocaleKeys.wallet.tr(), AppImages.wallet, WalletPage()),
+        PageModel(LocaleKeys.your_file.tr(), AppImages.documents,
+            InvestorProfilePage()),
+        PageModel(LocaleKeys.rewards.tr(), AppImages.reward, RewardsPage()),
+        PageModel(LocaleKeys.account.tr(), AppImages.account, AccountPage()),
+      ];
 
   onNavItemTap(index) {
     emit(MainPageChanged());

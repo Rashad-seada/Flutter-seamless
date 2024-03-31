@@ -279,7 +279,8 @@ class CodegenLoader extends AssetLoader{
   "invest_now_to_get_notified": "استثمر الآن لتحصل على إشعارات حول جميع استثماراتك وعقاراتك المباعة",
   "favourites": "المفضلة",
   "no_favourite_properties_yet": "لا يوجد عقارات مفضلة حتى الآن",
-  "explore_properties_and_mark_favorites": "استكشف العقارات وقم بتحديد المفضلة لديك لتجدها هنا بسهولة"
+  "explore_properties_and_mark_favorites": "استكشف العقارات وقم بتحديد المفضلة لديك لتجدها هنا بسهولة",
+  "your_file": "ملفك"
 };
 static const Map<String,dynamic> en = {
   "on_boarding_title_1": "The Latest Way to Invest in Real Estate",
@@ -546,7 +547,8 @@ static const Map<String,dynamic> en = {
   "invest_now_to_get_notified": "Invest now to get notified about all your investments and your sold properties",
   "favourites": "Favourites",
   "no_favourite_properties_yet": "No favourite properties yet",
-  "explore_properties_and_mark_favorites": "Explore properties and mark your favourite ones to find them here with easy access"
+  "explore_properties_and_mark_favorites": "Explore properties and mark your favourite ones to find them here with easy access",
+  "your_file": "Your file"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

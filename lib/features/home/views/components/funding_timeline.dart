@@ -1,3 +1,5 @@
+import 'package:Mawthoq/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -16,12 +18,12 @@ class FundingTimeline extends StatelessWidget {
         Row(
           children: [
             Text(
-              "Funding timeline",
+              LocaleKeys.funding_timeline,
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w600,
                   color: AppTheme.secondary900,
                   fontSize: 15.sp),
-            ),
+            ).tr(),
           ],
         ),
 
@@ -52,15 +54,16 @@ class FundingTimeline extends StatelessWidget {
                       ),
 
                       Text(
-                        "Closing data",
+                        LocaleKeys.final_date.tr(),
                         style: AppTheme.mainTextStyle(
                             fontWeight: FontWeight.w600,
                             color: AppTheme.secondary900,
                             fontSize: 12.sp),
                       ),
+                      Space(height: 1.h,),
 
                       Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                        LocaleKeys.property_funding_completion_date.tr(),
                         style: AppTheme.mainTextStyle(
                             fontWeight: FontWeight.w500,
                             color: AppTheme.neutral400,
@@ -86,15 +89,16 @@ class FundingTimeline extends StatelessWidget {
                       ),
 
                       Text(
-                        "Closing data",
+                        LocaleKeys.special_purpose_company_formed.tr(),
                         style: AppTheme.mainTextStyle(
                             fontWeight: FontWeight.w600,
                             color: AppTheme.secondary900,
                             fontSize: 12.sp),
                       ),
+                      Space(height: 1.h,),
 
                       Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                        LocaleKeys.spv_creation_and_property_deeds_distribution.tr(),
                         style: AppTheme.mainTextStyle(
                             fontWeight: FontWeight.w500,
                             color: AppTheme.neutral400,
@@ -120,15 +124,17 @@ class FundingTimeline extends StatelessWidget {
                       ),
 
                       Text(
-                        "Closing data",
+                        LocaleKeys.expected_first_rental_payment.tr(),
                         style: AppTheme.mainTextStyle(
                             fontWeight: FontWeight.w600,
                             color: AppTheme.secondary900,
                             fontSize: 12.sp),
                       ),
 
+                      Space(height: 1.h,),
+
                       Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                        LocaleKeys.expected_first_rent_payment_date.tr(),
                         style: AppTheme.mainTextStyle(
                             fontWeight: FontWeight.w500,
                             color: AppTheme.neutral400,

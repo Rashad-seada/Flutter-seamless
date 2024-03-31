@@ -5,17 +5,21 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/config/app_theme.dart';
+import '../../data/utils/property_status.dart';
 
 // ignore: must_be_immutable
 class HomeDetailsFundsComponents extends StatelessWidget {
   double raisedFunds;
   double requestedFunds;
   double width;
+  String status;
+
   HomeDetailsFundsComponents(
       {super.key,
       this.width = 100,
       required this.raisedFunds,
-      required this.requestedFunds});
+      required this.requestedFunds,
+      required this.status,});
 
   double percentOfRaisedFunds() {
     return raisedFunds / requestedFunds;
@@ -59,6 +63,8 @@ class HomeDetailsFundsComponents extends StatelessWidget {
                 fontWeight: FontWeight.w600
               ),
             ),
+            (status == PropertyStatus.soldOut)?
+
             Row(
               children: [
                 Icon(
@@ -69,15 +75,16 @@ class HomeDetailsFundsComponents extends StatelessWidget {
                 Space(
                   width: 1.w,
                 ),
+
                 Text(
                   LocaleKeys.closed_on.tr() + " 7 Apr 2021",
                   style: AppTheme.mainTextStyle(
                       color: AppTheme.neutral400, fontSize: 9.sp,
                       fontWeight: FontWeight.w600
                   ),
-                ),
+                ) ,
               ],
-            ),
+            ): SizedBox(),
 
           ],
         ),

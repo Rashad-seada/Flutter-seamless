@@ -9,6 +9,7 @@ import 'package:intl/intl.dart';
 
 // ignore: must_be_immutable
 class HomeFundsComponents extends StatelessWidget {
+  double price;
   double raisedFunds;
   double requestedFunds;
   double width;
@@ -16,7 +17,8 @@ class HomeFundsComponents extends StatelessWidget {
       {super.key,
       this.width = 100,
       required this.raisedFunds,
-      required this.requestedFunds});
+      required this.requestedFunds,
+      required this.price});
 
   double percentOfRaisedFunds() {
     return raisedFunds / requestedFunds;
@@ -35,7 +37,7 @@ class HomeFundsComponents extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  formatter.format(raisedFunds),
+                  formatter.format(price),
                   style: AppTheme.mainTextStyle(
                       fontWeight: FontWeight.w600,
                       color: AppTheme.primary900,

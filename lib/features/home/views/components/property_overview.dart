@@ -1,3 +1,5 @@
+import 'package:Mawthoq/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 import 'package:sizer/sizer.dart';
@@ -18,7 +20,7 @@ class PropertyOverview extends StatelessWidget {
         Row(
           children: [
             Text(
-              "Property Overview",
+              LocaleKeys.property_overview.tr(),
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w600,
                   color: AppTheme.secondary900,

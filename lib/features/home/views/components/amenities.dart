@@ -1,10 +1,12 @@
 import 'package:Mawthoq/core/config/app_images.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/config/app_theme.dart';
 import '../../../../core/views/widgets/space.dart';
+import '../../../../generated/locale_keys.g.dart';
 import '../utils/amenities_model.dart';
 
 class Amenities extends StatelessWidget {
@@ -27,7 +29,7 @@ class Amenities extends StatelessWidget {
         Row(
           children: [
             Text(
-              "Amenities",
+              LocaleKeys.amenities.tr(),
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w600,
                   color: AppTheme.secondary900,
@@ -47,25 +49,25 @@ class Amenities extends StatelessWidget {
            children: [
 
              if(hasBalacony)
-               amenities(AmenitiesModel(name: 'Balcony', image: AppImages.balcony)),
+               amenities(AmenitiesModel(name: LocaleKeys.balcony.tr(), image: AppImages.balcony)),
 
              if(hasGarden)
-               amenities(AmenitiesModel(name: 'Garden', image: AppImages.garden)),
+               amenities(AmenitiesModel(name: LocaleKeys.garden.tr(), image: AppImages.garden)),
 
              if(hasGym)
-               amenities(AmenitiesModel(name: 'Gym', image: AppImages.gym)),
+               amenities(AmenitiesModel(name: LocaleKeys.gym.tr(), image: AppImages.gym)),
 
              if(hasParking)
-               amenities(AmenitiesModel(name: 'Parking', image: AppImages.parking)),
+               amenities(AmenitiesModel(name: LocaleKeys.parking.tr(), image: AppImages.parking)),
 
              if(hasPool)
-               amenities(AmenitiesModel(name: 'Pool', image: AppImages.pool)),
+               amenities(AmenitiesModel(name: LocaleKeys.pool.tr(), image: AppImages.pool)),
 
              if(hasRestarrant)
-               amenities(AmenitiesModel(name: 'Restaurant', image: AppImages.restaurant)),
+               amenities(AmenitiesModel(name: LocaleKeys.restaurant.tr(), image: AppImages.restaurant)),
 
              if(hasSupermarket)
-               amenities(AmenitiesModel(name: 'Supermarket', image: AppImages.supermarket)),
+               amenities(AmenitiesModel(name: LocaleKeys.supermarket.tr(), image: AppImages.supermarket)),
 
            ],
         )
@@ -82,7 +84,14 @@ class Amenities extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
 
-          Image.asset(amenitiesModel.image,width: 6.w,height: 6.w,),
+          Container(
+              clipBehavior: Clip.hardEdge,
+              alignment: Alignment.center,
+              padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.w),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(2.w),
+                  color: AppTheme.tertiary900),
+              child: Image.asset(amenitiesModel.image,width: 7.w,height: 7.w,)),
 
           Space(width: 3.w,),
 
@@ -91,7 +100,7 @@ class Amenities extends StatelessWidget {
             style: AppTheme.mainTextStyle(
                 fontWeight: FontWeight.w500,
                 color: AppTheme.neutral600,
-                fontSize: 12.sp),
+                fontSize: 10.sp),
           ),
 
         ],

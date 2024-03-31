@@ -5,6 +5,7 @@ import 'package:sizer/sizer.dart';
 
 import '../../../../core/config/app_theme.dart';
 import '../../../../core/views/widgets/space.dart';
+import '../../../../generated/locale_keys.g.dart';
 import '../../../investor_profile/views/components/home_taps.dart';
 import '../bloc/home_details/home_details_cubit.dart';
 
@@ -25,7 +26,7 @@ class Financials extends StatelessWidget {
         Row(
           children: [
             Text(
-              "Financials",
+              LocaleKeys.financials.tr(),
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w600,
                   color: AppTheme.secondary900,
@@ -83,7 +84,7 @@ class Financials extends StatelessWidget {
           children: [
 
             Text(
-              "Property price",
+              LocaleKeys.property_price.tr(),
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w500,
                   color: AppTheme.neutral500,
@@ -91,7 +92,7 @@ class Financials extends StatelessWidget {
             ),
 
             Text(
-              "AED ${ NumberFormat.decimalPattern().format(propertyPrice)}",
+              "SAR ${ NumberFormat.decimalPattern().format(propertyPrice)}",
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w600,
                   color: AppTheme.secondary900,
@@ -111,7 +112,7 @@ class Financials extends StatelessWidget {
           children: [
 
             Text(
-              "Seamless fee",
+              LocaleKeys.seamless_fee.tr(),
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w500,
                   color: AppTheme.neutral500,
@@ -144,7 +145,7 @@ class Financials extends StatelessWidget {
           children: [
 
             Text(
-              "Investment cost",
+              LocaleKeys.investment_cost.tr(),
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w500,
                   color: AppTheme.neutral500,
@@ -152,7 +153,7 @@ class Financials extends StatelessWidget {
             ),
 
             Text(
-              "AED ${ NumberFormat.decimalPattern().format( propertyPrice + propertyPrice * (seamlessFees / 100))}",
+              "SAR ${ NumberFormat.decimalPattern().format( propertyPrice + propertyPrice * (seamlessFees / 100))}",
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w600,
                   color: AppTheme.primary900,
@@ -180,7 +181,7 @@ class Financials extends StatelessWidget {
           children: [
 
             Text(
-              "Annual gross rent",
+              LocaleKeys.annual_gross_rent.tr(),
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w500,
                   color: AppTheme.neutral500,
@@ -188,7 +189,7 @@ class Financials extends StatelessWidget {
             ),
 
             Text(
-              "AED ${ NumberFormat.decimalPattern().format(annualGrossRent)}",
+              "SAR ${ NumberFormat.decimalPattern().format(annualGrossRent)}",
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w600,
                   color: AppTheme.secondary900,
@@ -207,7 +208,7 @@ class Financials extends StatelessWidget {
           children: [
 
             Text(
-              "Service charges",
+              LocaleKeys.service_charges.tr(),
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w500,
                   color: AppTheme.neutral500,
@@ -215,7 +216,7 @@ class Financials extends StatelessWidget {
             ),
 
             Text(
-              "AED ${ NumberFormat.decimalPattern().format(serviceCharges)}",
+              "SAR ${ NumberFormat.decimalPattern().format(serviceCharges)}",
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w600,
                   color: AppTheme.secondary900,
@@ -234,7 +235,7 @@ class Financials extends StatelessWidget {
           children: [
 
             Text(
-              "maintenance",
+              LocaleKeys.maintenance.tr(),
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w500,
                   color: AppTheme.neutral500,
@@ -267,7 +268,7 @@ class Financials extends StatelessWidget {
           children: [
 
             Text(
-              "Net income",
+              LocaleKeys.net_income.tr(),
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w500,
                   color: AppTheme.neutral500,
@@ -275,7 +276,7 @@ class Financials extends StatelessWidget {
             ),
 
             Text(
-              "AED ${ NumberFormat.decimalPattern().format(annualGrossRent - (serviceCharges + maintenance))}",
+              "SAR ${ NumberFormat.decimalPattern().format(annualGrossRent - (serviceCharges + maintenance))}",
               style: AppTheme.mainTextStyle(
                   fontWeight: FontWeight.w600,
                   color: AppTheme.primary900,

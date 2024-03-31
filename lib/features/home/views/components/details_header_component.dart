@@ -14,10 +14,12 @@ class DetailsHeaderComponent extends StatelessWidget {
   double price;
   double raisedFunds;
   int investors;
+  String status;
   DetailsHeaderComponent({super.key,
     required this.price,
     required this.raisedFunds,
-    required this.investors
+    required this.investors,
+    required this.status,
   });
 
   NumberFormat formatter = NumberFormat('#,##0');
@@ -89,7 +91,7 @@ class DetailsHeaderComponent extends StatelessWidget {
               HomeDetailsFundsComponents(
                 raisedFunds: raisedFunds,
                 requestedFunds: price,
-                width: 78.w,
+                width: 78.w, status: status,
               ),
 
             ],

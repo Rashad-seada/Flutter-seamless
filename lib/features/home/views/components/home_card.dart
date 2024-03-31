@@ -84,6 +84,7 @@ class HomeCard extends StatelessWidget {
                     raisedFunds: (propertyEntity.price ?? 0.0) * ((double.tryParse(propertyEntity.percentageSold ?? '') ?? 0.0) / 100),
                     requestedFunds: propertyEntity.price?.toDouble() ?? 0.0,
                     width: 80.w,
+                    price: (propertyEntity.price ?? 0.0).toDouble(),
                   ),
                   Space(
                     height: 1.5.h,

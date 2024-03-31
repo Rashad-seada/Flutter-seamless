@@ -45,12 +45,12 @@ class PropertyDetails extends StatelessWidget {
 
         PropertyDetailsCard(leadingIcon: AppImages.money,
           title: '${LocaleKeys.current_rent_1.tr()} $rentPerMonth ${LocaleKeys.current_rent_2.tr()}',
-          description: LocaleKeys.current_rent_sub_text.tr() + " " + rentPerMonth.toString(),
+          description: "${LocaleKeys.current_rent_sub_text.tr()} $rentPerMonth",
         ),
 
         PropertyDetailsCard(leadingIcon: AppImages.invest,
           title: '${LocaleKeys.annual_gross_yield.tr()} $expectedGrowth%',
-          description: LocaleKeys.annual_gross_yield_sub_text.tr() + " $expectedGrowth%",
+          description: "${LocaleKeys.annual_gross_yield_sub_text.tr()} $expectedGrowth%",
         ),
 
       ],

@@ -19,7 +19,7 @@ class InvestorMainCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.hardEdge,
-      padding: EdgeInsets.symmetric(horizontal: 4.w,vertical: 0),
+      padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 0),
       alignment: Alignment.center,
       width: double.infinity,
       decoration: BoxDecoration(
@@ -36,70 +36,85 @@ class InvestorMainCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-
-          Space(height: 2.h,),
-
+          Space(
+            height: 2.h,
+          ),
           Text(
             LocaleKeys.investment_value.tr(),
             style: AppTheme.mainTextStyle(
                 color: AppTheme.neutral900, fontSize: 13.sp),
           ),
-
-          Space(height: 1.h,),
-
+          Space(
+            height: 1.h,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-
               Text(
                 "SAR",
                 style: AppTheme.mainTextStyle(
                     color: AppTheme.neutral900, fontSize: 15.sp),
               ),
-              Space(width: 2.w,),
-
+              Space(
+                width: 2.w,
+              ),
               Text(
-                "1500",
+                "0",
                 style: AppTheme.mainTextStyle(
-                    color: AppTheme.neutral900, fontSize: 22.sp,
-                    fontWeight: FontWeight.bold
-                ),
-
+                    color: AppTheme.neutral900,
+                    fontSize: 22.sp,
+                    fontWeight: FontWeight.bold),
               ),
             ],
           ),
-
-          Space(height: 2.5.h,),
-
+          Space(
+            height: 2.5.h,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ctaButton(label: LocaleKeys.invest.tr(), icon: AppImages.coin, onTap: (){
-                context.read<MainCubit>().onNavItemTap(0);
-              }),
-              ctaButton(label: LocaleKeys.deposit.tr(), icon: AppImages.plus, onTap: (){
-                context.read<MainCubit>().onNavItemTap(1);
-              }),
-              ctaButton(label: LocaleKeys.rewards.tr(), icon: AppImages.reward, onTap: (){
-                context.read<MainCubit>().onNavItemTap(3);
-              }),
-              ctaButton(label: LocaleKeys.start_selling.tr(), icon: AppImages.cart, onTap: (){
-                context.read<InvestorProfileCubit>().onStartSellingTap(context);
-              }),
-
+              ctaButton(
+                  label: LocaleKeys.invest.tr(),
+                  icon: AppImages.coin,
+                  onTap: () {
+                    context.read<MainCubit>().onNavItemTap(0);
+                  }),
+              ctaButton(
+                  label: LocaleKeys.deposit.tr(),
+                  icon: AppImages.plus,
+                  onTap: () {
+                    context.read<MainCubit>().onNavItemTap(1);
+                  }),
+              ctaButton(
+                  label: LocaleKeys.rewards.tr(),
+                  icon: AppImages.reward,
+                  onTap: () {
+                    context.read<MainCubit>().onNavItemTap(3);
+                  }),
+              ctaButton(
+                  label: LocaleKeys.start_selling.tr(),
+                  icon: AppImages.cart,
+                  onTap: () {
+                    context
+                        .read<InvestorProfileCubit>()
+                        .onStartSellingTap(context);
+                  }),
             ],
           ),
-
-          Space(height: 2.h,),
-
+          Space(
+            height: 2.h,
+          ),
         ],
       ),
     );
   }
 
-  Widget ctaButton({required String label,required String icon,required void Function() onTap}){
+  Widget ctaButton(
+      {required String label,
+      required String icon,
+      required void Function() onTap}) {
     return InkWell(
       borderRadius: BorderRadius.circular(2.w),
       onTap: onTap,
@@ -115,14 +130,12 @@ class InvestorMainCard extends StatelessWidget {
               height: 6.w,
               width: 6.w,
               icon,
-            color: AppTheme.neutral200,
+              color: AppTheme.neutral200,
             ),
           ),
-
           Space(
             height: .8.h,
           ),
-
           Text(
             label,
             style: AppTheme.mainTextStyle(
@@ -133,6 +146,3 @@ class InvestorMainCard extends StatelessWidget {
     );
   }
 }
-
-
-

@@ -1,8 +1,10 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/main/bloc/main/main_cubit.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/config/app_theme.dart';
@@ -97,6 +99,9 @@ class BeginInvestingCard extends StatelessWidget {
             height: 2.5.h,
           ),
           MainButton(
+            onTap: () {
+              context.read<MainCubit>().onNavItemTap(0);
+            },
             borderRadius: BorderRadius.circular(2.w),
             height: 4.8.h,
             width: double.infinity,
@@ -114,16 +119,14 @@ class BeginInvestingCard extends StatelessWidget {
     );
   }
 
-  Widget point({
-    required String text,
-    required BuildContext context
-  }) {
+  Widget point({required String text, required BuildContext context}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         RotationTransition(
-          turns: AlwaysStoppedAnimation((isLocaleArabic(context))? 225 / 360 :  45/ 360),
+          turns: AlwaysStoppedAnimation(
+              (isLocaleArabic(context)) ? 225 / 360 : 45 / 360),
           child: ClipPath(
             clipper: CustomTriangleClipper(),
             child: Container(

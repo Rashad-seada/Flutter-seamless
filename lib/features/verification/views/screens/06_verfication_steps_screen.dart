@@ -1,6 +1,7 @@
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/components/custom_app_bar.dart';
 import 'package:Mawthoq/features/verification/views/blocs/verification_cubit.dart';
+import 'package:Mawthoq/features/verification/views/screens/account_confirm_screen.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -19,14 +20,19 @@ class VerficationScreen extends StatelessWidget {
         context, MaterialPageRoute(builder: (_) => UploadId1Screen()));
   }
 
-  VerficationScreen({super.key});
+  void navigateAccountConfirmScreen(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => AccountConfirmScreen()));
+  }
+
+  const VerficationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 5.w),
+          padding: EdgeInsets.symmetric(horizontal: 7.w),
           children: [
             Space(
               height: 2.h,
@@ -55,7 +61,7 @@ class VerficationScreen extends StatelessWidget {
                   isChecked: true,
                 ),
                 Space(
-                  height: 1.5.h,
+                  height: 2.h,
                 ),
                 VerificationStepsCard(
                   label: LocaleKeys.what_is_your_job.tr(),
@@ -64,7 +70,7 @@ class VerficationScreen extends StatelessWidget {
                       context.read<VerificationCubit>()..onStep2Tap(context),
                 ),
                 Space(
-                  height: 1.5.h,
+                  height: 2.h,
                 ),
                 VerificationStepsCard(
                   label: LocaleKeys.address_verification.tr(),
@@ -73,7 +79,7 @@ class VerficationScreen extends StatelessWidget {
                   step: LocaleKeys.step_3.tr(),
                 ),
                 Space(
-                  height: 1.5.h,
+                  height: 2.h,
                 ),
                 VerificationStepsCard(
                   label: LocaleKeys.id_verification.tr(),
@@ -81,11 +87,11 @@ class VerficationScreen extends StatelessWidget {
                   onTap: () => navigateToUploadIdPage(context),
                 ),
                 Space(
-                  height: 1.5.h,
+                  height: 2.h,
                 ),
                 VerficationStepsButton(
                   label: LocaleKeys.continue_.tr(),
-                  // onTap: () => navigateToUploadIdPage(context),
+                  onTap: () => navigateAccountConfirmScreen(context),
                 ),
               ],
             ),

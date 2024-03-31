@@ -290,7 +290,7 @@ class CodegenLoader extends AssetLoader{
   "annual_gross_yield_sub_text": "ستكون عائدات هذه الوحدة حسب تحليلنا تقريبًا",
   "investments_calculator": "حاسبة الاستثمارات",
   "investments_calculator_sub_text": "العائد المتوقع للمستثمرات هو",
-  "in": "في",
+  "inn": "في",
   "value_growth": "نمو القيمة",
   "total_rent": "إجمالي الإيجار",
   "investment": "الاستثمار",
@@ -314,7 +314,22 @@ class CodegenLoader extends AssetLoader{
   "parking": "موقف سيارات",
   "pool": "حوض سباحة",
   "restaurant": "مطعم",
-  "supermarket": "سوبر ماركت"
+  "supermarket": "سوبر ماركت",
+  "your_file": "ملفك",
+  "terms_and_conditions": "الشروط والأحكام",
+  "read_and_accept_terms_and_conditions": "إقرأ واقبل الشروط والأحكام",
+  "terms_and_conditions_agreement": "اتفاقية الشروط والأحكام",
+  "final_date": "الموعد النهائي",
+  "property_funding_completion_date": "هذا هو تاريخ اكتمال تمويل العقار",
+  "special_purpose_company_formed": "تم تشكيل شركة ذات غرض خاص وتم توزيع مستند سند الملكية",
+  "spv_creation_and_property_deeds_distribution": "سيتم إنشاء SPV وسيتسلم جميع المستثمرين صكوك الملكية الخاصة بهم في غضون 2-3 أسابيع من إغلاق التمويل ، لإثبات ملكيتهم للعقار",
+  "expected_first_rental_payment": "الدفعة الأولى المتوقعة من الإيجار",
+  "expected_first_rent_payment_date": "من المتوقع أن يتم دفع أول دفعة إيجار لهذا العقار إلى المستثمرين بحلول إبريل 25، 2024",
+  "funding_timeline": "الجدول الزمني للتمويل",
+  "account_confirmation": "تأكيد الحساب",
+  "information_sent_successfully": "تم إرسال معلوماتك بنجاح",
+  "identity_and_information_verifying": "جاري التحقق من هويتك ومعلوماتك",
+  "complete_information_received": "لقد تلقينا معلوماتك الكاملة من خلال جميع خطوات التحقق وسنقوم الآن بالتحقق منها وإعلامك بالانتهاء"
 };
 static const Map<String,dynamic> en = {
   "on_boarding_title_1": "The Latest Way to Invest in Real Estate",
@@ -592,7 +607,7 @@ static const Map<String,dynamic> en = {
   "annual_gross_yield_sub_text": "This unit based on our analysis will yield approximately",
   "investments_calculator": "Investments calculator",
   "investments_calculator_sub_text": "Projected investments return is",
-  "in": "in",
+  "inn": "in",
   "value_growth": "Value growth",
   "total_rent": "Total rent",
   "investment": "Investment",
@@ -616,7 +631,22 @@ static const Map<String,dynamic> en = {
   "parking": "Parking",
   "pool": "Pool",
   "restaurant": "Restaurant",
-  "supermarket": "Supermarket"
+  "supermarket": "Supermarket",
+  "your_file": "Your file",
+  "terms_and_conditions": "Terms and Conditions",
+  "read_and_accept_terms_and_conditions": "Read and Accept Terms and Conditions",
+  "terms_and_conditions_agreement": "Terms and Conditions Agreement",
+  "final_date": "Final Date",
+  "property_funding_completion_date": "This is the Property Funding Completion Date",
+  "special_purpose_company_formed": "A Special Purpose Company has been formed and property deeds have been distributed",
+  "spv_creation_and_property_deeds_distribution": "An SPV will be created, and all investors will receive their property deeds within 2-3 weeks of funding closure to prove their ownership of the property",
+  "expected_first_rental_payment": "Expected First Rental Payment",
+  "expected_first_rent_payment_date": "The first rent payment for this property is expected to be paid to investors by April 25, 2024",
+  "funding_timeline": "Funding Timeline",
+  "account_confirmation": "Account Confirmation",
+  "information_sent_successfully": "Your information has been sent successfully",
+  "identity_and_information_verifying": "Your identity and information are being verified",
+  "complete_information_received": "We have received your complete information through all verification steps and will now verify it and notify you upon completion"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

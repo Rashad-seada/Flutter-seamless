@@ -15,7 +15,7 @@ class VerificationCubit extends Cubit<VerificationState> {
 
   int investmentPlan = 5000;
 
-  onSliderChange(double newValue){
+  onSliderChange(double newValue) {
     emit(VerificationSliderChange());
     investmentPlan = newValue.toInt();
     emit(VerificationInitial());
@@ -25,16 +25,18 @@ class VerificationCubit extends Cubit<VerificationState> {
     navigateToVerificationStepsScreen(context);
   }
 
-  navigateToVerificationStepsScreen(BuildContext context){
-    Navigator.push(context, MaterialPageRoute(builder: (_)=> VerficationScreen()));
+  navigateToVerificationStepsScreen(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => VerficationScreen()));
   }
 
-  onStep2Tap(BuildContext context){
-    Navigator.push(context, MaterialPageRoute(builder: (_)=> InvestmentPlanScreen()));
+  onStep2Tap(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => InvestmentPlanScreen()));
   }
 
-  onStep3Tap(BuildContext context){
-    Navigator.push(context, MaterialPageRoute(builder: (_)=> YourAddressScreen()));
+  onStep3Tap(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => YourAddressScreen()));
   }
-
 }

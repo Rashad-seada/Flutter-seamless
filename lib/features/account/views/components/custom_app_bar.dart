@@ -2,6 +2,7 @@ import 'package:Mawthoq/core/utils/is_locale_arabic.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
@@ -22,8 +23,8 @@ class CustomAppBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        InkWell(
-          borderRadius: BorderRadius.circular(100.w),
+        GestureDetector(
+          // borderRadius: BorderRadius.circular(100.w),
           onTap: () {
             Navigator.pop(context);
           },

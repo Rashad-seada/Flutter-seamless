@@ -276,7 +276,7 @@ abstract class  LocaleKeys {
   static const annual_gross_yield_sub_text = 'annual_gross_yield_sub_text';
   static const investments_calculator = 'investments_calculator';
   static const investments_calculator_sub_text = 'investments_calculator_sub_text';
-  static const inn = 'in';
+  static const inn = 'inn';
   static const value_growth = 'value_growth';
   static const total_rent = 'total_rent';
   static const investment = 'investment';
@@ -289,7 +289,7 @@ abstract class  LocaleKeys {
   static const seamless_fee = 'seamless_fee';
   static const investment_cost = 'investment_cost';
   static const annual_gross_rent = 'annual_gross_rent';
-  static const service_charges  = 'service_charges ';
+  static const service_charges = 'service_charges';
   static const maintenance = 'maintenance';
   static const net_income = 'net_income';
   static const location = 'location';
@@ -301,5 +301,20 @@ abstract class  LocaleKeys {
   static const pool = 'pool';
   static const restaurant = 'restaurant';
   static const supermarket = 'supermarket';
+  static const your_file = 'your_file';
+  static const terms_and_conditions = 'terms_and_conditions';
+  static const read_and_accept_terms_and_conditions = 'read_and_accept_terms_and_conditions';
+  static const terms_and_conditions_agreement = 'terms_and_conditions_agreement';
+  static const final_date = 'final_date';
+  static const property_funding_completion_date = 'property_funding_completion_date';
+  static const special_purpose_company_formed = 'special_purpose_company_formed';
+  static const spv_creation_and_property_deeds_distribution = 'spv_creation_and_property_deeds_distribution';
+  static const expected_first_rental_payment = 'expected_first_rental_payment';
+  static const expected_first_rent_payment_date = 'expected_first_rent_payment_date';
+  static const funding_timeline = 'funding_timeline';
+  static const account_confirmation = 'account_confirmation';
+  static const information_sent_successfully = 'information_sent_successfully';
+  static const identity_and_information_verifying = 'identity_and_information_verifying';
+  static const complete_information_received = 'complete_information_received';
 
 }

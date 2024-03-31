@@ -1,7 +1,6 @@
 import 'package:Mawthoq/features/account/views/bloc/account/account_cubit.dart';
 import 'package:Mawthoq/features/account/views/bloc/settings/settings_cubit.dart';
 import 'package:Mawthoq/features/auth/views/blocs/intro/intro_cubit.dart';
-import 'package:Mawthoq/features/auth/views/screens/00_auth_methods_screen.dart';
 import 'package:Mawthoq/features/cart/views/bloc/cart/cart_cubit.dart';
 import 'package:Mawthoq/features/home/views/bloc/home/home_cubit.dart';
 import 'package:Mawthoq/features/home/views/bloc/home_details/home_details_cubit.dart';

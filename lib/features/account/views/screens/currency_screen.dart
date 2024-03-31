@@ -33,7 +33,7 @@ class CurrencyScreen extends StatelessWidget {
             height: 2.h,
           ),
 
-          CurrencyItem(isSelected: false, url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1024px-Flag_of_Europe.svg.png', currency: 'EUR',),
+          CurrencyItem(isSelected: false, url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/2000px-Flag_of_Qatar.svg.png', currency: 'QAR',),
 
 
         ],

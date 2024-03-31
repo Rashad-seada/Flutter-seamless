@@ -76,4 +76,6 @@ class AppImages {
   static String videoPlay = "images/videoplay.svg";
   static String global = "images/global.svg";
   static String notifications = "images/notifications.svg";
+
+  static String seamlessLetter = "images/seamless_letter.png";
 }

@@ -139,7 +139,7 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                                             0.0) /
                                         100),
                             investors: HomeDetailsSuccess
-                                    .propertyEntity?.investorsCount ??
+                                    .propertyEntity?.investorsCount?.toInt() ??
                                 0),
                         Space(
                           height: 2.h,

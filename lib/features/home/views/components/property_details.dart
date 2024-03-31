@@ -1,4 +1,6 @@
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
@@ -23,37 +25,33 @@ class PropertyDetails extends StatelessWidget {
     return Column(
       children: [
 
-        PropertyDetailsCard(leadingIcon: AppImages.realState,
+        PropertyDetailsCard(leadingIcon: AppImages.locationPng,
           title: location,
           description: locationDescription,
         ),
 
         if(isRented)
-        PropertyDetailsCard(leadingIcon: AppImages.realState,
-          title: 'Rented',
-          description: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
+        PropertyDetailsCard(leadingIcon: AppImages.rent,
+          title: LocaleKeys.rent.tr(),
+          description: LocaleKeys.rent_sub_text.tr(),
         ),
 
         if(isProtected)
-          PropertyDetailsCard(leadingIcon: AppImages.realState,
-          title: '1 year rental protection',
-          description: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
+          PropertyDetailsCard(leadingIcon: AppImages.protection,
+            title: LocaleKeys.protection.tr(),
+            description: LocaleKeys.protection_sub_text.tr(),
         ),
 
 
-        PropertyDetailsCard(leadingIcon: AppImages.realState,
-          title: 'Current rent $rentPerMonth per month',
-          description: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
+        PropertyDetailsCard(leadingIcon: AppImages.money,
+          title: '${LocaleKeys.current_rent_1.tr()} $rentPerMonth ${LocaleKeys.current_rent_2.tr()}',
+          description: LocaleKeys.current_rent_sub_text.tr() + " " + rentPerMonth.toString(),
         ),
 
-        PropertyDetailsCard(leadingIcon: AppImages.realState,
-          title: '$expectedGrowth% annual gross yield',
-          description: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
+        PropertyDetailsCard(leadingIcon: AppImages.invest,
+          title: '${LocaleKeys.annual_gross_yield.tr()} $expectedGrowth%',
+          description: LocaleKeys.annual_gross_yield_sub_text.tr() + " $expectedGrowth%",
         ),
-
-
-
-
 
       ],
     );
@@ -71,7 +69,8 @@ class PropertyDetailsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(top: 2.h),
+      padding:  EdgeInsets.only(top: 2.h,bottom: 1.h),
+
       child: Row(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,7 +81,7 @@ class PropertyDetailsCard extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle
             ),
-            child: SvgPicture.asset(
+            child: Image.asset(
               leadingIcon,
               height: 4.h,
               width: 4.h,

@@ -219,11 +219,14 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                                     "") ??
                                 0.0),
                         Space(
-                          height: 1.5.h,
+                          height: 2.h,
                         ),
                         Divider(
                           color: AppTheme.neutral200,
                           thickness: .2.w,
+                        ),
+                        Space(
+                          height: 1.h,
                         ),
                         PropertyDetails(
                           location: HomeDetailsSuccess

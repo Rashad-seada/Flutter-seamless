@@ -21,17 +21,13 @@ class _BiometricAuthButtonState extends State<BiometricAuthButton> {
         GestureDetector(
           onTap: () async {
             if (_isActive) {
-              // إذا كانت المصادقة البيومترية مفعلة، قم بطلبها
               bool isAuthenticated = await _authenticate();
               if (isAuthenticated) {
-                // يمكنك هنا تنفيذ أي شيء بعد تحقق المصادقة
-                // مثلاً:
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text('تمت المصادقة بنجاح'),
                 ));
               }
             } else {
-              // إلا، قم بتبديل الحالة
               setState(() {
                 _isActive = !_isActive;
               });

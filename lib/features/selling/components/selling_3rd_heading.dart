@@ -2,6 +2,8 @@ import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/selling/components/how_it_works_card.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -30,24 +32,24 @@ class Selling3rdHeading extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'How it works',
+            LocaleKeys.how_it_works,
             style: AppTheme.mainTextStyle(
               color: AppTheme.secondary900,
               fontSize: 18.sp,
               fontWeight: FontWeight.bold,
             ),
-          ),
+          ).tr(),
           Space(
             height: 1.h,
           ),
           Text(
-            'Simply list your property on Seamless and get your money in cash when the sale is completed',
+            LocaleKeys.list_property_seamless,
             style: AppTheme.mainTextStyle(
               color: AppTheme.neutral400,
               fontSize: 11.sp,
             ),
             textAlign: TextAlign.center,
-          ),
+          ).tr(),
           Space(
             height: 2.h,
           ),
@@ -58,36 +60,32 @@ class Selling3rdHeading extends StatelessWidget {
               children: [
                 HowItWorksCard(
                   svgAsset: AppImages.documents,
-                  title: 'Quick view',
-                  subTitle:
-                      'Upload your property details without any obligations and if we are interested we will make you an offer',
+                  title: LocaleKeys.quick_view.tr(),
+                  subTitle: LocaleKeys.upload_property_details.tr(),
                 ),
                 Space(
                   height: 3.h,
                 ),
                 HowItWorksCard(
                   svgAsset: AppImages.heart,
-                  title: 'Intensive study',
-                  subTitle:
-                      'We will take care of any necessary updates and photograph the property in a professional manner for marketing purposes',
+                  title: LocaleKeys.intensive_study.tr(),
+                  subTitle: LocaleKeys.take_care_of_updates.tr(),
                 ),
                 Space(
                   height: 3.h,
                 ),
                 HowItWorksCard(
                   svgAsset: AppImages.realState,
-                  title: 'Fast selling process',
-                  subTitle:
-                      'Your property will be listed on the Seamless platform and may usually sell within 30-45 days',
+                  title: LocaleKeys.fast_selling_process.tr(),
+                  subTitle: LocaleKeys.property_listed_seamless.tr(),
                 ),
                 Space(
                   height: 3.h,
                 ),
                 HowItWorksCard(
                   svgAsset: AppImages.wallet,
-                  title: 'Easy closing process',
-                  subTitle:
-                      'The proceeds of the sale will be transferred to your bank account within 30 days of the property closing',
+                  title: LocaleKeys.easy_closing_process.tr(),
+                  subTitle: LocaleKeys.sale_proceeds_transferred.tr(),
                 ),
               ],
             ),

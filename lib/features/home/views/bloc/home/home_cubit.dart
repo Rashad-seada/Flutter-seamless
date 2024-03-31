@@ -1,9 +1,12 @@
 import 'package:Mawthoq/core/di/app_module.dart';
 import 'package:Mawthoq/features/cart/views/screens/cart_screen.dart';
+import 'package:Mawthoq/features/favourites/views/screens/favourites_screen.dart';
 import 'package:Mawthoq/features/home/domain/usecases/get_all_properties_use_case.dart';
 import 'package:Mawthoq/features/home/views/screens/home_details_screen.dart';
 import 'package:Mawthoq/features/notifications/views/screen/notifications_screen.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:bloc/bloc.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:meta/meta.dart';
@@ -19,28 +22,26 @@ class HomeCubit extends Cubit<HomeState> {
 
   int selectedIndex = 0;
 
-  List<String> get tabs => ["Available","Funded","Sold out"];
+  List<String> get tabs => [
+        LocaleKeys.available.tr(),
+        LocaleKeys.funded_.tr(),
+        LocaleKeys.sold_out.tr()
+      ];
 
   String propertyStatus = PropertyStatus.available;
 
-  getAllProperties(){
+  getAllProperties() {
     emit(HomeIsLoading());
-    getIt<GetAllPropertiesUseCase>().call(status: propertyStatus, page: 1).then(
-      (value) => value.fold(
-        (error) {
-          emit(HomeError(error));
-
-        },
-        (success) {
-          emit(HomeSuccess(success.data?.data ?? [] ));
-
-        }
-      )
-    );
+    getIt<GetAllPropertiesUseCase>()
+        .call(status: propertyStatus, page: 1)
+        .then((value) => value.fold((error) {
+              emit(HomeError(error));
+            }, (success) {
+              emit(HomeSuccess(success.data?.data ?? []));
+            }));
   }
 
-
-  onTabChange(int index){
+  onTabChange(int index) {
     emit(HomeTabChange());
     switch (index) {
       case 0:
@@ -63,29 +64,35 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   onFavoriteTap(BuildContext context) {
-
+    _navigateToFavouritesScreen(context);
   }
 
   onNotificationTap(BuildContext context) {
     _navigateToNotificationScreen(context);
   }
 
-  onHomeCardClick(BuildContext context,int propertyId){
-    _navigateToHomeDetailsScreen(context,propertyId);
+  onHomeCardClick(BuildContext context, int propertyId) {
+    _navigateToHomeDetailsScreen(context, propertyId);
   }
 
-  _navigateToCartScreen(BuildContext context){
-    Navigator.push(context, MaterialPageRoute(builder: (_)=> CartScreen()));
+  _navigateToCartScreen(BuildContext context) {
+    Navigator.push(context, MaterialPageRoute(builder: (_) => CartScreen()));
   }
 
-  _navigateToHomeDetailsScreen(BuildContext context,int propertyId){
-    Navigator.push(context, MaterialPageRoute(builder: (_)=> HomeDetailsScreen(propertyId: propertyId)));
+  _navigateToFavouritesScreen(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => FavouritesScreen()));
   }
 
-
-  _navigateToNotificationScreen(BuildContext context){
-    Navigator.push(context, MaterialPageRoute(builder: (_)=> NotificationsScreen()));
+  _navigateToHomeDetailsScreen(BuildContext context, int propertyId) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (_) => HomeDetailsScreen(propertyId: propertyId)));
   }
 
-
+  _navigateToNotificationScreen(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => NotificationsScreen()));
+  }
 }

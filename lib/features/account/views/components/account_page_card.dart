@@ -1,5 +1,6 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
+import 'package:Mawthoq/core/utils/is_locale_arabic.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -74,10 +75,15 @@ class AccountPageCard extends StatelessWidget {
               ],
             ),
             if (showArrow)
-              SvgPicture.asset(
-                AppImages.arrowRight,
-                height: 3.h,
-                width: 3.h,
+              RotationTransition(
+                turns: AlwaysStoppedAnimation(
+                    isLocaleArabic(context) ? 360 / 180 : 180 / 360),
+                child: SvgPicture.asset(
+                  AppImages.arrow,
+                  width: 6.w,
+                  height: 6.w,
+                  color: AppTheme.secondary900,
+                ),
               ),
           ],
         ),

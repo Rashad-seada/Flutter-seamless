@@ -2,6 +2,8 @@ import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/selling/components/closed_selling_grid_item.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
@@ -40,13 +42,13 @@ class ClosedSellingScreen extends StatelessWidget {
                   height: 2.h,
                 ),
                 Text(
-                  'Exit window closed',
+                  LocaleKeys.exit_window_closed,
                   style: AppTheme.mainTextStyle(
                     fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
                     color: AppTheme.secondary900,
                   ),
-                ),
+                ).tr(),
                 Space(
                   height: 2.h,
                 ),
@@ -90,13 +92,13 @@ class ClosedSellingScreen extends StatelessWidget {
                   height: 2.h,
                 ),
                 Text(
-                  'Eligible properties can be listed for sale in the 2nd week exit windows held every May and November',
+                  LocaleKeys.eligible_properties_listed,
                   style: AppTheme.mainTextStyle(
                     color: AppTheme.neutral400,
                     fontSize: 10.sp,
                   ),
                   textAlign: TextAlign.center,
-                ),
+                ).tr(),
               ],
             ),
             Space(
@@ -124,12 +126,12 @@ class ClosedSellingScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Next window',
+                            LocaleKeys.next_window,
                             style: AppTheme.mainTextStyle(
                               color: AppTheme.neutral400,
                               fontSize: 9.sp,
                             ),
-                          ),
+                          ).tr(),
                           Space(
                             width: 1.w,
                           ),
@@ -166,13 +168,13 @@ class ClosedSellingScreen extends StatelessWidget {
                               width: 1.w,
                             ),
                             Text(
-                              'Remind me',
+                              LocaleKeys.remind_me,
                               style: AppTheme.mainTextStyle(
                                 color: AppTheme.secondary900,
                                 fontSize: 9.sp,
                                 fontWeight: FontWeight.w600,
                               ),
-                            ),
+                            ).tr(),
                           ],
                         ),
                       ),
@@ -191,14 +193,14 @@ class ClosedSellingScreen extends StatelessWidget {
                   children: [
                     ClosedSellingGridItem(
                       svgAsset: AppImages.realState,
-                      heading: 'Buy secondary listings',
-                      ending: 'View listings',
+                      heading: LocaleKeys.buy_secondary_listings.tr(),
+                      ending: LocaleKeys.view_listings.tr(),
                       onTap: () {},
                     ),
                     ClosedSellingGridItem(
                       svgAsset: AppImages.realState,
-                      heading: 'Sell your stakes',
-                      ending: 'My stakes',
+                      heading: LocaleKeys.sell_your_stakes.tr(),
+                      ending: LocaleKeys.my_stakes.tr(),
                       onTap: () {},
                     ),
                   ],

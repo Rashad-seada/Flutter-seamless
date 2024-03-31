@@ -8,70 +8,67 @@ import '../../../../../core/infrastructure/api/api.dart';
 import '../../../../auth/data/entities/auth_response.dart';
 
 abstract class PropertyRemoteDataSource {
+  Future<GetPropertiesResponse> getHomeProperties({
+    required String token,
+    required String status,
+    required int page,
+  });
 
-  Future<GetPropertiesResponse> getHomeProperties({required String token,required String status,required int page,});
-
-  Future<GetOnePropertyResponse> getOneProperty({required String token,required int propertyId,});
+  Future<GetOnePropertyResponse> getOneProperty({
+    required String token,
+    required int propertyId,
+  });
 }
 
 class PropertyRemoteDataSourceImpl implements PropertyRemoteDataSource {
-
   final _client = getIt<Api>();
 
   @override
-  Future<GetPropertiesResponse> getHomeProperties({required String token, required String status, required int page}) async {
+  Future<GetPropertiesResponse> getHomeProperties(
+      {required String token,
+      required String status,
+      required int page}) async {
     try {
-
       final requestData = {
-        "status" : status,
+        "status": status,
       };
 
       final response = await _client.post(
           AppConsts.baseUrl + AppConsts.getAllPropertiesEndPoint,
-          queryParameters: {
-            "page" : page
-          },
+          queryParameters: {"page": page},
           headers: {
             "Accept": "application/json",
-            "Content-Type" : "application/json",
+            "Content-Type": "application/json",
             "Authorization": "Bearer $token"
           },
-          data: requestData
-      );
+          data: requestData);
 
-
-      Map<String,dynamic> responseData = response.data;
+      Map<String, dynamic> responseData = response.data;
 
       return GetPropertiesResponse.fromJson(responseData);
-
     } catch (e) {
       throw RemoteDataException(e.toString());
     }
   }
 
   @override
-  Future<GetOnePropertyResponse> getOneProperty({required String token, required int propertyId}) async  {
+  Future<GetOnePropertyResponse> getOneProperty(
+      {required String token, required int propertyId}) async {
     try {
-
-
       final response = await _client.get(
-          "${AppConsts.baseUrl}${AppConsts.getOnePropertyEndPoint}/$propertyId",
-          headers: {
-            "Accept": "application/json",
-            "Content-Type" : "application/json",
-            "Authorization": "Bearer $token"
-          },
+        "${AppConsts.baseUrl}${AppConsts.getOnePropertyEndPoint}/$propertyId",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "Authorization": "Bearer $token"
+        },
       );
 
-      Map<String,dynamic> responseData = response.data;
+      Map<String, dynamic> responseData = response.data;
 
       return GetOnePropertyResponse.fromJson(responseData);
-
     } catch (e) {
       throw RemoteDataException(e.toString());
     }
   }
-
-
-
 }

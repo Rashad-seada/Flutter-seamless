@@ -56,7 +56,7 @@ class WalletPage extends StatelessWidget {
                   width: 2.w,
                 ),
                 Text(
-                  "1500",
+                  "0",
                   style: AppTheme.mainTextStyle(
                       color: AppTheme.neutral900,
                       fontSize: 22.sp,
@@ -123,23 +123,22 @@ class WalletPage extends StatelessWidget {
             Space(
               height: 1.h,
             ),
-
-
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: BlocConsumer<WalletCubit,WalletState>(
+              child: BlocConsumer<WalletCubit, WalletState>(
                 listener: (context, state) {},
                 builder: (context, state) {
                   return WalletTaps(
                     tabs: [
-                      LocaleKeys.balance.tr(),
-                      LocaleKeys.balance.tr(),
-                      LocaleKeys.balance.tr(),
-                      LocaleKeys.balance.tr(),
-                      LocaleKeys.balance.tr(),
+                      LocaleKeys.all_transactions.tr(),
+                      LocaleKeys.investments.tr(),
+                      LocaleKeys.rent.tr(),
+                      LocaleKeys.incoming.tr(),
+                      LocaleKeys.outgoing.tr(),
                     ],
                     selectedIndex: context.read<WalletCubit>().selectedIndex,
-                    onChange: (index) => context.read<WalletCubit>().onTabChange(index),
+                    onChange: (index) =>
+                        context.read<WalletCubit>().onTabChange(index),
                   );
                 },
               ),

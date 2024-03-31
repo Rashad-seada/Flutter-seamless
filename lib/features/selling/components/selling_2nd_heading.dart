@@ -2,6 +2,8 @@ import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/custom_network_image.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/selling/components/main_button.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -43,36 +45,36 @@ class Selling2ndHeading extends StatelessWidget {
             height: 3.h,
           ),
           Text(
-            'We pay the price of your property in cash',
+            LocaleKeys.pay_price_in_cash,
             style: AppTheme.mainTextStyle(
               color: AppTheme.secondary900,
               fontSize: 14.sp,
             ),
-          ),
+          ).tr(),
           Space(
             height: 1.h,
           ),
           Text(
-            'Seamless allows you to easily sell your property for a full cash offer upon sale. Seamless is the ideal solution for you',
+            LocaleKeys.seamless_sell_property,
             style: AppTheme.mainTextStyle(
               color: AppTheme.neutral400,
               fontSize: 12.sp,
             ),
-          ),
+          ).tr(),
           Space(
             height: 1.h,
           ),
           Text(
-            'We have a perfect closing record and provide fair market value for the property without any hassle',
+            LocaleKeys.perfect_closing_record,
             style: AppTheme.mainTextStyle(
               color: AppTheme.neutral400,
               fontSize: 11.sp,
             ),
-          ),
+          ).tr(),
           Space(
             height: 3.h,
           ),
-          MainSellingButton(label: 'Selling with Seamless'),
+          MainSellingButton(label: LocaleKeys.selling_with_seamless.tr()),
         ],
       ),
     );

@@ -86,6 +86,7 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_xlider: ^3.5.0
   url_launcher: ^6.2.5
+  local_auth: ^2.2.0
 
 flutter_icons:
   image_path: "images/icon.jpeg"

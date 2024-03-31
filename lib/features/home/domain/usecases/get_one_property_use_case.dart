@@ -7,19 +7,15 @@ import '/core/di/app_module.dart';
 import '../../../../core/errors/failure.dart';
 
 class GetOnePropertyUseCase {
-
   PropertyRepo repo = getIt<PropertyRepo>();
 
-  Future<Either<Failure, GetOnePropertyResponse>> call({ required int propertyId}) async {
-    return getIt<GetUserUseCase>().call().then(
-      (value) => value.fold(
-        (error) {
+  Future<Either<Failure, GetOnePropertyResponse>> call(
+      {required int propertyId}) async {
+    return getIt<GetUserUseCase>().call().then((value) => value.fold((error) {
           return left(error);
-        },
-        (success) async {
-          return await repo.getOneProperty(token: success!.token!, propertyId: propertyId);
-        }
-      ));
+        }, (success) async {
+          return await repo.getOneProperty(
+              token: success!.token!, propertyId: propertyId);
+        }));
   }
-
 }

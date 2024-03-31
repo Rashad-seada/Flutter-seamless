@@ -1,5 +1,6 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
+import 'package:Mawthoq/core/utils/is_locale_arabic.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/rewards/screens/profits_screen.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
@@ -76,10 +77,15 @@ class RewardsCard extends StatelessWidget {
                       Space(
                         width: 2.w,
                       ),
-                      SvgPicture.asset(
-                        AppImages.arrowRight,
-                        height: 2.h,
-                        width: 2.h,
+                      RotationTransition(
+                        turns: AlwaysStoppedAnimation(
+                            isLocaleArabic(context) ? 360 / 180 : 180 / 360),
+                        child: SvgPicture.asset(
+                          AppImages.arrow,
+                          width: 2.h,
+                          height: 2.h,
+                          color: AppTheme.secondary900,
+                        ),
                       ),
                     ],
                   ),

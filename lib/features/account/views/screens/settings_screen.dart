@@ -35,7 +35,9 @@ class SettingsScreen extends StatelessWidget {
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return SettingsCard(
-                    model: context.read<SettingsCubit>().settingsInfo(context)[index],
+                    model: context
+                        .read<SettingsCubit>()
+                        .settingsInfo(context)[index],
                   );
                 },
                 separatorBuilder: (context, index) {
@@ -43,12 +45,13 @@ class SettingsScreen extends StatelessWidget {
                     height: 2.h,
                   );
                 },
-                itemCount: context.read<SettingsCubit>().settingsInfo(context).length),
+                itemCount:
+                    context.read<SettingsCubit>().settingsInfo(context).length),
             Space(
               height: 2.h,
             ),
             SettingsToggleCard(
-              title: 'Notifications',
+              title: LocaleKeys.notifications.tr(),
               subTitle: LocaleKeys.rent_paid_notifications.tr(),
               svgAsset: AppImages.notifications,
             ),

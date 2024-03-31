@@ -1,6 +1,9 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/account/views/components/custom_app_bar.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -21,24 +24,25 @@ class UploadId1Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'ID Activation',
-          style: AppTheme.mainTextStyle(
-            color: AppTheme.secondary900,
-          ),
-        ),
-      ),
-      body: ListView(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(3.w),
-            child: Column(
+    return SafeArea(
+      child: Scaffold(
+        body: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 5.w),
+          children: [
+            Space(
+              height: 2.h,
+            ),
+            CustomAppBar(
+              label: LocaleKeys.id_verification.tr(),
+            ),
+            Space(
+              height: 3.h,
+            ),
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 VerficationTextCard(
-                  cardTitle: 'Upload ID or passport',
+                  cardTitle: LocaleKeys.upload_id_or_passport.tr(),
                 ),
                 Space(
                   height: 1.5.h,
@@ -51,33 +55,34 @@ class UploadId1Screen extends StatelessWidget {
                   crossAxisSpacing: 10,
                   children: [
                     IdActivationCard(
-                        path: AppImages.id2Image,
-                        label:
-                            'Make sure to display all details including the lines at the bottom'),
+                      path: AppImages.id2Image,
+                      label: LocaleKeys.make_sure_to_display_details.tr(),
+                    ),
                     IdActivationCard(
-                        path: AppImages.id1Image,
-                        label:
-                            'We do not accept photos taken from another screen'),
+                      path: AppImages.id1Image,
+                      label: LocaleKeys.no_photos_from_another_screen.tr(),
+                    ),
                     IdActivationCard(
-                        path: AppImages.id4Image,
-                        label:
-                            'We do not accept photos with glare or excessive exposure'),
+                      path: AppImages.id4Image,
+                      label: LocaleKeys.no_photos_with_glare.tr(),
+                    ),
                     IdActivationCard(
-                        path: AppImages.id3Image,
-                        label: 'We do not accept cropped or damaged images'),
+                      path: AppImages.id3Image,
+                      label: LocaleKeys.no_cropped_or_damaged_images.tr(),
+                    ),
                   ],
                 ),
                 Space(
                   height: 2.h,
                 ),
                 VerficationStepsButton(
-                  label: 'Continue',
+                  label: LocaleKeys.continue_.tr(),
                   onTap: () => navigateToUploadIdPage(context),
                 ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

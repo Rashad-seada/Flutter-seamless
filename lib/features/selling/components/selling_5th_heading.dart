@@ -1,6 +1,8 @@
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/selling/components/main_button.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -45,29 +47,29 @@ class Selling5thHeading extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              'Are you ready to sell your property?',
+              LocaleKeys.ready_to_sell_property,
               style: AppTheme.mainTextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 14.sp,
               ),
               textAlign: TextAlign.center,
-            ),
+            ).tr(),
             Space(
               height: 1.h,
             ),
             Text(
-              'If you are thinking of selling, do not hesitate! The procedures are quick and non-binding',
+              LocaleKeys.thinking_of_selling,
               style: AppTheme.mainTextStyle(
                 color: Colors.white,
                 fontSize: 11.sp,
               ),
               textAlign: TextAlign.center,
-            ),
+            ).tr(),
             Space(
               height: 3.h,
             ),
-            MainSellingButton(label: 'Selling with Seamless'),
+            MainSellingButton(label: LocaleKeys.selling_with_seamless.tr()),
           ],
         ),
       ),

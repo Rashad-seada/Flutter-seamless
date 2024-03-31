@@ -1,8 +1,8 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
-import 'package:Mawthoq/core/views/widgets/space.dart';
-import 'package:Mawthoq/features/account/views/utils/account_model.dart';
+import 'package:Mawthoq/features/main/bloc/main/main_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
@@ -13,7 +13,7 @@ class ProfitsContainer extends StatelessWidget {
   String? string;
 
   void navigateToWalletPage(BuildContext context) {
-    Navigator.push(
+    Navigator.pop(
         context, MaterialPageRoute(builder: (_) => const WalletPage()));
   }
 
@@ -22,7 +22,10 @@ class ProfitsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => navigateToWalletPage(context),
+      onTap: () {
+        context.read<MainCubit>().onNavItemTap(1);
+        navigateToWalletPage(context);
+      },
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 2.w),
         decoration: BoxDecoration(

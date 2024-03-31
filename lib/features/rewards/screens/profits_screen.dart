@@ -1,5 +1,6 @@
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/account/views/components/custom_app_bar.dart';
 import 'package:Mawthoq/features/rewards/components/profits_card.dart';
 import 'package:Mawthoq/features/rewards/components/profits_container.dart';
 import 'package:Mawthoq/features/rewards/components/share_reward_link_card.dart';
@@ -13,21 +14,21 @@ class ProfitsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          LocaleKeys.profits,
-          style: AppTheme.mainTextStyle(
-            color: AppTheme.secondary900,
-          ),
-        ).tr(),
-      ),
-      body: ListView(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(6.w),
-            child: Column(
+    return SafeArea(
+      child: Scaffold(
+        body: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 7.w),
+          children: [
+            Space(
+              height: 2.h,
+            ),
+            CustomAppBar(
+              label: LocaleKeys.profits.tr(),
+            ),
+            Space(
+              height: 3.h,
+            ),
+            Column(
               children: [
                 Text(
                   LocaleKeys.your_rewards,
@@ -46,24 +47,24 @@ class ProfitsScreen extends StatelessWidget {
                     color: AppTheme.secondary900,
                   ),
                 ),
-                Space(
-                  height: 1.5.h,
-                ),
-                ProfitsCard(),
-                Space(
-                  height: 1.5.h,
-                ),
-                ProfitsContainer(
-                  label: LocaleKeys.wallet.tr(),
-                ),
-                Space(
-                  height: 1.5.h,
-                ),
-                ShareRewardLinkCard(),
               ],
             ),
-          ),
-        ],
+            Space(
+              height: 1.5.h,
+            ),
+            ProfitsCard(),
+            Space(
+              height: 1.5.h,
+            ),
+            ProfitsContainer(
+              label: LocaleKeys.wallet.tr(),
+            ),
+            Space(
+              height: 1.5.h,
+            ),
+            ShareRewardLinkCard(),
+          ],
+        ),
       ),
     );
   }

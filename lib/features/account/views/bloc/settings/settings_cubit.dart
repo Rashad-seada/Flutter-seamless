@@ -4,7 +4,9 @@ import 'package:Mawthoq/features/account/views/screens/currency_screen.dart';
 import 'package:Mawthoq/features/account/views/utils/account_model.dart';
 import 'package:Mawthoq/features/language/views/blocs/language/language_cubit.dart';
 import 'package:Mawthoq/features/language/views/screens/language_screen.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:bloc/bloc.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class SettingsCubit extends Cubit<SettingsState> {
@@ -17,14 +19,10 @@ class SettingsCubit extends Cubit<SettingsState> {
   }
 
   List<SettingsModel> settingsInfo(context) => [
-        SettingsModel(
-            AppImages.language, 'Language', 'English', () =>
-          _navigateToLanguageScreen(context)
-        ),
-        SettingsModel(
-            AppImages.coin, 'The currency', 'SAR', () =>
-        _navigateToCurrencyScreen(context)
-        ),
+        SettingsModel(AppImages.language, LocaleKeys.language.tr(),
+            LocaleKeys.english.tr(), () => _navigateToLanguageScreen(context)),
+        SettingsModel(AppImages.coin, LocaleKeys.currency.tr(), 'SAR',
+            () => _navigateToCurrencyScreen(context)),
       ];
 
   List<SettingsCardModel> get settingsCardInfo1 => [
@@ -35,11 +33,13 @@ class SettingsCubit extends Cubit<SettingsState> {
         SettingsCardModel(AppImages.phone, 'The currency', false),
       ];
 
-  _navigateToLanguageScreen(BuildContext context){
-    Navigator.push(context,MaterialPageRoute(builder: (_)=> LanguageScreen()));
+  _navigateToLanguageScreen(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => LanguageScreen()));
   }
 
-  _navigateToCurrencyScreen(BuildContext context){
-    Navigator.push(context,MaterialPageRoute(builder: (_)=> CurrencyScreen()));
+  _navigateToCurrencyScreen(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => CurrencyScreen()));
   }
 }

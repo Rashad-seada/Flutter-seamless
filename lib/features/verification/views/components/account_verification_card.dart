@@ -1,4 +1,5 @@
 import 'package:Mawthoq/core/config/app_theme.dart';
+import 'package:Mawthoq/core/utils/is_locale_arabic.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/verification/views/blocs/verification_cubit.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
@@ -19,7 +20,9 @@ class AccountVerificationCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(
         2.w,
       ),
-      onTap: ()=> context.read<VerificationCubit>().onAccountVerificationCardTap(context),
+      onTap: () => context
+          .read<VerificationCubit>()
+          .onAccountVerificationCardTap(context),
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 2.5.w, horizontal: 2.5.w),
         decoration: BoxDecoration(
@@ -28,33 +31,27 @@ class AccountVerificationCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(
             2.w,
           ),
-
-
         ),
-
         child: Row(
-
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-
-
-        Container(
-        padding: EdgeInsets.symmetric(vertical: 2.w, horizontal: 2.w),
-        decoration: BoxDecoration(
-          color: AppTheme.primary900,
-          borderRadius: BorderRadius.circular(
-            1.w,
-          ),
-        ),
-        child: SvgPicture.asset(AppImages.documents,
-          width: 6.w,
-          height: 6.w,
-          color: AppTheme.neutral100,
-        )
-        ),
-
-            Space(width: 3.w,),
-
+            Container(
+                padding: EdgeInsets.symmetric(vertical: 2.w, horizontal: 2.w),
+                decoration: BoxDecoration(
+                  color: AppTheme.primary900,
+                  borderRadius: BorderRadius.circular(
+                    1.w,
+                  ),
+                ),
+                child: SvgPicture.asset(
+                  AppImages.documents,
+                  width: 6.w,
+                  height: 6.w,
+                  color: AppTheme.neutral100,
+                )),
+            Space(
+              width: 3.w,
+            ),
             SizedBox(
               width: 60.w,
               child: Text(
@@ -64,16 +61,17 @@ class AccountVerificationCard extends StatelessWidget {
                   fontSize: 9.sp,
                 ),
               ),
-
             ),
-
-            SvgPicture.asset(AppImages.arrowRight,
-              width: 6.w,
-              height: 6.w,
-              color: AppTheme.neutral900,
-            )
-
-
+            RotationTransition(
+              turns: AlwaysStoppedAnimation(
+                  isLocaleArabic(context) ? 360 / 180 : 180 / 360),
+              child: SvgPicture.asset(
+                AppImages.arrow,
+                width: 6.w,
+                height: 6.w,
+                color: AppTheme.neutral900,
+              ),
+            ),
           ],
         ),
       ),

@@ -1,5 +1,7 @@
 import 'package:Mawthoq/core/config/app_images.dart';
+import 'package:Mawthoq/core/utils/is_locale_arabic.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/rewards/screens/silver_category_screen.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +12,11 @@ import '../../../../core/config/app_theme.dart';
 
 // ignore: must_be_immutable
 class RewardsIndicator extends StatelessWidget {
+  void navigateToSilverCategoryScreen(BuildContext context) {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (_) => const SilverCategoryScreen()));
+  }
+
   double raisedFunds;
   double requestedFunds;
   double width;
@@ -26,7 +33,7 @@ class RewardsIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () => navigateToSilverCategoryScreen(context),
       child: Container(
         padding: EdgeInsets.all(2.h),
         decoration: BoxDecoration(
@@ -68,11 +75,15 @@ class RewardsIndicator extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ).tr(),
-                      SvgPicture.asset(
-                        AppImages.arrowRight,
-                        height: 2.5.h,
-                        width: 2.5.h,
-                        color: AppTheme.neutral900,
+                      RotationTransition(
+                        turns: AlwaysStoppedAnimation(
+                            isLocaleArabic(context) ? 360 / 180 : 180 / 360),
+                        child: SvgPicture.asset(
+                          AppImages.arrow,
+                          width: 2.5.h,
+                          height: 2.5.h,
+                          color: AppTheme.secondary900,
+                        ),
                       ),
                     ],
                   ),

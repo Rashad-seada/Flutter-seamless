@@ -1,6 +1,9 @@
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/account/views/components/custom_app_bar.dart';
 import 'package:Mawthoq/features/verification/views/blocs/verification_cubit.dart';
+import 'package:Mawthoq/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
@@ -21,69 +24,74 @@ class VerficationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Account Activation'),
-      ),
-      body: ListView(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(3.w),
-            child: Column(
+    return SafeArea(
+      child: Scaffold(
+        body: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 5.w),
+          children: [
+            Space(
+              height: 2.h,
+            ),
+            CustomAppBar(
+              label: LocaleKeys.account_activation.tr(),
+            ),
+            Space(
+              height: 3.h,
+            ),
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset(
                   'images/verfication_icon.png',
                 ),
                 VerficationTextCard(
-                  cardTitle: 'Lets start investing',
+                  cardTitle: LocaleKeys.lets_start_investing.tr(),
                 ),
                 Space(
                   height: 3.h,
                 ),
                 VerificationStepsCard(
-                  label: 'Register',
-                  step: 'Step 1',
-                    isChecked: true
-
+                  label: LocaleKeys.register.tr(),
+                  step: LocaleKeys.step_1.tr(),
+                  isChecked: true,
                 ),
                 Space(
                   height: 1.5.h,
                 ),
                 VerificationStepsCard(
-                  label: 'What is your job?',
-                  step: 'Step 2',
-                  onTap: ()=> context.read<VerificationCubit>()..onStep2Tap(context),
+                  label: LocaleKeys.what_is_your_job.tr(),
+                  step: LocaleKeys.step_2.tr(),
+                  onTap: () =>
+                      context.read<VerificationCubit>()..onStep2Tap(context),
                 ),
                 Space(
                   height: 1.5.h,
                 ),
                 VerificationStepsCard(
-                  label: 'Address Verfication',
-                  onTap: ()=> context.read<VerificationCubit>()..onStep3Tap(context),
-
-                  step: 'Step 3',
+                  label: LocaleKeys.address_verification.tr(),
+                  onTap: () =>
+                      context.read<VerificationCubit>()..onStep3Tap(context),
+                  step: LocaleKeys.step_3.tr(),
                 ),
                 Space(
                   height: 1.5.h,
                 ),
                 VerificationStepsCard(
-                  label: 'ID Verfication',
-                  step: 'Step 4',
+                  label: LocaleKeys.id_verification.tr(),
+                  step: LocaleKeys.step_4.tr(),
                   onTap: () => navigateToUploadIdPage(context),
-
                 ),
                 Space(
                   height: 1.5.h,
                 ),
                 VerficationStepsButton(
-                  label: 'Continue',
-                  //onTap: () => navigateToUploadIdPage(context),
+                  label: LocaleKeys.continue_.tr(),
+                  // onTap: () => navigateToUploadIdPage(context),
                 ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -10,30 +10,26 @@ part 'home_details_state.dart';
 class HomeDetailsCubit extends Cubit<HomeDetailsState> {
   HomeDetailsCubit() : super(HomeDetailsInitial());
 
-  List<String> tabs = ["Acquisition","Rental Income"];
+  List<String> tabs = ["Acquisition", "Rental Income"];
 
   int selectedIndex = 0;
 
-  onTabChange(int index,) {
+  onTabChange(
+    int index,
+  ) {
     emit(HomeDetailsPageChanges());
     selectedIndex = index;
     emit(HomeDetailsSuccess(HomeDetailsSuccess.propertyEntity));
   }
 
-  getOnProperty(int propertyId){
+  getOnProperty(int propertyId) {
     emit(HomeDetailsIsLoading());
-    getIt<GetOnePropertyUseCase>().call(propertyId: propertyId).then(
-      (value) => value.fold(
-        (error) {
-          emit(HomeDetailsError(error));
-
-        },
-        (success) {
-
-          emit(HomeDetailsSuccess(success.data));
-
-        })
-    );
+    getIt<GetOnePropertyUseCase>()
+        .call(propertyId: propertyId)
+        .then((value) => value.fold((error) {
+              emit(HomeDetailsError(error));
+            }, (success) {
+              emit(HomeDetailsSuccess(success.data));
+            }));
   }
-
 }

@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter_svg/svg.dart';
 
-class NotificationsScreen extends StatelessWidget {
-  const NotificationsScreen({super.key});
+class FavouritesScreen extends StatelessWidget {
+  const FavouritesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class NotificationsScreen extends StatelessWidget {
                   height: 2.h,
                 ),
                 CustomAppBar(
-                  label: LocaleKeys.notifications.tr(),
+                  label: LocaleKeys.favourites.tr(),
                 ),
                 Space(
                   height: 3.h,
@@ -41,14 +41,14 @@ class NotificationsScreen extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.all(6.w),
                         child: SvgPicture.asset(
-                          AppImages.notification,
+                          AppImages.heart,
                           height: 10.w,
                           width: 10.w,
                           color: AppTheme.secondary900,
                         ),
                       ),
                       Text(
-                        LocaleKeys.no_notifications_yet,
+                        LocaleKeys.no_favourite_properties_yet,
                         style: AppTheme.mainTextStyle(
                           fontSize: 16.sp,
                           color: AppTheme.secondary900,
@@ -59,7 +59,7 @@ class NotificationsScreen extends StatelessWidget {
                         height: 1.h,
                       ),
                       Text(
-                        LocaleKeys.invest_now_to_get_notified,
+                        LocaleKeys.explore_properties_and_mark_favorites,
                         style: AppTheme.mainTextStyle(
                           fontSize: 12.sp,
                           color: AppTheme.neutral400,

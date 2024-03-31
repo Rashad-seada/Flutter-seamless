@@ -37,7 +37,6 @@ class HomeDetailsScreen extends StatefulWidget {
 
   @override
   State<HomeDetailsScreen> createState() => _HomeDetailsScreenState();
-
 }
 
 class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
@@ -54,15 +53,11 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
     AppTheme.initSystemNavAndStatusBar();
   }
 
-  
   @override
   void initState() {
     context.read<HomeDetailsCubit>().getOnProperty(widget.propertyId);
     super.initState();
   }
-  
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -83,26 +78,27 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
             builder: (context, state) {
               if (state is HomeDetailsIsLoading) {
                 return const HomeDetailsLoading();
-
               } else if (state is HomeDetailsError) {
-
                 return Padding(
                   padding: EdgeInsets.only(top: 30.h),
                   child: Center(
                     child: CustomErrorWidget(
-                      errorMessage: HomeDetailsError.failure.message ?? "Unknown",
-                      onTap: () => context.read<HomeDetailsCubit>().getOnProperty(widget.propertyId),
+                      errorMessage:
+                          HomeDetailsError.failure.message ?? "Unknown",
+                      onTap: () => context
+                          .read<HomeDetailsCubit>()
+                          .getOnProperty(widget.propertyId),
                     ),
                   ),
                 );
-
               } else if (state is HomeDetailsSuccess) {
                 return Column(
                   children: [
                     DetailsImageSlider(
-                      imageUrls: HomeDetailsSuccess.propertyEntity?.images?.map(
-                              (e) => AppConsts.imageUrl + e.toString()
-                      ).toList() ?? [],
+                      imageUrls: HomeDetailsSuccess.propertyEntity?.images
+                              ?.map((e) => AppConsts.imageUrl + e.toString())
+                              .toList() ??
+                          [],
                     ),
                     Space(
                       height: 2.h,
@@ -112,26 +108,42 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                       shrinkWrap: true,
                       padding: EdgeInsets.symmetric(horizontal: 7.w),
                       children: [
-
-
                         TitleCard(
-                            title: HomeDetailsSuccess.propertyEntity?.name ?? "--",
-                            bedrooms: HomeDetailsSuccess.propertyEntity?.bedsCount?.toString() ?? "--",
-                            bathrooms: HomeDetailsSuccess.propertyEntity?.bathroomsCount?.toString() ?? "--" ,
-                            area: HomeDetailsSuccess.propertyEntity?.area?.toString() ?? "--"
-                        ),
+                            title:
+                                HomeDetailsSuccess.propertyEntity?.name ?? "--",
+                            bedrooms: HomeDetailsSuccess
+                                    .propertyEntity?.bedsCount
+                                    ?.toString() ??
+                                "--",
+                            bathrooms: HomeDetailsSuccess
+                                    .propertyEntity?.bathroomsCount
+                                    ?.toString() ??
+                                "--",
+                            area: HomeDetailsSuccess.propertyEntity?.area
+                                    ?.toString() ??
+                                "--"),
                         Space(
                           height: 2.h,
                         ),
                         DetailsHeaderComponent(
-                            price: HomeDetailsSuccess.propertyEntity?.price?.toDouble() ?? 0,
-                            raisedFunds: (HomeDetailsSuccess.propertyEntity?.price ?? 0.0) * ((double.tryParse(HomeDetailsSuccess.propertyEntity?.percentageSold ?? '') ?? 0.0) / 100),
-                            investors: HomeDetailsSuccess.propertyEntity?.investorsCount ?? 0
-                        ),
+                            price: HomeDetailsSuccess.propertyEntity?.price
+                                    ?.toDouble() ??
+                                0,
+                            raisedFunds:
+                                (HomeDetailsSuccess.propertyEntity?.price ??
+                                        0.0) *
+                                    ((double.tryParse(HomeDetailsSuccess
+                                                    .propertyEntity
+                                                    ?.percentageSold ??
+                                                '') ??
+                                            0.0) /
+                                        100),
+                            investors: HomeDetailsSuccess
+                                    .propertyEntity?.investorsCount ??
+                                0),
                         Space(
                           height: 2.h,
                         ),
-
                         SizedBox(
                           width: 86.w,
                           height: 6.h,
@@ -148,15 +160,14 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                                     style: AppTheme.mainTextStyle(
                                         color: AppTheme.secondary900,
                                         fontSize: 11.sp,
-                                        fontWeight: FontWeight.w600
-                                    ),
+                                        fontWeight: FontWeight.w600),
                                   ).tr(),
                                   //onTap: ()=> context.read<LoginCubit>().onLoginClick(context),
                                 ),
                               ),
-
-                              Space(width: 2.w,),
-
+                              Space(
+                                width: 2.w,
+                              ),
                               Expanded(
                                 flex: 1,
                                 child: MainButton(
@@ -174,9 +185,16 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                                       context: context,
                                       builder: (BuildContext context) {
                                         return AddToCartDialog(
-                                          label: HomeDetailsSuccess.propertyEntity?.name ?? '--',
-                                          image: HomeDetailsSuccess.propertyEntity?.image ?? '--',
-                                          propertyId: HomeDetailsSuccess.propertyEntity?.id?.toInt() ?? -1,
+                                          label: HomeDetailsSuccess
+                                                  .propertyEntity?.name ??
+                                              '--',
+                                          image: HomeDetailsSuccess
+                                                  .propertyEntity?.image ??
+                                              '--',
+                                          propertyId: HomeDetailsSuccess
+                                                  .propertyEntity?.id
+                                                  ?.toInt() ??
+                                              -1,
                                         );
                                       },
                                     );
@@ -186,15 +204,20 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                             ],
                           ),
                         ),
-
                         Space(
                           height: 2.h,
                         ),
                         DetailsCard(
-                            fundedData: HomeDetailsSuccess.propertyEntity?.fundingDate ?? "",
-                            price: HomeDetailsSuccess.propertyEntity?.price?.toDouble() ?? 0,
-                            rentalIncome: double.tryParse(HomeDetailsSuccess.propertyEntity?.annualNetRentIncome ?? "") ?? 0.0
-                        ),
+                            fundedData: HomeDetailsSuccess
+                                    .propertyEntity?.fundingDate ??
+                                "",
+                            price: HomeDetailsSuccess.propertyEntity?.price
+                                    ?.toDouble() ??
+                                0,
+                            rentalIncome: double.tryParse(HomeDetailsSuccess
+                                        .propertyEntity?.annualNetRentIncome ??
+                                    "") ??
+                                0.0),
                         Space(
                           height: 1.5.h,
                         ),
@@ -203,12 +226,29 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                           thickness: .2.w,
                         ),
                         PropertyDetails(
-                            location: HomeDetailsSuccess.propertyEntity?.locationDescription ?? "--",
-                            locationDescription: HomeDetailsSuccess.propertyEntity?.locationDescription ?? "--",
-                            isRented: (HomeDetailsSuccess.propertyEntity?.isRented == 1)? true : false,
-                            isProtected: (HomeDetailsSuccess.propertyEntity?.isProtected == 1)? true : false,
-                            rentPerMonth: HomeDetailsSuccess.propertyEntity?.monthlyCurrentRent?.toDouble() ?? 0,
-                            expectedGrowth: double.tryParse(HomeDetailsSuccess.propertyEntity?.annualExpectedGrowth ?? '') ?? 0,
+                          location: HomeDetailsSuccess
+                                  .propertyEntity?.locationDescription ??
+                              "--",
+                          locationDescription: HomeDetailsSuccess
+                                  .propertyEntity?.locationDescription ??
+                              "--",
+                          isRented:
+                              (HomeDetailsSuccess.propertyEntity?.isRented == 1)
+                                  ? true
+                                  : false,
+                          isProtected:
+                              (HomeDetailsSuccess.propertyEntity?.isProtected ==
+                                      1)
+                                  ? true
+                                  : false,
+                          rentPerMonth: HomeDetailsSuccess
+                                  .propertyEntity?.monthlyCurrentRent
+                                  ?.toDouble() ??
+                              0,
+                          expectedGrowth: double.tryParse(HomeDetailsSuccess
+                                      .propertyEntity?.annualExpectedGrowth ??
+                                  '') ??
+                              0,
                         ),
                         Space(
                           height: 2.h,
@@ -224,41 +264,105 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                         Space(
                           height: 5.h,
                         ),
-                        PropertyOverview(overview: HomeDetailsSuccess.propertyEntity?.propertyDescription ?? "--",),
+                        PropertyOverview(
+                          overview: HomeDetailsSuccess
+                                  .propertyEntity?.propertyDescription ??
+                              "--",
+                        ),
                         Space(
                           height: 5.h,
                         ),
                         Financials(
-                            price: HomeDetailsSuccess.propertyEntity?.price?.toDouble() ?? 0,
-                            seamlessFees: double.tryParse(HomeDetailsSuccess.propertyEntity?.seamlessFee ?? '')?? 0,
-                            annualGrossRent: ((double.tryParse(HomeDetailsSuccess.propertyEntity?.annualRentIncome ?? '')?? 0)/100).toDouble() * ( HomeDetailsSuccess.propertyEntity?.price?.toDouble() ?? 0),
-                            serviceCharges: ((double.tryParse(HomeDetailsSuccess.propertyEntity?.servicesFees ?? '')?? 0)/100).toDouble() * ( HomeDetailsSuccess.propertyEntity?.price?.toDouble() ?? 0),
-                            maintenance: ((double.tryParse(HomeDetailsSuccess.propertyEntity?.maintainceFees ?? '')?? 0)/100).toDouble() * ( HomeDetailsSuccess.propertyEntity?.price?.toDouble() ?? 0),
+                          price: HomeDetailsSuccess.propertyEntity?.price
+                                  ?.toDouble() ??
+                              0,
+                          seamlessFees: double.tryParse(HomeDetailsSuccess
+                                      .propertyEntity?.seamlessFee ??
+                                  '') ??
+                              0,
+                          annualGrossRent: ((double.tryParse(HomeDetailsSuccess
+                                                  .propertyEntity
+                                                  ?.annualRentIncome ??
+                                              '') ??
+                                          0) /
+                                      100)
+                                  .toDouble() *
+                              (HomeDetailsSuccess.propertyEntity?.price
+                                      ?.toDouble() ??
+                                  0),
+                          serviceCharges: ((double.tryParse(HomeDetailsSuccess
+                                                  .propertyEntity
+                                                  ?.servicesFees ??
+                                              '') ??
+                                          0) /
+                                      100)
+                                  .toDouble() *
+                              (HomeDetailsSuccess.propertyEntity?.price
+                                      ?.toDouble() ??
+                                  0),
+                          maintenance: ((double.tryParse(HomeDetailsSuccess
+                                                  .propertyEntity
+                                                  ?.maintainceFees ??
+                                              '') ??
+                                          0) /
+                                      100)
+                                  .toDouble() *
+                              (HomeDetailsSuccess.propertyEntity?.price
+                                      ?.toDouble() ??
+                                  0),
                         ),
                         Space(
                           height: 5.h,
                         ),
-
                         FundingTimeline(),
-
                         Space(
                           height: 5.h,
                         ),
                         Location(
-                          location: HomeDetailsSuccess.propertyEntity?.locationDescription ?? "--",
+                          location: HomeDetailsSuccess
+                                  .propertyEntity?.locationDescription ??
+                              "--",
                         ),
                         Space(
                           height: 5.h,
                         ),
                         Amenities(
-                            hasBalacony: (HomeDetailsSuccess.propertyEntity?.hasBalcony == 1)? true: false,
-                            hasGarden: (HomeDetailsSuccess.propertyEntity?.hasGarden == 1)? true: false,
-                            hasGym: (HomeDetailsSuccess.propertyEntity?.hasGym == 1)? true: false,
-                            hasParking: (HomeDetailsSuccess.propertyEntity?.hasParking == 1)? true: false,
-                            hasPool: (HomeDetailsSuccess.propertyEntity?.hasPool == 1)? true: false,
-                            hasRestarrant: (HomeDetailsSuccess.propertyEntity?.hasRestaurant == 1)? true: false,
-                            hasSupermarket: (HomeDetailsSuccess.propertyEntity?.hasSupermarket == 1)? true: false
-                        ),
+                            hasBalacony:
+                                (HomeDetailsSuccess.propertyEntity?.hasBalcony ==
+                                        1)
+                                    ? true
+                                    : false,
+                            hasGarden: (HomeDetailsSuccess.propertyEntity?.hasGarden ==
+                                    1)
+                                ? true
+                                : false,
+                            hasGym:
+                                (HomeDetailsSuccess
+                                            .propertyEntity?.hasGym ==
+                                        1)
+                                    ? true
+                                    : false,
+                            hasParking:
+                                (HomeDetailsSuccess
+                                            .propertyEntity?.hasParking ==
+                                        1)
+                                    ? true
+                                    : false,
+                            hasPool: (HomeDetailsSuccess
+                                        .propertyEntity?.hasPool ==
+                                    1)
+                                ? true
+                                : false,
+                            hasRestarrant: (HomeDetailsSuccess
+                                        .propertyEntity?.hasRestaurant ==
+                                    1)
+                                ? true
+                                : false,
+                            hasSupermarket: (HomeDetailsSuccess
+                                        .propertyEntity?.hasSupermarket ==
+                                    1)
+                                ? true
+                                : false),
                         Space(
                           height: 4.h,
                         ),

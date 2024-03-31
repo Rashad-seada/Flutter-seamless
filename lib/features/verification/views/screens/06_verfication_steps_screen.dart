@@ -1,4 +1,3 @@
-import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/components/custom_app_bar.dart';
 import 'package:Mawthoq/features/verification/views/blocs/verification_cubit.dart';

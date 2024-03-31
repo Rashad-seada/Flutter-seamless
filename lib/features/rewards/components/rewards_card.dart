@@ -64,10 +64,10 @@ class RewardsCard extends StatelessWidget {
                         ),
                       ),
                       Space(
-                        width: 0.5.w,
+                        width: 1.w,
                       ),
                       Text(
-                        '100',
+                        '0',
                         style: AppTheme.mainTextStyle(
                           color: AppTheme.secondary900,
                           fontSize: 13.sp,

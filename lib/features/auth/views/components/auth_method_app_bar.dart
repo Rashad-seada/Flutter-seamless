@@ -1,9 +1,16 @@
 import 'package:Mawthoq/core/config/app_theme.dart';
+import 'package:Mawthoq/features/language/views/screens/language_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:sizer/sizer.dart';
 
 class AuthMethodAppBar extends StatelessWidget {
-  const AuthMethodAppBar({super.key});
+  _navigateToLanguageScreen(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => LanguageScreen()));
+  }
+
+  AuthMethodAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +22,10 @@ class AuthMethodAppBar extends StatelessWidget {
           height: 9.h,
           color: AppTheme.secondary900,
         ),
-        InkWell(
-          onTap: () {},
+        GestureDetector(
+          onTap: () => _navigateToLanguageScreen(context),
           child: Padding(
-            padding: const EdgeInsets.only(left: 20, top: 50),
+            padding: const EdgeInsets.only(left: 20, top: 50, right: 20),
             child: Container(
               height: 6.h,
               width: 13.w,

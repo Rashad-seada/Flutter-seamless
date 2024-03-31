@@ -1,7 +1,5 @@
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 class VerificationStepsCard extends StatelessWidget {
@@ -10,11 +8,11 @@ class VerificationStepsCard extends StatelessWidget {
   void Function()? onTap;
   bool isChecked;
   VerificationStepsCard(
-      {
-      super.key,
+      {super.key,
       required this.label,
-      required this.step, this.onTap, this.isChecked = false
-      });
+      required this.step,
+      this.onTap,
+      this.isChecked = false});
 
   @override
   Widget build(BuildContext context) {
@@ -63,17 +61,20 @@ class VerificationStepsCard extends StatelessWidget {
                   ),
                 ],
               ),
-          CircleAvatar(
-            radius: 5.w,
-            backgroundColor: (isChecked)? AppTheme.success : AppTheme.neutral100,
-            child: Padding(
-              padding: EdgeInsets.all(2.w),
-              child: (isChecked)? Icon(
-                Icons.check,
-                color: AppTheme.neutral100,
-              ) : null,
-            ),
-          ),
+              CircleAvatar(
+                radius: 5.w,
+                backgroundColor:
+                    (isChecked) ? AppTheme.success : AppTheme.neutral100,
+                child: Padding(
+                  padding: EdgeInsets.all(2.w),
+                  child: (isChecked)
+                      ? Icon(
+                          Icons.check,
+                          color: AppTheme.neutral100,
+                        )
+                      : null,
+                ),
+              ),
             ],
           ),
         ),

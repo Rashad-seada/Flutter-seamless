@@ -96,7 +96,7 @@ class TermsAndConditionsScreen extends StatelessWidget {
                   height: 2.h,
                 ),
                 VerficationStepsButton(
-                  label: 'Accept',
+                  label: LocaleKeys.confirm.tr(),
                 ),
               ],
             ),

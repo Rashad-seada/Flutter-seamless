@@ -1,5 +1,6 @@
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/components/custom_app_bar.dart';
+import 'package:Mawthoq/features/verification/views/screens/account_confirm_screen.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,11 @@ import '../components/verfication_steps_button.dart';
 import '../components/verfication_text_card.dart';
 
 class UploadId2Screen extends StatelessWidget {
+  void navigateAccountConfirmScreen(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => AccountConfirmScreen()));
+  }
+
   const UploadId2Screen({super.key});
 
   @override
@@ -61,7 +67,7 @@ class UploadId2Screen extends StatelessWidget {
                   ),
                   VerficationStepsButton(
                     label: LocaleKeys.upload.tr(),
-                    onTap: () {},
+                    onTap: () => navigateAccountConfirmScreen(context),
                   ),
                 ],
               ),

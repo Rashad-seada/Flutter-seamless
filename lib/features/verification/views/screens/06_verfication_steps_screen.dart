@@ -20,11 +20,6 @@ class VerficationScreen extends StatelessWidget {
         context, MaterialPageRoute(builder: (_) => UploadId1Screen()));
   }
 
-  void navigateAccountConfirmScreen(BuildContext context) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (_) => AccountConfirmScreen()));
-  }
-
   const VerficationScreen({super.key});
 
   @override
@@ -91,7 +86,6 @@ class VerficationScreen extends StatelessWidget {
                 ),
                 VerficationStepsButton(
                   label: LocaleKeys.continue_.tr(),
-                  onTap: () => navigateAccountConfirmScreen(context),
                 ),
               ],
             ),

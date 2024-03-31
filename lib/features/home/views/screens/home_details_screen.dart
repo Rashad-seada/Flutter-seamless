@@ -21,6 +21,7 @@ import '../../../../core/views/widgets/custom_error_widget.dart';
 import '../../../../core/views/widgets/main_button.dart';
 import '../../../../generated/locale_keys.g.dart';
 import '../../../account/views/components/custom_app_bar.dart';
+import '../../data/utils/property_status.dart';
 import '../components/amenities.dart';
 import '../components/details_card.dart';
 import '../components/details_header_component.dart';
@@ -53,6 +54,10 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
 
   void disposeSystemNavigationBar() {
     AppTheme.initSystemNavAndStatusBar();
+  }
+
+  bool isFundedOrSold(){
+    return HomeDetailsSuccess.propertyEntity!.status == PropertyStatus.soldOut || HomeDetailsSuccess.propertyEntity!.status == PropertyStatus.funded;
   }
 
   @override
@@ -149,12 +154,14 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                                         100),
                             investors: HomeDetailsSuccess
                                     .propertyEntity?.investorsCount?.toInt() ??
-                                0),
+                                0,
+                          status: HomeDetailsSuccess.propertyEntity?.status ?? '',
+                        ),
                         Space(
                           height: 2.h,
                         ),
                         MainButton(
-                          color: AppTheme.primary900,
+                          color: (isFundedOrSold())? AppTheme.primary900.withOpacity(0.4) : AppTheme.primary900,
                           width: 86.w,
                           height: 6.h,
                           label: Row(
@@ -165,14 +172,17 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
 
 
                               Text(
-                                LocaleKeys.add_to_cart,
+                                (isFundedOrSold()) ? LocaleKeys.funded : LocaleKeys.add_to_cart,
                                 style: AppTheme.mainTextStyle(
                                     color: AppTheme.secondary900,
                                     fontSize: 11.sp,
                                     fontWeight: FontWeight.w600),
                               ).tr(),
-                              Space(width: 2.w,),
 
+                              if(!isFundedOrSold())
+                                Space(width: 2.w,),
+
+                              if(!isFundedOrSold())
                               SvgPicture.asset(
                                 AppImages.cart,
                                 height: 2.5.h,
@@ -183,23 +193,26 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                             ],
                           ),
                           onTap: () {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AddToCartDialog(
-                                  label: HomeDetailsSuccess
-                                      .propertyEntity?.name ??
-                                      '--',
-                                  image: HomeDetailsSuccess
-                                      .propertyEntity?.image ??
-                                      '--',
-                                  propertyId: HomeDetailsSuccess
-                                      .propertyEntity?.id
-                                      ?.toInt() ??
-                                      -1,
-                                );
-                              },
-                            );
+                            if(!isFundedOrSold()){
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AddToCartDialog(
+                                    label: HomeDetailsSuccess
+                                        .propertyEntity?.name ??
+                                        '--',
+                                    image: HomeDetailsSuccess
+                                        .propertyEntity?.image ??
+                                        '--',
+                                    propertyId: HomeDetailsSuccess
+                                        .propertyEntity?.id
+                                        ?.toInt() ??
+                                        -1,
+                                  );
+                                },
+                              );
+                            }
+
                           },
                         ),
                         Space(

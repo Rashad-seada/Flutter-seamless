@@ -457,9 +457,9 @@ class _InvestmentsCalculatorCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          _InvestmentsCalculatorCardItem(dotColor: AppTheme.secondary900, title: LocaleKeys.investment.tr(), description: "AED ${ NumberFormat.decimalPattern().format(allMoneyGrowth)}"),
-          _InvestmentsCalculatorCardItem(dotColor: AppTheme.primary900, title: LocaleKeys.total_rent.tr(), description: "AED ${ NumberFormat.decimalPattern().format(expectedAnnualRentalYield)}"),
-          _InvestmentsCalculatorCardItem(dotColor: Color(0xff1f5fcb), title: LocaleKeys.value_growth.tr(), description: "AED ${ NumberFormat.decimalPattern().format(propertyValueGrowth)}")
+          _InvestmentsCalculatorCardItem(dotColor: AppTheme.secondary900, title: LocaleKeys.investment.tr(), description: "SAR ${ NumberFormat.decimalPattern().format(allMoneyGrowth)}"),
+          _InvestmentsCalculatorCardItem(dotColor: AppTheme.primary900, title: LocaleKeys.total_rent.tr(), description: "SAR ${ NumberFormat.decimalPattern().format(expectedAnnualRentalYield)}"),
+          _InvestmentsCalculatorCardItem(dotColor: Color(0xff1f5fcb), title: LocaleKeys.value_growth.tr(), description: "SAR ${ NumberFormat.decimalPattern().format(propertyValueGrowth)}")
 
         ],
       ),

@@ -44,7 +44,7 @@ class AccountVerificationCard extends StatelessWidget {
                   ),
                 ),
                 child: SvgPicture.asset(
-                  AppImages.documents,
+                  AppImages.profile,
                   width: 6.w,
                   height: 6.w,
                   color: AppTheme.neutral100,

@@ -309,5 +309,9 @@
   "spv_creation_and_property_deeds_distribution": "سيتم إنشاء SPV وسيتسلم جميع المستثمرين صكوك الملكية الخاصة بهم في غضون 2-3 أسابيع من إغلاق التمويل ، لإثبات ملكيتهم للعقار",
   "expected_first_rental_payment": "الدفعة الأولى المتوقعة من الإيجار",
   "expected_first_rent_payment_date": "من المتوقع أن يتم دفع أول دفعة إيجار لهذا العقار إلى المستثمرين بحلول إبريل 25، 2024",
-  "funding_timeline": "الجدول الزمني للتمويل"
+  "funding_timeline": "الجدول الزمني للتمويل",
+  "account_confirmation": "تأكيد الحساب",
+  "information_sent_successfully": "تم إرسال معلوماتك بنجاح",
+  "identity_and_information_verifying": "جاري التحقق من هويتك ومعلوماتك",
+  "complete_information_received": "لقد تلقينا معلوماتك الكاملة من خلال جميع خطوات التحقق وسنقوم الآن بالتحقق منها وإعلامك بالانتهاء"
 }

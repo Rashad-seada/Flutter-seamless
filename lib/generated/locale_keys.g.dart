@@ -312,5 +312,9 @@ abstract class  LocaleKeys {
   static const expected_first_rental_payment = 'expected_first_rental_payment';
   static const expected_first_rent_payment_date = 'expected_first_rent_payment_date';
   static const funding_timeline = 'funding_timeline';
+  static const account_confirmation = 'account_confirmation';
+  static const information_sent_successfully = 'information_sent_successfully';
+  static const identity_and_information_verifying = 'identity_and_information_verifying';
+  static const complete_information_received = 'complete_information_received';
 
 }

@@ -325,7 +325,11 @@ class CodegenLoader extends AssetLoader{
   "spv_creation_and_property_deeds_distribution": "سيتم إنشاء SPV وسيتسلم جميع المستثمرين صكوك الملكية الخاصة بهم في غضون 2-3 أسابيع من إغلاق التمويل ، لإثبات ملكيتهم للعقار",
   "expected_first_rental_payment": "الدفعة الأولى المتوقعة من الإيجار",
   "expected_first_rent_payment_date": "من المتوقع أن يتم دفع أول دفعة إيجار لهذا العقار إلى المستثمرين بحلول إبريل 25، 2024",
-  "funding_timeline": "الجدول الزمني للتمويل"
+  "funding_timeline": "الجدول الزمني للتمويل",
+  "account_confirmation": "تأكيد الحساب",
+  "information_sent_successfully": "تم إرسال معلوماتك بنجاح",
+  "identity_and_information_verifying": "جاري التحقق من هويتك ومعلوماتك",
+  "complete_information_received": "لقد تلقينا معلوماتك الكاملة من خلال جميع خطوات التحقق وسنقوم الآن بالتحقق منها وإعلامك بالانتهاء"
 };
 static const Map<String,dynamic> en = {
   "on_boarding_title_1": "The Latest Way to Invest in Real Estate",
@@ -638,7 +642,11 @@ static const Map<String,dynamic> en = {
   "spv_creation_and_property_deeds_distribution": "An SPV will be created, and all investors will receive their property deeds within 2-3 weeks of funding closure to prove their ownership of the property",
   "expected_first_rental_payment": "Expected First Rental Payment",
   "expected_first_rent_payment_date": "The first rent payment for this property is expected to be paid to investors by April 25, 2024",
-  "funding_timeline": "Funding Timeline"
+  "funding_timeline": "Funding Timeline",
+  "account_confirmation": "Account Confirmation",
+  "information_sent_successfully": "Your information has been sent successfully",
+  "identity_and_information_verifying": "Your identity and information are being verified",
+  "complete_information_received": "We have received your complete information through all verification steps and will now verify it and notify you upon completion"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

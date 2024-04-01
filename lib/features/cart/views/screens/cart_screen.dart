@@ -93,7 +93,9 @@ class _CartScreenState extends State<CartScreen> {
                                     0) /
                                 100 *
                                 (double.tryParse(CartSuccess.getCartResponse?.data?[index].amount ?? '') ?? 0),
-                            investedValue: double.tryParse(CartSuccess.getCartResponse?.data?[index].amount ?? '') ?? 0);
+                            investedValue: double.tryParse(CartSuccess.getCartResponse?.data?[index].amount ?? '') ?? 0,
+                            onDeleteTap: ()=> context.read<CartCubit>().onDeleteCartItemTap(context,CartSuccess.getCartResponse?.data?[index].id ?? 0),
+                        );
                       },
                       separatorBuilder: (BuildContext context, int index) {
                         return Space(
@@ -102,42 +104,57 @@ class _CartScreenState extends State<CartScreen> {
                       },
                       itemCount: CartSuccess.getCartResponse?.data?.length ?? 0,
                     ),
-                    Space(
-                      height: 2.h,
-                    ),
-                    MainButton(
-                      color: Colors.transparent,
-                      height: 5.h,
-                      width: 10.w,
-                      border: Border.all(color: AppTheme.neutral300),
-                      label: Text(
-                        LocaleKeys.add_real_state,
-                        style: AppTheme.mainTextStyle(
-                            fontSize: 9.sp,
-                            color: AppTheme.secondary900,
-                            fontWeight: FontWeight.w600),
-                      ).tr(),
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => MainScreen()));
-                      },
-                    ),
-                    Space(
-                      height: 2.h,
-                    ),
-                    CartPayNowCard(
-                      totalCartValue:
-                          context.read<CartCubit>().getCartTotalAmount(),
-                    ),
-                    Space(
-                      height: 5.h,
-                    ),
+
                   ],
                 );
               }
               return const SizedBox();
             },
           ),
+
+
+          BlocConsumer<CartCubit, CartState>(
+            listener: (context, state) {},
+            builder: (context, state) {
+              return Column(
+                children: [
+                  Space(
+                          height: 2.h,
+                        ),
+                  MainButton(
+                    color: Colors.transparent,
+                    height: 5.h,
+                    width: 86.w,
+                    border: Border.all(color: AppTheme.neutral300),
+                    label: Text(
+                      LocaleKeys.add_real_state,
+                      style: AppTheme.mainTextStyle(
+                          fontSize: 9.sp,
+                          color: AppTheme.secondary900,
+                          fontWeight: FontWeight.w600),
+                    ).tr(),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => MainScreen()));
+                    },
+                  ),
+
+                  Space(
+                    height: 2.h,
+                  ),
+                  CartPayNowCard(
+                    totalCartValue:
+                    context.read<CartCubit>().getCartTotalAmount(),
+                  ),
+                  Space(
+                    height: 5.h,
+                  ),
+
+                ],
+              );
+            },
+          ),
+
         ],
       ),
     ));

@@ -85,8 +85,9 @@ class CartCubit extends Cubit<CartState> {
               emit(CartError(error));
 
             },
-                (success) {
-              emit(CartSuccess(modifyCartResponse: success));
+                (success) async {
+                  emit(CartSuccess(modifyCartResponse: success));
+                  await getCart();
 
             }
         )
@@ -95,6 +96,10 @@ class CartCubit extends Cubit<CartState> {
 
   String? validateAmount() {
     return getIt<ValidateAmountUseCase>().call(amountController.text);
+  }
+
+  onDeleteCartItemTap(BuildContext context, int cartItemId) {
+    removeFromCart(context,cartItemId);
   }
 
 }

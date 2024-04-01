@@ -14,8 +14,9 @@ class CartItem extends StatelessWidget {
   double monthlyRent;
   double capitalGrowth;
   double investedValue;
+  void Function()? onDeleteTap;
 
-  CartItem({super.key,required this.label,required this.imageUrl,required this.monthlyRent,required this.capitalGrowth,required this.investedValue,});
+  CartItem({super.key,required this.label,required this.imageUrl,required this.monthlyRent,required this.capitalGrowth,required this.investedValue,this.onDeleteTap});
 
   NumberFormat formatter = NumberFormat('#,##0');
 
@@ -69,8 +70,15 @@ class CartItem extends StatelessWidget {
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w600
                     ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis
                   ),
                 ),
+
+                Space(width: 3.w,),
+
+                IconButton(onPressed: onDeleteTap, icon: Icon(Icons.delete_outline_rounded))
+
 
               ],
             ),

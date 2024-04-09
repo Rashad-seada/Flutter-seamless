@@ -59,7 +59,9 @@ class HelpCenterScreen extends StatelessWidget {
             ),
             AccountPageContainer(
                 iconColor: AppTheme.primary900,
-                info: context.read<AccountCubit>().helpCenterScreenInfo2),
+                info: context
+                    .read<AccountCubit>()
+                    .helpCenterScreenInfo2(context)),
           ],
         ),
       ),

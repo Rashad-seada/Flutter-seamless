@@ -1,6 +1,7 @@
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/account/views/components/blog_card.dart';
+import 'package:Mawthoq/features/account/views/screens/single_blog_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -9,6 +10,11 @@ import '../../../../generated/locale_keys.g.dart';
 import '../components/custom_app_bar.dart';
 
 class BlogScreen extends StatelessWidget {
+  void navigateToSingleBlogScreen(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => SingleBlogScreen()));
+  }
+
   const BlogScreen({super.key});
 
   @override
@@ -47,6 +53,7 @@ class BlogScreen extends StatelessWidget {
                 BlogCard(
                   label: LocaleKeys.how_platform_works.tr(),
                   icon: Icons.question_mark_outlined,
+                  onTap: () => navigateToSingleBlogScreen(context),
                 ),
                 BlogCard(
                   label: LocaleKeys.how_returns_work.tr(),

@@ -8,6 +8,7 @@ import 'package:Mawthoq/features/account/views/screens/privacy_and_security_scre
 import 'package:Mawthoq/features/account/views/screens/privacy_politics_screen.dart';
 import 'package:Mawthoq/features/account/views/screens/settings_screen.dart';
 import 'package:Mawthoq/features/account/views/utils/account_model.dart';
+import 'package:Mawthoq/features/chat/views/screens/chat_screen.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:bloc/bloc.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -49,6 +50,15 @@ class AccountCubit extends Cubit<AccountState> {
   void _navigateToPrivacyPoliticsScreen(BuildContext context) {
     Navigator.push(context,
         MaterialPageRoute(builder: (_) => const PrivacyPoliticsScreen()));
+  }
+
+  void _navigateToChatScreen(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => const ChatScreen()));
+  }
+
+  void onChatClick(BuildContext context) {
+    _navigateToChatScreen(context);
   }
 
   void onPrivacyPoliticsClick(BuildContext context) {
@@ -96,9 +106,9 @@ class AccountCubit extends Cubit<AccountState> {
             AppImages.videoPlay, LocaleKeys.how_it_works.tr(), () {}),
       ];
 
-  List<AccountContainerModel> get helpCenterScreenInfo2 => [
-        AccountContainerModel(
-            AppImages.messege, LocaleKeys.direct_chat.tr(), () {}),
+  List<AccountContainerModel> helpCenterScreenInfo2(BuildContext context) => [
+        AccountContainerModel(AppImages.messege, LocaleKeys.direct_chat.tr(),
+            () => onChatClick(context)),
         AccountContainerModel(
             AppImages.phone, LocaleKeys.whatsapp_contact.tr(), () {}),
         AccountContainerModel(

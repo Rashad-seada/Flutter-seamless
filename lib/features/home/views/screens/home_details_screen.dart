@@ -4,6 +4,7 @@ import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/custom_progress_indicator.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:Mawthoq/features/cart/views/components/add_to_cart_dialog.dart';
+import 'package:Mawthoq/features/favourites/views/blocs/favorites_cubit.dart';
 import 'package:Mawthoq/features/home/views/bloc/home_details/home_details_cubit.dart';
 import 'package:Mawthoq/features/home/views/components/home_details_loading.dart';
 import 'package:Mawthoq/features/home/views/components/location.dart';
@@ -12,6 +13,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
@@ -160,60 +162,88 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                         Space(
                           height: 2.h,
                         ),
-                        MainButton(
-                          color: (isFundedOrSold())? AppTheme.primary900.withOpacity(0.4) : AppTheme.primary900,
-                          width: 86.w,
-                          height: 6.h,
-                          label: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
+
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 4,
+                              child: MainButton(
+                                color: (isFundedOrSold())? AppTheme.primary900.withOpacity(0.4) : AppTheme.primary900,
+                                height: 6.h,
+                                label: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
 
 
-                              Text(
-                                (isFundedOrSold()) ? LocaleKeys.funded : LocaleKeys.add_to_cart,
-                                style: AppTheme.mainTextStyle(
-                                    color: AppTheme.secondary900,
-                                    fontSize: 11.sp,
-                                    fontWeight: FontWeight.w600),
-                              ).tr(),
+                                    Text(
+                                      (isFundedOrSold()) ? LocaleKeys.funded : LocaleKeys.add_to_cart,
+                                      style: AppTheme.mainTextStyle(
+                                          color: AppTheme.secondary900,
+                                          fontSize: 11.sp,
+                                          fontWeight: FontWeight.w600),
+                                    ).tr(),
 
-                              if(!isFundedOrSold())
-                                Space(width: 2.w,),
+                                    if(!isFundedOrSold())
+                                      Space(width: 2.w,),
 
-                              if(!isFundedOrSold())
-                              SvgPicture.asset(
-                                AppImages.cart,
-                                height: 2.5.h,
-                                width: 2.5.h,
-                                color: AppTheme.secondary900,
-                              ),
+                                    if(!isFundedOrSold())
+                                    SvgPicture.asset(
+                                      AppImages.cart,
+                                      height: 2.5.h,
+                                      width: 2.5.h,
+                                      color: AppTheme.secondary900,
+                                    ),
 
-                            ],
-                          ),
-                          onTap: () {
-                            if(!isFundedOrSold()){
-                              showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AddToCartDialog(
-                                    label: HomeDetailsSuccess
-                                        .propertyEntity?.name ??
-                                        '--',
-                                    image: HomeDetailsSuccess
-                                        .propertyEntity?.image ??
-                                        '--',
-                                    propertyId: HomeDetailsSuccess
-                                        .propertyEntity?.id
-                                        ?.toInt() ??
-                                        -1,
-                                  );
+                                  ],
+                                ),
+                                onTap: () {
+                                  if(!isFundedOrSold()){
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AddToCartDialog(
+                                          label: HomeDetailsSuccess
+                                              .propertyEntity?.name ??
+                                              '--',
+                                          image: HomeDetailsSuccess
+                                              .propertyEntity?.image ??
+                                              '--',
+                                          propertyId: HomeDetailsSuccess
+                                              .propertyEntity?.id
+                                              ?.toInt() ??
+                                              -1,
+                                        );
+                                      },
+                                    );
+                                  }
+
                                 },
-                              );
-                            }
+                              ),
+                            ),
 
-                          },
+                            Space(width: 3.w,),
+                            Expanded(
+                              flex: 1,
+                              child: MainButton(
+                                color: AppTheme.primary900.withOpacity(0.2),
+                                height: 6.h,
+                                label: BlocBuilder<FavoritesCubit, FavoritesState>(
+                                  builder: (context, state) {
+                                    if(state is FavoritesIsLoading){
+                                      return CustomProgressIndicator();
+                                    } else {
+
+                                      return Icon(Icons.favorite_border_rounded,color: AppTheme.secondary900);
+                                    }
+                                  },
+                                ),
+                                onTap: () => context.read<FavoritesCubit>().addToFavorite(context,HomeDetailsSuccess.propertyEntity?.id?.toInt() ?? -1),
+
+                              ),
+                            ),
+                          ],
                         ),
                         Space(
                           height: 2.h,

@@ -22,7 +22,7 @@ class DetailsCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.7.h),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(2.w),
-          color: AppTheme.tertiary900),
+          color: AppTheme.primary900.withOpacity(0.1)),
       child: Column(
         children: [
 

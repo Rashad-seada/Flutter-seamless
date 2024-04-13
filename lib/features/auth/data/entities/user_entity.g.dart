@@ -26,13 +26,14 @@ class UserEntityAdapter extends TypeAdapter<UserEntity> {
       updatedAt: fields[6] as String?,
       receiveEmails: fields[7] as int?,
       verified: fields[8] as int?,
+      onboardingStep: fields[9] as int?,
     );
   }
 
   @override
   void write(BinaryWriter writer, UserEntity obj) {
     writer
-      ..writeByte(9)
+      ..writeByte(10)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -50,7 +51,9 @@ class UserEntityAdapter extends TypeAdapter<UserEntity> {
       ..writeByte(7)
       ..write(obj.receiveEmails)
       ..writeByte(8)
-      ..write(obj.verified);
+      ..write(obj.verified)
+      ..writeByte(9)
+      ..write(obj.onboardingStep);
   }
 
   @override

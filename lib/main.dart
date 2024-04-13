@@ -2,6 +2,7 @@ import 'package:Mawthoq/features/account/views/bloc/account/account_cubit.dart';
 import 'package:Mawthoq/features/account/views/bloc/settings/settings_cubit.dart';
 import 'package:Mawthoq/features/auth/views/blocs/intro/intro_cubit.dart';
 import 'package:Mawthoq/features/cart/views/bloc/cart/cart_cubit.dart';
+import 'package:Mawthoq/features/favourites/views/blocs/favorites_cubit.dart';
 import 'package:Mawthoq/features/home/views/bloc/home/home_cubit.dart';
 import 'package:Mawthoq/features/home/views/bloc/home_details/home_details_cubit.dart';
 import 'package:Mawthoq/features/investor_profile/views/bloc/investor_profile/investor_profile_cubit.dart';
@@ -58,6 +59,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => VerificationCubit()),
         BlocProvider(create: (_) => IntroCubit()),
         BlocProvider(create: (_) => CartCubit()),
+        BlocProvider(create: (_) => FavoritesCubit()),
+
       ],
       child: Sizer(
         builder: (BuildContext context, Orientation orientation,

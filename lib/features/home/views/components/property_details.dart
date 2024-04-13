@@ -82,7 +82,7 @@ class PropertyDetailsCard extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.w),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(2.w),
-                color: AppTheme.tertiary900),
+                color: AppTheme.primary900.withOpacity(0.1)),
             child: Image.asset(
               leadingIcon,
               height: 3.h,

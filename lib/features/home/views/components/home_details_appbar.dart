@@ -18,7 +18,7 @@ class HomeDetailsAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 2.w),
+      padding: EdgeInsets.symmetric(horizontal: 3.w),
       decoration: BoxDecoration(
         color: isTrasperant ? Colors.transparent : AppTheme.neutral100,
       ),
@@ -28,23 +28,51 @@ class HomeDetailsAppbar extends StatelessWidget {
         children: [
           Row(
             children: [
-              InkWell(
-                onTap: () => context.read<HomeCubit>().onFavoriteTap(context),
-                child: SvgPicture.asset(
-                    width: 6.5.w, height: 6.5.w, AppImages.heart),
-              ),
-              Space(
-                width: 2.w,
-              ),
-              InkWell(
-                onTap: () => context.read<HomeCubit>().onCartTap(context),
-                child: SvgPicture.asset(
-                  width: 6.5.w,
-                  height: 6.5.w,
-                  AppImages.cart,
-                  color: AppTheme.secondary900
-                ),
-              ),
+
+              ListenableBuilder(listenable: context.read<CartCubit>().cartItemsCount,
+                  builder: (context,widget){
+
+                    return InkWell(
+                      onTap: () => context.read<HomeCubit>().onCartTap(context),
+                      child: SvgPicture.asset(
+                        width: 7.w,
+                        height: 7.w,
+                        AppImages.cart,
+                        color: (context.read<CartCubit>().cartItemsCount.value == 0)? AppTheme.secondary900 : AppTheme.primary900,
+                      ),
+                    );
+
+                  }),
+
+
+
+              Space(width: 1.w,),
+
+              ListenableBuilder(listenable: context.read<CartCubit>().cartItemsCount,
+                  builder: (context,widget){
+
+                    if(context.read<CartCubit>().cartItemsCount.value == 0){
+                      return SizedBox();
+                    }else {
+                      return Container(
+                        padding: EdgeInsets.symmetric(horizontal: 3.w,vertical: 0.4),
+                        decoration: BoxDecoration(
+                            color: AppTheme.primary900,
+                            borderRadius: BorderRadius.circular(100)
+                        ),
+                        child: Text(
+                          "( ${context.read<CartCubit>().cartItemsCount.value.toString()} )",
+                          style: AppTheme.mainTextStyle(
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w700
+                          ),
+                        ),
+                      );
+                    }
+
+
+
+                  }),
             ],
           ),
           InkWell(

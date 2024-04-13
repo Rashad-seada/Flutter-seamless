@@ -16,4 +16,10 @@ class AppConsts {
   static const String getAllPropertiesEndPoint = "/properties";
   static const String getOnePropertyEndPoint = "/properties";
   static const String cartEndPoint = "/cart";
+
+  static const String accountEndPoint = "/account/user";
+
+  static const String favoriteEndPoint = "/favourites";
+
+  static const String onboardingEndPoint = "/onboarding/step";
 }

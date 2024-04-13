@@ -31,6 +31,10 @@ class UserEntity {
   @HiveField(8)
   int? verified;
 
+  @HiveField(9)
+  int? onboardingStep;
+
+
   UserEntity({
     this.id,
     this.token,
@@ -41,6 +45,7 @@ class UserEntity {
     this.updatedAt,
     this.receiveEmails,
     this.verified,
+    this.onboardingStep
   });
 
   UserEntity.fromJson(Map<String, dynamic> json) {
@@ -52,6 +57,7 @@ class UserEntity {
     updatedAt = json['updated_at'];
     receiveEmails = json['receive_emails'] ?? 0;
     verified = json['verified'] ?? 0;
+    onboardingStep = json['onboarding_step'] ?? 1;
   }
 
   Map<String, dynamic> toJson() {
@@ -64,6 +70,7 @@ class UserEntity {
     data['updated_at'] = updatedAt;
     data['receive_emails'] = receiveEmails;
     data['verified'] = verified;
+    data['onboarding_step'] = onboardingStep;
     return data;
   }
 
@@ -77,6 +84,7 @@ class UserEntity {
     String? updatedAt,
     int? receiveEmails,
     int? verified,
+    int? onboardingStep,
   }) {
     return UserEntity(
       id: id ?? this.id,
@@ -88,6 +96,9 @@ class UserEntity {
       updatedAt: updatedAt ?? this.updatedAt,
       receiveEmails: receiveEmails ?? this.receiveEmails,
       verified: verified ?? this.verified,
+      onboardingStep: onboardingStep ?? this.onboardingStep
     );
   }
+
 }
+

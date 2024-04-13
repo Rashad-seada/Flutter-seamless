@@ -329,7 +329,11 @@ class CodegenLoader extends AssetLoader{
   "account_confirmation": "تأكيد الحساب",
   "information_sent_successfully": "تم إرسال معلوماتك بنجاح",
   "identity_and_information_verifying": "جاري التحقق من هويتك ومعلوماتك",
-  "complete_information_received": "لقد تلقينا معلوماتك الكاملة من خلال جميع خطوات التحقق وسنقوم الآن بالتحقق منها وإعلامك بالانتهاء"
+  "complete_information_received": "لقد تلقينا معلوماتك الكاملة من خلال جميع خطوات التحقق وسنقوم الآن بالتحقق منها وإعلامك بالانتهاء",
+  "logout_sub_text": "هل ترغب حقًا في تسجيل الخروج من حسابك؟",
+  "cancel": "إلغاء",
+  "employed_status": "ما هي حاله عملك ؟",
+  "your_freelance_url": "رابط حسابك للعمل الحر"
 };
 static const Map<String,dynamic> en = {
   "on_boarding_title_1": "The Latest Way to Invest in Real Estate",
@@ -646,7 +650,11 @@ static const Map<String,dynamic> en = {
   "account_confirmation": "Account Confirmation",
   "information_sent_successfully": "Your information has been sent successfully",
   "identity_and_information_verifying": "Your identity and information are being verified",
-  "complete_information_received": "We have received your complete information through all verification steps and will now verify it and notify you upon completion"
+  "complete_information_received": "We have received your complete information through all verification steps and will now verify it and notify you upon completion",
+  "logout_sub_text": "Do you really want to logout from your account?",
+  "cancel": "Cancel",
+  "employed_status": "Whats your employment status?",
+  "your_freelance_url": "your freelance profile url"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

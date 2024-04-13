@@ -2,16 +2,20 @@ import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/features/verification/views/components/verfication_steps_button.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/config/app_theme.dart';
 import '../../../../core/views/widgets/custom_circle_avatar.dart';
+import '../../../../core/views/widgets/custom_drop_down.dart';
+import '../../../../core/views/widgets/custom_progress_indicator.dart';
 import '../../../../core/views/widgets/custom_text_field.dart';
 import '../../../../core/views/widgets/main_button.dart';
 import '../../../../core/views/widgets/space.dart';
 import '../../../../generated/locale_keys.g.dart';
 import '../../../account/views/components/custom_app_bar.dart';
+import '../blocs/verification_cubit.dart';
 
 class YourAddressScreen extends StatelessWidget {
   const YourAddressScreen({super.key});
@@ -27,9 +31,9 @@ class YourAddressScreen extends StatelessWidget {
           Space(
             height: 2.h,
           ),
-          CustomAppBar(label: LocaleKeys.your_address.tr()),
+          CustomAppBar(label: ''),
           Space(
-            height: 5.h,
+            height: 3.h,
           ),
           Text(
             LocaleKeys.your_address_text,
@@ -68,51 +72,76 @@ class YourAddressScreen extends StatelessWidget {
                   ),
                 ],
                 color: Colors.white),
-            child: Column(
-              children: [
-                CustomTextField(
-                  // controller: context.read<LoginCubit>().emailController,
-                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
-                  fillColor: Colors.transparent,
-                  label: LocaleKeys.country.tr(),
+            child: Form(
+              key: context.read<VerificationCubit>().yourLocationFormKey,
 
-                  // ),
-                ),
-                Space(
-                  height: 2.h,
-                ),
-                CustomTextField(
-                  // controller: context.read<LoginCubit>().emailController,
-                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
-                  fillColor: Colors.transparent,
-                  label: LocaleKeys.city.tr(),
-                ),
-                Space(
-                  height: 2.h,
-                ),
-                CustomTextField(
-                  // controller: context.read<LoginCubit>().emailController,
-                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
-                  fillColor: Colors.transparent,
-                  label: LocaleKeys.address_line_1.tr(),
-                  // ),
-                ),
-                Space(
-                  height: 2.h,
-                ),
-                CustomTextField(
-                  // controller: context.read<LoginCubit>().emailController,
-                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
-                  label: LocaleKeys.address_line_2.tr(),
-                  fillColor: Colors.transparent,
-                ),
-              ],
+              child: Column(
+                children: [
+
+
+                  BlocBuilder<VerificationCubit, VerificationState>(
+                    builder: (context, state) {
+                      return CustomDropDown(
+                                    width : 86.w,
+                                    menuItems: context.read<VerificationCubit>().countryList,
+                                    selectedItem: context.read<VerificationCubit>().country,
+                                    onChanged : (value) => context.read<VerificationCubit>().onCountryChange(value),
+                                    hint: LocaleKeys.country.tr(),
+                                  );
+                    },
+                  ),
+
+                  Space(
+                    height: 2.h,
+                  ),
+                  CustomTextField(
+                    controller: context.read<VerificationCubit>().cityController,
+                    validator: (_)=> context.read<VerificationCubit>().validateTextField(_!),
+                    fillColor: Colors.transparent,
+                    label: LocaleKeys.city.tr(),
+                  ),
+                  Space(
+                    height: 2.h,
+                  ),
+                  CustomTextField(
+                    controller: context.read<VerificationCubit>().areaController,
+                    validator: (_)=> context.read<VerificationCubit>().validateTextField(_!),
+                    fillColor: Colors.transparent,
+                    label: LocaleKeys.address_line_1.tr(),
+                    // ),
+                  ),
+                  Space(
+                    height: 2.h,
+                  ),
+                  CustomTextField(
+                    controller: context.read<VerificationCubit>().streetAddressController,
+                    validator: (_)=> context.read<VerificationCubit>().validateTextField(_!),
+                    label: LocaleKeys.address_line_2.tr(),
+                    fillColor: Colors.transparent,
+                  ),
+                ],
+              ),
             ),
           ),
-          VerficationStepsButton(
-            label: LocaleKeys.next.tr(),
-            // onTap: () => navigateToJobScreen(context),
+          BlocConsumer<VerificationCubit,VerificationState>(
+            listener: (context, state) {},
+            builder: (context, state) {
+              return MainButton(
+                color: AppTheme.primary900,
+                width: 86.w,
+                height: 6.h,
+                label: (state is VerificationIsLoading)? CustomProgressIndicator(
+                  color: AppTheme.neutral100,
+                ) : Text(
+                  LocaleKeys.next,
+                  style: AppTheme.mainTextStyle(
+                      color: AppTheme.secondary900, fontSize: 12.sp),
+                ).tr(),
+                onTap: ()=> context.read<VerificationCubit>().step5(context),
+              );
+            },
           ),
+
         ],
       ),
     ));

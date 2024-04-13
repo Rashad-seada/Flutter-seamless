@@ -314,5 +314,10 @@
   "account_confirmation": "Account Confirmation",
   "information_sent_successfully": "Your information has been sent successfully",
   "identity_and_information_verifying": "Your identity and information are being verified",
-  "complete_information_received": "We have received your complete information through all verification steps and will now verify it and notify you upon completion"
+  "complete_information_received": "We have received your complete information through all verification steps and will now verify it and notify you upon completion",
+  "logout_sub_text": "Do you really want to logout from your account?",
+  "cancel": "Cancel",
+  "employed_status": "Whats your employment status?",
+  "your_freelance_url": "your freelance profile url"
+
 }

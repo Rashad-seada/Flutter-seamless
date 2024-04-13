@@ -12,6 +12,7 @@ class AccountPageCard extends StatelessWidget {
   void Function()? onTap;
   String title;
   String subTitle;
+
   AccountPageCard({
     super.key,
     this.showArrow = true,

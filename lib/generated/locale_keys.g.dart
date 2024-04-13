@@ -316,5 +316,9 @@ abstract class  LocaleKeys {
   static const information_sent_successfully = 'information_sent_successfully';
   static const identity_and_information_verifying = 'identity_and_information_verifying';
   static const complete_information_received = 'complete_information_received';
+  static const logout_sub_text = 'logout_sub_text';
+  static const cancel = 'cancel';
+  static const employed_status = 'employed_status';
+  static const your_freelance_url = 'your_freelance_url';
 
 }

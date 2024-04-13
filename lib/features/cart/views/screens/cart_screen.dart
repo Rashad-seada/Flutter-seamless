@@ -54,6 +54,7 @@ class _CartScreenState extends State<CartScreen> {
             builder: (context, state) {
               if (state is CartIsLoading) {
                 return CustomProgressIndicator();
+
               } else if (state is CartError) {
                 return Padding(
                   padding: EdgeInsets.only(top: 10.h),

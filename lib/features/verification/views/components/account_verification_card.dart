@@ -27,7 +27,6 @@ class AccountVerificationCard extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 2.5.w, horizontal: 2.5.w),
         decoration: BoxDecoration(
           color: AppTheme.primary900.withOpacity(0.1),
-          border: Border.all(color: AppTheme.primary900),
           borderRadius: BorderRadius.circular(
             2.w,
           ),
@@ -47,7 +46,7 @@ class AccountVerificationCard extends StatelessWidget {
                   AppImages.profile,
                   width: 6.w,
                   height: 6.w,
-                  color: AppTheme.neutral100,
+                  color: AppTheme.secondary900,
                 )),
             Space(
               width: 3.w,

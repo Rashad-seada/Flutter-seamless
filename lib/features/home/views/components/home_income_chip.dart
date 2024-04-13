@@ -32,7 +32,7 @@ class HomeIncomeChip extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.7.h),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(1.w),
-          color: AppTheme.tertiary900),
+          color: AppTheme.primary900.withOpacity(0.1)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,

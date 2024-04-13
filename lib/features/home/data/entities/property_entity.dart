@@ -1,5 +1,5 @@
 class PropertyEntity {
-  num? id;
+  int? id;
   String? city;
   String? name;
   String? status;
@@ -25,7 +25,7 @@ class PropertyEntity {
   String? seamlessFee;
   String? servicesFees;
   String? maintainceFees;
-  List<String>? documents;
+  Documents? documents;
   num? hasGym;
   num? hasParking;
   num? hasBalcony;
@@ -38,41 +38,41 @@ class PropertyEntity {
 
   PropertyEntity(
       {this.id,
-      this.city,
-      this.name,
-      this.status,
-      this.isRented,
-      this.price,
-      this.percentageSold,
-      this.annualIncome,
-      this.annualExpectedGrowth,
-      this.annualRentIncome,
-      this.annualNetRentIncome,
-      this.image,
-      this.images,
-      this.locationDescription,
-      this.bedsCount,
-      this.bathroomsCount,
-      this.area,
-      this.totalRentPaid,
-      this.fundingDate,
-      this.investorsCount,
-      this.isProtected,
-      this.monthlyCurrentRent,
-      this.propertyDescription,
-      this.seamlessFee,
-      this.servicesFees,
-      this.maintainceFees,
-      this.documents,
-      this.hasGym,
-      this.hasParking,
-      this.hasBalcony,
-      this.hasPool,
-      this.hasSupermarket,
-      this.hasRestaurant,
-      this.hasGarden,
-      this.createdAt,
-      this.updatedAt});
+        this.city,
+        this.name,
+        this.status,
+        this.isRented,
+        this.price,
+        this.percentageSold,
+        this.annualIncome,
+        this.annualExpectedGrowth,
+        this.annualRentIncome,
+        this.annualNetRentIncome,
+        this.image,
+        this.images,
+        this.locationDescription,
+        this.bedsCount,
+        this.bathroomsCount,
+        this.area,
+        this.totalRentPaid,
+        this.fundingDate,
+        this.investorsCount,
+        this.isProtected,
+        this.monthlyCurrentRent,
+        this.propertyDescription,
+        this.seamlessFee,
+        this.servicesFees,
+        this.maintainceFees,
+        this.documents,
+        this.hasGym,
+        this.hasParking,
+        this.hasBalcony,
+        this.hasPool,
+        this.hasSupermarket,
+        this.hasRestaurant,
+        this.hasGarden,
+        this.createdAt,
+        this.updatedAt});
 
   PropertyEntity.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -101,7 +101,9 @@ class PropertyEntity {
     seamlessFee = json['seamless_fee'];
     servicesFees = json['services_fees'];
     maintainceFees = json['maintaince_fees'];
-    documents = json['documents'].cast<String>();
+    documents = json['documents'] != null
+        ? new Documents.fromJson(json['documents'])
+        : null;
     hasGym = json['has_gym'];
     hasParking = json['has_parking'];
     hasBalcony = json['has_balcony'];
@@ -141,7 +143,9 @@ class PropertyEntity {
     data['seamless_fee'] = this.seamlessFee;
     data['services_fees'] = this.servicesFees;
     data['maintaince_fees'] = this.maintainceFees;
-    data['documents'] = this.documents;
+    if (this.documents != null) {
+      data['documents'] = this.documents!.toJson();
+    }
     data['has_gym'] = this.hasGym;
     data['has_parking'] = this.hasParking;
     data['has_balcony'] = this.hasBalcony;
@@ -151,6 +155,37 @@ class PropertyEntity {
     data['has_garden'] = this.hasGarden;
     data['created_at'] = this.createdAt;
     data['updated_at'] = this.updatedAt;
+    return data;
+  }
+}
+
+class Documents {
+  String? investorMemoSkyGardens1305ENPdf;
+  String? investorMemoSkyGardens1306ENPdf;
+  String? investorMemoSkyGardens1307ENPdf;
+
+  Documents(
+      {this.investorMemoSkyGardens1305ENPdf,
+        this.investorMemoSkyGardens1306ENPdf,
+        this.investorMemoSkyGardens1307ENPdf});
+
+  Documents.fromJson(Map<String, dynamic> json) {
+    investorMemoSkyGardens1305ENPdf =
+    json['Investor Memo - Sky Gardens 1305 (EN).pdf'];
+    investorMemoSkyGardens1306ENPdf =
+    json['Investor Memo - Sky Gardens 1306 (EN).pdf'];
+    investorMemoSkyGardens1307ENPdf =
+    json['Investor Memo - Sky Gardens 1307 (EN).pdf'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['Investor Memo - Sky Gardens 1305 (EN).pdf'] =
+        this.investorMemoSkyGardens1305ENPdf;
+    data['Investor Memo - Sky Gardens 1306 (EN).pdf'] =
+        this.investorMemoSkyGardens1306ENPdf;
+    data['Investor Memo - Sky Gardens 1307 (EN).pdf'] =
+        this.investorMemoSkyGardens1307ENPdf;
     return data;
   }
 }

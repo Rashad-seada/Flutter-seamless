@@ -4,8 +4,13 @@ import 'package:Mawthoq/features/verification/views/screens/account_confirm_scre
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../../core/config/app_theme.dart';
+import '../../../../core/views/widgets/custom_progress_indicator.dart';
+import '../../../../core/views/widgets/main_button.dart';
+import '../blocs/verification_cubit.dart';
 import '../components/upload_id_card.dart';
 import '../components/verfication_steps_button.dart';
 import '../components/verfication_text_card.dart';
@@ -44,31 +49,61 @@ class UploadId2Screen extends StatelessWidget {
                   Space(
                     height: 2.h,
                   ),
-                  UploadIdCard(
-                    label: LocaleKeys.front_side_of_id.tr(),
-                    onTap: () {},
+                  BlocBuilder<VerificationCubit,VerificationState>(
+                    builder: (context, state) {
+                      return UploadIdCard(
+                        image: context.read<VerificationCubit>().front,
+                        label: LocaleKeys.front_side_of_id.tr(),
+                        onTap: () => context.read<VerificationCubit>().onFrontImageTap(),
+                      );
+                    },
                   ),
                   Space(
                     height: 2.h,
                   ),
-                  UploadIdCard(
-                    label: LocaleKeys.back_side_of_id.tr(),
-                    onTap: () {},
+                  BlocBuilder<VerificationCubit,VerificationState>(
+                    builder: (context, state) {
+                      return UploadIdCard(
+                                      image: context.read<VerificationCubit>().back,
+                                      label: LocaleKeys.back_side_of_id.tr(),
+                                      onTap: () => context.read<VerificationCubit>().onBackImageTap(),
+                                    );
+                    },
                   ),
                   Space(
                     height: 2.h,
                   ),
-                  UploadIdCard(
-                    label: LocaleKeys.your_photo_with_id.tr(),
-                    onTap: () {},
+                  BlocBuilder<VerificationCubit,VerificationState>(
+                    builder: (context, state) {
+                      return UploadIdCard(
+                                      image: context.read<VerificationCubit>().image,
+                                      label: LocaleKeys.your_photo_with_id.tr(),
+                                      onTap: () => context.read<VerificationCubit>().onImageTap(),
+                                    );
+                    },
                   ),
                   Space(
                     height: 2.h,
                   ),
-                  VerficationStepsButton(
-                    label: LocaleKeys.upload.tr(),
-                    onTap: () => navigateAccountConfirmScreen(context),
+
+                  BlocBuilder<VerificationCubit,VerificationState>(
+                    builder: (context, state) {
+                      return MainButton(
+                        color: AppTheme.primary900,
+                        width: 86.w,
+                        height: 6.h,
+                        label: (state is VerificationIsLoading)? CustomProgressIndicator(
+                          color: AppTheme.neutral100,
+                        ) : Text(
+                          LocaleKeys.upload,
+                          style: AppTheme.mainTextStyle(
+                              color: AppTheme.secondary900, fontSize: 12.sp),
+                        ).tr(),
+                        onTap: ()=> context.read<VerificationCubit>().step7(context),
+                      );
+                    },
                   ),
+                  
                 ],
               ),
             ),

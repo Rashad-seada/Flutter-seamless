@@ -90,7 +90,7 @@ class Amenities extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.w),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(2.w),
-                  color: AppTheme.tertiary900),
+                  color: AppTheme.primary900.withOpacity(0.1)),
               child: Image.asset(amenitiesModel.image,width: 7.w,height: 7.w,)),
 
           Space(width: 3.w,),

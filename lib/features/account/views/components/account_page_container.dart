@@ -21,7 +21,7 @@ class AccountPageContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 2.w),
+      padding: EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 4.w),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(

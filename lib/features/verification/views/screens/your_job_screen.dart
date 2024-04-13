@@ -2,12 +2,18 @@ import 'package:Mawthoq/features/verification/views/components/verfication_steps
 import 'package:Mawthoq/features/verification/views/screens/terms&conditions_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 import '../../../../core/config/app_theme.dart';
+import '../../../../core/views/widgets/custom_drop_down.dart';
+import '../../../../core/views/widgets/custom_progress_indicator.dart';
 import '../../../../core/views/widgets/custom_text_field.dart';
+import '../../../../core/views/widgets/main_button.dart';
 import '../../../../core/views/widgets/space.dart';
 import '../../../../generated/locale_keys.g.dart';
 import '../../../account/views/components/custom_app_bar.dart';
+import '../../data/utils/employment_status.dart';
+import '../blocs/verification_cubit.dart';
 
 class YourJobScreen extends StatelessWidget {
   void navigateToTermsAndConditionsScreen(BuildContext context) {
@@ -28,9 +34,9 @@ class YourJobScreen extends StatelessWidget {
           Space(
             height: 2.h,
           ),
-          CustomAppBar(label: LocaleKeys.your_job.tr()),
+          CustomAppBar(label: ""),
           Space(
-            height: 5.h,
+            height: 3.h,
           ),
           Text(
             LocaleKeys.your_job_text,
@@ -69,76 +75,137 @@ class YourJobScreen extends StatelessWidget {
                   ),
                 ],
                 color: Colors.white),
-            child: Column(
-              children: [
-                CustomTextField(
-                  // controller: context.read<LoginCubit>().emailController,
-                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
-                  label: LocaleKeys.employed.tr(),
-                  fillColor: Colors.transparent,
-                  // ),
-                ),
-                Space(
-                  height: 2.h,
-                ),
-                CustomTextField(
-                  // controller: context.read<LoginCubit>().emailController,
-                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
-                  fillColor: Colors.transparent,
-                  label: LocaleKeys.name_of_work_place.tr(),
-                ),
-                Space(
-                  height: 2.h,
-                ),
-                CustomTextField(
-                  // controller: context.read<LoginCubit>().emailController,
-                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
-                  fillColor: Colors.transparent,
-                  label: LocaleKeys.name_of_work_owner.tr(),
-                ),
-                Space(
-                  height: 2.h,
-                ),
-                CustomTextField(
-                  // controller: context.read<LoginCubit>().emailController,
-                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
-                  fillColor: Colors.transparent,
-                  label: LocaleKeys.address_of_work.tr(),
-                ),
-                Space(
-                  height: 2.h,
-                ),
-                CustomTextField(
-                  // controller: context.read<LoginCubit>().emailController,
-                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
-                  fillColor: Colors.transparent,
-                  label: LocaleKeys.your_job_title.tr(),
-                ),
-                Space(
-                  height: 2.h,
-                ),
-                CustomTextField(
-                  // controller: context.read<LoginCubit>().emailController,
-                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
-                  fillColor: Colors.transparent,
-                  label: LocaleKeys.your_job_field.tr(),
-                ),
-                Space(
-                  height: 2.h,
-                ),
-                CustomTextField(
-                  // controller: context.read<LoginCubit>().emailController,
-                  // validator: (_)=> context.read<LoginCubit>().validateEmail(),
-                  fillColor: Colors.transparent,
-                  label: LocaleKeys.your_main_income.tr(),
-                ),
-              ],
+            child: BlocBuilder<VerificationCubit,VerificationState>(
+              builder: (context, state) {
+                return Form(
+                  key: context.read<VerificationCubit>().yourJobFromKey,
+                  child: Column(
+                            children: [
+
+                              CustomDropDown(
+                                width : 86.w,
+                                menuItems: context.read<VerificationCubit>().employmentStatusList,
+                                selectedItem: context.read<VerificationCubit>().employmentStatus,
+                                onChanged : (value) => context.read<VerificationCubit>().onEmploymentStatusChange(value),
+                                hint: LocaleKeys.employed_status.tr(),
+                              ),
+
+                              Space(
+                                height: 2.h,
+                              ),
+
+                              if(context.read<VerificationCubit>().employmentStatus?.value == EmploymentStatus.employee)
+                              CustomTextField(
+                                controller: context.read<VerificationCubit>().employmentCompanyController,
+                                validator: (_)=> context.read<VerificationCubit>().validateTextField(_!),
+                                fillColor: Colors.transparent,
+                                label: LocaleKeys.name_of_work_place.tr(),
+                              ),
+
+                              if(context.read<VerificationCubit>().employmentStatus?.value == EmploymentStatus.employee)
+                                Space(
+                                height: 2.h,
+                              ),
+
+                              if(context.read<VerificationCubit>().employmentStatus?.value == EmploymentStatus.employee)
+                                CustomTextField(
+                                  controller: context.read<VerificationCubit>().employmentOwnerController,
+                                  validator: (_)=> context.read<VerificationCubit>().validateTextField(_!),
+                                fillColor: Colors.transparent,
+                                label: LocaleKeys.name_of_work_owner.tr(),
+                              ),
+                              if(context.read<VerificationCubit>().employmentStatus?.value == EmploymentStatus.employee)
+                                Space(
+                                height: 2.h,
+                              ),
+                              if(context.read<VerificationCubit>().employmentStatus?.value == EmploymentStatus.employee)
+                                CustomTextField(
+                                  controller: context.read<VerificationCubit>().employmentAddressController,
+                                  validator: (_)=> context.read<VerificationCubit>().validateTextField(_!),
+                                fillColor: Colors.transparent,
+                                label: LocaleKeys.address_of_work.tr(),
+                              ),
+                              if(context.read<VerificationCubit>().employmentStatus?.value == EmploymentStatus.employee)
+
+                                Space(
+                                height: 2.h,
+                              ),
+                              if(context.read<VerificationCubit>().employmentStatus?.value == EmploymentStatus.employee)
+                                CustomTextField(
+                                  controller: context.read<VerificationCubit>().employmentTitleController,
+                                  validator: (_)=> context.read<VerificationCubit>().validateTextField(_!),
+                                fillColor: Colors.transparent,
+                                label: LocaleKeys.your_job_title.tr(),
+                              ),
+                              if(context.read<VerificationCubit>().employmentStatus?.value == EmploymentStatus.employee)
+
+                                Space(
+                                height: 2.h,
+                              ),
+                              if(context.read<VerificationCubit>().employmentStatus?.value == EmploymentStatus.employee)
+                                CustomTextField(
+                                  controller: context.read<VerificationCubit>().employmentDomainController,
+                                  validator: (_)=> context.read<VerificationCubit>().validateTextField(_!),
+                                fillColor: Colors.transparent,
+                                label: LocaleKeys.your_job_field.tr(),
+                              ),
+                              if(context.read<VerificationCubit>().employmentStatus?.value == EmploymentStatus.employee)
+                                Space(
+                                height: 2.h,
+                              ),
+
+                              if(context.read<VerificationCubit>().employmentStatus?.value == EmploymentStatus.freelancer)
+                                CustomTextField(
+                                  controller: context.read<VerificationCubit>().freelancerUrlController,
+                                  validator: (_)=> context.read<VerificationCubit>().validateTextField(_!),
+                                  fillColor: Colors.transparent,
+                                  label: LocaleKeys.your_freelance_url.tr(),
+                                ),
+                              if(context.read<VerificationCubit>().employmentStatus?.value == EmploymentStatus.freelancer)
+                                Space(
+                                  height: 2.h,
+                                ),
+
+
+                              CustomDropDown(
+                                width : 86.w,
+                                menuItems: context.read<VerificationCubit>().incomeSourceList,
+                                selectedItem: context.read<VerificationCubit>().incomeSource,
+                                onChanged : (value) => context.read<VerificationCubit>().onIncomeSourceChange(value),
+                                hint: LocaleKeys.your_main_income.tr(),
+                              ),
+
+
+                            ],
+                          ),
+                );
+              },
             ),
           ),
-          VerficationStepsButton(
-            label: LocaleKeys.next.tr(),
-            onTap: () => navigateToTermsAndConditionsScreen(context),
+
+          BlocConsumer<VerificationCubit,VerificationState>(
+            listener: (context, state) {},
+            builder: (context, state) {
+              return MainButton(
+                color: AppTheme.primary900,
+                width: 86.w,
+                height: 6.h,
+                label: (state is VerificationIsLoading)? CustomProgressIndicator(
+                  color: AppTheme.neutral100,
+                ) : Text(
+                  LocaleKeys.next,
+                  style: AppTheme.mainTextStyle(
+                      color: AppTheme.secondary900, fontSize: 12.sp),
+                ).tr(),
+                onTap: ()=> context.read<VerificationCubit>().step3(context),
+              );
+            },
           ),
+
+          Space(
+            height: 10.h,
+          ),
+
         ],
       ),
     ));

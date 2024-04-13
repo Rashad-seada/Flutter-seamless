@@ -16,7 +16,7 @@ class HomeInfoChip extends StatelessWidget {
       decoration: BoxDecoration(
           border: Border.all(color: AppTheme.neutral300, width: 1),
           borderRadius: BorderRadius.circular(1.w),
-          color: AppTheme.tertiary900),
+          color: AppTheme.primary900.withOpacity(0.1)),
       child: Text(
         label,
         style:

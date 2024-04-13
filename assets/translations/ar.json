@@ -313,5 +313,10 @@
   "account_confirmation": "تأكيد الحساب",
   "information_sent_successfully": "تم إرسال معلوماتك بنجاح",
   "identity_and_information_verifying": "جاري التحقق من هويتك ومعلوماتك",
-  "complete_information_received": "لقد تلقينا معلوماتك الكاملة من خلال جميع خطوات التحقق وسنقوم الآن بالتحقق منها وإعلامك بالانتهاء"
+  "complete_information_received": "لقد تلقينا معلوماتك الكاملة من خلال جميع خطوات التحقق وسنقوم الآن بالتحقق منها وإعلامك بالانتهاء",
+  "logout_sub_text": "هل ترغب حقًا في تسجيل الخروج من حسابك؟",
+  "cancel": "إلغاء",
+  "employed_status": "ما هي حاله عملك ؟",
+  "your_freelance_url": "رابط حسابك للعمل الحر"
+
 }

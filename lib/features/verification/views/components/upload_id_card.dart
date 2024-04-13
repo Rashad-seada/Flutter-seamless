@@ -1,19 +1,24 @@
+import 'dart:io';
+
 import 'package:Mawthoq/core/config/app_images.dart';
 import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:sizer/sizer.dart';
 
 class UploadIdCard extends StatelessWidget {
   String label;
+  XFile? image;
   void Function()? onTap;
-  UploadIdCard({super.key, required this.label, this.onTap});
+  UploadIdCard({super.key, required this.label, this.onTap,this.image});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       child: Container(
+        clipBehavior: Clip.hardEdge,
         height: 18.h,
         width: double.infinity,
         decoration: BoxDecoration(
@@ -30,7 +35,7 @@ class UploadIdCard extends StatelessWidget {
             3.w,
           ),
         ),
-        child: Column(
+        child: (image == null)? Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(AppImages.uploadId),
@@ -44,7 +49,7 @@ class UploadIdCard extends StatelessWidget {
               ),
             ),
           ],
-        ),
+        ) : Expanded(child: Image.file(File(image!.path),fit: BoxFit.cover,)),
       ),
     );
   }

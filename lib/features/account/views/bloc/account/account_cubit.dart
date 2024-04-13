@@ -1,4 +1,5 @@
 import 'package:Mawthoq/core/config/app_images.dart';
+import 'package:Mawthoq/features/account/domain/usecases/get_account_use_case.dart';
 import 'package:Mawthoq/features/account/views/bloc/account/account_states.dart';
 import 'package:Mawthoq/features/account/views/screens/account_information_screen.dart';
 import 'package:Mawthoq/features/account/views/screens/blog_screen.dart';
@@ -8,13 +9,73 @@ import 'package:Mawthoq/features/account/views/screens/privacy_and_security_scre
 import 'package:Mawthoq/features/account/views/screens/privacy_politics_screen.dart';
 import 'package:Mawthoq/features/account/views/screens/settings_screen.dart';
 import 'package:Mawthoq/features/account/views/utils/account_model.dart';
+import 'package:Mawthoq/features/auth/domain/usecases/get_user_use_case.dart';
+import 'package:Mawthoq/features/auth/domain/usecases/logout_use_case.dart';
+import 'package:Mawthoq/features/auth/views/screens/00_auth_methods_screen.dart';
 import 'package:Mawthoq/generated/locale_keys.g.dart';
 import 'package:bloc/bloc.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/di/app_module.dart';
+import '../../../../../core/views/widgets/custom_flush_bar.dart';
+import '../../../../auth/data/entities/user_entity.dart';
+
 class AccountCubit extends Cubit<AccountState> {
   AccountCubit() : super(AccountInitial());
+
+
+  onLogoutTap(BuildContext context){
+    logout(context);
+  }
+
+  logout(BuildContext context){
+    emit(AccountIsLoggingOut());
+    getIt<LogoutUseCase>().call().then((value) => value.fold(
+            (error) {
+              showFlushBar(
+                  context,
+                  title: "Error ${error.failureCode}",
+                  message : error.message
+              );
+            },
+            (success) {
+              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_)=> AuthMethodsScreen()), (route) => false);
+        }
+    ));
+  }
+
+  getUserFromLocal(BuildContext context){
+    emit(AccountIsGettingAccount());
+    getIt<GetUserUseCase>().call().then((value) => value.fold(
+            (error) {
+          emit(AccountError(error));
+          showFlushBar(
+              context,
+              title: "Error ${error.failureCode}",
+              message : error.message
+          );
+        },
+            (success) {
+          emit(AccountSuccess(success!));
+        }
+    ));
+  }
+
+  getAccount(BuildContext context){
+    emit(AccountIsGettingAccount());
+    getIt<GetAccountUseCase>().call().then((value) => value.fold(
+        (error) {
+          emit(AccountError(error));
+
+        },
+        (success) {
+          emit(AccountSuccess(success.user!));
+        }
+    ));
+  }
+
+
 
   void _navigateToAccountInfoScreen(BuildContext context) {
     Navigator.push(context,
@@ -79,8 +140,8 @@ class AccountCubit extends Cubit<AccountState> {
     _navigateToBlogScreen(context);
   }
 
-  List<AccountContainerModel> get accountScreenInfo => [
-        AccountContainerModel(AppImages.email, LocaleKeys.email.tr(), () {}),
+  List<AccountContainerModel>  accountScreenInfo(UserEntity? user) => [
+        AccountContainerModel(AppImages.email, user?.email ?? "--", () {}),
         AccountContainerModel(AppImages.phone, LocaleKeys.phone.tr(), () {}),
       ];
 

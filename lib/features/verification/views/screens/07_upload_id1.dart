@@ -7,8 +7,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../../core/views/widgets/custom_progress_indicator.dart';
+import '../../../../core/views/widgets/main_button.dart';
+import '../blocs/verification_cubit.dart';
 import '../components/id_activation_card.dart';
 import '../components/verfication_steps_button.dart';
 import '../components/verfication_text_card.dart';
@@ -75,10 +79,26 @@ class UploadId1Screen extends StatelessWidget {
                 Space(
                   height: 2.h,
                 ),
-                VerficationStepsButton(
-                  label: LocaleKeys.continue_.tr(),
-                  onTap: () => navigateToUploadIdPage(context),
+
+                BlocConsumer<VerificationCubit,VerificationState>(
+                  listener: (context, state) {},
+                  builder: (context, state) {
+                    return MainButton(
+                      color: AppTheme.primary900,
+                      width: 86.w,
+                      height: 6.h,
+                      label: (state is VerificationIsLoading)? CustomProgressIndicator(
+                        color: AppTheme.neutral100,
+                      ) : Text(
+                        LocaleKeys.continue_,
+                        style: AppTheme.mainTextStyle(
+                            color: AppTheme.secondary900, fontSize: 12.sp),
+                      ).tr(),
+                      onTap: ()=> context.read<VerificationCubit>().step6(context),
+                    );
+                  },
                 ),
+
               ],
             ),
           ],

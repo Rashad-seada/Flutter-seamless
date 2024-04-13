@@ -20,6 +20,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/di/app_module.dart';
 import '../../../../../core/views/widgets/custom_flush_bar.dart';
 import '../../../../auth/data/entities/user_entity.dart';
+import '../../../../chat/views/screens/chat_screen.dart';
 
 class AccountCubit extends Cubit<AccountState> {
   AccountCubit() : super(AccountInitial());
@@ -112,6 +113,15 @@ class AccountCubit extends Cubit<AccountState> {
         MaterialPageRoute(builder: (_) => const PrivacyPoliticsScreen()));
   }
 
+  void _navigateToChatScreen(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (_) => const ChatScreen()));
+  }
+
+  void onChatClick(BuildContext context) {
+    _navigateToChatScreen(context);
+  }
+
   void onPrivacyPoliticsClick(BuildContext context) {
     _navigateToPrivacyPoliticsScreen(context);
   }
@@ -157,9 +167,9 @@ class AccountCubit extends Cubit<AccountState> {
             AppImages.videoPlay, LocaleKeys.how_it_works.tr(), () {}),
       ];
 
-  List<AccountContainerModel> get helpCenterScreenInfo2 => [
-        AccountContainerModel(
-            AppImages.messege, LocaleKeys.direct_chat.tr(), () {}),
+  List<AccountContainerModel> helpCenterScreenInfo2(BuildContext context) => [
+    AccountContainerModel(AppImages.messege, LocaleKeys.direct_chat.tr(),
+            () => onChatClick(context)),
         AccountContainerModel(
             AppImages.phone, LocaleKeys.whatsapp_contact.tr(), () {}),
         AccountContainerModel(

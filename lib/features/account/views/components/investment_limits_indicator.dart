@@ -34,8 +34,11 @@ class InvestmentLimitsIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () =>
-          context.read<AccountCubit>().onInvestmentLimitsClick(context),
+      onTap: () {
+        if (isInvetmentLimit == false) {
+          context.read<AccountCubit>().onInvestmentLimitsClick(context);
+        }
+      },
       child: Container(
         padding: EdgeInsets.all(2.h),
         decoration: BoxDecoration(

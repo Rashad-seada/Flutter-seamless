@@ -1,10 +1,8 @@
+import 'package:Mawthoq/core/views/widgets/wave_container.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
-
-import '../../../../core/config/app_images.dart';
 import '../../../../core/config/app_theme.dart';
 import '../../../../core/views/widgets/main_button.dart';
 import '../../../../core/views/widgets/space.dart';
@@ -25,53 +23,89 @@ class MessageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 7.w),
-        child: ListView(
-          children: [
-            Space(
-              height: 25.h,
-            ),
-            Center(
-              child: SvgPicture.asset(
-                AppImages.done,
-                width: 86.w,
+      body: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          WaveContainer(),
+          ListView(
+            padding: EdgeInsets.symmetric(horizontal: 7.w),
+            children: [
+              Space(
                 height: 20.h,
               ),
-            ),
-            Space(
-              height: 5.h,
-            ),
-            Text(LocaleKeys.all_done,
+              Center(
+                child: Image.asset(
+                  'images/confirm_email _image.png',
+                  width: 86.w,
+                  height: 20.h,
+                ),
+              ),
+              Space(
+                height: 5.h,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'An email has been received',
                     style: AppTheme.mainTextStyle(
-                      color: AppTheme.neutral900,
-                      fontSize: 25.sp,
+                      fontSize: 20.sp,
+                      color: AppTheme.secondary900,
+                      fontWeight: FontWeight.bold,
                     ),
-                    textAlign: TextAlign.center)
-                .tr(),
-            Space(
-              height: 2.h,
-            ),
-            Text(LocaleKeys.all_done_description,
+                    textAlign: TextAlign.center,
+                  ),
+                  Space(
+                    height: 1.h,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'An Email has been sent to ',
+                        style: AppTheme.mainTextStyle(
+                          fontSize: 12.sp,
+                          color: AppTheme.secondary900,
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Text(
+                          'email@gmail.com',
+                          style: AppTheme.mainTextStyle(
+                            fontSize: 12.sp,
+                            color: AppTheme.primary900,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Text(
+                    'Please Verify your account from the link in the mail',
                     style: AppTheme.mainTextStyle(
-                        color: AppTheme.neutral700, fontSize: 12.sp),
-                    textAlign: TextAlign.center)
-                .tr(),
-            Space(
-              height: 15.h,
-            ),
-            MainButton(
-              width: 86.w,
-              height: 7.h,
-              label: Text(
-                LocaleKeys.done,
-                style: AppTheme.mainTextStyle(
-                    color: AppTheme.neutral100, fontSize: 14.sp),
-              ).tr(),
-              onTap: () => context.read<RegisterCubit>().onDoneClick(context),
-            )
-          ],
-        ),
+                      fontSize: 10.sp,
+                      color: AppTheme.secondary900,
+                    ),
+                  ),
+                ],
+              ),
+              Space(
+                height: 25.h,
+              ),
+              MainButton(
+                color: AppTheme.primary900,
+                width: 86.w,
+                height: 7.h,
+                label: Text(
+                  LocaleKeys.done,
+                  style: AppTheme.mainTextStyle(
+                      color: AppTheme.secondary900, fontSize: 14.sp),
+                ).tr(),
+                onTap: () => context.read<RegisterCubit>().onDoneClick(context),
+              )
+            ],
+          ),
+        ],
       ),
     ));
   }

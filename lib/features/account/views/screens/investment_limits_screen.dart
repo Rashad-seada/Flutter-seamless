@@ -1,6 +1,6 @@
 import 'package:Mawthoq/core/config/app_images.dart';
-import 'package:Mawthoq/core/config/app_theme.dart';
 import 'package:Mawthoq/core/views/widgets/space.dart';
+import 'package:Mawthoq/features/account/views/components/custom_app_bar.dart';
 import 'package:Mawthoq/features/account/views/components/investment_limits_indicator.dart';
 import 'package:Mawthoq/features/account/views/components/investment_limits_guide.dart';
 import 'package:Mawthoq/features/account/views/components/privacy_security_container.dart';
@@ -14,19 +14,20 @@ class InvestmentLimitsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          LocaleKeys.investment_limit,
-          style: AppTheme.mainTextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-        ).tr(),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(6.w),
-        child: ListView(
+    return SafeArea(
+      child: Scaffold(
+        body: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 7.w),
           children: [
+            Space(
+              height: 2.h,
+            ),
+            CustomAppBar(
+              label: LocaleKeys.investment_limit.tr(),
+            ),
+            Space(
+              height: 3.h,
+            ),
             InvestmentLimitsIndicator(
               isInvetmentLimit: true,
               headLabel: LocaleKeys.from_limit.tr(),
